@@ -7,6 +7,8 @@ public static class Generate_Room_Demo {
 	public static Map generateRoom() {
 		Map demoMap = new Map();
 
+		//Demo room map, relativly complex
+
 		List<LevelEditor_2.TileCoord> emptyTiles1 = new List<LevelEditor_2.TileCoord>();
 		emptyTiles1.Add(new LevelEditor_2.TileCoord(0, 0));
 		emptyTiles1.Add(new LevelEditor_2.TileCoord(2, 0));

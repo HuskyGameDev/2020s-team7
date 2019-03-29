@@ -7,6 +7,10 @@ public static class Generate_Room_4 {
 	public static Map generateRoom() {
 		Map demoMap = new Map();
 
+		// This room has two hallways that go through the middle.
+		// both of the hallways are longer from the inside than the outside,
+		// and the hallways are also at 90 degrees to each other, passing through the same space.
+
 		List<LevelEditor_2.TileCoord> emptyTiles = new List<LevelEditor_2.TileCoord>();
 		emptyTiles.Add(new LevelEditor_2.TileCoord(1, 1));
 
@@ -42,7 +46,8 @@ public static class Generate_Room_4 {
 			new LevelEditor_2.TileCoord(0, 1, false, false, true, false)
 			);
 
-
+		LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(0, 2));
+		LevelEditor_2.setTarget(chunk1, new LevelEditor_2.TileCoord(2, 0));
 
 		return demoMap;
 	}

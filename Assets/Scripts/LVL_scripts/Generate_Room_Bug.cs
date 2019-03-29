@@ -8,6 +8,9 @@ public static class Generate_Room_Bug {
 	public static Map generateRoom() {
 		Map demoMap = new Map();
 
+		// This map demonstrates the ways that connects can be very wierd
+		// Demonstrates cunfusing, undesired behavior
+
 		List<LevelEditor_2.TileCoord> emptyTiles = new List<LevelEditor_2.TileCoord>();
 		emptyTiles.Add(new LevelEditor_2.TileCoord(0, 0));
 		emptyTiles.Add(new LevelEditor_2.TileCoord(0, 2));
