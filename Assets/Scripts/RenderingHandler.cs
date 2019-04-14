@@ -39,7 +39,7 @@ public class RenderingHandler : MonoBehaviour {
             Direction dir = (Direction)i;
             Vector2Int position = center + dir.offset();
             Node drawNode = (node.GetConnectionFromDir(dir) == null) ? null : GameManager.instance.map[(int)node.GetConnectionFromDir(dir)];
-            renderMap[position.x, position.y].DrawFullNode(drawNode);
+            
             if (drawNode != null && visibleNodes.Contains(drawNode) == false)
                 visibleNodes.Add(drawNode);
 
@@ -62,16 +62,10 @@ public class RenderingHandler : MonoBehaviour {
                     //Get the diagnol node
                     Vector2Int position = center + primaryDir.offset() + secondaryDir.offset();
                     //Draw the two relevent triangles
-                    renderMap[position.x,position.y].SetFloorFromDir(Direction.North, null);
-                    renderMap[position.x,position.y].SetFloorFromDir(Direction.South, null);
-                    renderMap[position.x,position.y].SetFloorFromDir(Direction.West, null);
-                    renderMap[position.x,position.y].SetFloorFromDir(Direction.East, null);
-                    renderMap[position.x,position.y].SetWallFromDir(Direction.North, false);
-                    renderMap[position.x,position.y].SetWallFromDir(Direction.South, false);
-                    renderMap[position.x,position.y].SetWallFromDir(Direction.West, false);
-                    renderMap[position.x,position.y].SetWallFromDir(Direction.East, false);
+                    renderMap[position.x,position.y].DrawFullNode(null);
+                    altRenderMap[position.x,position.y].DrawFullNode(null);
 
-                }
+				}
             }
         }
 
@@ -118,31 +112,32 @@ public class RenderingHandler : MonoBehaviour {
                     //Get the diagnol node
                     Vector2Int position = center + primaryDir.offset() + secondaryDir.offset();
                     Node diagnolNode = GameManager.instance.map[(int)primaryNode.GetConnectionFromDir(secondaryDir)];
-                    //Draw the two relevent triangles
-                    renderMap[position.x,position.y].SetFloorFromDir(primaryDir, diagnolNode);
+
+					if (secondaryDir == Direction.North || secondaryDir == Direction.South) {
+						//Draw on layer one.
+						renderMap[position.x, position.y].DrawFullNode(diagnolNode);
+						renderMap[position.x, position.y].SetLayer(activeLayer);
+					}
+					else {
+						//Draw on layer two
+						altRenderMap[position.x, position.y].DrawFullNode(diagnolNode);
+						altRenderMap[position.x, position.y].SetLayer(activeLayer);
+					}
+					//Draw the two relevent triangles
+					//renderMap[position.x,position.y].SetFloorFromDir(primaryDir, diagnolNode);
 
 
-                    if (diagnolNode.data.enter == primaryDir && diagnolNode.data.hasEnter)
-                        renderMap[position.x,position.y].SetLineFromDir(primaryDir,true );
-                    if (diagnolNode.data.leave == primaryDir && diagnolNode.data.hasLeave)
-                        renderMap[position.x,position.y].SetLineFromDir(primaryDir,true );
+					//if (diagnolNode.data.enter == primaryDir && diagnolNode.data.hasEnter)
+					//    renderMap[position.x,position.y].SetLineFromDir(primaryDir,true );
+					//if (diagnolNode.data.leave == primaryDir && diagnolNode.data.hasLeave)
+					//    renderMap[position.x,position.y].SetLineFromDir(primaryDir,true );
 
 
-                    renderMap[position.x,position.y].SetFloorFromDir(secondaryDir.inverse(), diagnolNode);
-                    if (diagnolNode.data.enter == secondaryDir.inverse() && diagnolNode.data.hasEnter)
-                        renderMap[position.x,position.y].SetLineFromDir(secondaryDir.inverse(),true );
-                    if (diagnolNode.data.leave == secondaryDir.inverse() && diagnolNode.data.hasLeave)
-                        renderMap[position.x,position.y].SetLineFromDir(secondaryDir.inverse(),true );
-
-                    //Put this on the right layer
-                    renderMap[position.x,position.y].SetLayer(activeLayer);
-
-
-                    //Check primaryDir from diagnol to see if we need a wall
-                    if (diagnolNode.GetConnectionFromDir(primaryDir) == null) {
-                        //Debug.Log("Wall: " +(primaryDir)+"->" +(secondaryDir)+"->"+(primaryDir));
-                        renderMap[position.x,position.y].SetWallFromDir(primaryDir, true);
-                    }
+					// renderMap[position.x,position.y].SetFloorFromDir(secondaryDir.inverse(), diagnolNode);
+					//if (diagnolNode.data.enter == secondaryDir.inverse() && diagnolNode.data.hasEnter)
+					//    renderMap[position.x,position.y].SetLineFromDir(secondaryDir.inverse(),true );
+					//if (diagnolNode.data.leave == secondaryDir.inverse() && diagnolNode.data.hasLeave)
+					//    renderMap[position.x,position.y].SetLineFromDir(secondaryDir.inverse(),true );
 
                 }
 
