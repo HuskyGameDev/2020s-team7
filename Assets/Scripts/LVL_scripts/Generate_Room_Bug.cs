@@ -19,18 +19,36 @@ public static class Generate_Room_Bug {
 
 		Node[,] chunk = LevelEditor_2.createChunk(demoMap, new Color32(255, 255, 200, 255), 3, 3, emptyTiles);
 
-		LevelEditor_2.createTwoWayLink(
+		LevelEditor_2.createOneWayLink(
 			chunk,
 			chunk,
-			new LevelEditor_2.TileCoord(1, 0, true, false, false, false),
-			new LevelEditor_2.TileCoord(0, 1, false, false, false, true)
+			new LevelEditor_2.TileCoord(1, 0),
+			new LevelEditor_2.TileCoord(0, 1),
+				LevelEditor_2.Direction.North
+			);
+
+		LevelEditor_2.createOneWayLink(
+			chunk,
+			chunk,
+			new LevelEditor_2.TileCoord(0, 1),
+			new LevelEditor_2.TileCoord(1, 0),
+				LevelEditor_2.Direction.West
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk,
 			chunk,
-			new LevelEditor_2.TileCoord(1, 2, false, false, true, false),
-			new LevelEditor_2.TileCoord(2, 1, false, true, false, false)
+			new LevelEditor_2.TileCoord(1, 2),
+			new LevelEditor_2.TileCoord(2, 1),
+				LevelEditor_2.Direction.South
+			);
+
+		LevelEditor_2.createTwoWayLink(
+			chunk,
+			chunk,
+			new LevelEditor_2.TileCoord(2, 1),
+			new LevelEditor_2.TileCoord(1, 2),
+				LevelEditor_2.Direction.East
 			);
 
 		return demoMap;

@@ -49,7 +49,7 @@ public static class LevelEditor_2 {
 		// object that this tile represents
         public GameObject myObject;
 	}
-
+	public enum Direction {North, East, South, West};
 	/*
 	public static Map createRoom() {
 		return new Map();
@@ -190,17 +190,16 @@ public static class LevelEditor_2 {
 	/// <param name="chunkTo"></param>
 	/// <param name="tileFrom"></param>
 	/// <param name="tileTo"></param>
-	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo) {
-		if (tileFrom.North == true) {
+	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, Direction dir) {
+		if (dir == Direction.North) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (tileFrom.East == true) {
+		} else if (dir == Direction.East) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (tileFrom.South == true) {
+		} else if (dir == Direction.South) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (tileFrom.West == true) {
+		} else {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
 		}
-		
 	}
 
 	/// <summary>
@@ -213,25 +212,19 @@ public static class LevelEditor_2 {
 	/// <param name="chunk2"></param>
 	/// <param name="tile1"></param>
 	/// <param name="tile2"></param>
-	public static void createTwoWayLink(Node[,] chunk1, Node[,] chunk2, TileCoord tile1, TileCoord tile2) {
-		if (tile1.North == true) {
-			chunk1[tile1.x, tile1.y].connections.north = chunk2[tile2.x, tile2.y].index;
-		} else if (tile1.East == true) {
-			chunk1[tile1.x, tile1.y].connections.east = chunk2[tile2.x, tile2.y].index;
-		} else if (tile1.South == true) {
-			chunk1[tile1.x, tile1.y].connections.south = chunk2[tile2.x, tile2.y].index;
-		} else if (tile1.West == true) {
-			chunk1[tile1.x, tile1.y].connections.west = chunk2[tile2.x, tile2.y].index;
-		}
-
-		if (tile2.North == true) {
-			chunk2[tile2.x, tile2.y].connections.north = chunk1[tile1.x, tile1.y].index;
-		} else if (tile2.East == true) {
-			chunk2[tile2.x, tile2.y].connections.east = chunk1[tile1.x, tile1.y].index;
-		} else if (tile2.South == true) {
-			chunk2[tile2.x, tile2.y].connections.south = chunk1[tile1.x, tile1.y].index;
-		} else if (tile2.West == true) {
-			chunk2[tile2.x, tile2.y].connections.west = chunk1[tile1.x, tile1.y].index;
+	public static void createTwoWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, Direction dir) {
+		if (dir == Direction.North) {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.south = chunkFrom[tileFrom.x, tileFrom.y].index;
+		} else if (dir == Direction.East) {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.west = chunkFrom[tileFrom.x, tileFrom.y].index;
+		} else if (dir == Direction.South) {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.north = chunkFrom[tileFrom.x, tileFrom.y].index;
+		} else {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.east = chunkFrom[tileFrom.x, tileFrom.y].index;
 		}
 	}
 
