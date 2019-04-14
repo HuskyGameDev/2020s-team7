@@ -33,7 +33,11 @@ public class CharacterAnimator : MonoBehaviour
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         if ((int)dir == 0)
         {
+<<<<<<< HEAD
             spriteR.sprite = sprites[characterSelect[characterInput][10]];
+=======
+            spriteR.sprite = sprites[0];
+>>>>>>> bd27ce227a92ea548f64fbfc1b7deb2d5622fdd3
         }
         else if ((int)dir == 1)
         {

@@ -12,154 +12,86 @@ public class RenderingHandler : MonoBehaviour {
     public RenderMap renderMap = new RenderMap(0);
     public RenderMap altRenderMap = new RenderMap(0);
 
+
+	public RenderMap[] renderLayers { get { return new RenderMap[] { renderMap, altRenderMap }; } }
 	public List<Node> prevVisibleNodes = new List<Node>();
-    //[SerializeField] public List<List<GameObject>> renderTiles = new List<List<GameObject>>();
-    //[SerializeField] public GameObject renderTiles = new GameObject[renderMap.dim,renderMap.dim];
+	private List<Node> visibleNodes;
+	//[SerializeField] public List<List<GameObject>> renderTiles = new List<List<GameObject>>();
+	//[SerializeField] public GameObject renderTiles = new GameObject[renderMap.dim,renderMap.dim];
 	// Use this for initialization
+	private DrawPathInstruction[] drawPathInstructions;
 
     Vector2Int center;
 	void Start () {
 		center = new Vector2Int(renderMap.dim /2, renderMap.dim / 2);
+
+		drawPathInstructions = new DrawPathInstruction[4];
+		for (int i = 0; i < 4; i++) {
+			Direction dir = (Direction)i;
+			Direction left = dir.counterclockwise();
+			Direction right = dir.clockwise();
+			drawPathInstructions[i] = new DrawPathInstruction(dir, new DrawPathInstruction[] {
+				new DrawPathInstruction(dir, new DrawPathInstruction[] { new DrawPathInstruction(left, new DrawPathInstruction[] { }), new DrawPathInstruction(right, new DrawPathInstruction[] { })}),
+				new DrawPathInstruction(left, new DrawPathInstruction[] { new DrawPathInstruction(dir, new DrawPathInstruction[] { new DrawPathInstruction(left, new DrawPathInstruction[] { })}) }),
+				new DrawPathInstruction(right, new DrawPathInstruction[] { new DrawPathInstruction(dir, new DrawPathInstruction[] { new DrawPathInstruction(right, new DrawPathInstruction[] { })}) }),
+			});
+		}
 	}
 
-    public void HandleRender(Direction direction, Node node, bool doShift = true)
+
+
+	private void HandleDPI(DrawPathInstruction dpi, Vector2Int oldPosition, Node oldNode) {
+		//If our map does not have a node in the instruction dir, we cannot render in that dir
+		if (oldNode.GetConnectionFromDir(dpi.dir) == null)
+			return;
+
+		Vector2Int position = oldPosition + dpi.dir.offset();
+		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
+		Node node = GameManager.instance.map[(int)oldNode.GetConnectionFromDir(dpi.dir)];
+		//Draw the node, regarless of if it is null (null node is handled by the drawer)
+		tile.DrawFullNode(node);
+		//If the node is not null, then we continue on with the instructions
+		if (node != null) {
+			//Add it to the list of drawn nodes
+			if (visibleNodes.Contains(node) == false)
+				visibleNodes.Add(node);
+			//Follow instructions on the next node
+			foreach (DrawPathInstruction nDpi in dpi.nextInstructions)
+				HandleDPI(nDpi, position, node);
+		}
+	}
+
+	public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
-        if (doShift) ShiftGrid(direction);
-        
-        List<Node> visibleNodes = new List<Node>();
-        //Handle the one we are standing on.
+		//if (doShift) ShiftGrid(direction);
+		//Blank out all render tiles
+		foreach (RenderTile t in renderMap)
+			t.DrawFullNode(null);
+		foreach (RenderTile t in altRenderMap)
+			t.DrawFullNode(null);
+
+		//Track a list of all map nodes we render this cycle
+		visibleNodes = new List<Node>();
+
+        //Handle the render tile we are standing on (always layer 1)
         renderMap[center.x, center.y].DrawFullNode(node);
-        renderMap[center.x, center.y].SetLayer(activeLayer);
         if (visibleNodes.Contains(node) == false)
             visibleNodes.Add(node);
-        
-
-        //Handle the 4 cardinal directions
-        for (int i = 0; i < 4; i++) {
-            Direction dir = (Direction)i;
-            Vector2Int position = center + dir.offset();
-            Node drawNode = (node.GetConnectionFromDir(dir) == null) ? null : GameManager.instance.map[(int)node.GetConnectionFromDir(dir)];
-            
-            if (drawNode != null && visibleNodes.Contains(drawNode) == false)
-                visibleNodes.Add(drawNode);
-
-			renderMap[position.x, position.y].DrawFullNode(drawNode);
-			altRenderMap[position.x, position.y].DrawFullNode(drawNode);
-
-			if (node.GetConnectionFromDir(dir) != null) {
-				renderMap[position.x, position.y].SetLayer(activeLayer);
-				altRenderMap[position.x, position.y].SetLayer(activeLayer);
-			}
-        }
-
-        //Blank out the diagnols (these will be rendred again)
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                if (i==j) 
-                    continue;
-                else {
-                    Direction primaryDir = (Direction)i;
-                    Direction secondaryDir = (Direction)j;
-                    //We dont want to handle the inverse Scenario (this was already renderd)
-                    if (primaryDir.inverse() == secondaryDir)
-                        continue;
-
-                    //Get the diagnol node
-                    Vector2Int position = center + primaryDir.offset() + secondaryDir.offset();
-                    //Draw the two relevent triangles
-                    renderMap[position.x,position.y].DrawFullNode(null);
-                    altRenderMap[position.x,position.y].DrawFullNode(null);
-
-				}
-            }
-        }
-
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                if (i==j) {
-                    Direction dir = (Direction)i;
-                    Vector2Int position = center + dir.offset() + dir.offset();
-                    if (node.GetConnectionFromDir(dir) != null) {
-                        Node primaryNode = GameManager.instance.map[(int)node.GetConnectionFromDir(dir)];
-                        if (primaryNode != null) {
-                            Node drawNode = (primaryNode.GetConnectionFromDir(dir) == null) ? null : GameManager.instance.map[(int)primaryNode.GetConnectionFromDir(dir)];
-                            renderMap[position.x, position.y].DrawFullNode(drawNode);
-                            renderMap[position.x, position.y].SetLayer(activeLayer);
-							altRenderMap[position.x, position.y].DrawFullNode(drawNode);
-							altRenderMap[position.x, position.y].SetLayer(activeLayer);
-						}
-                    }
-                }
-                else {
-                    Direction primaryDir = (Direction)i;
-                    Direction secondaryDir = (Direction)j;
-                    //We dont want to handle the inverse Scenario (this was already renderd)
-                    if (primaryDir.inverse() == secondaryDir)
-                        continue;
-                    //Dont render if that side doesnt exist
-                    if (node.GetConnectionFromDir(primaryDir) == null)
-                        continue;
-
-                    //Get the node offset from center
-                    Node primaryNode = GameManager.instance.map[(int)node.GetConnectionFromDir(primaryDir)];
-
-                    //If there is nothing on the second direction, we are not rendering this tile from this perspective
-                    if (primaryNode.GetConnectionFromDir(secondaryDir) == null)
-                        continue;
+ 
+		//Follow all drawing paths
+		foreach (DrawPathInstruction dpi in drawPathInstructions) {
+			HandleDPI(dpi, center, node);
+		}
 
 
-                    {
-                        List<Node> deepAdd = primaryNode.GetFullStackConnectionsFromDir(secondaryDir);
-                        foreach (Node n in deepAdd) {
-                            if (visibleNodes.Contains(n) == false)
-                                visibleNodes.Add(n);
-                        }
-                    }
-
-                    //Get the diagnol node
-                    Vector2Int position = center + primaryDir.offset() + secondaryDir.offset();
-                    Node diagnolNode = GameManager.instance.map[(int)primaryNode.GetConnectionFromDir(secondaryDir)];
-
-					if (secondaryDir == Direction.North || secondaryDir == Direction.South) {
-						//Draw on layer one.
-						renderMap[position.x, position.y].DrawFullNode(diagnolNode);
-						renderMap[position.x, position.y].SetLayer(activeLayer);
-					}
-					else {
-						//Draw on layer two
-						altRenderMap[position.x, position.y].DrawFullNode(diagnolNode);
-						altRenderMap[position.x, position.y].SetLayer(activeLayer);
-					}
-					//Draw the two relevent triangles
-					//renderMap[position.x,position.y].SetFloorFromDir(primaryDir, diagnolNode);
-
-
-					//if (diagnolNode.data.enter == primaryDir && diagnolNode.data.hasEnter)
-					//    renderMap[position.x,position.y].SetLineFromDir(primaryDir,true );
-					//if (diagnolNode.data.leave == primaryDir && diagnolNode.data.hasLeave)
-					//    renderMap[position.x,position.y].SetLineFromDir(primaryDir,true );
-
-
-					// renderMap[position.x,position.y].SetFloorFromDir(secondaryDir.inverse(), diagnolNode);
-					//if (diagnolNode.data.enter == secondaryDir.inverse() && diagnolNode.data.hasEnter)
-					//    renderMap[position.x,position.y].SetLineFromDir(secondaryDir.inverse(),true );
-					//if (diagnolNode.data.leave == secondaryDir.inverse() && diagnolNode.data.hasLeave)
-					//    renderMap[position.x,position.y].SetLineFromDir(secondaryDir.inverse(),true );
-
-                }
-
-            }
-        }
-
-        //Handle the popping of things leaving view
-        //Remove all things currently visible from the previously visible
+        //Remove all currently seen nodes from perviously seen nodes
         foreach (Node item in visibleNodes)
         {
             while (prevVisibleNodes.Contains(item)) {
                 prevVisibleNodes.Remove(item);
             }
         }
-        //Then go through what remains in previously visible
+        //Then go through what remains in previously visible and pop connection stack since we no longer need fake a connection
         foreach (Node item in prevVisibleNodes) {
             //This method will reduce it down the the bottom connection stack
             item.PopConnectionStack();
@@ -175,7 +107,6 @@ public class RenderingHandler : MonoBehaviour {
 				for (int y = 0; y < rM.dim; y++) {
 					for (int i = 0; i < 4; i++)
 						rM[x, y].SetLineFromDir((Direction)i, false);
-					rM[x, y].SetLayer(memoryLayer);
 				}
 			}
 			switch (direction) {
@@ -235,9 +166,20 @@ public class RenderingHandler : MonoBehaviour {
 		}
     }
 
+	private struct DrawPathInstruction {
+		public Direction dir;
+		//public int renderLayer;
+		public DrawPathInstruction[] nextInstructions;
+		public DrawPathInstruction(Direction dir, DrawPathInstruction[] nextInstructions) {
+			this.dir = dir;
+			//this.renderLayer = renderLayer;
+			this.nextInstructions = nextInstructions;
+		}
+	}
+
 
 	[System.Serializable]
-    public class RenderMap
+    public class RenderMap : IEnumerable
     {
         [SerializeField]
         public RenderTile[] tiles;
@@ -253,5 +195,9 @@ public class RenderingHandler : MonoBehaviour {
             get { return tiles[(int)(y * dim) + x];  }
             set { tiles[(int)(y * dim) + x] = value; }
         }
-    }
+
+		public IEnumerator GetEnumerator() {
+			return tiles.GetEnumerator();
+		}
+	}
 }
