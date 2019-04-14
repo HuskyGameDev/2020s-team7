@@ -299,6 +299,7 @@ MonoBehaviour:
   southLine: {fileID: 1968397136}
   eastLine: {fileID: 1463875918}
   westLine: {fileID: 1248057746}
+  lineCenter: {fileID: 0}
 --- !u!4 &2358933
 Transform:
   m_ObjectHideFlags: 0
@@ -582,6 +583,7 @@ MonoBehaviour:
   southLine: {fileID: 1056715358}
   eastLine: {fileID: 1139546739}
   westLine: {fileID: 148030384}
+  lineCenter: {fileID: 0}
 --- !u!4 &19195120
 Transform:
   m_ObjectHideFlags: 0
@@ -1765,6 +1767,7 @@ MonoBehaviour:
   southLine: {fileID: 1776747740}
   eastLine: {fileID: 1181611967}
   westLine: {fileID: 13702871}
+  lineCenter: {fileID: 0}
 --- !u!4 &87522861
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,6 +1826,7 @@ MonoBehaviour:
   southLine: {fileID: 961505020}
   eastLine: {fileID: 1294202643}
   westLine: {fileID: 112530884}
+  lineCenter: {fileID: 0}
 --- !u!4 &87839213
 Transform:
   m_ObjectHideFlags: 0
@@ -3817,6 +3821,7 @@ MonoBehaviour:
   southLine: {fileID: 131536178}
   eastLine: {fileID: 346256290}
   westLine: {fileID: 1524677788}
+  lineCenter: {fileID: 0}
 --- !u!4 &192957446
 Transform:
   m_ObjectHideFlags: 0
@@ -3950,6 +3955,7 @@ MonoBehaviour:
   southLine: {fileID: 1316107060}
   eastLine: {fileID: 1787133261}
   westLine: {fileID: 1753553361}
+  lineCenter: {fileID: 0}
 --- !u!4 &212790754
 Transform:
   m_ObjectHideFlags: 0
@@ -4607,6 +4613,7 @@ MonoBehaviour:
   southLine: {fileID: 1948621334}
   eastLine: {fileID: 189661010}
   westLine: {fileID: 163185962}
+  lineCenter: {fileID: 0}
 --- !u!4 &268880296
 Transform:
   m_ObjectHideFlags: 0
@@ -5340,6 +5347,7 @@ MonoBehaviour:
   southLine: {fileID: 402620410}
   eastLine: {fileID: 1454850463}
   westLine: {fileID: 1442053060}
+  lineCenter: {fileID: 0}
 --- !u!4 &315135069
 Transform:
   m_ObjectHideFlags: 0
@@ -5398,6 +5406,7 @@ MonoBehaviour:
   southLine: {fileID: 1170264454}
   eastLine: {fileID: 2026455243}
   westLine: {fileID: 1418545714}
+  lineCenter: {fileID: 0}
 --- !u!4 &315652672
 Transform:
   m_ObjectHideFlags: 0
@@ -5681,6 +5690,7 @@ MonoBehaviour:
   southLine: {fileID: 1432342860}
   eastLine: {fileID: 1858744935}
   westLine: {fileID: 1370993502}
+  lineCenter: {fileID: 0}
 --- !u!4 &326051286
 Transform:
   m_ObjectHideFlags: 0
@@ -6114,6 +6124,7 @@ MonoBehaviour:
   southLine: {fileID: 659728313}
   eastLine: {fileID: 337819604}
   westLine: {fileID: 1237941941}
+  lineCenter: {fileID: 0}
 --- !u!4 &343117569
 Transform:
   m_ObjectHideFlags: 0
@@ -6652,6 +6663,7 @@ MonoBehaviour:
   southLine: {fileID: 1348084567}
   eastLine: {fileID: 171197770}
   westLine: {fileID: 533648199}
+  lineCenter: {fileID: 0}
 --- !u!4 &373304684
 Transform:
   m_ObjectHideFlags: 0
@@ -7685,6 +7697,7 @@ MonoBehaviour:
   southLine: {fileID: 138652459}
   eastLine: {fileID: 102863507}
   westLine: {fileID: 84989994}
+  lineCenter: {fileID: 0}
 --- !u!4 &453367084
 Transform:
   m_ObjectHideFlags: 0
@@ -7968,6 +7981,7 @@ MonoBehaviour:
   southLine: {fileID: 86750914}
   eastLine: {fileID: 317811750}
   westLine: {fileID: 805262060}
+  lineCenter: {fileID: 0}
 --- !u!4 &471287803
 Transform:
   m_ObjectHideFlags: 0
@@ -8176,6 +8190,7 @@ MonoBehaviour:
   southLine: {fileID: 925966787}
   eastLine: {fileID: 1153338455}
   westLine: {fileID: 1155984338}
+  lineCenter: {fileID: 0}
 --- !u!4 &489715490
 Transform:
   m_ObjectHideFlags: 0
@@ -8534,6 +8549,7 @@ MonoBehaviour:
   southLine: {fileID: 1648625453}
   eastLine: {fileID: 87167891}
   westLine: {fileID: 1720582977}
+  lineCenter: {fileID: 0}
 --- !u!4 &501418770
 Transform:
   m_ObjectHideFlags: 0
@@ -8817,6 +8833,7 @@ MonoBehaviour:
   southLine: {fileID: 697351430}
   eastLine: {fileID: 307327667}
   westLine: {fileID: 576634081}
+  lineCenter: {fileID: 0}
 --- !u!4 &504844922
 Transform:
   m_ObjectHideFlags: 0
@@ -10303,6 +10320,7 @@ MonoBehaviour:
   southLine: {fileID: 1588631465}
   eastLine: {fileID: 603222791}
   westLine: {fileID: 1068031533}
+  lineCenter: {fileID: 0}
 --- !u!4 &571502869
 Transform:
   m_ObjectHideFlags: 0
@@ -11940,6 +11958,7 @@ MonoBehaviour:
   southLine: {fileID: 105621845}
   eastLine: {fileID: 926944452}
   westLine: {fileID: 2109294281}
+  lineCenter: {fileID: 0}
 --- !u!4 &668032812
 Transform:
   m_ObjectHideFlags: 0
@@ -13442,6 +13461,7 @@ MonoBehaviour:
   southLine: {fileID: 851253309}
   eastLine: {fileID: 1724697351}
   westLine: {fileID: 714312378}
+  lineCenter: {fileID: 0}
 --- !u!4 &746979992
 Transform:
   m_ObjectHideFlags: 0
@@ -14357,6 +14377,7 @@ MonoBehaviour:
   southLine: {fileID: 1725736777}
   eastLine: {fileID: 1291233101}
   westLine: {fileID: 85800011}
+  lineCenter: {fileID: 0}
 --- !u!4 &786275354
 Transform:
   m_ObjectHideFlags: 0
@@ -15090,6 +15111,7 @@ MonoBehaviour:
   southLine: {fileID: 1256523421}
   eastLine: {fileID: 1788028712}
   westLine: {fileID: 295920489}
+  lineCenter: {fileID: 0}
 --- !u!4 &872700889
 Transform:
   m_ObjectHideFlags: 0
@@ -15410,6 +15432,7 @@ MonoBehaviour:
   southLine: {fileID: 1657571175}
   eastLine: {fileID: 948943133}
   westLine: {fileID: 115457484}
+  lineCenter: {fileID: 0}
 --- !u!4 &881229756
 Transform:
   m_ObjectHideFlags: 0
@@ -15843,6 +15866,7 @@ MonoBehaviour:
   southLine: {fileID: 1277625709}
   eastLine: {fileID: 1101629055}
   westLine: {fileID: 1056754918}
+  lineCenter: {fileID: 0}
 --- !u!4 &907766628
 Transform:
   m_ObjectHideFlags: 0
@@ -15901,6 +15925,7 @@ MonoBehaviour:
   southLine: {fileID: 2032469767}
   eastLine: {fileID: 1866102009}
   westLine: {fileID: 1973417691}
+  lineCenter: {fileID: 0}
 --- !u!4 &909438708
 Transform:
   m_ObjectHideFlags: 0
@@ -16934,6 +16959,7 @@ MonoBehaviour:
   southLine: {fileID: 389622743}
   eastLine: {fileID: 1335097334}
   westLine: {fileID: 456276337}
+  lineCenter: {fileID: 0}
 --- !u!4 &995227288
 Transform:
   m_ObjectHideFlags: 0
@@ -17667,6 +17693,7 @@ MonoBehaviour:
   southLine: {fileID: 85290082}
   eastLine: {fileID: 678281107}
   westLine: {fileID: 585153237}
+  lineCenter: {fileID: 0}
 --- !u!4 &1032683852
 Transform:
   m_ObjectHideFlags: 0
@@ -19000,6 +19027,7 @@ MonoBehaviour:
   southLine: {fileID: 46995550}
   eastLine: {fileID: 42058041}
   westLine: {fileID: 781614406}
+  lineCenter: {fileID: 0}
 --- !u!4 &1098210019
 Transform:
   m_ObjectHideFlags: 0
@@ -19133,6 +19161,7 @@ MonoBehaviour:
   southLine: {fileID: 267836558}
   eastLine: {fileID: 1114232243}
   westLine: {fileID: 1348883410}
+  lineCenter: {fileID: 0}
 --- !u!4 &1100905285
 Transform:
   m_ObjectHideFlags: 0
@@ -20016,6 +20045,7 @@ MonoBehaviour:
   southLine: {fileID: 383000743}
   eastLine: {fileID: 546656998}
   westLine: {fileID: 1525722008}
+  lineCenter: {fileID: 0}
 --- !u!4 &1155938232
 Transform:
   m_ObjectHideFlags: 0
@@ -20824,6 +20854,7 @@ MonoBehaviour:
   southLine: {fileID: 845964002}
   eastLine: {fileID: 746040488}
   westLine: {fileID: 319215009}
+  lineCenter: {fileID: 0}
 --- !u!4 &1197072623
 Transform:
   m_ObjectHideFlags: 0
@@ -21332,6 +21363,7 @@ MonoBehaviour:
   southLine: {fileID: 266775927}
   eastLine: {fileID: 2129435}
   westLine: {fileID: 1456141440}
+  lineCenter: {fileID: 0}
 --- !u!4 &1220717422
 Transform:
   m_ObjectHideFlags: 0
@@ -22065,6 +22097,7 @@ MonoBehaviour:
   southLine: {fileID: 1656013678}
   eastLine: {fileID: 1031161723}
   westLine: {fileID: 1479727251}
+  lineCenter: {fileID: 0}
 --- !u!4 &1246890824
 Transform:
   m_ObjectHideFlags: 0
@@ -23664,6 +23697,7 @@ MonoBehaviour:
   southLine: {fileID: 1356520193}
   eastLine: {fileID: 477020543}
   westLine: {fileID: 1112845642}
+  lineCenter: {fileID: 0}
 --- !u!4 &1335296688
 Transform:
   m_ObjectHideFlags: 0
@@ -24547,6 +24581,7 @@ MonoBehaviour:
   southLine: {fileID: 1514486649}
   eastLine: {fileID: 1457784881}
   westLine: {fileID: 1017666099}
+  lineCenter: {fileID: 0}
 --- !u!4 &1365466357
 Transform:
   m_ObjectHideFlags: 0
@@ -25218,6 +25253,7 @@ MonoBehaviour:
   southLine: {fileID: 491965310}
   eastLine: {fileID: 422239817}
   westLine: {fileID: 1958618173}
+  lineCenter: {fileID: 0}
 --- !u!4 &1405186398
 Transform:
   m_ObjectHideFlags: 0
@@ -25951,6 +25987,7 @@ MonoBehaviour:
   southLine: {fileID: 1085056829}
   eastLine: {fileID: 1340350792}
   westLine: {fileID: 1567695501}
+  lineCenter: {fileID: 0}
 --- !u!4 &1452399238
 Transform:
   m_ObjectHideFlags: 0
@@ -27699,6 +27736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1552788036}
+  - component: {fileID: 1552788037}
   m_Layer: 0
   m_Name: String Remaining
   m_TagString: Untagged
@@ -27713,13 +27751,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552788035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 57, y: 116, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1717775202}
   m_Father: {fileID: 152773275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1552788037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552788035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc35dc6a0e404f4f8cf6f73e0e1d738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1557656447
 GameObject:
   m_ObjectHideFlags: 0
@@ -28056,6 +28105,7 @@ MonoBehaviour:
   southLine: {fileID: 1648204946}
   eastLine: {fileID: 742983990}
   westLine: {fileID: 1066274664}
+  lineCenter: {fileID: 0}
 --- !u!4 &1570235069
 Transform:
   m_ObjectHideFlags: 0
@@ -29273,6 +29323,7 @@ MonoBehaviour:
   southLine: {fileID: 1397745407}
   eastLine: {fileID: 658690428}
   westLine: {fileID: 1548227869}
+  lineCenter: {fileID: 0}
 --- !u!4 &1650571807
 Transform:
   m_ObjectHideFlags: 0
@@ -29481,6 +29532,7 @@ MonoBehaviour:
   southLine: {fileID: 271506291}
   eastLine: {fileID: 1545602376}
   westLine: {fileID: 65594487}
+  lineCenter: {fileID: 0}
 --- !u!4 &1667760005
 Transform:
   m_ObjectHideFlags: 0
@@ -29914,6 +29966,7 @@ MonoBehaviour:
   southLine: {fileID: 2110315796}
   eastLine: {fileID: 1261293444}
   westLine: {fileID: 560944134}
+  lineCenter: {fileID: 0}
 --- !u!4 &1690384711
 Transform:
   m_ObjectHideFlags: 0
@@ -30719,7 +30772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 31, y: 0}
   m_SizeDelta: {x: 100, y: 107.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717775204
@@ -32516,6 +32569,7 @@ MonoBehaviour:
   southLine: {fileID: 900324357}
   eastLine: {fileID: 556549843}
   westLine: {fileID: 2029581112}
+  lineCenter: {fileID: 0}
 --- !u!4 &1816340026
 Transform:
   m_ObjectHideFlags: 0
@@ -33174,6 +33228,7 @@ MonoBehaviour:
   southLine: {fileID: 479708095}
   eastLine: {fileID: 1720647536}
   westLine: {fileID: 1032039927}
+  lineCenter: {fileID: 0}
 --- !u!4 &1861624562
 Transform:
   m_ObjectHideFlags: 0
@@ -33532,6 +33587,7 @@ MonoBehaviour:
   southLine: {fileID: 1670419177}
   eastLine: {fileID: 1482611402}
   westLine: {fileID: 517110345}
+  lineCenter: {fileID: 0}
 --- !u!4 &1872446536
 Transform:
   m_ObjectHideFlags: 0
@@ -34436,6 +34492,7 @@ MonoBehaviour:
   southLine: {fileID: 1508766962}
   eastLine: {fileID: 3984007}
   westLine: {fileID: 108680049}
+  lineCenter: {fileID: 0}
 --- !u!4 &1916368307
 Transform:
   m_ObjectHideFlags: 0
@@ -34869,6 +34926,7 @@ MonoBehaviour:
   southLine: {fileID: 305783527}
   eastLine: {fileID: 1284238241}
   westLine: {fileID: 2099863673}
+  lineCenter: {fileID: 0}
 --- !u!4 &1950313401
 Transform:
   m_ObjectHideFlags: 0
@@ -35227,6 +35285,7 @@ MonoBehaviour:
   southLine: {fileID: 1706491565}
   eastLine: {fileID: 1641563632}
   westLine: {fileID: 1891241666}
+  lineCenter: {fileID: 0}
 --- !u!4 &1966706130
 Transform:
   m_ObjectHideFlags: 0
@@ -36983,6 +37042,7 @@ MonoBehaviour:
   southLine: {fileID: 2138117206}
   eastLine: {fileID: 1910860950}
   westLine: {fileID: 165503561}
+  lineCenter: {fileID: 0}
 --- !u!4 &2051282678
 Transform:
   m_ObjectHideFlags: 0
@@ -37471,6 +37531,7 @@ MonoBehaviour:
   southLine: {fileID: 126388725}
   eastLine: {fileID: 1642032966}
   westLine: {fileID: 345589597}
+  lineCenter: {fileID: 0}
 --- !u!4 &2080142196
 Transform:
   m_ObjectHideFlags: 0
@@ -38400,6 +38461,7 @@ MonoBehaviour:
   southLine: {fileID: 114017602}
   eastLine: {fileID: 2112547692}
   westLine: {fileID: 1700517375}
+  lineCenter: {fileID: 0}
 --- !u!4 &2120133251
 Transform:
   m_ObjectHideFlags: 0
@@ -38604,7 +38666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2, y: 29}
   m_SizeDelta: {x: 343, y: 397.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146562671

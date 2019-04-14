@@ -15,6 +15,7 @@ public class RenderTile : MonoBehaviour {
     public SpriteRenderer southLine;
     public SpriteRenderer eastLine;
     public SpriteRenderer westLine;
+	public SpriteRenderer lineCenter;
 
 	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { northWall, eastWall, southWall, westWall, floor, northLine, southLine, eastLine, westLine }; } }
 
@@ -44,6 +45,11 @@ public class RenderTile : MonoBehaviour {
                 SetLineFromDir((Direction)node.data.enter, true);
             if (node.data.hasLeave)
                 SetLineFromDir((Direction)node.data.leave, true);
+			if (node.data.hasEnter && node.data.hasLeave && node.data.enter.inverse() == node.data.leave)
+				lineCenter.gameObject.SetActive(true);
+			else
+				lineCenter.gameObject.SetActive(false);
+
 
 			//Update the floor sprite if this node has one.
 			if (node.floorSprite != null) floor.sprite = node.floorSprite;
