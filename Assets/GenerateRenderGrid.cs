@@ -16,7 +16,7 @@ public class GenerateRenderGrid : LevelGenerator {
 			DestroyImmediate(oldRender[i].gameObject);
 		}
 
-
+        //5555
 		handler.renderMap = new RenderingHandler.RenderMap(dim * dim);
 		handler.altRenderMap = new RenderingHandler.RenderMap(dim * dim);
 		handler.renderMap.dim = dim;
