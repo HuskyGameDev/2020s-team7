@@ -97,7 +97,7 @@ public static class LevelEditor_2 {
 					if (valid) {    // if none of the given empty tile coords were found to match current tile coords, create this tile
 						int index = room.size;
 						//Debug.Log("Creating tile \"" + index + "\" [" + i + ", " + j + "]");
-						chunk[i, j] = new Node(index, color);
+						chunk[i, j] = new Node(index, color, GameManager.instance.spriteBook[0]);
 						room[index] = chunk[i, j];
 					}
 				}
@@ -108,7 +108,7 @@ public static class LevelEditor_2 {
 				for (int j = 0; j < height; j++) {
 					int index = room.size;
 					//Debug.Log("Creating tile \"" + index + "\" [" + i + ", " + j + "]");
-					chunk[i, j] = new Node(index, color);
+					chunk[i, j] = new Node(index, color, GameManager.instance.spriteBook[0]);
 					room[index] = chunk[i, j];
 				}
 			}
@@ -237,7 +237,8 @@ public static class LevelEditor_2 {
 	public static void setSource(Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.source;
 		GameManager.instance.currentPosition = chunk[tile.x, tile.y];
-		chunk[tile.x, tile.y].color = new Color32(255, 0, 255, 255);
+		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
+
 	}
 
 	/// <summary>
@@ -248,7 +249,8 @@ public static class LevelEditor_2 {
 	/// <param name="tile"></param>
 	public static void setTarget(Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.target;
-		chunk[tile.x, tile.y].color = new Color32(255, 0, 255, 255);
+		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[2];
+
 	}
     /*
     public static void SetObject(GameObject obj, TileCoord tile)

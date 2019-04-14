@@ -144,10 +144,7 @@ MonoBehaviour:
   eastWall: {fileID: 822466500}
   southWall: {fileID: 1978826672}
   westWall: {fileID: 2091949017}
-  northFloor: {fileID: 2036246584}
-  southFloor: {fileID: 135894355}
-  eastFloor: {fileID: 1176599354}
-  westFloor: {fileID: 1008152463}
+  floor: {fileID: 0}
   northLine: {fileID: 1583737472}
   southLine: {fileID: 1354063658}
   eastLine: {fileID: 1362360511}
@@ -733,10 +730,7 @@ MonoBehaviour:
   eastWall: {fileID: 1893148398}
   southWall: {fileID: 1811880311}
   westWall: {fileID: 1637210213}
-  northFloor: {fileID: 1638414695}
-  southFloor: {fileID: 56826387}
-  eastFloor: {fileID: 1339805966}
-  westFloor: {fileID: 1929267301}
+  floor: {fileID: 0}
   northLine: {fileID: 712575492}
   southLine: {fileID: 841086785}
   eastLine: {fileID: 1573004994}
@@ -1472,10 +1466,7 @@ MonoBehaviour:
   eastWall: {fileID: 288395916}
   southWall: {fileID: 1803862873}
   westWall: {fileID: 2058870958}
-  northFloor: {fileID: 346452609}
-  southFloor: {fileID: 2007088632}
-  eastFloor: {fileID: 1940064755}
-  westFloor: {fileID: 1602629418}
+  floor: {fileID: 0}
   northLine: {fileID: 273577290}
   southLine: {fileID: 1181572255}
   eastLine: {fileID: 648299601}
@@ -3441,10 +3432,7 @@ MonoBehaviour:
   eastWall: {fileID: 750626911}
   southWall: {fileID: 1901615057}
   westWall: {fileID: 54946527}
-  northFloor: {fileID: 454685289}
-  southFloor: {fileID: 778988249}
-  eastFloor: {fileID: 878933744}
-  westFloor: {fileID: 593978391}
+  floor: {fileID: 0}
   northLine: {fileID: 1337941940}
   southLine: {fileID: 1807717780}
   eastLine: {fileID: 1761496378}
@@ -3846,42 +3834,6 @@ Prefab:
     - target: {fileID: 1478348900868680, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
       propertyPath: m_Name
       value: RenderTile
-      objectReference: {fileID: 0}
-    - target: {fileID: 1903855033103522, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1325211257589492, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1458748303152532, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1550599695322956, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212148229632682654, guid: ba1cb4bbb96976d4eba7c85d3c479a74,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 212450427824275980, guid: ba1cb4bbb96976d4eba7c85d3c479a74,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 212900999094264476, guid: ba1cb4bbb96976d4eba7c85d3c479a74,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 212225472954167618, guid: ba1cb4bbb96976d4eba7c85d3c479a74,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
@@ -4592,10 +4544,7 @@ MonoBehaviour:
   eastWall: {fileID: 862327129}
   southWall: {fileID: 1657246159}
   westWall: {fileID: 255492612}
-  northFloor: {fileID: 1663579432}
-  southFloor: {fileID: 1917089410}
-  eastFloor: {fileID: 737342018}
-  westFloor: {fileID: 2069030278}
+  floor: {fileID: 0}
   northLine: {fileID: 1333510368}
   southLine: {fileID: 1118980184}
   eastLine: {fileID: 916323906}
@@ -5484,10 +5433,7 @@ MonoBehaviour:
   eastWall: {fileID: 1299639522}
   southWall: {fileID: 236860092}
   westWall: {fileID: 1754558659}
-  northFloor: {fileID: 860548891}
-  southFloor: {fileID: 441134106}
-  eastFloor: {fileID: 45411959}
-  westFloor: {fileID: 1554048191}
+  floor: {fileID: 0}
   northLine: {fileID: 1659463714}
   southLine: {fileID: 1834382233}
   eastLine: {fileID: 1179370896}
@@ -5835,10 +5781,7 @@ MonoBehaviour:
   eastWall: {fileID: 1177183873}
   southWall: {fileID: 426350163}
   westWall: {fileID: 1692354638}
-  northFloor: {fileID: 946048286}
-  southFloor: {fileID: 469273761}
-  eastFloor: {fileID: 1321045327}
-  westFloor: {fileID: 1190347376}
+  floor: {fileID: 0}
   northLine: {fileID: 1399720648}
   southLine: {fileID: 1741549934}
   eastLine: {fileID: 1922359439}
@@ -7614,10 +7557,7 @@ MonoBehaviour:
   eastWall: {fileID: 914936176}
   southWall: {fileID: 1815876675}
   westWall: {fileID: 496007560}
-  northFloor: {fileID: 571449186}
-  southFloor: {fileID: 2135205189}
-  eastFloor: {fileID: 602998852}
-  westFloor: {fileID: 83323623}
+  floor: {fileID: 0}
   northLine: {fileID: 906851194}
   southLine: {fileID: 1404994540}
   eastLine: {fileID: 1034696897}
@@ -10530,10 +10470,7 @@ MonoBehaviour:
   eastWall: {fileID: 1176904103}
   southWall: {fileID: 748283514}
   westWall: {fileID: 1346142142}
-  northFloor: {fileID: 348551047}
-  southFloor: {fileID: 1656820373}
-  eastFloor: {fileID: 1103816904}
-  westFloor: {fileID: 341445767}
+  floor: {fileID: 0}
   northLine: {fileID: 1874016328}
   southLine: {fileID: 580844397}
   eastLine: {fileID: 1291713192}
@@ -10819,10 +10756,7 @@ MonoBehaviour:
   eastWall: {fileID: 671208124}
   southWall: {fileID: 1556133461}
   westWall: {fileID: 736991204}
-  northFloor: {fileID: 1315815657}
-  southFloor: {fileID: 1968188591}
-  eastFloor: {fileID: 412315548}
-  westFloor: {fileID: 813343733}
+  floor: {fileID: 0}
   northLine: {fileID: 220644358}
   southLine: {fileID: 1600054255}
   eastLine: {fileID: 136095325}
@@ -10883,10 +10817,7 @@ MonoBehaviour:
   eastWall: {fileID: 831429894}
   southWall: {fileID: 860915022}
   westWall: {fileID: 138055011}
-  northFloor: {fileID: 1814500253}
-  southFloor: {fileID: 1854773821}
-  eastFloor: {fileID: 1793748224}
-  westFloor: {fileID: 774461958}
+  floor: {fileID: 0}
   northLine: {fileID: 1342854223}
   southLine: {fileID: 2078800925}
   eastLine: {fileID: 1009195138}
@@ -11322,10 +11253,7 @@ MonoBehaviour:
   eastWall: {fileID: 2037934937}
   southWall: {fileID: 892327788}
   westWall: {fileID: 1504926715}
-  northFloor: {fileID: 62463787}
-  southFloor: {fileID: 534407212}
-  eastFloor: {fileID: 1760100442}
-  westFloor: {fileID: 1387334709}
+  floor: {fileID: 0}
   northLine: {fileID: 417371125}
   southLine: {fileID: 1057008731}
   eastLine: {fileID: 97407312}
@@ -11686,10 +11614,7 @@ MonoBehaviour:
   eastWall: {fileID: 2093620768}
   southWall: {fileID: 2046755935}
   westWall: {fileID: 1424753652}
-  northFloor: {fileID: 664094597}
-  southFloor: {fileID: 2078268929}
-  eastFloor: {fileID: 583092730}
-  westFloor: {fileID: 396137179}
+  floor: {fileID: 0}
   northLine: {fileID: 227160982}
   southLine: {fileID: 748894581}
   eastLine: {fileID: 24840090}
@@ -12575,10 +12500,7 @@ MonoBehaviour:
   eastWall: {fileID: 281521895}
   southWall: {fileID: 163870163}
   westWall: {fileID: 1386904252}
-  northFloor: {fileID: 1522713580}
-  southFloor: {fileID: 885373937}
-  eastFloor: {fileID: 1130375677}
-  westFloor: {fileID: 410128972}
+  floor: {fileID: 0}
   northLine: {fileID: 1624360716}
   southLine: {fileID: 1665597904}
   eastLine: {fileID: 1771292722}
@@ -13464,10 +13386,7 @@ MonoBehaviour:
   eastWall: {fileID: 266550230}
   southWall: {fileID: 460701525}
   westWall: {fileID: 974298534}
-  northFloor: {fileID: 1481954413}
-  southFloor: {fileID: 2134730750}
-  eastFloor: {fileID: 1127144793}
-  westFloor: {fileID: 1775337125}
+  floor: {fileID: 0}
   northLine: {fileID: 1885004420}
   southLine: {fileID: 1280099111}
   eastLine: {fileID: 335873365}
@@ -14469,10 +14388,7 @@ MonoBehaviour:
   eastWall: {fileID: 821995294}
   southWall: {fileID: 1065211147}
   westWall: {fileID: 1138750236}
-  northFloor: {fileID: 1949763523}
-  southFloor: {fileID: 1884285044}
-  eastFloor: {fileID: 2145490549}
-  westFloor: {fileID: 821097962}
+  floor: {fileID: 0}
   northLine: {fileID: 768947513}
   southLine: {fileID: 1359203264}
   eastLine: {fileID: 786708655}
@@ -15374,7 +15290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5cbd5ff65053d47aacd037e41f8c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 0
   countLimit: 240
 --- !u!114 &1385313090
 MonoBehaviour:
@@ -15822,10 +15737,7 @@ MonoBehaviour:
   eastWall: {fileID: 1587529513}
   southWall: {fileID: 1701661340}
   westWall: {fileID: 704942029}
-  northFloor: {fileID: 2024340273}
-  southFloor: {fileID: 1030805299}
-  eastFloor: {fileID: 788222608}
-  westFloor: {fileID: 1540437478}
+  floor: {fileID: 0}
   northLine: {fileID: 757929496}
   southLine: {fileID: 1141254949}
   eastLine: {fileID: 1776244986}
@@ -16554,10 +16466,7 @@ MonoBehaviour:
   eastWall: {fileID: 2130950802}
   southWall: {fileID: 1126645705}
   westWall: {fileID: 1747583123}
-  northFloor: {fileID: 365338186}
-  southFloor: {fileID: 1909045799}
-  eastFloor: {fileID: 540471583}
-  westFloor: {fileID: 176090606}
+  floor: {fileID: 0}
   northLine: {fileID: 2065950999}
   southLine: {fileID: 1239185347}
   eastLine: {fileID: 1365252577}
@@ -17941,6 +17850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   memoryLayer: 9
   activeLayer: 8
+  mask: {fileID: 0}
   renderMap:
     tiles:
     - {fileID: 1152120635}
@@ -17969,6 +17879,9 @@ MonoBehaviour:
     - {fileID: 943098235}
     - {fileID: 2090598090}
     dim: 5
+  altRenderMap:
+    tiles: []
+    dim: 0
 --- !u!4 &1606919723
 Transform:
   m_ObjectHideFlags: 0
@@ -19558,10 +19471,7 @@ MonoBehaviour:
   eastWall: {fileID: 1681170214}
   southWall: {fileID: 812006163}
   westWall: {fileID: 899203050}
-  northFloor: {fileID: 1202461613}
-  southFloor: {fileID: 1656149519}
-  eastFloor: {fileID: 1923382054}
-  westFloor: {fileID: 1913658062}
+  floor: {fileID: 0}
   northLine: {fileID: 1573854752}
   southLine: {fileID: 1588319219}
   eastLine: {fileID: 1988940238}
@@ -21861,7 +21771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5cbd5ff65053d47aacd037e41f8c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: 0
   countLimit: 240
 --- !u!1 &1901615055
 GameObject:
@@ -22869,10 +22778,7 @@ MonoBehaviour:
   eastWall: {fileID: 1910610657}
   southWall: {fileID: 83357430}
   westWall: {fileID: 46431313}
-  northFloor: {fileID: 1758934240}
-  southFloor: {fileID: 179300752}
-  eastFloor: {fileID: 2026987754}
-  westFloor: {fileID: 718799929}
+  floor: {fileID: 0}
   northLine: {fileID: 619236949}
   southLine: {fileID: 604949184}
   eastLine: {fileID: 257931896}
@@ -24385,6 +24291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objective: {fileID: 365807829}
+  PauseMenu: {fileID: 0}
+  ResumeButton: {fileID: 0}
+  GameUI: {fileID: 0}
 --- !u!1 &2089430996
 GameObject:
   m_ObjectHideFlags: 0
@@ -24491,10 +24400,7 @@ MonoBehaviour:
   eastWall: {fileID: 1786248828}
   southWall: {fileID: 1493846712}
   westWall: {fileID: 1127682895}
-  northFloor: {fileID: 702478579}
-  southFloor: {fileID: 490065767}
-  eastFloor: {fileID: 1456469199}
-  westFloor: {fileID: 267169276}
+  floor: {fileID: 0}
   northLine: {fileID: 960607179}
   southLine: {fileID: 846029546}
   eastLine: {fileID: 1601341555}
@@ -24780,10 +24686,7 @@ MonoBehaviour:
   eastWall: {fileID: 136112945}
   southWall: {fileID: 1675908596}
   westWall: {fileID: 812864013}
-  northFloor: {fileID: 1767615388}
-  southFloor: {fileID: 1257516260}
-  eastFloor: {fileID: 320174148}
-  westFloor: {fileID: 446201153}
+  floor: {fileID: 0}
   northLine: {fileID: 1788424886}
   southLine: {fileID: 647361086}
   eastLine: {fileID: 827133614}
@@ -24844,10 +24747,7 @@ MonoBehaviour:
   eastWall: {fileID: 617149332}
   southWall: {fileID: 593181834}
   westWall: {fileID: 1542167133}
-  northFloor: {fileID: 1712847680}
-  southFloor: {fileID: 1382727646}
-  eastFloor: {fileID: 472677916}
-  westFloor: {fileID: 920740893}
+  floor: {fileID: 0}
   northLine: {fileID: 854640426}
   southLine: {fileID: 2017086376}
   eastLine: {fileID: 169382427}
@@ -25283,10 +25183,7 @@ MonoBehaviour:
   eastWall: {fileID: 811990994}
   southWall: {fileID: 2091410002}
   westWall: {fileID: 870191600}
-  northFloor: {fileID: 364557298}
-  southFloor: {fileID: 1162947096}
-  eastFloor: {fileID: 1148778519}
-  westFloor: {fileID: 596687437}
+  floor: {fileID: 0}
   northLine: {fileID: 275257960}
   southLine: {fileID: 1677750775}
   eastLine: {fileID: 2034176752}
@@ -25497,10 +25394,7 @@ MonoBehaviour:
   eastWall: {fileID: 1358818284}
   southWall: {fileID: 1383447933}
   westWall: {fileID: 47917037}
-  northFloor: {fileID: 202328559}
-  southFloor: {fileID: 1723635418}
-  eastFloor: {fileID: 1328785636}
-  westFloor: {fileID: 938948004}
+  floor: {fileID: 0}
   northLine: {fileID: 1007340138}
   southLine: {fileID: 1531211547}
   eastLine: {fileID: 1852369375}
