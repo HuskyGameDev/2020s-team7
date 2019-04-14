@@ -19,6 +19,8 @@ public class RenderTile : MonoBehaviour {
     public SpriteRenderer eastLine;
     public SpriteRenderer westLine;
 
+	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { northWall, eastWall, southWall, westWall, northFloor, southFloor, eastFloor, westFloor, northLine, southLine, eastLine, westLine }; } }
+
 
 
     public void CopyState(RenderTile other)

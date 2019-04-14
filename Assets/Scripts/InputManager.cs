@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour {
 	*/
 
 	//public enum Action { up, down, left, right, confirm, cancel, action_1, action_2, action_3 };    // what actions/inputs we will has keybindings for
-	public enum Action { up, down, left, right, confirm, back};
+	public enum Action { up, right, down, left, confirm, back};
 	private Keybindings keybindings = null;  // keybindings for manager to use when checking button presses
 	private Keybindings temp_keybindings = null; // potential changes to keybindings, can then be applied or discarded
 	private System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();    // used for saving/loading keybindings from file
@@ -74,12 +74,12 @@ public class InputManager : MonoBehaviour {
 			keys = new KeyCode[6, 2];
 			keys[0, 0] = KeyCode.UpArrow;  // up
 			keys[0, 1] = KeyCode.W;
-			keys[1, 0] = KeyCode.DownArrow;    // down
-			keys[1, 1] = KeyCode.S;
-			keys[2, 0] = KeyCode.LeftArrow;    // left
-			keys[2, 1] = KeyCode.A;
-			keys[3, 0] = KeyCode.RightArrow;   // right
-			keys[3, 1] = KeyCode.D;
+			keys[1, 0] = KeyCode.RightArrow;    // right
+			keys[1, 1] = KeyCode.D;
+			keys[2, 0] = KeyCode.DownArrow;    // down
+			keys[2, 1] = KeyCode.S;
+			keys[3, 0] = KeyCode.LeftArrow;   // left
+			keys[3, 1] = KeyCode.A;
 			keys[4, 0] = KeyCode.Return;   // confirm
 			keys[4, 1] = KeyCode.Space;
 			keys[5, 0] = KeyCode.Escape;  // back
@@ -101,7 +101,7 @@ public class InputManager : MonoBehaviour {
 		/// <returns></returns>
 		public Keybindings Copy() {
 			Keybindings copy = new Keybindings();
-			for (int i = 0; i < 9; i++) {
+			for (int i = 0; i < 6; i++) {
 				copy.keys[i, 0] = this.keys[i, 0];
 				copy.keys[i, 1] = this.keys[i, 1];
 			}

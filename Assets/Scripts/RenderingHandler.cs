@@ -7,10 +7,12 @@ public class RenderingHandler : MonoBehaviour {
 
     public int memoryLayer;
     public int activeLayer;
+	public SpriteMask mask;
     [SerializeField]
     public RenderMap renderMap = new RenderMap(0);
+    public RenderMap altRenderMap = new RenderMap(0);
 
-    public List<Node> prevVisibleNodes = new List<Node>();
+	public List<Node> prevVisibleNodes = new List<Node>();
     //[SerializeField] public List<List<GameObject>> renderTiles = new List<List<GameObject>>();
     //[SerializeField] public GameObject renderTiles = new GameObject[renderMap.dim,renderMap.dim];
 	// Use this for initialization
@@ -20,9 +22,9 @@ public class RenderingHandler : MonoBehaviour {
 		center = new Vector2Int(renderMap.dim /2, renderMap.dim / 2);
 	}
 
-    public void HandleRender(GameManager.Direction direction, Node node, bool doShift = true)
+    public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
-        if (doShift) ShiftGrid(direction);
+        //if (doShift) ShiftGrid(direction);
         
         List<Node> visibleNodes = new List<Node>();
         //Handle the one we are standing on.
@@ -45,7 +47,7 @@ public class RenderingHandler : MonoBehaviour {
                 renderMap[position.x, position.y].SetLayer(activeLayer);
         }
 
-        //Blank out the diagnols
+        //Blank out the diagnols (these will be rendred again)
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (i==j) 

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         instance = this;
 
+		InputManager.instance.LoadKeybinds();
+
 		map = Generate_Room_Demo.generateRoom();
         if (currentPosition == null)
             currentPosition = map[0];
@@ -51,11 +53,12 @@ public class GameManager : MonoBehaviour {
 
 
 
-        KeyCode[] buttonMapping = new KeyCode[] {KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.A};
-        KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
-        for (int i = 0; i < 4; i++) {
+        //KeyCode[] buttonMapping = new KeyCode[] {KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.A};
+        //KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
+
+		for (int i = 0; i < 4; i++) {
             Direction dir = (Direction)i;
-            if (Input.GetKeyDown(buttonMapping[i]) || Input.GetKeyDown(buttonMapping2[i])) {
+            if (InputManager.instance.OnInputDown((InputManager.Action)i)) {
                 if (currentPosition.GetConnectionFromDir(dir) != null) {
                     Node otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
                     //See if the other node has a leave

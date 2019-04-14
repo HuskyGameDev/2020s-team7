@@ -18174,6 +18174,7 @@ GameObject:
   - component: {fileID: 1606919722}
   - component: {fileID: 1606919721}
   - component: {fileID: 1606919724}
+  - component: {fileID: 1606919725}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -18293,6 +18294,17 @@ MonoBehaviour:
   handler: {fileID: 1606919722}
   dim: 5
   tilePrefab: {fileID: 1478348900868680, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
+--- !u!114 &1606919725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1606919720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 371c33e2a656e0b499bb869d75d2b5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1616619348
 GameObject:
   m_ObjectHideFlags: 0
