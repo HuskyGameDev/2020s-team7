@@ -74,11 +74,12 @@ public class Node {
 		dataStack.Push(new LineData());
 	}
 
-	public Node(int index, Color32 color) {
+	public Node(int index, Color32 color, Sprite sprite) {
         connectionStack.Push(new ConnectionSet());
 		dataStack.Push(new LineData());
 		this.index = index;
 		this.color = color;
+		this.floorSprite = sprite;
 	}
 
 	public Node(int? north, int? south, int? east, int? west, int index, Color32 color) {

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public bool winTrigger = false;
     public UnityEngine.UI.Text stringrem;
     public GameObject wintext;
+
+	public Sprite[] spriteBook;
 	// Use this for initialization
 	void Start () {
         instance = this;
