@@ -17,8 +17,18 @@ public class UIManager : MonoBehaviour {
     {
         if (InputManager.instance.OnInputDown(InputManager.Action.back))
         {
-            PauseMenu.SetActive(true);
-            GameUI.SetActive(false);
+            if (PauseMenu.active)
+            {
+                PauseMenu.SetActive(false);
+                GameUI.SetActive(true);
+            }
+            else
+            {
+                PauseMenu.SetActive(true);
+                GameUI.SetActive(false);
+            }
+            
+            
         }
         
     }
@@ -27,6 +37,10 @@ public class UIManager : MonoBehaviour {
         PauseMenu.SetActive(false);
         GameUI.SetActive(true);
 
+    }
+    void ExitButtonPressed()
+    {
+        Application.Quit();
     }
 
     
