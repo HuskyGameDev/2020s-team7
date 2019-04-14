@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FlashText : MonoBehaviour {
-    public int counter = 0;
+    private int counter = 0;
     public int countLimit = 240;
 	// Use this for initialization
 	
