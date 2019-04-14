@@ -21,29 +21,33 @@ public static class Generate_Room_4 {
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk2,
-			new LevelEditor_2.TileCoord(0, 1, false, true, false, false),
-			new LevelEditor_2.TileCoord(0, 0, false, false, false, true)
+			new LevelEditor_2.TileCoord(0, 1),
+			new LevelEditor_2.TileCoord(0, 0),
+				LevelEditor_2.Direction.East
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk2,
-			new LevelEditor_2.TileCoord(2, 1, false, false, false, true),
-			new LevelEditor_2.TileCoord(1, 0, false, true, false, false)
+			new LevelEditor_2.TileCoord(2, 1),
+			new LevelEditor_2.TileCoord(1, 0),
+				LevelEditor_2.Direction.West
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk3,
-			new LevelEditor_2.TileCoord(1, 0, false, false, true, false),
-			new LevelEditor_2.TileCoord(0, 0, true, false, false, false)
+			new LevelEditor_2.TileCoord(1, 0),
+			new LevelEditor_2.TileCoord(0, 0),
+				LevelEditor_2.Direction.South
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk3,
-			new LevelEditor_2.TileCoord(1, 2, true, false, false, false),
-			new LevelEditor_2.TileCoord(0, 1, false, false, true, false)
+			new LevelEditor_2.TileCoord(1, 2),
+			new LevelEditor_2.TileCoord(0, 1),
+				LevelEditor_2.Direction.North
 			);
 
 		LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(0, 2));

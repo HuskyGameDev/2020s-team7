@@ -19,14 +19,16 @@ using UnityEngine;
 			LevelEditor_2.createTwoWayLink(
 				chunk1,
 				chunk2,
-				new LevelEditor_2.TileCoord(1, 1, false, true, false, false),
-				new LevelEditor_2.TileCoord(0, 0, false, false, false, true)
+				new LevelEditor_2.TileCoord(1, 1),
+				new LevelEditor_2.TileCoord(0, 0),
+				LevelEditor_2.Direction.East
 				);
 			LevelEditor_2.createTwoWayLink(
 				chunk1,
 				chunk2,
-				new LevelEditor_2.TileCoord(3, 1, false, false, false, true),
-				new LevelEditor_2.TileCoord(2, 0, false, true, false, false)
+				new LevelEditor_2.TileCoord(3, 1),
+				new LevelEditor_2.TileCoord(2, 0),
+				LevelEditor_2.Direction.West
 				);
 
         LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(0, 0));
