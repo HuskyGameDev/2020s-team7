@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviour {
                                 currentPosition = otherNode;
                                 nonEuclidRenderer.HandleRender(dir, currentPosition);
                                 animLockout = false;
-                                Debug.Log(currentPosition.data.type);
                                 if (stringLeft == 0 && currentPosition.data.type == Node.LineData.TileType.target) {
                                     winTrigger = true;
                                 }

@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour {
     void ExitButtonPressed()
     {
         Application.Quit();
+		Debug.Break();
     }
 
     

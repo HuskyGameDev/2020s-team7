@@ -7,6 +7,6 @@ public class StringRemaining : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
-        Debug.Log("Hi");
+      //  Debug.Log("Hi");
     }
 }
