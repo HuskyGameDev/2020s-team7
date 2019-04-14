@@ -14,20 +14,29 @@ public class CharacterAnimator : MonoBehaviour
     public Sprite[] sprites;
     private SpriteRenderer spriteR;
     private bool foot = false;
+    private ArrayList characterSelect;
+    private int characterInput = 0;
 
     void Start() { instance = this; }
-
+ 
     readonly Vector2[] moveDir = new Vector2[] { new Vector2(0, 1), new Vector2(1, 0), new Vector2(0, -1), new Vector2(-1, 0) };
     public IEnumerator<object> AnimateMovement(AnimationCallback callback, GameManager.Direction dir, float time)
     {
         float progress = 0.0f;
         Vector3 startPos = this.gameObject.transform.position;
         Vector3 goalPos = startPos + (new Vector3(moveDir[(int)dir].x, moveDir[(int)dir].y, 0));
+
+        //characterSelect = new ArrayList();
+        //int[][] character1 = new int[][] { 1, 2 },;
+        //characterSelect.Add(character1);
+        //characterSelect.Add(character2);
+        //characterSelect.Add(character3);
+
         //changes the direction of the player sprite
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         if ((int)dir == 0)
         {
-            spriteR.sprite = sprites[0];
+            spriteR.sprite = sprites[];
         }
         else if ((int)dir == 1)
         {
