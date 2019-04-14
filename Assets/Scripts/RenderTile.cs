@@ -29,16 +29,6 @@ public class RenderTile : MonoBehaviour {
         westWall.gameObject.SetActive(other.westWall.gameObject.activeSelf);
     }
 
-    public void SetLayer(int layer)
-    {
-        this.gameObject.layer = layer;
-        northWall.gameObject.layer = layer;
-        southWall.gameObject.layer = layer;
-        eastWall.gameObject.layer = layer;
-        westWall.gameObject.layer = layer;
-        floor.gameObject.layer = layer;
-    }
-
     public void DrawFullNode(Node node)
     {
         if (node == null)
