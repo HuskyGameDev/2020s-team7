@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour {
         //KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
 
 		for (int i = 0; i < 4; i++) {
+			//Direction lines up with input manager so we can directly convert to an action from a direction.
             Direction dir = (Direction)i;
             if (InputManager.instance.OnInputDown((InputManager.Action)i)) {
                 if (currentPosition.GetConnectionFromDir(dir) != null) {

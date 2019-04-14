@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour {
+public class InputManager {
 	/*TODO: 
 	 *		[NO] mouse position/click stuff
 	 *		[X] Make into a singleton rather than static
