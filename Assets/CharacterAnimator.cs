@@ -13,6 +13,7 @@ public class CharacterAnimator : MonoBehaviour
 
     public Sprite[] sprites;
     private SpriteRenderer spriteR;
+    private bool foot = false;
 
     void Start() { instance = this; }
 
@@ -40,15 +41,77 @@ public class CharacterAnimator : MonoBehaviour
         {
             spriteR.sprite = sprites[3];
         }
+        foot = !foot;
         //Slide forward
         while (progress <= time)
         {
+            if ((int)dir == 0)
+            {
+                if (foot)
+                {
+                    spriteR.sprite = sprites[4];
+                }
+                else
+                {
+                    spriteR.sprite = sprites[8];
+                }
+                
+            }
+            else if ((int)dir == 1)
+            {
+                if (foot)
+                {
+                    spriteR.sprite = sprites[5];
+                }
+                else
+                {
+                    spriteR.sprite = sprites[9];
+                }
+            }
+            else if ((int)dir == 2)
+            {
+                if (foot)
+                {
+                    spriteR.sprite = sprites[6];
+                }
+                else
+                {
+                    spriteR.sprite = sprites[10];
+                }
+            }
+            else if ((int)dir == 3)
+            {
+                if (foot)
+                {
+                    spriteR.sprite = sprites[7];
+                }
+                else
+                {
+                    spriteR.sprite = sprites[11];
+                }
+            }
             progress += Time.deltaTime;
             this.gameObject.transform.position = Vector3.Lerp(startPos, goalPos, progress / time);
             yield return null;
         }
         //Snap back
         this.gameObject.transform.position = startPos;
+        if ((int)dir == 0)
+        {
+            spriteR.sprite = sprites[0];
+        }
+        else if ((int)dir == 1)
+        {
+            spriteR.sprite = sprites[1];
+        }
+        else if ((int)dir == 2)
+        {
+            spriteR.sprite = sprites[2];
+        }
+        else if ((int)dir == 3)
+        {
+            spriteR.sprite = sprites[3];
+        }
 
         //yield return null;
 
