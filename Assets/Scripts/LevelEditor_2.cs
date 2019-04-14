@@ -4,14 +4,31 @@ using UnityEngine;
 
 public static class LevelEditor_2 {
 
+	/// <summary>
+	/// Used to hold information about tile coordinates and which 
+	/// edges should have either walls or a connection to another node
+	/// </summary>
 	public class TileCoord {
 
-
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
 		public TileCoord (int x, int y) {
 			this.x = x;
 			this.y = y;
 		}
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		/// <param name="north"></param>
+		/// <param name="east"></param>
+		/// <param name="south"></param>
+		/// <param name="west"></param>
 		public TileCoord(int x, int y, bool north, bool east, bool south, bool west) {
 			this.x = x;
 			this.y = y;
@@ -21,36 +38,54 @@ public static class LevelEditor_2 {
 			this.West = west;
 		}
 
+		// data this class is meant to hold
 		public int x;
 		public int y;
-
 		public bool North;
 		public bool East;
 		public bool South;
 		public bool West;
 
+		// object that this tile represents
         public GameObject myObject;
 	}
-
+	public enum Direction {North, East, South, West};
 	/*
 	public static Map createRoom() {
 		return new Map();
 	}*/
 
+		/// <summary>
+		/// This method creates a "chunk": a simple cartesian grid of connected tiles.
+		/// It takes a map/room that these new tiles should be within, 
+		/// a color for all of these tiles to be,
+		/// a height and width for the grid to be, 
+		/// a list of which tiles should not actually be created within the grid, 
+		/// and a list of tiles that should have walls along with which sides of the tile those walls should be on.
+		/// </summary>
+		/// <param name="room"></param>
+		/// <param name="color"></param>
+		/// <param name="width"></param>
+		/// <param name="height"></param>
+		/// <param name="emptyTiles"></param>
+		/// <param name="tileWalls"></param>
+		/// <returns></returns>
 	public static Node[,] createChunk(Map room, Color32 color, int width, int height, List<TileCoord> emptyTiles = null, List<TileCoord> tileWalls = null) {
-		Node[,] chunk = new Node[width,height];
+		Node[,] chunk = new Node[width,height]; // 2D array of tiles for the new chunk, allows easy accessing based on coordinates
 
-		if (null != emptyTiles) {	// do stuff to create chunk with empty tiles
-			IEnumerator<TileCoord> emptyIterator = emptyTiles.GetEnumerator();
+		// do stuff to create chunk with empty tiles, only needs to be done if there is a list of tiles that should be empty
+		if (null != emptyTiles) {	
+			IEnumerator<TileCoord> emptyIterator = emptyTiles.GetEnumerator();	// iterator for list of empty tiles
+			
 			// create tiles only where tiles are not indicated as supossed to be empty
 			//Debug.Log("Empty tile list exists");
 			for (int i = 0; i < width; i++) {
 				for (int j = 0; j < height; j++) {
 					bool valid = true;  // if a tile should be created for this square
-					bool notDone1 = true;   // indicates that not all listed empty tiles have been checked to see if the match the coordinates of the current tile
+					bool notDone = true;   // indicates that not all listed empty tiles have been checked to see if the match the coordinates of the current tile
 
-					while (valid && notDone1) {
-						notDone1 = emptyIterator.MoveNext();
+					while (valid && notDone) {	// check each tile in the empty tile list, to see if it matches the current coordinates
+						notDone = emptyIterator.MoveNext();
 						//Debug.Log("emptyIterator.current =  [" + emptyIterator.Current.x + ", " + emptyIterator.Current.y + "]");
 						if ((emptyIterator.Current.x == i) && (emptyIterator.Current.y == j)) { //check if coordinate 
 							valid = false;
@@ -62,7 +97,7 @@ public static class LevelEditor_2 {
 					if (valid) {    // if none of the given empty tile coords were found to match current tile coords, create this tile
 						int index = room.size;
 						//Debug.Log("Creating tile \"" + index + "\" [" + i + ", " + j + "]");
-						chunk[i, j] = new Node(index, color);
+						chunk[i, j] = new Node(index, color, GameManager.instance.spriteBook[0]);
 						room[index] = chunk[i, j];
 					}
 				}
@@ -73,7 +108,7 @@ public static class LevelEditor_2 {
 				for (int j = 0; j < height; j++) {
 					int index = room.size;
 					//Debug.Log("Creating tile \"" + index + "\" [" + i + ", " + j + "]");
-					chunk[i, j] = new Node(index, color);
+					chunk[i, j] = new Node(index, color, GameManager.instance.spriteBook[0]);
 					room[index] = chunk[i, j];
 				}
 			}
@@ -93,19 +128,19 @@ public static class LevelEditor_2 {
 					}
 
 					// connect to southern tile
-					if (((j + 1) < height) && (chunk[i, j + 1]) != null) {  // if node above if out-of-bounds, or empty, do not link to it
+					if (((j + 1) < height) && (chunk[i, j + 1]) != null) {  // if node below if out-of-bounds, or empty, do not link to it
 						chunk[i, j].connections.south = chunk[i, j + 1].index;
 						//Debug.Log("Connecting tile \"" + chunk[i, j].index + "\" [" + i + ", " + j + "] to \"" + chunk[i, j + 1].index + "\" [" + i + ", " + (j + 1) + "]");
 					}
 
 					// connect to western tile
-					if (((i - 1) >= 0) && (chunk[i - 1, j] != null)) {  // if node above if out-of-bounds, or empty, do not link to it
+					if (((i - 1) >= 0) && (chunk[i - 1, j] != null)) {  // if node to left if out-of-bounds, or empty, do not link to it
 						chunk[i, j].connections.west = chunk[i - 1, j].index;
 						//Debug.Log("Connecting tile \"" + chunk[i, j].index + "\" [" + i + ", " + j + "] to \"" + chunk[i - 1, j].index + "\" [" + (i - 1) + ", " + j + "]");
 					}
 
 					// connect to eastern tile
-					if (((i + 1) < width) && (chunk[i + 1, j] != null)) {  // if node above if out-of-bounds, or empty, do not link to it
+					if (((i + 1) < width) && (chunk[i + 1, j] != null)) {  // if node to right if out-of-bounds, or empty, do not link to it
 						chunk[i, j].connections.east = chunk[i + 1, j].index;
 						//Debug.Log("Connecting tile \"" + chunk[i, j].index + "\" [" + i + ", " + j + "] to \"" + chunk[i + 1, j].index + "\" [" + (i + 1) + ", " + j + "]");
 					}
@@ -113,10 +148,11 @@ public static class LevelEditor_2 {
 			}
 		}
 
-		// do walls 
-		if (null != tileWalls) {
+		// remove links to adjacent tiles, where indicated by list of tiles that should have walls
+		// A "wall" is actually just a tile not having a link to another tile in that direction
+		if (null != tileWalls) {	// only needs to be done if there is a list of tiles that should have walls
 			IEnumerator<TileCoord> wallIterator = tileWalls.GetEnumerator();
-			bool notDone2 = true;
+			bool notDone2 = true; // indicates that there are still tiles that need walls remaining in the list
 			while (notDone2) {
 				TileCoord tile = wallIterator.Current;
 				if (null != tile) {
@@ -140,55 +176,81 @@ public static class LevelEditor_2 {
 			}
 		}
 
-		return chunk;
+		return chunk; // return the created chunk, so it can be used when linking tiles together
 	}
 
-	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo) {
-		if (tileFrom.North == true) {
+
+	/// <summary>
+	/// Create a link from the tile at the coordinates indicated in the 1st chunk to 
+	/// the tile indicated by the coordinates in the 2nd chunk, but not a connection from the 2nd back to the 1st.
+	/// Can be used to link tiles within the same chunk.
+	/// Can even be used to link a tile to itself.
+	/// </summary>
+	/// <param name="chunkFrom"></param>
+	/// <param name="chunkTo"></param>
+	/// <param name="tileFrom"></param>
+	/// <param name="tileTo"></param>
+	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, Direction dir) {
+		if (dir == Direction.North) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (tileFrom.East == true) {
+		} else if (dir == Direction.East) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (tileFrom.South == true) {
+		} else if (dir == Direction.South) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (tileFrom.West == true) {
+		} else {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
 		}
-		
 	}
 
-	public static void createTwoWayLink(Node[,] chunk1, Node[,] chunk2, TileCoord tile1, TileCoord tile2) {
-		if (tile1.North == true) {
-			chunk1[tile1.x, tile1.y].connections.north = chunk2[tile2.x, tile2.y].index;
-		} else if (tile1.East == true) {
-			chunk1[tile1.x, tile1.y].connections.east = chunk2[tile2.x, tile2.y].index;
-		} else if (tile1.South == true) {
-			chunk1[tile1.x, tile1.y].connections.south = chunk2[tile2.x, tile2.y].index;
-		} else if (tile1.West == true) {
-			chunk1[tile1.x, tile1.y].connections.west = chunk2[tile2.x, tile2.y].index;
-		}
-
-		if (tile2.North == true) {
-			chunk2[tile2.x, tile2.y].connections.north = chunk1[tile1.x, tile1.y].index;
-		} else if (tile2.East == true) {
-			chunk2[tile2.x, tile2.y].connections.east = chunk1[tile1.x, tile1.y].index;
-		} else if (tile2.South == true) {
-			chunk2[tile2.x, tile2.y].connections.south = chunk1[tile1.x, tile1.y].index;
-		} else if (tile2.West == true) {
-			chunk2[tile2.x, tile2.y].connections.west = chunk1[tile1.x, tile1.y].index;
+	/// <summary>
+	/// Create a link between the tile at the coordinates indicated in the 1st chunk and 
+	/// the tile indicated by the coordinates in the 2nd chunk.
+	/// Can be used to link tiles within the same chunk.
+	/// Can even be used to link a tile to itself.
+	/// </summary>
+	/// <param name="chunk1"></param>
+	/// <param name="chunk2"></param>
+	/// <param name="tile1"></param>
+	/// <param name="tile2"></param>
+	public static void createTwoWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, Direction dir) {
+		if (dir == Direction.North) {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.south = chunkFrom[tileFrom.x, tileFrom.y].index;
+		} else if (dir == Direction.East) {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.west = chunkFrom[tileFrom.x, tileFrom.y].index;
+		} else if (dir == Direction.South) {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.north = chunkFrom[tileFrom.x, tileFrom.y].index;
+		} else {
+			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
+			chunkTo[tileTo.x, tileTo.y].connections.east = chunkFrom[tileFrom.x, tileFrom.y].index;
 		}
 	}
 
-	//currentPosition = map[0];
+	/// <summary>
+	/// Sets the source tile for a map/room. This is where the player starts.
+	/// Takes the chunk that the desired tile is in, and the coordinates of the tile within the chunk
+	/// </summary>
+	/// <param name="chunk"></param>
+	/// <param name="tile"></param>
 	public static void setSource(Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.source;
 		GameManager.instance.currentPosition = chunk[tile.x, tile.y];
-		chunk[tile.x, tile.y].color = new Color32(255, 0, 255, 255);
+		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
+
 	}
 
-
+	/// <summary>
+	/// Sets the target tile for a map/room. This is where the player needs to draw their line to.
+	/// Takes the chunk that the desired tile is in, and the coordinates of the tile within the chunk
+	/// </summary>
+	/// <param name="chunk"></param>
+	/// <param name="tile"></param>
 	public static void setTarget(Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.target;
-		chunk[tile.x, tile.y].color = new Color32(255, 0, 255, 255);
+		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[2];
+
 	}
     /*
     public static void SetObject(GameObject obj, TileCoord tile)

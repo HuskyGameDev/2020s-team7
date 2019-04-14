@@ -8,6 +8,8 @@ public class Node {
     public int index;
     // Use this for initialization
 	public Color32 color = Color.magenta;
+	public Sprite floorSprite;
+
 	public LineData data {
         get {
             return dataStack.Peek();
@@ -56,17 +58,13 @@ public class Node {
         switch (dir)
         {
             case GameManager.Direction.North:
-                return connections.north;
-                break;
+				return connections.north;
             case GameManager.Direction.South:
                 return connections.south;
-                break;
             case GameManager.Direction.East:
                 return connections.east;
-                break;
             case GameManager.Direction.West:
                 return connections.west;
-                break;
         }
         return null;
     }
@@ -76,11 +74,12 @@ public class Node {
 		dataStack.Push(new LineData());
 	}
 
-	public Node(int index, Color32 color) {
+	public Node(int index, Color32 color, Sprite sprite) {
         connectionStack.Push(new ConnectionSet());
 		dataStack.Push(new LineData());
 		this.index = index;
 		this.color = color;
+		this.floorSprite = sprite;
 	}
 
 	public Node(int? north, int? south, int? east, int? west, int index, Color32 color) {
@@ -120,17 +119,13 @@ public class Node {
             get { 
                 switch (dir) {
                     case Direction.North:
-                    return north;
-                    break;
+						return north;
                     case Direction.South:
-                    return south;                
-                    break;
+						return south;                
                     case Direction.West:
-                    return west;                
-                    break;
+						return west;                
                     case Direction.East:
-                    return east;                
-                    break;
+						return east;                
                 }
                 return east;
             }

@@ -17,11 +17,15 @@ public class GameManager : MonoBehaviour {
     public bool winTrigger = false;
     public UnityEngine.UI.Text stringrem;
     public GameObject wintext;
+
+	public Sprite[] spriteBook;
 	// Use this for initialization
 	void Start () {
         instance = this;
 
-		map = Generate_Room_Demo.generateRoom();
+		InputManager.instance.LoadKeybinds();
+
+		map = Generate_Room_5.generateRoom();
         if (currentPosition == null)
             currentPosition = map[0];
 		nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
@@ -51,11 +55,13 @@ public class GameManager : MonoBehaviour {
 
 
 
-        KeyCode[] buttonMapping = new KeyCode[] {KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.A};
-        KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
-        for (int i = 0; i < 4; i++) {
+        //KeyCode[] buttonMapping = new KeyCode[] {KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.A};
+        //KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
+
+		for (int i = 0; i < 4; i++) {
+			//Direction lines up with input manager so we can directly convert to an action from a direction.
             Direction dir = (Direction)i;
-            if (Input.GetKeyDown(buttonMapping[i]) || Input.GetKeyDown(buttonMapping2[i])) {
+            if (InputManager.instance.OnInputDown((InputManager.Action)i)) {
                 if (currentPosition.GetConnectionFromDir(dir) != null) {
                     Node otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
                     //See if the other node has a leave

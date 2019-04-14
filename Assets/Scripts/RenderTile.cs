@@ -9,15 +9,15 @@ public class RenderTile : MonoBehaviour {
     public SpriteRenderer southWall;
     public SpriteRenderer westWall;
 
-    public SpriteRenderer northFloor;
-    public SpriteRenderer southFloor;
-    public SpriteRenderer eastFloor;
-    public SpriteRenderer westFloor;
+    public SpriteRenderer floor;
 
     public SpriteRenderer northLine;
     public SpriteRenderer southLine;
     public SpriteRenderer eastLine;
     public SpriteRenderer westLine;
+	public SpriteRenderer lineCenter;
+
+	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { northWall, eastWall, southWall, westWall, floor, northLine, southLine, eastLine, westLine }; } }
 
 
 
@@ -28,19 +28,6 @@ public class RenderTile : MonoBehaviour {
         eastWall.gameObject.SetActive(other.eastWall.gameObject.activeSelf);
         southWall.gameObject.SetActive(other.southWall.gameObject.activeSelf);
         westWall.gameObject.SetActive(other.westWall.gameObject.activeSelf);
-    }
-
-    public void SetLayer(int layer)
-    {
-        this.gameObject.layer = layer;
-        northWall.gameObject.layer = layer;
-        southWall.gameObject.layer = layer;
-        eastWall.gameObject.layer = layer;
-        westWall.gameObject.layer = layer;
-        northFloor.gameObject.layer = layer;
-        southFloor.gameObject.layer = layer;
-        eastFloor.gameObject.layer = layer;
-        westFloor.gameObject.layer = layer;
     }
 
     public void DrawFullNode(Node node)
@@ -58,12 +45,17 @@ public class RenderTile : MonoBehaviour {
                 SetLineFromDir((Direction)node.data.enter, true);
             if (node.data.hasLeave)
                 SetLineFromDir((Direction)node.data.leave, true);
+			if (node.data.hasEnter && node.data.hasLeave && node.data.enter.inverse() == node.data.leave)
+				lineCenter.gameObject.SetActive(true);
+			else
+				lineCenter.gameObject.SetActive(false);
 
-            //this.gameObject.GetComponent<SpriteRenderer>().color = node.color;
-            SetFloorFromDir(Direction.North, node);
-            SetFloorFromDir(Direction.South, node);
-            SetFloorFromDir(Direction.East, node);
-            SetFloorFromDir(Direction.West, node);
+
+			//Update the floor sprite if this node has one.
+			if (node.floorSprite != null) floor.sprite = node.floorSprite;
+			//Update the floor color
+			floor.color = node.color;
+
             this.gameObject.SetActive(true);   
             SetWallsFromNode(node);
         }
@@ -86,45 +78,7 @@ public class RenderTile : MonoBehaviour {
         }
     }
 
-    public void SetFloorFromDir(Direction dir, Node node) {
-        if (node != null)
-            this.gameObject.SetActive(true);
-        switch (dir)
-		{
-			case GameManager.Direction.North:
-                if (node == null)
-                    northFloor.gameObject.SetActive(false);
-	    		else {
-                    northFloor.gameObject.SetActive(true);
-                    northFloor.color = node.color;
-                }
-				break;
-			case GameManager.Direction.South:
-                if (node == null)
-                    southFloor.gameObject.SetActive(false);
-	    		else {
-                    southFloor.gameObject.SetActive(true);
-                    southFloor.color = node.color;
-                }
-				break;
-			case GameManager.Direction.East:
-                if (node == null)
-                    eastFloor.gameObject.SetActive(false);
-	    		else {
-                    eastFloor.gameObject.SetActive(true);
-                    eastFloor.color = node.color;
-                }
-				break;
-			case GameManager.Direction.West:
-                if (node == null)
-                    westFloor.gameObject.SetActive(false);
-	    		else {
-                    westFloor.gameObject.SetActive(true);                   
-                    westFloor.color = node.color;
-                }
-				break;
-		}
-    }
+
     public void SetWallFromDir(Direction dir, bool b) {
         switch (dir) {
             case Direction.North:

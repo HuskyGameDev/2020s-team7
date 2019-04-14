@@ -7,6 +7,8 @@ public static class Generate_Room_Demo {
 	public static Map generateRoom() {
 		Map demoMap = new Map();
 
+		//Demo room map, relativly complex
+
 		List<LevelEditor_2.TileCoord> emptyTiles1 = new List<LevelEditor_2.TileCoord>();
 		emptyTiles1.Add(new LevelEditor_2.TileCoord(0, 0));
 		emptyTiles1.Add(new LevelEditor_2.TileCoord(2, 0));
@@ -18,14 +20,16 @@ public static class Generate_Room_Demo {
 		LevelEditor_2.createOneWayLink(
 			chunk1,
 			chunk2,
-			new LevelEditor_2.TileCoord(0, 3, false, true, false, false),
-			new LevelEditor_2.TileCoord(1, 3)
+			new LevelEditor_2.TileCoord(0, 3),
+			new LevelEditor_2.TileCoord(1, 3),
+				LevelEditor_2.Direction.East
 			);
 		LevelEditor_2.createOneWayLink(
 			chunk2,
 			chunk1,
-			new LevelEditor_2.TileCoord(2, 3, false, false, false, true),
-			new LevelEditor_2.TileCoord(1, 3)
+			new LevelEditor_2.TileCoord(2, 3),
+			new LevelEditor_2.TileCoord(1, 3),
+				LevelEditor_2.Direction.West
 			);
 
 
@@ -39,36 +43,41 @@ public static class Generate_Room_Demo {
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk4,
-			new LevelEditor_2.TileCoord(0, 1, false, true, false, false),
-			new LevelEditor_2.TileCoord(0, 0, false, false, false, true)
+			new LevelEditor_2.TileCoord(0, 1),
+			new LevelEditor_2.TileCoord(0, 0),
+				LevelEditor_2.Direction.East
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk4,
-			new LevelEditor_2.TileCoord(2, 1, false, false, false, true),
-			new LevelEditor_2.TileCoord(1, 0, false, true, false, false)
+			new LevelEditor_2.TileCoord(2, 1),
+			new LevelEditor_2.TileCoord(1, 0),
+				LevelEditor_2.Direction.West
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk5,
-			new LevelEditor_2.TileCoord(1, 0, false, false, true, false),
-			new LevelEditor_2.TileCoord(0, 0, true, false, false, false)
+			new LevelEditor_2.TileCoord(1, 0),
+			new LevelEditor_2.TileCoord(0, 0),
+				LevelEditor_2.Direction.South
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk5,
-			new LevelEditor_2.TileCoord(1, 2, true, false, false, false),
-			new LevelEditor_2.TileCoord(0, 1, false, false, true, false)
+			new LevelEditor_2.TileCoord(1, 2),
+			new LevelEditor_2.TileCoord(0, 1),
+				LevelEditor_2.Direction.North
 			);
 
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk3,
-			new LevelEditor_2.TileCoord(1, 0, true, false, false, false),
-			new LevelEditor_2.TileCoord(1, 2, false, false, true, false)
+			new LevelEditor_2.TileCoord(1, 0),
+			new LevelEditor_2.TileCoord(1, 2),
+				LevelEditor_2.Direction.North
 			);
 
 		Node[,] chunk6 = LevelEditor_2.createChunk(demoMap, new Color32(50, 50, 50, 255), 1, 1);
@@ -76,8 +85,9 @@ public static class Generate_Room_Demo {
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk6,
-			new LevelEditor_2.TileCoord(0, 0, false, false, false, true),
-			new LevelEditor_2.TileCoord(0, 0, false, true, false, false)
+			new LevelEditor_2.TileCoord(0, 0),
+			new LevelEditor_2.TileCoord(0, 0),
+				LevelEditor_2.Direction.West
 			);
 
 		LevelEditor_2.setSource(chunk2, new LevelEditor_2.TileCoord(1, 0));
