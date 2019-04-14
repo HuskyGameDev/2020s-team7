@@ -30,7 +30,7 @@ public class GenerateRenderGrid : LevelGenerator {
 				//Change the masking on the alt render map
 				RenderTile t = handler.altRenderMap[x, y];
 				foreach (SpriteRenderer spr in t.GetAllSprites) {
-					spr.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
+					spr.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 					spr.sortingOrder += 10;
 				}
 			}

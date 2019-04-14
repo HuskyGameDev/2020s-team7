@@ -24,7 +24,7 @@ public class RenderingHandler : MonoBehaviour {
 
     public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
-        //if (doShift) ShiftGrid(direction);
+        if (doShift) ShiftGrid(direction);
         
         List<Node> visibleNodes = new List<Node>();
         //Handle the one we are standing on.
@@ -43,8 +43,13 @@ public class RenderingHandler : MonoBehaviour {
             if (drawNode != null && visibleNodes.Contains(drawNode) == false)
                 visibleNodes.Add(drawNode);
 
-            if (node.GetConnectionFromDir(dir) != null)
-                renderMap[position.x, position.y].SetLayer(activeLayer);
+			renderMap[position.x, position.y].DrawFullNode(drawNode);
+			altRenderMap[position.x, position.y].DrawFullNode(drawNode);
+
+			if (node.GetConnectionFromDir(dir) != null) {
+				renderMap[position.x, position.y].SetLayer(activeLayer);
+				altRenderMap[position.x, position.y].SetLayer(activeLayer);
+			}
         }
 
         //Blank out the diagnols (these will be rendred again)
@@ -80,7 +85,9 @@ public class RenderingHandler : MonoBehaviour {
                             Node drawNode = (primaryNode.GetConnectionFromDir(dir) == null) ? null : GameManager.instance.map[(int)primaryNode.GetConnectionFromDir(dir)];
                             renderMap[position.x, position.y].DrawFullNode(drawNode);
                             renderMap[position.x, position.y].SetLayer(activeLayer);
-                        }
+							altRenderMap[position.x, position.y].DrawFullNode(drawNode);
+							altRenderMap[position.x, position.y].SetLayer(activeLayer);
+						}
                     }
                 }
                 else {
@@ -162,78 +169,70 @@ public class RenderingHandler : MonoBehaviour {
 
 
     public void ShiftGrid(GameManager.Direction direction) {
-        for (int x = 0; x < renderMap.dim; x++)
-        {
-            for (int y = 0; y < renderMap.dim; y++)
-            {
-                for (int i = 0; i < 4; i++)
-                    renderMap[x, y].SetLineFromDir((Direction)i, false);
-                renderMap[x, y].SetLayer(memoryLayer);
-            }
-        }
-        switch (direction)
-        {
-            case GameManager.Direction.North:
-                for (int x = 0; x < renderMap.dim; x++)
-                {
-                    for (int y = 0; y < renderMap.dim-1; y++) // Dont do final row since it doesnt have anything after it
-                    {
-                        renderMap[x, y].CopyState(renderMap[x,y+1]);
-                    }
-                }
-                //Handle blanking out the last row out
-                for (int x = 0; x < renderMap.dim; x++)
-                {
-                    renderMap[x, renderMap.dim-1].DrawFullNode(null);
-                }
-                break;
-            case GameManager.Direction.East:
-                for (int x = 0; x < renderMap.dim-1; x++)
-                {
-                    for (int y = 0; y < renderMap.dim; y++) // Dont do final row since it doesnt have anything after it
-                    {
-                        renderMap[x, y].CopyState(renderMap[x + 1, y]);
-                    }
-                }
-                //Handle blanking out the last row out
-                for (int y = 0; y < renderMap.dim; y++)
-                {
-                    renderMap[renderMap.dim-1, y].DrawFullNode(null);
-                }
-                //Handling blanking the last row out
-                break;
-            case GameManager.Direction.South:
-                for (int x = 0; x < renderMap.dim; x++)
-                {
-                    for (int y = renderMap.dim-1; y > 0; y--) // Dont do final row since it doesnt have anything after it
-                    {
-                        renderMap[x, y].CopyState(renderMap[x, y - 1]);
-                    }
-                }
-                //Handling blanking the last row out
-                //Handle blanking out the last row out
-                for (int x = 0; x < renderMap.dim; x++)
-                {
-                    renderMap[x, 0].DrawFullNode(null);
-                }
-                break;
-            case GameManager.Direction.West:
-                for (int x = renderMap.dim-1; x > 0; x--)
-                {
-                    for (int y = 0; y < renderMap.dim; y++) // Dont do final row since it doesnt have anything after it
-                    {
-                        renderMap[x, y].CopyState(renderMap[x - 1, y]);
-                    }
-                }
-                //Handling blanking the last row out
-                for (int y = 0; y < renderMap.dim; y++)
-                {
-                    renderMap[0, y].DrawFullNode(null);
-                }
-                break;
-            default:
-                break;
-        }
+		RenderMap[] maps = new RenderMap[] { renderMap, altRenderMap };
+		foreach (RenderMap rM in maps) {
+			for (int x = 0; x < rM.dim; x++) {
+				for (int y = 0; y < rM.dim; y++) {
+					for (int i = 0; i < 4; i++)
+						rM[x, y].SetLineFromDir((Direction)i, false);
+					rM[x, y].SetLayer(memoryLayer);
+				}
+			}
+			switch (direction) {
+				case GameManager.Direction.North:
+					for (int x = 0; x < rM.dim; x++) {
+						for (int y = 0; y < rM.dim - 1; y++) // Dont do final row since it doesnt have anything after it
+						{
+							rM[x, y].CopyState(rM[x, y + 1]);
+						}
+					}
+					//Handle blanking out the last row out
+					for (int x = 0; x < rM.dim; x++) {
+						rM[x, rM.dim - 1].DrawFullNode(null);
+					}
+					break;
+				case GameManager.Direction.East:
+					for (int x = 0; x < rM.dim - 1; x++) {
+						for (int y = 0; y < rM.dim; y++) // Dont do final row since it doesnt have anything after it
+						{
+							rM[x, y].CopyState(rM[x + 1, y]);
+						}
+					}
+					//Handle blanking out the last row out
+					for (int y = 0; y < rM.dim; y++) {
+						rM[rM.dim - 1, y].DrawFullNode(null);
+					}
+					//Handling blanking the last row out
+					break;
+				case GameManager.Direction.South:
+					for (int x = 0; x < rM.dim; x++) {
+						for (int y = rM.dim - 1; y > 0; y--) // Dont do final row since it doesnt have anything after it
+						{
+							rM[x, y].CopyState(rM[x, y - 1]);
+						}
+					}
+					//Handling blanking the last row out
+					//Handle blanking out the last row out
+					for (int x = 0; x < rM.dim; x++) {
+						rM[x, 0].DrawFullNode(null);
+					}
+					break;
+				case GameManager.Direction.West:
+					for (int x = rM.dim - 1; x > 0; x--) {
+						for (int y = 0; y < rM.dim; y++) // Dont do final row since it doesnt have anything after it
+						{
+							rM[x, y].CopyState(rM[x - 1, y]);
+						}
+					}
+					//Handling blanking the last row out
+					for (int y = 0; y < rM.dim; y++) {
+						rM[0, y].DrawFullNode(null);
+					}
+					break;
+				default:
+					break;
+			}
+		}
     }
 
 
