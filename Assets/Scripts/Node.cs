@@ -54,6 +54,8 @@ public class Node {
         }
     }
 
+	public int ConnectionStackSize() { return connectionStack.Count;  }
+
     public int? GetConnectionFromDir(GameManager.Direction dir) {
         switch (dir)
         {
@@ -110,6 +112,10 @@ public class Node {
 
 
     public class ConnectionSet {
+		/// <summary>
+		/// This ConnectionSet cannot be popped unless this node's connection stack is size 1;
+		/// </summary>
+		public Node supressedBy = null;
         public int? north = null;
         public int? south = null;
         public int? east = null;
