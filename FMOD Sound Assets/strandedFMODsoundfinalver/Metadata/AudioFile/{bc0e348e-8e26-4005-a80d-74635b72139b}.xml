@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{bc0e348e-8e26-4005-a80d-74635b72139b}">
+        <property name="assetPath">
+            <value>4_Board_Placement_ver3.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.4374829931972789</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{62340d55-28d0-480d-984a-d8c0c44ad17c}</destination>
+        </relationship>
+    </object>
+</objects>

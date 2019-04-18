@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{77891025-c748-4a28-b662-4f1319305450}">
+        <property name="assetPath">
+            <value>4_Single_Dice_Roll.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.85414965986394553</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{62340d55-28d0-480d-984a-d8c0c44ad17c}</destination>
+        </relationship>
+    </object>
+</objects>

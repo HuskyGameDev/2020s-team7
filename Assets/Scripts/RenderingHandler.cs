@@ -91,22 +91,11 @@ public class RenderingHandler : MonoBehaviour {
                 prevVisibleNodes.Remove(item);
             }
         }
-
-		{//Then go through what remains in previously visible and pop connection stack since we no longer need fake a connection
-			bool modificationDetected = true;
-			while (modificationDetected == true) {
-				modificationDetected = false;
-				for (int i = prevVisibleNodes.Count -1; i >= 0; i--) {
-					Node item = prevVisibleNodes[i];
-					if (item.connections.supressedBy == null || item.connections.supressedBy.ConnectionStackSize() == 1) {
-						//This method will reduce it down the the bottom connection stack
-						item.PopConnectionStack();
-						modificationDetected = true;
-						prevVisibleNodes.Remove(item);
-					}
-				}
-			}
-		}
+        //Then go through what remains in previously visible and pop connection stack since we no longer need fake a connection
+        foreach (Node item in prevVisibleNodes) {
+            //This method will reduce it down the the bottom connection stack
+            item.PopConnectionStack();
+        }
         prevVisibleNodes = visibleNodes;
     }
 
