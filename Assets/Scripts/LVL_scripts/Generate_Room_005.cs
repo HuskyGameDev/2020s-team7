@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Generate_Room_5 {
+public static class Generate_Room_005 {
     public static Map generateRoom()
     {
         Map _map = new Map();

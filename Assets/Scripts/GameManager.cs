@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 
 		InputManager.instance.LoadKeybinds();
 
-		map = Generate_Room_5.generateRoom();
+		map = Generate_Room_007.generateRoom();
         if (currentPosition == null)
             currentPosition = map[0];
 		nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < 4; i++) {
 			//Direction lines up with input manager so we can directly convert to an action from a direction.
             Direction dir = (Direction)i;
-            if (InputManager.instance.OnInputDown((InputManager.Action)i)) {
+            if (InputManager.instance.OnInput((InputManager.Action)i)) {
                 if (currentPosition.GetConnectionFromDir(dir) != null) {
                     Node otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
                     //See if the other node has a leave
