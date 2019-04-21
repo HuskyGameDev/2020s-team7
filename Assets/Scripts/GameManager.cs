@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour {
 
 		InputManager.instance.LoadKeybinds();
 
-		map = Generate_Room_007.generateRoom();
+
+		map = Generate_Room_Demo4.generateRoom();
         if (currentPosition == null)
             currentPosition = map[0];
 		nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
