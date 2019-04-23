@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     public bool winTrigger = false;
     public UnityEngine.UI.Text stringrem;
     public GameObject wintext;
+	public bool cinimaticMode = false;
 
 	public Sprite[] spriteBook;
 	// Use this for initialization
@@ -63,51 +64,59 @@ public class GameManager : MonoBehaviour {
 			//Direction lines up with input manager so we can directly convert to an action from a direction.
             Direction dir = (Direction)i;
             if (InputManager.instance.OnInput((InputManager.Action)i)) {
-                if (currentPosition.GetConnectionFromDir(dir) != null) {
-                    Node otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
-                    //See if the other node has a leave
-                    if ((otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir)) {
-                        animLockout = true;
-                        StartCoroutine(CharacterAnimator.instance.AnimateMovement(
-                            (bool flag) => {
-                                //Handle fake connection stacking
-                                {
-                                    if (otherNode.GetConnectionFromDir(dir.inverse()) != currentPosition.index) {
-                                        //We need to do a connection stacking
-                                        Node.ConnectionSet newSet = otherNode.connections.Copy();
-                                        newSet[dir.inverse()] = currentPosition.index;
-                                        otherNode.AddToConnectionStack(newSet);
-                                        //Due to the way we handle connection pushing, we need to add this to the previously visables
-                                    }
-                                }
+				bool canMove = false;
+				Node otherNode = null;
+				if (currentPosition.GetConnectionFromDir(dir) != null) {
+					otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
+					//See if the other node has a leave
+					canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir);
+				}
+				if (cinimaticMode && Input.GetKey(KeyCode.Space)) canMove = false;
+                animLockout = true;
+                StartCoroutine(CharacterAnimator.instance.AnimateMovement(
+                    (bool flag) => {
+						if (!canMove) {
+							animLockout = false;
+							return;
+						}
+                        //Handle fake connection stacking
+                        {
+                            if (otherNode.GetConnectionFromDir(dir.inverse()) != currentPosition.index) {
+                                //We need to do a connection stacking
+                                Node.ConnectionSet newSet = otherNode.connections.Copy();
+                                newSet[dir.inverse()] = currentPosition.index;
+                                otherNode.AddToConnectionStack(newSet);
+                                //Due to the way we handle connection pushing, we need to add this to the previously visables
+                            }
+                        }
 
-                                //Tag the current square with line exit dir
-                                if (otherNode.data.hasLeave == false) {
-                                    currentPosition.data.leave = dir;
-                                    otherNode.data.enter = dir.inverse();
-                                    currentPosition.data.hasLeave = true;
-                                    otherNode.data.hasEnter = true;
-                                    stringLeft--;
-                                }
-                                else {
-                                    //Do a backup
-                                    currentPosition.data.hasEnter =false;
-                                    otherNode.data.hasLeave = false;
-                                    stringLeft++;
-                                }
+                        //Tag the current square with line exit dir
+                        if (otherNode.data.hasLeave == false) {
+                            currentPosition.data.leave = dir;
+                            otherNode.data.enter = dir.inverse();
+                            currentPosition.data.hasLeave = true;
+                            otherNode.data.hasEnter = true;
+                            stringLeft--;
+                        }
+                        else {
+                            //Do a backup
+                            currentPosition.data.hasEnter =false;
+                            otherNode.data.hasLeave = false;
+                            stringLeft++;
+                        }
 
-                                currentPosition = otherNode;
-                                nonEuclidRenderer.HandleRender(dir, currentPosition);
-                                animLockout = false;
-                                if (stringLeft == 0 && currentPosition.data.type == Node.LineData.TileType.target) {
-                                    winTrigger = true;
-                                }
-                            },
-                            dir,
-                            moveAnimSpeed
-                        ));
-                    }
-                }
+                        currentPosition = otherNode;
+                        nonEuclidRenderer.HandleRender(dir, currentPosition);
+                        animLockout = false;
+                        if (stringLeft == 0 && currentPosition.data.type == Node.LineData.TileType.target) {
+                            winTrigger = true;
+                        }
+                    },
+                    dir,
+                    moveAnimSpeed,
+					canMove
+				));
+                
                 break;
             }
         }

@@ -22,7 +22,7 @@ public class CharacterAnimator : MonoBehaviour
     void Start() { instance = this; }
  
     readonly Vector2[] moveDir = new Vector2[] { new Vector2(0, 1), new Vector2(1, 0), new Vector2(0, -1), new Vector2(-1, 0) };
-    public IEnumerator<object> AnimateMovement(AnimationCallback callback, GameManager.Direction dir, float time)
+    public IEnumerator<object> AnimateMovement(AnimationCallback callback, GameManager.Direction dir, float time, bool canMove)
     {
         float progress = 0.0f;
         Vector3 startPos = this.gameObject.transform.position;
@@ -48,77 +48,62 @@ public class CharacterAnimator : MonoBehaviour
             spriteR.sprite = sprites[characterSelect[characterInput][4]];
         }
         foot = !foot;
-        //Slide forward
-        while (progress <= time)
-        {
-            if ((int)dir == 0)
-            {
-                if (foot)
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][9]];
-                }
-                else
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][11]];
-                }
-                
-            }
-            else if ((int)dir == 1)
-            {
-                if (foot)
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][6]];
-                }
-                else
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][8]];
-                }
-            }
-            else if ((int)dir == 2)
-            {
-                if (foot)
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][0]];
-                }
-                else
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][2]];
-                }
-            }
-            else if ((int)dir == 3)
-            {
-                if (foot)
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][3]];
-                }
-                else
-                {
-                    spriteR.sprite = sprites[characterSelect[characterInput][5]];
-                }
-            }
-            progress += Time.deltaTime;
-            this.gameObject.transform.position = Vector3.Lerp(startPos, goalPos, progress / time);
-            yield return null;
-        }
-        //Snap back
-        this.gameObject.transform.position = startPos;
-        if ((int)dir == 0)
-        {
-            spriteR.sprite = sprites[characterSelect[characterInput][10]];
-        }
-        else if ((int)dir == 1)
-        {
-            spriteR.sprite = sprites[characterSelect[characterInput][7]];
-        }
-        else if ((int)dir == 2)
-        {
-            spriteR.sprite = sprites[characterSelect[characterInput][1]];
-        }
-        else if ((int)dir == 3)
-        {
-            spriteR.sprite = sprites[characterSelect[characterInput][4]];
-        }
 
+		if (canMove) {
+			//Slide forward
+			while (progress <= time) {
+				if ((int)dir == 0) {
+					if (foot) {
+						spriteR.sprite = sprites[characterSelect[characterInput][9]];
+					}
+					else {
+						spriteR.sprite = sprites[characterSelect[characterInput][11]];
+					}
+
+				}
+				else if ((int)dir == 1) {
+					if (foot) {
+						spriteR.sprite = sprites[characterSelect[characterInput][6]];
+					}
+					else {
+						spriteR.sprite = sprites[characterSelect[characterInput][8]];
+					}
+				}
+				else if ((int)dir == 2) {
+					if (foot) {
+						spriteR.sprite = sprites[characterSelect[characterInput][0]];
+					}
+					else {
+						spriteR.sprite = sprites[characterSelect[characterInput][2]];
+					}
+				}
+				else if ((int)dir == 3) {
+					if (foot) {
+						spriteR.sprite = sprites[characterSelect[characterInput][3]];
+					}
+					else {
+						spriteR.sprite = sprites[characterSelect[characterInput][5]];
+					}
+				}
+				progress += Time.deltaTime;
+				this.gameObject.transform.position = Vector3.Lerp(startPos, goalPos, progress / time);
+				yield return null;
+			}
+			//Snap back
+			this.gameObject.transform.position = startPos;
+			if ((int)dir == 0) {
+				spriteR.sprite = sprites[characterSelect[characterInput][10]];
+			}
+			else if ((int)dir == 1) {
+				spriteR.sprite = sprites[characterSelect[characterInput][7]];
+			}
+			else if ((int)dir == 2) {
+				spriteR.sprite = sprites[characterSelect[characterInput][1]];
+			}
+			else if ((int)dir == 3) {
+				spriteR.sprite = sprites[characterSelect[characterInput][4]];
+			}
+		}
         //yield return null;
 
         callback(true);
