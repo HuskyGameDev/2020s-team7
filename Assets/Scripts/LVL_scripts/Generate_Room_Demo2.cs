@@ -41,8 +41,8 @@ public static class Generate_Room_Demo2 {
 				LevelEditor_2.Direction.East
 			);
 
-		LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(1, 0));
-		//LevelEditor_2.setTarget(chunk6, new LevelEditor_2.TileCoord(0, 0));
+		LevelEditor_2.setSource(demoMap, chunk1, new LevelEditor_2.TileCoord(1, 0));
+		//LevelEditor_2.setTarget(demoMap, chunk6, new LevelEditor_2.TileCoord(0, 0));
 
 		return demoMap;
 	}

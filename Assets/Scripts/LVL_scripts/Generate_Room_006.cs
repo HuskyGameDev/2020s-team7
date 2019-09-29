@@ -6,7 +6,7 @@ public class Generate_Room_006  {
 
     public static Map generateRoom()
     {
-        Map demoMap = new Map();
+		Map demoMap = new Map();
 
         // This map is a long room, with a walled off walway in the middle.
         // The hallway looks short from the outside, and long from the inside
@@ -22,10 +22,10 @@ public class Generate_Room_006  {
 
         };
 
-        Node[,] chunk1 = LevelEditor_2.createChunk(demoMap, new Color32(255, 255, 0, 255), 7, 6, emptyTiles);
-        Node[,] chunkAE = LevelEditor_2.createChunk(demoMap, Color.red, 1, 3);
-        Node[,] chunkBF = LevelEditor_2.createChunk(demoMap, Color.green, 1, 3);
-        Node[,] chunkCD = LevelEditor_2.createChunk(demoMap, Color.blue, 1, 3);
+		Node[,] chunk1 = LevelEditor_2.createChunk(demoMap, new Color32(255, 255, 0, 255), 7, 6, emptyTiles);
+		Node[,] chunkAE = LevelEditor_2.createChunk(demoMap, Color.red, 1, 3);
+		Node[,] chunkBF = LevelEditor_2.createChunk(demoMap, Color.green, 1, 3);
+		Node[,] chunkCD = LevelEditor_2.createChunk(demoMap, Color.blue, 1, 3);
 
         LevelEditor_2.createTwoWayLink(
             chunk1,
@@ -80,8 +80,8 @@ public class Generate_Room_006  {
 
 
 
-        LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(0, 2));
-        LevelEditor_2.setTarget(chunk1, new LevelEditor_2.TileCoord(3, 3));
+        LevelEditor_2.setSource(demoMap, chunk1, new LevelEditor_2.TileCoord(0, 2));
+        LevelEditor_2.setTarget(demoMap, chunk1, new LevelEditor_2.TileCoord(3, 3));
 
         return demoMap;
     }

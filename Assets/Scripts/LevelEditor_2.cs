@@ -50,10 +50,6 @@ public static class LevelEditor_2 {
         public GameObject myObject;
 	}
 	public enum Direction {North, East, South, West};
-	/*
-	public static Map createRoom() {
-		return new Map();
-	}*/
 
 		/// <summary>
 		/// This method creates a "chunk": a simple cartesian grid of connected tiles.
@@ -157,19 +153,23 @@ public static class LevelEditor_2 {
 				TileCoord tile = wallIterator.Current;
 				if (null != tile) {
 					if (tile.North == true) {	// check if north wall
-						chunk[tile.x, tile.y].connections.north = null;
+						//chunk[tile.x, tile.y].connections.north = null;
+						chunk[tile.x, tile.y].connections.north = -1;
 					}
 
 					if (tile.South == true) {   // check if south wall
-						chunk[tile.x, tile.y].connections.south = null;
+						//chunk[tile.x, tile.y].connections.south = null;
+						chunk[tile.x, tile.y].connections.south = -1;
 					}
 
 					if (tile.East == true) {   // check if East wall
-						chunk[tile.x, tile.y].connections.east = null;
+						//chunk[tile.x, tile.y].connections.east = null;
+						chunk[tile.x, tile.y].connections.east = -1;
 					}
 
 					if (tile.West == true) {   // check if west wall
-						chunk[tile.x, tile.y].connections.west = null;
+						//chunk[tile.x, tile.y].connections.west = null;
+						chunk[tile.x, tile.y].connections.west = -1;
 					}
 				}
 				notDone2 = wallIterator.MoveNext();
@@ -234,11 +234,13 @@ public static class LevelEditor_2 {
 	/// </summary>
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
-	public static void setSource(Node[,] chunk, TileCoord tile) {
+	public static void setSource(Map room, Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.source;
 		GameManager.instance.currentPosition = chunk[tile.x, tile.y];
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
-
+		//room.sourceNode = chunk[tile.x, tile.y];
+		//Debug.Log("Setting");
+		room.sourceNodeIndex = chunk[tile.x, tile.y].index;
 	}
 
 	/// <summary>
@@ -247,10 +249,12 @@ public static class LevelEditor_2 {
 	/// </summary>
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
-	public static void setTarget(Node[,] chunk, TileCoord tile) {
+	public static void setTarget(Map room, Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.target;
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[2];
+		//room.targetNode = chunk[tile.x, tile.y];
 
+		room.targetNodeIndex = chunk[tile.x, tile.y].index;
 	}
     /*
     public static void SetObject(GameObject obj, TileCoord tile)
