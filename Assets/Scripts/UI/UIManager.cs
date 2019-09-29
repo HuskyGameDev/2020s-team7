@@ -17,8 +17,8 @@ public class UIManager : MonoBehaviour {
     {
         if (InputManager.instance.OnInputDown(InputManager.Action.back))
         {
-            if (PauseMenu.active)
-            {
+            //if (PauseMenu.active)
+			if (PauseMenu.activeInHierarchy) {
                 PauseMenu.SetActive(false);
                 GameUI.SetActive(true);
             }

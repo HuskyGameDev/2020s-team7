@@ -5,7 +5,7 @@ using UnityEngine;
 public static class Generate_Room_005 {
     public static Map generateRoom()
     {
-        Map _map = new Map();
+		Map _map = new Map();
 
         //This Room will show the player that they can move from one pink tile to the next
 
@@ -19,9 +19,9 @@ public static class Generate_Room_005 {
             new LevelEditor_2.TileCoord(3, 6),
 
         };
-        Node[,] chunk1 = LevelEditor_2.createChunk(_map, new Color32(244, 173, 66, 255), 4, 9, Chunk1EmptyTiles);
-        Node[,] chunk2 = LevelEditor_2.createChunk(_map, Color.cyan, 2, 4);
-        Node[,] chunk3 = LevelEditor_2.createChunk(_map, Color.red, 2, 4);
+		Node[,] chunk1 = LevelEditor_2.createChunk(_map, new Color32(244, 173, 66, 255), 4, 9, Chunk1EmptyTiles);
+		Node[,] chunk2 = LevelEditor_2.createChunk(_map, Color.cyan, 2, 4);
+		Node[,] chunk3 = LevelEditor_2.createChunk(_map, Color.red, 2, 4);
 
         LevelEditor_2.createTwoWayLink(
                 chunk1,
@@ -66,8 +66,8 @@ public static class Generate_Room_005 {
                 LevelEditor_2.Direction.West
                 );
 
-        LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(2, 6));
-        LevelEditor_2.setTarget(chunk3, new LevelEditor_2.TileCoord(1, 1));
+        LevelEditor_2.setSource(_map, chunk1, new LevelEditor_2.TileCoord(2, 6));
+        LevelEditor_2.setTarget(_map, chunk3, new LevelEditor_2.TileCoord(1, 1));
 
         return _map;
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,17 +20,32 @@ public class GameManager : MonoBehaviour {
     public GameObject wintext;
 	public bool cinimaticMode = false;
 
-	public Sprite[] spriteBook;
+	//public Sprite[] spriteBook;
+	public string[] spriteBook;
 	// Use this for initialization
-	void Start () {
-        instance = this;
+	void Start() {
+		instance = this;
 
 		InputManager.instance.LoadKeybinds();
 
+		/*
+		Map mapTest;
+		mapTest = Generate_Room_006.generateRoom();
+		Map.Save(mapTest, Application.dataPath + "/Levels/room_006");
+		*/
 
-		map = Generate_Room_006.generateRoom();
-        if (currentPosition == null)
+		if (File.Exists(Application.dataPath + "/Levels/room_006")) {
+			//Debug.Log("Success: map file exists");
+			map = Map.Load(Application.dataPath + "/Levels/room_006");
+		} else {
+			Debug.Log("Error: map file does not exist");
+		}
+		/*
+		//map = Generate_Room_Demo.generateRoom();
+		//map = mapTest;
+		if (currentPosition == null)
             currentPosition = map[0];
+		*/
 		nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
 	}
 
@@ -66,8 +82,10 @@ public class GameManager : MonoBehaviour {
             if (InputManager.instance.OnInput((InputManager.Action)i)) {
 				bool canMove = false;
 				Node otherNode = null;
-				if (currentPosition.GetConnectionFromDir(dir) != null) {
-					otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
+				//if (currentPosition.GetConnectionFromDir(dir) != null) {
+				if (currentPosition.GetConnectionFromDir(dir) >= 0) {
+					//otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
+					otherNode = map[(int)currentPosition.GetConnectionFromDir(dir)];
 					//See if the other node has a leave
 					canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir);
 				}
@@ -81,9 +99,10 @@ public class GameManager : MonoBehaviour {
 						}
                         //Handle fake connection stacking
                         {
+							//If the connection from this node to the other is one-way
                             if (otherNode.GetConnectionFromDir(dir.inverse()) != currentPosition.index) {
-                                //We need to do a connection stacking
-                                Node.ConnectionSet newSet = otherNode.connections.Copy();
+								//We need to do a connection stacking
+								Node.ConnectionSet newSet = otherNode.connections.Copy();
                                 newSet[dir.inverse()] = currentPosition.index;
                                 otherNode.AddToConnectionStack(newSet);
                                 //Due to the way we handle connection pushing, we need to add this to the previously visables

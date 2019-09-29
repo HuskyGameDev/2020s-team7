@@ -31027,15 +31027,233 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stringLeft: 21
+  currentPosition:
+    index: 0
+    color:
+      serializedVersion: 2
+      rgba: 4294902015
+    floorSprite: 
+    connectionList:
+    - north: -1
+      south: -1
+      east: -1
+      west: -1
+  map:
+    defaultPosition: 0
+    sourceNodeIndex: -1
+    targetNodeIndex: -1
+    size: 0
+    arraySize: 20
+    nodes:
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
+    - index: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294902015
+      floorSprite: 
+      connectionList:
+      - north: -1
+        south: -1
+        east: -1
+        west: -1
   nonEuclidRenderer: {fileID: 1606919722}
   winTrigger: 0
   stringrem: {fileID: 2146562671}
   wintext: {fileID: 162050678}
   cinimaticMode: 1
   spriteBook:
-  - {fileID: 21300000, guid: b862f78018b24a64080d8c0478fd37ab, type: 3}
-  - {fileID: 21300000, guid: 9a9e8c4256d64024589ba1db4fdbf992, type: 3}
-  - {fileID: 21300000, guid: a0be0c1d65901ef498a7fba4e5eeaff6, type: 3}
+  - rock_05_disp
+  - sourceTile
+  - targetTile
   moveAnimSpeed: 0.25
   youWinScreenTimeout: 7
 --- !u!114 &1606919722
@@ -31108,6 +31326,7 @@ MonoBehaviour:
     - {fileID: 987702399}
     - {fileID: 1889054031}
     dim: 5
+  prevVisibleNodes: []
 --- !u!4 &1606919723
 Transform:
   m_ObjectHideFlags: 0

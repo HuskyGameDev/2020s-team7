@@ -90,8 +90,8 @@ public static class Generate_Room_Demo {
 				LevelEditor_2.Direction.West
 			);
 
-		LevelEditor_2.setSource(chunk2, new LevelEditor_2.TileCoord(1, 0));
-		LevelEditor_2.setTarget(chunk6, new LevelEditor_2.TileCoord(0, 0));
+		LevelEditor_2.setSource(demoMap, chunk2, new LevelEditor_2.TileCoord(1, 0));
+		LevelEditor_2.setTarget(demoMap, chunk6, new LevelEditor_2.TileCoord(0, 0));
 
 		return demoMap;
 	}

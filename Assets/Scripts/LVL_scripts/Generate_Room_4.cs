@@ -50,8 +50,8 @@ public static class Generate_Room_4 {
 				LevelEditor_2.Direction.North
 			);
 
-		LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(0, 2));
-		LevelEditor_2.setTarget(chunk1, new LevelEditor_2.TileCoord(2, 0));
+		LevelEditor_2.setSource(demoMap, chunk1, new LevelEditor_2.TileCoord(0, 2));
+		LevelEditor_2.setTarget(demoMap, chunk1, new LevelEditor_2.TileCoord(2, 0));
 
 		return demoMap;
 	}

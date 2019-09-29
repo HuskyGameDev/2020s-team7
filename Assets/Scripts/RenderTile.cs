@@ -54,9 +54,18 @@ public class RenderTile : MonoBehaviour {
 
 
 			//Update the floor sprite if this node has one.
-			if (node.floorSprite != null) floor.sprite = node.floorSprite;
+			//if (node.floorSprite != null) floor.sprite = node.floorSprite;
+			if (node.floorSprite != null) {
+				Sprite fSprite = Resources.Load<Sprite>(node.floorSprite);
+				if (fSprite != null) {
+					floor.sprite = fSprite;
+				} else {
+					floor.sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
+				//floor.sprite = Resources.Load<Sprite>("rock_05_disp");
+			}
 			//Update the floor color
-			floor.color = Color.Lerp(node.color, Color.gray, .3f);
+			floor.color = Color.Lerp(node.color/*new Color32(node.r, node.g, node.b, node.a)*/, Color.gray, .3f);
 
             this.gameObject.SetActive(true);   
             SetWallsFromNode(node);
@@ -99,9 +108,15 @@ public class RenderTile : MonoBehaviour {
     }
 
     public void SetWallsFromNode(Node node) {
-            northWall.gameObject.SetActive(node.connections.north == null);
-            southWall.gameObject.SetActive(node.connections.south == null);
-            eastWall.gameObject.SetActive(node.connections.east == null);
-            westWall.gameObject.SetActive(node.connections.west == null);        
-    }
+		northWall.gameObject.SetActive(node.connections.north == -1);
+		southWall.gameObject.SetActive(node.connections.south == -1);
+		eastWall.gameObject.SetActive(node.connections.east == -1);
+		westWall.gameObject.SetActive(node.connections.west == -1);
+		/*
+		northWall.gameObject.SetActive(node.connections.north == null);
+		southWall.gameObject.SetActive(node.connections.south == null);
+		eastWall.gameObject.SetActive(node.connections.east == null);
+		westWall.gameObject.SetActive(node.connections.west == null);
+		*/
+	}
 }

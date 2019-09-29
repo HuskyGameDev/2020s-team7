@@ -411,8 +411,8 @@ public static class Generate_Room_Demo4 {
 		#endregion
 		#endregion
 
-		LevelEditor_2.setSource(chunk1, new LevelEditor_2.TileCoord(2, 0));
-		LevelEditor_2.setTarget(chunk11, new LevelEditor_2.TileCoord(2, 0));
+		LevelEditor_2.setSource(demoMap, chunk1, new LevelEditor_2.TileCoord(2, 0));
+		LevelEditor_2.setTarget(demoMap, chunk11, new LevelEditor_2.TileCoord(2, 0));
 
 		return demoMap;
 	}

@@ -42,8 +42,10 @@ public class RenderingHandler : MonoBehaviour {
 
 	private void HandleDPI(DrawPathInstruction dpi, Vector2Int oldPosition, Node oldNode) {
 		//If our map does not have a node in the instruction dir, we cannot render in that dir
-		if (oldNode.GetConnectionFromDir(dpi.dir) == null)
+		//if (oldNode.GetConnectionFromDir(dpi.dir) == null) {
+		if (oldNode.GetConnectionFromDir(dpi.dir) < 0) {
 			return;
+		}
 
 		Vector2Int position = oldPosition + dpi.dir.offset();
 		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
@@ -99,8 +101,9 @@ public class RenderingHandler : MonoBehaviour {
         prevVisibleNodes = visibleNodes;
     }
 
-
-    public void ShiftGrid(GameManager.Direction direction) {
+	#region Oldcode "public void ShiftGrid(GameManager.Direction direction) {...}"
+	/*
+	public void ShiftGrid(GameManager.Direction direction) {
 		RenderMap[] maps = new RenderMap[] { renderMap, altRenderMap };
 		foreach (RenderMap rM in maps) {
 			for (int x = 0; x < rM.dim; x++) {
@@ -165,6 +168,8 @@ public class RenderingHandler : MonoBehaviour {
 			}
 		}
     }
+	*/
+	#endregion
 
 	private struct DrawPathInstruction {
 		public Direction dir;
