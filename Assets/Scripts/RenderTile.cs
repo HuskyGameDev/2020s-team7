@@ -4,7 +4,8 @@ using UnityEngine;
 using Direction = GameManager.Direction;
 
 public class RenderTile : MonoBehaviour {
-    public SpriteRenderer northWall;
+	public SpriteRenderer corners;
+	public SpriteRenderer northWall;
     public SpriteRenderer eastWall;
     public SpriteRenderer southWall;
     public SpriteRenderer westWall;

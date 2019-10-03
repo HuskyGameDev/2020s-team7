@@ -36,7 +36,13 @@ public class GenerateRenderGrid : LevelGenerator {
 			}
 		}
 
-		return null;
+		for (int x = 0; x <= dim; x++) {
+			for (int y = 0; y <= dim; y++) {
+
+			}
+		}
+
+				return null;
 	}
 
 
