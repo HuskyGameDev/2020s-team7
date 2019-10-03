@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generate_Room_006  {
-
-    public static Map generateRoom()
+public class Generate_Room_006 : Generate_Generic_Room {
+	override public string getLevelName() {
+		return "006";
+	}
+	override public Map generateRoom()
     {
 		Map demoMap = new Map();
 

@@ -31,7 +31,7 @@ public class GenerateRenderGrid : LevelGenerator {
 				RenderTile t = handler.altRenderMap[x, y];
 				foreach (SpriteRenderer spr in t.GetAllSprites) {
 					spr.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-					spr.sortingOrder += 10;
+					spr.sortingOrder += 20;
 				}
 			}
 		}

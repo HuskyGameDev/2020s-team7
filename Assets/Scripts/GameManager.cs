@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     public GameObject wintext;
 	public bool cinimaticMode = false;
 
+	public string levelName = "006";
+
 	//public Sprite[] spriteBook;
 	public string[] spriteBook;
 	// Use this for initialization
@@ -28,24 +30,14 @@ public class GameManager : MonoBehaviour {
 
 		InputManager.instance.LoadKeybinds();
 
-		/*
-		Map mapTest;
-		mapTest = Generate_Room_006.generateRoom();
-		Map.Save(mapTest, Application.dataPath + "/Levels/room_006");
-		*/
+		//BatchGenerate.GenerateRooms();
 
-		if (File.Exists(Application.dataPath + "/Levels/room_006")) {
-			//Debug.Log("Success: map file exists");
-			map = Map.Load(Application.dataPath + "/Levels/room_006");
+		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName)) {
+			map = Map.Load(Application.dataPath + "/Levels/room_" + levelName);
 		} else {
-			Debug.Log("Error: map file does not exist");
+			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + "/Levels/room_" + levelName + "\"");
 		}
-		/*
-		//map = Generate_Room_Demo.generateRoom();
-		//map = mapTest;
-		if (currentPosition == null)
-            currentPosition = map[0];
-		*/
+
 		nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
 	}
 

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public static class Generate_Room_Bug {
-
-	public static Map generateRoom() {
+public class Generate_Room_Bug : Generate_Generic_Room {
+	override public string getLevelName() {
+		return "Bug";
+	}
+	override public Map generateRoom() {
 		Map demoMap = new Map();
 
 		// This map demonstrates the ways that connects can be very wierd

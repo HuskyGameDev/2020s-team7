@@ -4004,7 +4004,7 @@ SpriteMask:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b8bc285ace7eaf54da723f7a0bd72391, type: 3}
-  m_MaskAlphaCutoff: 0.01
+  m_MaskAlphaCutoff: 0.095
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
@@ -9626,7 +9626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &561133074
 Transform:
   m_ObjectHideFlags: 0
@@ -20997,7 +20997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1107380214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24966,6 +24966,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1478348900868680, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
   m_IsPrefabAsset: 0
@@ -28316,7 +28320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1488752987
 Transform:
   m_ObjectHideFlags: 0
@@ -31250,6 +31254,7 @@ MonoBehaviour:
   stringrem: {fileID: 2146562671}
   wintext: {fileID: 162050678}
   cinimaticMode: 1
+  levelName: 006
   spriteBook:
   - rock_05_disp
   - sourceTile
@@ -31855,7 +31860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1641500379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40753,7 +40758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2069387891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41822,7 +41827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2109307482
 MonoBehaviour:
   m_ObjectHideFlags: 0
