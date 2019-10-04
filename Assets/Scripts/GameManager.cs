@@ -22,11 +22,35 @@ public class GameManager : MonoBehaviour {
 
 	public string levelName = "006";
 
-	//public Sprite[] spriteBook;
-	public string[] spriteBook;
+
+    #region States
+    
+    public GameObject mainmenu;
+    public GameObject gameplay;
+    public GameObject lscamera;
+
+    public LevelSelector levelselector;
+    public PauseMenu pausemenu;
+
+    
+
+
+    IState currentstate;
+
+
+
+    #endregion
+
+
+    //public Sprite[] spriteBook;
+    public string[] spriteBook;
 	// Use this for initialization
 	void Start() {
-		instance = this;
+        instance = this;
+        currentstate = levelselector;
+
+        //levelselector.SetActive(true);
+        
 
 		InputManager.instance.LoadKeybinds();
 
@@ -35,7 +59,7 @@ public class GameManager : MonoBehaviour {
 		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName)) {
 			map = Map.Load(Application.dataPath + "/Levels/room_" + levelName);
 		} else {
-			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + "/Levels/room_" + levelName + "\"");
+			//Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + "/Levels/room_" + levelName + "\"");
 		}
 
 		nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
@@ -46,9 +70,28 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Application.Quit();
-		}
+        if (InputManager.instance.OnInputDown(InputManager.Action.back))
+        {
+            lscamera.SetActive(true);
+            pausemenu.gameObject.SetActive(true);
+            gameplay.SetActive(false);
+            levelselector.gameObject.SetActive(false);
+            
+            //if (pausemenu.activeInHierarchy) Debug.Log("I'm active");
+            //changeState(lscamera, gameplay);
+            
+            
+            
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            lscamera.SetActive(true);
+            pausemenu.gameObject.SetActive(false);
+            changeState(levelselector);
+            
+        }
+
+        currentstate._Update();
 
         stringrem.text = stringLeft + "/21";
         //Dont do anything past here if we are doing an animation
@@ -63,7 +106,10 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
+          
+       
 
+        
 
         //KeyCode[] buttonMapping = new KeyCode[] {KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.A};
         //KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
@@ -133,7 +179,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void resetLevelAssets()
+    {
+        stringLeft = 21;
+        nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
+    }
 
+    public void changeState(IState g, IState p = null)
+    {
+        if (g != null) g.gameObject.SetActive(true);
+        if (p!=null) p.gameObject.SetActive(false);
+    }
 
 
 }

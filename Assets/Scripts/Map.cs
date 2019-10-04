@@ -103,7 +103,7 @@ public class Map {
 				//Debug.Log("Success: map.sourceNode is not null");
 				GameManager.instance.currentPosition = map[map.sourceNodeIndex];
 			} else {
-				//Debug.Log("Error: map.sourceNode is null");
+				Debug.Log("Error: map.sourceNode is null");
 				GameManager.instance.currentPosition = map[0];
 			}
 

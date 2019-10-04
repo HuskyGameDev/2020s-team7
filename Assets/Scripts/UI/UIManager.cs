@@ -10,11 +10,12 @@ public class UIManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        Objective.SetActive(true);
-        PauseMenu.SetActive(false);
+        //Objective.SetActive(true);
+        //PauseMenu.SetActive(false);
     }
     void Update()
     {
+        /*
         if (InputManager.instance.OnInputDown(InputManager.Action.back))
         {
             //if (PauseMenu.active)
@@ -42,6 +43,7 @@ public class UIManager : MonoBehaviour {
     {
         Application.Quit();
 		Debug.Break();
+    }*/
     }
 
     
