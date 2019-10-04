@@ -7,13 +7,18 @@ public class RenderingHandler : MonoBehaviour {
 
     public int memoryLayer;
     public int activeLayer;
-	public SpriteMask mask;
+	//public SpriteMask mask;
     [SerializeField]
     public RenderMap renderMap = new RenderMap(0);
     public RenderMap altRenderMap = new RenderMap(0);
-
+	public MaskMap cornerMaskMap = new MaskMap(0);
+	public MaskMap altCornerMaskMap = new MaskMap(0);
+	public MaskMap tileMaskMap = new MaskMap(0);
+	public MaskMap altTileMaskMap = new MaskMap(0);
 
 	public RenderMap[] renderLayers { get { return new RenderMap[] { renderMap, altRenderMap }; } }
+	public MaskMap[] cornerMaskLayers { get { return new MaskMap[] { cornerMaskMap, altCornerMaskMap }; } }
+	public MaskMap[] tileMaskLayers { get { return new MaskMap[] { tileMaskMap, altTileMaskMap }; } }
 	public List<Node> prevVisibleNodes = new List<Node>();
 	private List<Node> visibleNodes;
 	//[SerializeField] public List<List<GameObject>> renderTiles = new List<List<GameObject>>();
@@ -191,8 +196,9 @@ public class RenderingHandler : MonoBehaviour {
 
         public int dim;
 
-        public RenderMap(int tileAmt) {
-            this.tiles = new RenderTile[tileAmt];
+        public RenderMap(int dim) {
+            this.tiles = new RenderTile[dim * dim];
+			this.dim = dim;
         }
 
         public RenderTile this[int x, int y]
@@ -203,6 +209,33 @@ public class RenderingHandler : MonoBehaviour {
 
 		public IEnumerator GetEnumerator() {
 			return tiles.GetEnumerator();
+		}
+	}
+
+	[System.Serializable]
+	public class MaskMap : IEnumerable {
+		[SerializeField]
+		public GenericMask[] masks;
+
+		public int dim;
+
+		public MaskMap(int dim) {
+			if (dim > 0) {
+				this.masks = new GenericMask[(dim) * (dim)];
+				this.dim = dim;
+			} else {
+				this.masks = new GenericMask[0];
+				this.dim = 0;
+			}
+		}
+
+		public GenericMask this[int x, int y] {
+			get { return masks[(int)(y * dim) + x]; }
+			set { masks[(int)(y * dim) + x] = value; }
+		}
+
+		public IEnumerator GetEnumerator() {
+			return masks.GetEnumerator();
 		}
 	}
 }

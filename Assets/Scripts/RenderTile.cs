@@ -18,6 +18,8 @@ public class RenderTile : MonoBehaviour {
     public SpriteRenderer westLine;
 	public SpriteRenderer lineCenter;
 
+	public GenericMask[] cornerMasks;
+
 	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { northWall, eastWall, southWall, westWall, floor, northLine, southLine, eastLine, westLine, lineCenter}; } }
 
 

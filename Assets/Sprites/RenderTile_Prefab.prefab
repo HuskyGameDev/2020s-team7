@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4093524882067578}
   - component: {fileID: 114978806218850756}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: RenderTile_Prefab
   m_TagString: RenderTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ddac7fee32dfb49bc6df86bd585285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corners: {fileID: 0}
   northWall: {fileID: 212695813496089696}
   eastWall: {fileID: 212715231717925864}
   southWall: {fileID: 212280773287388646}
@@ -391,6 +392,7 @@ MonoBehaviour:
   eastLine: {fileID: 212900999094264476}
   westLine: {fileID: 212148229632682654}
   lineCenter: {fileID: 212633196508755878}
+  cornerMasks: []
 --- !u!212 &212148229632682654
 SpriteRenderer:
   m_ObjectHideFlags: 1
