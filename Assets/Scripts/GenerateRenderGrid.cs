@@ -81,14 +81,14 @@ public class GenerateRenderGrid : LevelGenerator {
 				RenderTile t = handler.renderMap[x, y];
 				foreach (SpriteRenderer spr in t.GetAllSprites) {
 					spr.sortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
-					spr.color = new Color32(255, 0, 0, 255);
+					//spr.color = new Color32(255, 0, 0, 255);
 				}
 
 				t = handler.altRenderMap[x, y];
 				foreach (SpriteRenderer spr in t.GetAllSprites) {
 					spr.sortingOrder += 20;
 					spr.sortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
-					spr.color = new Color32(125, 255, 125, 255);
+					//spr.color = new Color32(125, 255, 125, 255);
 				}
 
 			}
@@ -105,6 +105,8 @@ public class GenerateRenderGrid : LevelGenerator {
 
 					handler.cornerMaskMap[x, y].gameObject.SetActive(true);
 
+					// certain corner masks are only neededd based on which direction a tile is visited/rendered from
+					// only tiles on the diagonal can have corner masks be rendered from both directions
 					if (((y < x) && ((y+x) > dim)) || ((y > x) && ((y + x) < dim))) {
 						// only need horizontal masks
 						foreach (SpriteMask mask in handler.cornerMaskMap[x, y].maskVertical) {
@@ -130,7 +132,7 @@ public class GenerateRenderGrid : LevelGenerator {
 						handler.cornerMaskMap[x, y].maskLineOfSight.transform.localPosition = new Vector3(-0.5f, -0.5f, 0.0f);
 					}
 
-					//outermost corner masks do not need line mask
+					//outer-edge corner masks do not need line mask
 					if ((x == 0) || (y == 0) || (x == dim) || (y == dim)) {
 						SpriteMask line = handler.cornerMaskMap[x, y].maskLineOfSight;
 						if (line != null) DestroyImmediate(line.gameObject);

@@ -70,7 +70,7 @@ public class RenderingHandler : MonoBehaviour {
 		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
 		Node node = GameManager.instance.gameplay.map[(int)oldNode.GetConnectionFromDir(dpi.dir)];
 		//Draw the node, regarless of if it is null (null node is handled by the drawer)
-		tile.DrawFullNode(node);
+		tile.DrawFullNode(node, dpi.dir, position);
 		//If the node is not null, then we continue on with the instructions
 		if (node != null) {
 			//Add it to the list of drawn nodes
@@ -93,15 +93,15 @@ public class RenderingHandler : MonoBehaviour {
 		//if (doShift) ShiftGrid(direction);
 		//Blank out all render tiles
 		foreach (RenderTile t in renderMap)
-			t.DrawFullNode(null);
+			t.DrawFullNode(null, null, null);
 		foreach (RenderTile t in altRenderMap)
-			t.DrawFullNode(null);
+			t.DrawFullNode(null, null, null);
 
 		//Track a list of all map nodes we render this cycle
 		visibleNodes = new List<Node>();
 
         //Handle the render tile we are standing on (always layer 1)
-        renderMap[center.x, center.y].DrawFullNode(node);
+        renderMap[center.x, center.y].DrawFullNode(node, Direction.North, center);
         if (visibleNodes.Contains(node) == false)
             visibleNodes.Add(node);
  

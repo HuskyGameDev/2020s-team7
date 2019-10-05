@@ -24,6 +24,12 @@ public class Gameplay : IState {
 
 	public override void _StartState() {
 		nonEuclidRenderer.initialize();
+
+        GameManager.instance.pausemenu.gameObject.SetActive(false);
+        GameManager.instance.levelselector.gameObject.SetActive(false);
+
+		resetLevelAssets();
+
 	}
 
 	public override void _EndState() {
@@ -37,9 +43,7 @@ public class Gameplay : IState {
 		if (InputManager.instance.OnInputDown(InputManager.Action.back))
         {
             GameManager.instance.lscamera.SetActive(true);
-			GameManager.instance.pausemenu.gameObject.SetActive(true);
-			GameManager.instance.gameplay.gameObject.SetActive(false);
-			GameManager.instance.levelselector.gameObject.SetActive(false);
+            GameManager.instance.changeState(GameManager.instance.pausemenu, GameManager.instance.levelselector);
             
             //if (pausemenu.activeInHierarchy) Debug.Log("I'm active");
             //changeState(lscamera, gameplay);
@@ -125,8 +129,13 @@ public class Gameplay : IState {
 
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
-						if (stringLeft == 0 && currentPosition.data.type == Node.LineData.TileType.target) {
+
+						if (//stringLeft == 0 &&
+                        currentPosition.data.type == Node.LineData.TileType.target) {
+
 							winTrigger = true;
+                            GameManager.instance.changeState(GameManager.instance.levelselector, this);
+                            Debug.Log("You win!");
 						}
 					},
 					dir,

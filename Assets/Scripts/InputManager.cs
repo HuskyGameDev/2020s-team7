@@ -19,11 +19,11 @@ public class InputManager {
 	*/
 
 	//public enum Action { up, down, left, right, confirm, cancel, action_1, action_2, action_3 };    // what actions/inputs we will has keybindings for
-	public enum Action { up, right, down, left, confirm, back};
+	public enum Action { up, right, down, left, confirm, back, action};
 	private Keybindings keybindings = null;  // keybindings for manager to use when checking button presses
 	private Keybindings temp_keybindings = null; // potential changes to keybindings, can then be applied or discarded
 	private System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();    // used for saving/loading keybindings from file
-
+	private static int numberOfKeys = 7;
 	// Used for deciding if arrow key input was "pressed" or "released" this frame
 	//private bool[] state = new bool[8];
 	//private bool[] lastState = new bool[8]; // 
@@ -71,19 +71,27 @@ public class InputManager {
 		/// Constructor, with default keybindings.
 		/// </summary>
 		public Keybindings() {
-			keys = new KeyCode[6, 2];
+			keys = new KeyCode[InputManager.numberOfKeys, 2];
 			keys[0, 0] = KeyCode.UpArrow;  // up
 			keys[0, 1] = KeyCode.W;
+
 			keys[1, 0] = KeyCode.RightArrow;    // right
 			keys[1, 1] = KeyCode.D;
+
 			keys[2, 0] = KeyCode.DownArrow;    // down
 			keys[2, 1] = KeyCode.S;
+
 			keys[3, 0] = KeyCode.LeftArrow;   // left
 			keys[3, 1] = KeyCode.A;
+
 			keys[4, 0] = KeyCode.Return;   // confirm
 			keys[4, 1] = KeyCode.Space;
+
 			keys[5, 0] = KeyCode.Escape;  // back
 			keys[5, 1] = KeyCode.P;
+
+			keys[6, 0] = KeyCode.RightShift;  // action
+			keys[6, 1] = KeyCode.E;
 
 			//keys[5, 0] = KeyCode.Escape;  // cancel
 			//keys[5, 1] = KeyCode.Space;
@@ -101,7 +109,7 @@ public class InputManager {
 		/// <returns></returns>
 		public Keybindings Copy() {
 			Keybindings copy = new Keybindings();
-			for (int i = 0; i < 6; i++) {
+			for (int i = 0; i < InputManager.numberOfKeys; i++) {
 				copy.keys[i, 0] = this.keys[i, 0];
 				copy.keys[i, 1] = this.keys[i, 1];
 			}

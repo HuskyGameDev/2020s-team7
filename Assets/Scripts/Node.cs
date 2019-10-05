@@ -11,6 +11,8 @@ public class Node {
 	public Color32 color = Color.magenta;
 	//public Sprite floorSprite;
 	public String floorSprite = null;
+	public enum TileType { regular, source, target };
+	public TileType type = TileType.regular;
 
 	public LineData data {
 		get {
@@ -49,8 +51,26 @@ public class Node {
 		public GameManager.Direction enter = Direction.North;
 		public GameManager.Direction leave = Direction.North;
 		public bool lineActive = false;
-		public enum TileType { regular, source, target };
+
+		public enum TileType { regular, source, target, checkpointon, checkpointoff };
+
 		public TileType type = TileType.regular;
+	
+		public LineData() {
+
+		}
+
+		public LineData(bool hasEnter, bool hasLeave, GameManager.Direction enter, GameManager.Direction leave, bool lineActive) {
+			this.hasEnter = hasEnter;
+			this.hasLeave = hasLeave;
+			this.enter = enter;
+			this.leave = leave;
+			this.lineActive = lineActive;
+		}
+
+		public LineData Copy() {
+			return new LineData(hasEnter, hasLeave, enter, leave, lineActive);
+		}
 	}
 
 	public void AddToConnectionStack(ConnectionSet set) {
@@ -107,7 +127,7 @@ public class Node {
 	}
 
 	//public Node_2(int? north, int? south, int? east, int? west, int index, Color32 color) {
-	public Node(int north, int south, int east, int west, int index, Color32 color) {
+	public Node(int north, int south, int east, int west, int index, Color32 color, String floorSprite, List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
 		//connectionStack.Push(new ConnectionSet());
 		connectionList.Add(new ConnectionSet());
 		//dataStack.Push(new LineData());
@@ -116,11 +136,19 @@ public class Node {
 		this.connections.south = south;
 		this.connections.east = east;
 		this.connections.west = west;
+		this.index = index;
 		this.color = color;
+		this.floorSprite = floorSprite;
+		foreach (ConnectionSet conn in connectionOriginal) {
+			this.connectionList.Add(conn.Copy());
+		}
+		foreach (LineData data in dataOriginal) {
+			this.dataList.Add(data.Copy());
+		}
 	}
 
 	public Node Copy() {
-		return new Node(connections.north, connections.south, connections.east, connections.west, index, color);
+		return new Node(connections.north, connections.south, connections.east, connections.west, index, color, floorSprite, connectionList, dataList);
 	}
 
 	public List<Node> GetFullStackConnectionsFromDir(Direction dir) {
