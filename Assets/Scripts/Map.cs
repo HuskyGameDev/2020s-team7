@@ -96,7 +96,7 @@ public class Map {
 
 	public static Map Load(string path) {
 		if (File.Exists(path)) {
-			Debug.Log("Success: map file exists at path: " + path);
+			//Debug.Log("Success: map file exists at path: " + path);
 			string jsonData = File.ReadAllText(path);
 			Map map = JsonUtility.FromJson<Map>(jsonData);
 			
@@ -106,7 +106,7 @@ public class Map {
 			}
 
 			if (map.sourceNodeIndex >= 0) {
-				Debug.Log("Success: map.sourceNode is not null, is :" + map.sourceNodeIndex);
+				//Debug.Log("Success: map.sourceNode is not null, is :" + map.sourceNodeIndex);
 				GameManager.instance.gameplay.currentPosition = map[map.sourceNodeIndex];
 			} else {
 				Debug.Log("Error: map.sourceNode is null");

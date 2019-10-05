@@ -9983,6 +9983,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7033f7734c93aec42bbca6e5f3dc4a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 2051500448}
+  - {fileID: 1272855077}
+  - {fileID: 1435552024}
+  - {fileID: 1208965976}
+  - {fileID: 1570580265}
+  - {fileID: 1030399315}
+  - {fileID: 1345407816}
+  - {fileID: 1040183798}
+  - {fileID: 1326333170}
+  - {fileID: 341892536}
+  - {fileID: 1611182728}
 --- !u!1 &264797056
 GameObject:
   m_ObjectHideFlags: 0
@@ -24083,8 +24095,8 @@ MonoBehaviour:
         m_MethodName: onClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 263752723}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 263752725}
+          m_ObjectArgumentAssemblyTypeName: IState, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -28438,7 +28450,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 701287880}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &701827924
 GameObject:
   m_ObjectHideFlags: 0
@@ -79738,11 +79750,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 780082937}
-        m_MethodName: onClick
-        m_Mode: 2
+        m_MethodName: resume
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1448683665}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

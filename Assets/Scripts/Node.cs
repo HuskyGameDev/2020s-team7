@@ -49,7 +49,7 @@ public class Node {
 		public GameManager.Direction enter = Direction.North;
 		public GameManager.Direction leave = Direction.North;
 		public bool lineActive = false;
-		public enum TileType { regular, source, target };
+		public enum TileType { regular, source, target, checkpointon, checkpointoff };
 		public TileType type = TileType.regular;
 	}
 
