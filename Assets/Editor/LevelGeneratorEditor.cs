@@ -7,11 +7,11 @@ using UnityEditor;
 public class LevelGeneratorEditor : Editor {
 
 	public override void OnInspectorGUI() {
-		if (GUILayout.Button("Generate")) {
+		if (GUILayout.Button("Generate Render Grid")) {
 			//((LevelGenerator)target).CreateAndSaveLevel();
 			((LevelGenerator)target).GenerateLevel(); 
 		}
-		if (GUILayout.Button("Clear level")) {
+		if (GUILayout.Button("Delete Render Grid")) {
 			((LevelGenerator)target).DeleteRenderMap();
 		}
 		base.OnInspectorGUI();

@@ -235,7 +235,7 @@ public static class LevelEditor_2 {
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
 	public static void setSource(Map room, Node[,] chunk, TileCoord tile) {
-		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.source;
+		chunk[tile.x, tile.y].type = Node.TileType.source;
 		//GameManager.instance.currentPosition = chunk[tile.x, tile.y];
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
 		//room.sourceNode = chunk[tile.x, tile.y];
@@ -250,7 +250,7 @@ public static class LevelEditor_2 {
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
 	public static void setTarget(Map room, Node[,] chunk, TileCoord tile) {
-		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.target;
+		chunk[tile.x, tile.y].type = Node.TileType.target;
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[2];
 		//room.targetNode = chunk[tile.x, tile.y];
 

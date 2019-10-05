@@ -33,7 +33,7 @@ public class RenderTile : MonoBehaviour {
         westWall.gameObject.SetActive(other.westWall.gameObject.activeSelf);
     }
 
-    public void DrawFullNode(Node node)
+    public void DrawFullNode(Node node, GameManager.Direction? dir, Vector2Int? position)
     {
         if (node == null)
         {
@@ -55,6 +55,67 @@ public class RenderTile : MonoBehaviour {
 			else
 				lineCenter.gameObject.SetActive(false);
 
+			// should evaluate to an array of size 2 for tiles on the cardinal directions, 4 for the middle tile, or 1 otherwise
+			/*
+			Direction[] checkDirection = new Direction[((position.x == 2) ? 2:1) * ((position.y == 2) ? 2 : 1)];
+			int i = 0;
+			if (position.x >= 2) {
+				if (position.y >= 2) {
+					checkDirection[i] = Direction.North;
+					i++;
+				}
+				if(position.y <= 2) {
+					checkDirection[i] = Direction.East;
+					i++;
+				}
+			}
+			if (position.x <= 2) {
+				if (position.y >= 2) {
+					checkDirection[i] = Direction.West;
+					i++;
+				}
+				if (position.y <= 2) {
+					checkDirection[i] = Direction.South;
+					i++;
+				}
+			}
+			*/
+			/*
+			if ((position.x <= 2) && (position.y <= 2)) {
+				checkDirection[i] = Direction.South;
+				i++;
+			}
+			if ((position.x >= 2) && (position.y >= 2)) {
+				checkDirection[i] = Direction.North;
+				i++;
+			}
+			if ((position.x <= 2) && (position.y >= 2)) {
+				checkDirection[i] = Direction.West;
+				i++;
+			}
+			if ((position.x >= 2) && (position.y <= 2)) {
+				checkDirection[i] = Direction.East;
+			}*/
+			/*
+			Node[] clockwiseNodes = new Node[4];
+			Node[] counterwiseNode = new Node[4];
+			Node tempNodeCW = node;
+			Node tempNodeCCW = node;
+			bool draw;
+			foreach (Direction d in checkDirection) {
+				draw = false;
+				for (i = 0; i < 4; i++) {
+					if (tempNodeCW != null) {
+						tempNodeCW = GameManager.instance.gameplay.map[(int)node.GetConnectionFromDir(dir)];
+					}
+					if (tempNodeCCW != null) {
+						tempNodeCCW = GameManager.instance.gameplay.map[(int)node.GetConnectionFromDir(dir)];
+					}
+
+
+				}
+			}
+			*/
 
 			//Update the floor sprite if this node has one.
 			//if (node.floorSprite != null) floor.sprite = node.floorSprite;

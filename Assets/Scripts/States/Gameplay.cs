@@ -24,8 +24,12 @@ public class Gameplay : IState {
 
 	public override void _StartState() {
 		nonEuclidRenderer.initialize();
+
         GameManager.instance.pausemenu.gameObject.SetActive(false);
         GameManager.instance.levelselector.gameObject.SetActive(false);
+
+		resetLevelAssets();
+
 	}
 
 	public override void _EndState() {
@@ -125,9 +129,10 @@ public class Gameplay : IState {
 
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
-                        //Debug.Log("Hello");
+
 						if (//stringLeft == 0 &&
                         currentPosition.data.type == Node.LineData.TileType.target) {
+
 							winTrigger = true;
                             GameManager.instance.changeState(GameManager.instance.levelselector, this);
                             Debug.Log("You win!");
