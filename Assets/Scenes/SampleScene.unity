@@ -57646,6 +57646,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57656,6 +57657,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57666,6 +57668,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57676,6 +57679,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57686,6 +57690,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57696,6 +57701,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57706,6 +57712,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57716,6 +57723,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57726,6 +57734,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57736,6 +57745,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57746,6 +57756,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57756,6 +57767,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57766,6 +57778,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57776,6 +57789,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57786,6 +57800,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57796,6 +57811,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57806,6 +57822,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57816,6 +57833,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57826,6 +57844,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57836,6 +57855,7 @@ MonoBehaviour:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      type: 0
       connectionList:
       - north: -1
         south: -1
@@ -57848,6 +57868,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294902015
     floorSprite: 
+    type: 0
     connectionList:
     - north: -1
       south: -1
