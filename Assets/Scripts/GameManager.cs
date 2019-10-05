@@ -53,7 +53,8 @@ public class GameManager : MonoBehaviour {
 
 		InputManager.instance.LoadKeybinds();
 
-		//BatchGenerate.GenerateRooms();
+		BatchGenerate.GenerateRooms();
+
 		/*
 		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName)) {
 			map = Map.Load(Application.dataPath + "/Levels/room_" + levelName);
