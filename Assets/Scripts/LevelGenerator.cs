@@ -11,5 +11,5 @@ public class LevelGenerator : MonoBehaviour {
 		//UnityEditor.AssetDatabase.Refresh();
 	}
 	public virtual Map GenerateLevel() { return new Map();}
-
+	public virtual void DeleteRenderMap() { }
 }

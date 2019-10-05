@@ -131,7 +131,7 @@ public class Node {
 		foreach (ConnectionSet set in conns) {
 			//if (set[dir] != null) {
 			if (set[dir] != -1) {
-					Node n = GameManager.instance.map[(int)set[dir]];
+					Node n = GameManager.instance.gameplay.map[(int)set[dir]];
 				if (ns.Contains(n) == false)
 					ns.Add(n);
 			}

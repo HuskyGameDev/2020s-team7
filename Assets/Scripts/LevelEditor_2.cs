@@ -236,7 +236,7 @@ public static class LevelEditor_2 {
 	/// <param name="tile"></param>
 	public static void setSource(Map room, Node[,] chunk, TileCoord tile) {
 		chunk[tile.x, tile.y].data.type = Node.LineData.TileType.source;
-		GameManager.instance.currentPosition = chunk[tile.x, tile.y];
+		//GameManager.instance.currentPosition = chunk[tile.x, tile.y];
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
 		//room.sourceNode = chunk[tile.x, tile.y];
 		//Debug.Log("Setting");

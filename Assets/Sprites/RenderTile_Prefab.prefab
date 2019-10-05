@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1498256588789176
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ddac7fee32dfb49bc6df86bd585285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corners: {fileID: 0}
+  corners: {fileID: 212633737250542280}
   northWall: {fileID: 212695813496089696}
   eastWall: {fileID: 212715231717925864}
   southWall: {fileID: 212280773287388646}

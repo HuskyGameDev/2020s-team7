@@ -20,7 +20,7 @@ public class RenderTile : MonoBehaviour {
 
 	public GenericMask[] cornerMasks;
 
-	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { northWall, eastWall, southWall, westWall, floor, northLine, southLine, eastLine, westLine, lineCenter}; } }
+	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { corners, northWall, eastWall, southWall, westWall, floor, northLine, southLine, eastLine, westLine, lineCenter}; } }
 
 
 

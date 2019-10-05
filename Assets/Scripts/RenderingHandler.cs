@@ -5,46 +5,60 @@ using Direction = GameManager.Direction;
 
 public class RenderingHandler : MonoBehaviour {
 
-    public int memoryLayer;
-    public int activeLayer;
+    //public int memoryLayer;
+    //public int activeLayer;
 	//public SpriteMask mask;
     [SerializeField]
     public RenderMap renderMap = new RenderMap(0);
     public RenderMap altRenderMap = new RenderMap(0);
 	public MaskMap cornerMaskMap = new MaskMap(0);
-	public MaskMap altCornerMaskMap = new MaskMap(0);
+	//public MaskMap altCornerMaskMap = new MaskMap(0);
 	public MaskMap tileMaskMap = new MaskMap(0);
-	public MaskMap altTileMaskMap = new MaskMap(0);
+	//public MaskMap altTileMaskMap = new MaskMap(0);
 
 	public RenderMap[] renderLayers { get { return new RenderMap[] { renderMap, altRenderMap }; } }
-	public MaskMap[] cornerMaskLayers { get { return new MaskMap[] { cornerMaskMap, altCornerMaskMap }; } }
-	public MaskMap[] tileMaskLayers { get { return new MaskMap[] { tileMaskMap, altTileMaskMap }; } }
+	//public MaskMap[] cornerMaskLayers { get { return new MaskMap[] { cornerMaskMap, altCornerMaskMap }; } }
+	//public MaskMap[] tileMaskLayers { get { return new MaskMap[] { tileMaskMap, altTileMaskMap }; } }
 	public List<Node> prevVisibleNodes = new List<Node>();
 	private List<Node> visibleNodes;
 	//[SerializeField] public List<List<GameObject>> renderTiles = new List<List<GameObject>>();
 	//[SerializeField] public GameObject renderTiles = new GameObject[renderMap.dim,renderMap.dim];
 	// Use this for initialization
-	private DrawPathInstruction[] drawPathInstructions;
 
-    Vector2Int center;
+	[SerializeField]
+	private DrawPathInstruction[] drawPathInstructions = new DrawPathInstruction[0];
+	//public DrawPathInstruction[] drawPathInstructions;
+
+	Vector2Int center;
 	void Start () {
-		center = new Vector2Int(renderMap.dim /2, renderMap.dim / 2);
+		initialize();
+	}
 
-		drawPathInstructions = new DrawPathInstruction[4];
-		for (int i = 0; i < 4; i++) {
-			Direction dir = (Direction)i;
-			Direction left = dir.counterclockwise();
-			Direction right = dir.clockwise();
-			drawPathInstructions[i] = new DrawPathInstruction(dir, new DrawPathInstruction[] {
+	public void initialize() {
+		center = new Vector2Int(renderMap.dim / 2, renderMap.dim / 2);
+
+		if (drawPathInstructions.Length < 4) {
+			drawPathInstructions = new DrawPathInstruction[4];
+			for (int i = 0; i < 4; i++) {
+				Direction dir = (Direction)i;
+				Direction left = dir.counterclockwise();
+				Direction right = dir.clockwise();
+				drawPathInstructions[i] = new DrawPathInstruction(dir, new DrawPathInstruction[] {
 				new DrawPathInstruction(dir, new DrawPathInstruction[] { new DrawPathInstruction(left, new DrawPathInstruction[] { }), new DrawPathInstruction(right, new DrawPathInstruction[] { })}),
 				new DrawPathInstruction(left, new DrawPathInstruction[] { new DrawPathInstruction(dir, new DrawPathInstruction[] { new DrawPathInstruction(left, new DrawPathInstruction[] { })}) }),
 				new DrawPathInstruction(right, new DrawPathInstruction[] { new DrawPathInstruction(dir, new DrawPathInstruction[] { new DrawPathInstruction(right, new DrawPathInstruction[] { })}) }),
 			});
+			}
 		}
 	}
 
 
-
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="dpi"></param>
+	/// <param name="oldPosition"></param>
+	/// <param name="oldNode"></param>
 	private void HandleDPI(DrawPathInstruction dpi, Vector2Int oldPosition, Node oldNode) {
 		//If our map does not have a node in the instruction dir, we cannot render in that dir
 		//if (oldNode.GetConnectionFromDir(dpi.dir) == null) {
@@ -54,7 +68,7 @@ public class RenderingHandler : MonoBehaviour {
 
 		Vector2Int position = oldPosition + dpi.dir.offset();
 		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
-		Node node = GameManager.instance.map[(int)oldNode.GetConnectionFromDir(dpi.dir)];
+		Node node = GameManager.instance.gameplay.map[(int)oldNode.GetConnectionFromDir(dpi.dir)];
 		//Draw the node, regarless of if it is null (null node is handled by the drawer)
 		tile.DrawFullNode(node);
 		//If the node is not null, then we continue on with the instructions
@@ -68,6 +82,12 @@ public class RenderingHandler : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="direction"></param>
+	/// <param name="node"></param>
+	/// <param name="doShift"></param>
 	public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
 		//if (doShift) ShiftGrid(direction);
@@ -176,6 +196,7 @@ public class RenderingHandler : MonoBehaviour {
 	*/
 	#endregion
 
+	//[System.Serializable]
 	private struct DrawPathInstruction {
 		public Direction dir;
 		//public int renderLayer;

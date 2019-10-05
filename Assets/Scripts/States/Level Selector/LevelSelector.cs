@@ -4,8 +4,15 @@ using System.IO;
 using UnityEngine;
 
 public class LevelSelector : IState {
+	public override void _StartState() {
+		Debug.Log("LevelSelector does not do anything in its _StartState() method");
+	}
 
-    public static string level = "001";
+	public override void _EndState() {
+		Debug.Log("LevelSelector does not do anything in its _EndState() method");
+	}
+
+	public static string level = "001";
     private static bool change = false;
     
 
@@ -36,13 +43,14 @@ public class LevelSelector : IState {
         if (change)
         {
             //Change these two to whatever controls the visuals of the level once imported
-            GameManager.instance.map = startLevel(level);
-            GameManager.instance.resetLevelAssets();
+            GameManager.instance.gameplay.map = startLevel(level);
+            GameManager.instance.gameplay.resetLevelAssets();
 
             //Keep this
-            GameManager.instance.gameplay.SetActive(true);
-           this.gameObject.SetActive(false);
+            GameManager.instance.gameplay.gameObject.SetActive(true);
+            //this.gameObject.SetActive(false);
             change = false;
+			GameManager.instance.changeState(GameManager.instance.gameplay, this);
         }
     }
 }
