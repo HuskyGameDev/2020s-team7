@@ -24,6 +24,7 @@ public class Gameplay : IState {
 
 	public override void _StartState() {
 		nonEuclidRenderer.initialize();
+		resetLevelAssets();
 	}
 
 	public override void _EndState() {
@@ -125,7 +126,7 @@ public class Gameplay : IState {
 
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
-						if (stringLeft == 0 && currentPosition.data.type == Node.LineData.TileType.target) {
+						if (stringLeft == 0 && currentPosition.type == Node.TileType.target) {
 							winTrigger = true;
 						}
 					},
