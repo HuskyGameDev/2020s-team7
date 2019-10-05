@@ -18,6 +18,7 @@ public class Map {
 	// new stuff
 	public int size = 0;
 	public int arraySize = 20;
+    public int stringleft = 21;
 	[SerializeField]
 	private Node[] nodes = new Node[20];
 	public Node this[int i] {

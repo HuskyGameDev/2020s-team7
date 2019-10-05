@@ -8,6 +8,7 @@ public class Generate_Room_004 : Generate_Generic_Room {
 	}
 	override public Map generateRoom() {
 		Map demoMap = new Map();
+        demoMap.stringleft = 10;
 
 		// This room has two hallways that go through the middle.
 		// both of the hallways are longer from the inside than the outside,

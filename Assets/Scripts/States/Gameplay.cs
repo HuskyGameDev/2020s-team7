@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class Gameplay : IState {
 	bool animLockout = false;
@@ -9,7 +12,10 @@ public class Gameplay : IState {
 	public bool cinimaticMode = false;
 
 	public int stringLeft = 21;
-	public UnityEngine.UI.Text stringrem;
+
+    
+    public UnityEngine.UI.Text stringrem;
+    
 	public GameObject wintext;
 
 	public float moveAnimSpeed = 0.25f;
@@ -23,8 +29,12 @@ public class Gameplay : IState {
 	public RenderingHandler nonEuclidRenderer;
 
 	public override void _StartState() {
+
+        
+
 		nonEuclidRenderer.initialize();
 
+     
         GameManager.instance.pausemenu.gameObject.SetActive(false);
         GameManager.instance.levelselector.gameObject.SetActive(false);
 
@@ -57,7 +67,7 @@ public class Gameplay : IState {
             
         }
 		
-        stringrem.text = stringLeft + "/21";
+        stringrem.text = stringLeft +"/"+ map.stringleft.ToString();
         //Dont do anything past here if we are doing an animation
         if (animLockout)
             return;
@@ -149,7 +159,7 @@ public class Gameplay : IState {
 	}
 
 	public void resetLevelAssets() {
-		stringLeft = 21;
+        stringLeft = map.stringleft;
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
 	}
 }

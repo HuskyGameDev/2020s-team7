@@ -7,7 +7,9 @@ public class Generate_Room_003 : Generate_Generic_Room {
 		return "003";
 	}
 	override public Map generateRoom() {
+        
 		Map demoMap = new Map();
+       
 
 			// This map is a long room, with a walled off walway in the middle.
 			// The hallway looks short from the outside, and long from the inside

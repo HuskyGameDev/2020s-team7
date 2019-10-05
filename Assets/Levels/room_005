@@ -4,6 +4,7 @@
     "targetNodeIndex": 43,
     "size": 46,
     "arraySize": 50,
+    "stringleft": 21,
     "nodes": [
         {
             "index": 0,
@@ -14,6 +15,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -32,6 +34,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 0,
@@ -50,6 +53,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 1,
@@ -68,6 +72,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 2,
@@ -86,6 +91,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 3,
@@ -104,6 +110,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 4,
@@ -122,6 +129,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 5,
@@ -140,6 +148,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 6,
@@ -158,6 +167,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 7,
@@ -176,6 +186,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -194,6 +205,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 9,
@@ -212,6 +224,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 10,
@@ -230,6 +243,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 11,
@@ -248,6 +262,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 12,
@@ -266,6 +281,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 13,
@@ -284,6 +300,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 14,
@@ -302,6 +319,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 15,
@@ -320,6 +338,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 16,
@@ -338,6 +357,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -356,6 +376,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 18,
@@ -374,6 +395,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 19,
@@ -392,6 +414,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 20,
@@ -410,6 +433,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 21,
@@ -428,6 +452,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 22,
@@ -446,6 +471,7 @@
                 "a": 255
             },
             "floorSprite": "sourceTile",
+            "type": 1,
             "connectionList": [
                 {
                     "north": 23,
@@ -464,6 +490,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 24,
@@ -482,6 +509,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 25,
@@ -500,6 +528,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -518,6 +547,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -536,6 +566,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 28,
@@ -554,6 +585,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -572,6 +604,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 30,
@@ -590,6 +623,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 31,
@@ -608,6 +642,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 32,
@@ -626,6 +661,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -644,6 +680,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 34,
@@ -662,6 +699,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 35,
@@ -680,6 +718,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 36,
@@ -698,6 +737,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -716,6 +756,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 38,
@@ -734,6 +775,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 39,
@@ -752,6 +794,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 40,
@@ -770,6 +813,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -788,6 +832,7 @@
                 "a": 255
             },
             "floorSprite": "targetTile",
+            "type": 2,
             "connectionList": [
                 {
                     "north": 42,
@@ -806,6 +851,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 43,
@@ -824,6 +870,7 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "type": 0,
             "connectionList": [
                 {
                     "north": 44,
@@ -842,6 +889,7 @@
                 "a": 255
             },
             "floorSprite": "",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -860,6 +908,7 @@
                 "a": 255
             },
             "floorSprite": "",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -878,6 +927,7 @@
                 "a": 255
             },
             "floorSprite": "",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
@@ -896,6 +946,7 @@
                 "a": 255
             },
             "floorSprite": "",
+            "type": 0,
             "connectionList": [
                 {
                     "north": -1,
