@@ -33,14 +33,14 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk12,
 			new LevelEditor_2.TileCoord(2, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk11,
 			chunk12,
 			new LevelEditor_2.TileCoord(2, 0),
 			new LevelEditor_2.TileCoord(0, 3),
-				LevelEditor_2.Direction.North
+				GameManager.Direction.North
 			);
 
 		#region links_1
@@ -50,28 +50,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk2,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk2,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk2,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk1,
 			chunk2,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 2-3
@@ -80,28 +80,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk3,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk2,
 			chunk3,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk2,
 			chunk3,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk2,
 			chunk3,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 3-4
@@ -110,28 +110,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk4,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk4,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk4,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk4,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 4-5
@@ -140,28 +140,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk5,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk4,
 			chunk5,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk4,
 			chunk5,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk4,
 			chunk5,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 5-6
@@ -170,28 +170,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk6,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk5,
 			chunk6,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk5,
 			chunk6,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk5,
 			chunk6,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 6-7
@@ -200,28 +200,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk7,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk6,
 			chunk7,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk6,
 			chunk7,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk6,
 			chunk7,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 7-8
@@ -230,28 +230,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk8,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk7,
 			chunk8,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk7,
 			chunk8,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk7,
 			chunk8,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 8-9
@@ -260,28 +260,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk9,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk8,
 			chunk9,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk8,
 			chunk9,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk8,
 			chunk9,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 9-10
@@ -290,28 +290,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk10,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk9,
 			chunk10,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk9,
 			chunk10,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk9,
 			chunk10,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#region 10-11
@@ -320,28 +320,28 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk11,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk10,
 			chunk11,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk10,
 			chunk11,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(3, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk10,
 			chunk11,
 			new LevelEditor_2.TileCoord(4, 0),
 			new LevelEditor_2.TileCoord(4, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 		#endregion
 		#endregion
@@ -353,14 +353,14 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk12,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.East
+				GameManager.Direction.East
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk3,
 			chunk12,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 		#endregion
 		#region 5
@@ -369,14 +369,14 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk12,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(0, 1),
-				LevelEditor_2.Direction.East
+				GameManager.Direction.East
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk5,
 			chunk12,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(0, 1),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 		#endregion
 		#region 7
@@ -385,14 +385,14 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk12,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(0, 2),
-				LevelEditor_2.Direction.East
+				GameManager.Direction.East
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk7,
 			chunk12,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(0, 2),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 		#endregion
 		#region 9
@@ -401,14 +401,14 @@ public class Generate_Room_Demo4 : Generate_Generic_Room {
 			chunk12,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(0, 3),
-				LevelEditor_2.Direction.East
+				GameManager.Direction.East
 			);
 		LevelEditor_2.createTwoWayLink(
 			chunk9,
 			chunk12,
 			new LevelEditor_2.TileCoord(3, 0),
 			new LevelEditor_2.TileCoord(0, 3),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 		#endregion
 		#endregion

@@ -1,9 +1,9 @@
 {
     "defaultPosition": 0,
     "sourceNodeIndex": 0,
-    "targetNodeIndex": 26,
-    "size": 29,
-    "arraySize": 30,
+    "targetNodeIndex": 28,
+    "_size": 33,
+    "arraySize": 40,
     "stringleft": 21,
     "nodes": [
         {
@@ -508,13 +508,8 @@
                 "b": 255,
                 "a": 255
             },
-
-            "floorSprite": "targetTile",
-            "type": 2,
-
             "floorSprite": "rock_05_disp",
             "type": 0,
-
             "connectionList": [
                 {
                     "north": -1,
@@ -591,7 +586,6 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
-
             "connectionList": [
                 {
                     "north": 29,
@@ -640,7 +634,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -659,7 +653,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -678,7 +672,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -697,7 +691,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -716,7 +710,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -735,7 +729,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -754,7 +748,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,

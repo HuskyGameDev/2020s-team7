@@ -2,8 +2,9 @@
     "defaultPosition": 0,
     "sourceNodeIndex": 0,
     "targetNodeIndex": 13,
-    "size": 24,
+    "_size": 24,
     "arraySize": 30,
+    "stringleft": 21,
     "nodes": [
         {
             "index": 0,
@@ -462,7 +463,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -481,7 +482,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -500,7 +501,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -519,7 +520,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -538,7 +539,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -557,7 +558,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,

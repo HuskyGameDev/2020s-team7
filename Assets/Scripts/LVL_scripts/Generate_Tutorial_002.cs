@@ -27,14 +27,14 @@ public class Generate_Tutorial_002 : Generate_Generic_Room {
                 chunk2,
                 new LevelEditor_2.TileCoord(2, 0),
                 new LevelEditor_2.TileCoord(0, 0),
-                LevelEditor_2.Direction.South
+                GameManager.Direction.South
                 );
             LevelEditor_2.createTwoWayLink(
                 chunk1,
                 chunk2,
                 new LevelEditor_2.TileCoord(2, 2),
                 new LevelEditor_2.TileCoord(0, 9),
-                LevelEditor_2.Direction.North
+				GameManager.Direction.North
                 );
 
         LevelEditor_2.setSource(_map, chunk1, new LevelEditor_2.TileCoord(0, 0));

@@ -6,7 +6,8 @@ using Direction = GameManager.Direction;
 
 [System.Serializable]
 public class Node {
-	public int index;
+	[ReadOnly]
+	public int index = -1;
 	// Use this for initialization
 	public Color32 color = Color.magenta;
 	//public Sprite floorSprite;
@@ -34,8 +35,9 @@ public class Node {
 	}
 
 	
-	[SerializeField]
-	private List<ConnectionSet> connectionList = new List<ConnectionSet>();
+	//[SerializeField]
+	[HideInInspector]
+	public List<ConnectionSet> connectionList = new List<ConnectionSet>();
 	private List<LineData> dataList = new List<LineData>();
 
 
@@ -153,7 +155,7 @@ public class Node {
 
 	public List<Node> GetFullStackConnectionsFromDir(Direction dir) {
 		List<Node> ns = new List<Node>();
-		//ConnectionSet[] conns = connectionStack.ToArray();
+		
 		ConnectionSet[] conns = connectionList.ToArray();
 		Array.Reverse(conns);
 		foreach (ConnectionSet set in conns) {

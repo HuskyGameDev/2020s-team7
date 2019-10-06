@@ -49,7 +49,7 @@ public static class LevelEditor_2 {
 		// object that this tile represents
         public GameObject myObject;
 	}
-	public enum Direction {North, East, South, West};
+	//public enum Direction {North, East, South, West};
 
 		/// <summary>
 		/// This method creates a "chunk": a simple cartesian grid of connected tiles.
@@ -190,15 +190,26 @@ public static class LevelEditor_2 {
 	/// <param name="chunkTo"></param>
 	/// <param name="tileFrom"></param>
 	/// <param name="tileTo"></param>
-	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, Direction dir) {
-		if (dir == Direction.North) {
+	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, GameManager.Direction dir) {
+		if (dir == GameManager.Direction.North) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (dir == Direction.East) {
+		} else if (dir == GameManager.Direction.East) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (dir == Direction.South) {
+		} else if (dir == GameManager.Direction.South) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
 		} else {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
+		}
+	}
+	public static void createOneWayLink(Map room, int fromIndex, int toIndex, GameManager.Direction dir) {
+		if (dir == GameManager.Direction.North) {
+			room[fromIndex].connections.north = room[toIndex].index;
+		} else if (dir == GameManager.Direction.East) {
+			room[fromIndex].connections.east = room[toIndex].index;
+		} else if (dir == GameManager.Direction.South) {
+			room[fromIndex].connections.south = room[toIndex].index;
+		} else {
+			room[fromIndex].connections.west = room[toIndex].index;
 		}
 	}
 
@@ -212,19 +223,34 @@ public static class LevelEditor_2 {
 	/// <param name="chunk2"></param>
 	/// <param name="tile1"></param>
 	/// <param name="tile2"></param>
-	public static void createTwoWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, Direction dir) {
-		if (dir == Direction.North) {
+	public static void createTwoWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, GameManager.Direction dir) {
+		if (dir == GameManager.Direction.North) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
 			chunkTo[tileTo.x, tileTo.y].connections.south = chunkFrom[tileFrom.x, tileFrom.y].index;
-		} else if (dir == Direction.East) {
+		} else if (dir == GameManager.Direction.East) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
 			chunkTo[tileTo.x, tileTo.y].connections.west = chunkFrom[tileFrom.x, tileFrom.y].index;
-		} else if (dir == Direction.South) {
+		} else if (dir == GameManager.Direction.South) {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
 			chunkTo[tileTo.x, tileTo.y].connections.north = chunkFrom[tileFrom.x, tileFrom.y].index;
 		} else {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
 			chunkTo[tileTo.x, tileTo.y].connections.east = chunkFrom[tileFrom.x, tileFrom.y].index;
+		}
+	}
+	public static void createTwoWayLink(Map room, int fromIndex, int toIndex, GameManager.Direction dir) {
+		if (dir == GameManager.Direction.North) {
+			room[fromIndex].connections.north = room[toIndex].index;
+			room[toIndex].connections.south = room[fromIndex].index;
+		} else if (dir == GameManager.Direction.East) {
+			room[fromIndex].connections.east = room[toIndex].index;
+			room[toIndex].connections.west = room[fromIndex].index;
+		} else if (dir == GameManager.Direction.South) {
+			room[fromIndex].connections.south = room[toIndex].index;
+			room[toIndex].connections.north = room[fromIndex].index;
+		} else {
+			room[fromIndex].connections.west = room[toIndex].index;
+			room[toIndex].connections.east = room[fromIndex].index;
 		}
 	}
 
@@ -235,12 +261,26 @@ public static class LevelEditor_2 {
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
 	public static void setSource(Map room, Node[,] chunk, TileCoord tile) {
+		for (int i = 0; i < room.size; i++) {
+			if (room[i].type == Node.TileType.source) {
+				room[i].type = Node.TileType.regular;
+				room[i].floorSprite = GameManager.instance.spriteBook[0];
+			}
+		}
 		chunk[tile.x, tile.y].type = Node.TileType.source;
-		//GameManager.instance.currentPosition = chunk[tile.x, tile.y];
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
-		//room.sourceNode = chunk[tile.x, tile.y];
-		//Debug.Log("Setting");
 		room.sourceNodeIndex = chunk[tile.x, tile.y].index;
+	}
+	public static void setSource(Map room, int tileIndex) {
+		for (int i = 0; i < room.size; i++) {
+			if (room[i].type == Node.TileType.source) {
+				room[i].type = Node.TileType.regular;
+				room[i].floorSprite = GameManager.instance.spriteBook[0];
+			}
+		}
+		room[tileIndex].type = Node.TileType.source;
+		room[tileIndex].floorSprite = GameManager.instance.spriteBook[1];
+		room.sourceNodeIndex = tileIndex;
 	}
 
 	/// <summary>
@@ -250,15 +290,91 @@ public static class LevelEditor_2 {
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
 	public static void setTarget(Map room, Node[,] chunk, TileCoord tile) {
+		for (int i = 0; i < room.size; i++) {
+			if (room[i].type == Node.TileType.target) {
+				room[i].type = Node.TileType.regular;
+				room[i].floorSprite = GameManager.instance.spriteBook[0];
+			}
+		}
 		chunk[tile.x, tile.y].type = Node.TileType.target;
 		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[2];
-		//room.targetNode = chunk[tile.x, tile.y];
-
 		room.targetNodeIndex = chunk[tile.x, tile.y].index;
 	}
-    /*
-    public static void SetObject(GameObject obj, TileCoord tile)
-    {
-        tile.myObject = obj;
-    }*/
+	public static void setTarget(Map room, int tileIndex) {
+		for (int i = 0; i < room.size; i++) {
+			if (room[i].type == Node.TileType.target) {
+				room[i].type = Node.TileType.regular;
+				room[i].floorSprite = GameManager.instance.spriteBook[0];
+			}
+		}
+		room[tileIndex].type = Node.TileType.target;
+		room[tileIndex].floorSprite = GameManager.instance.spriteBook[2];
+		room.targetNodeIndex = tileIndex;
+	}
+
+	public static void deleteTile(Map room, int index) {
+		//Debug.Log("deleteTile() does not do anything right now");
+		for (int k = 0; k < room.size; k++) {
+			// j is index of moved node
+			// room[k] is node to check
+			// List<ConnectionSet> connectionList is list of connections on node to check
+			Node.ConnectionSet[] conns = room[k].connectionList.ToArray();
+			foreach (Node.ConnectionSet set in conns) {
+				for (int dir = 0; dir < 4; dir++) {
+					if (set[(GameManager.Direction)dir] == index) {
+						Debug.Log("Deleting connection to node with index " + index);
+						set[(GameManager.Direction)dir] = -1;
+					}
+				}
+			}
+		}
+		if (index == room.sourceNodeIndex) {
+			for (int k = 0; k < room.size; k++) {
+				if ((room[k] != null) && (room[k].index >= 0) && (room[k].index != index)) {
+					setSource(room, k);
+				}
+			}
+		}
+		room[index] = null;
+	}
+
+	public static void cleanUpMap(Map room) {
+		//Debug.Log("cleanUpMap() does not do anything right now");
+
+		int mapSize = room.size;
+		//int newMapSize = 0;
+		//int mapArraySize = room.arraySize;
+		for (int i = 0; i < mapSize; i++) {
+			if ((room[i] == null) || (room[i].index < 0)) {
+				Debug.Log("Node with index " + i + " does not exist");
+				for (int j = (i + 1); j < mapSize; j++) {
+					Debug.Log("Moving node with index " + j + " down one");
+					if ((room[j] == null) || (room[j].index < 0)) {
+						room[j - 1] = room[j];
+						room[j - 1].index = (j - 1);
+						for (int k = 0; k < mapSize; k++) {
+							// j is index of moved node
+							// room[k] is node to check
+							// List<ConnectionSet> connectionList is list of connections on node to check
+							Node.ConnectionSet[] conns = room[k].connectionList.ToArray();
+							foreach (Node.ConnectionSet set in conns) {
+								for (int dir = 0; dir < 4; dir++) {
+									if (set[(GameManager.Direction)dir] == j) {
+										Debug.Log("Found reference to node with index " + j);
+										set[(GameManager.Direction)dir] = (j - 1);
+									}
+								}
+							}
+						}
+					}
+				}
+				mapSize--;
+			}
+		}
+		Node[] tempNodes = new Node[mapSize];
+		for (int n = 0; n < mapSize; n++) {
+			tempNodes[n] = room[n];
+		}
+		room.setNodes(tempNodes, mapSize, mapSize);
+	}
 }

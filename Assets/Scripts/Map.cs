@@ -16,24 +16,29 @@ public class Map {
 	public int targetNodeIndex = -1;
 
 	// new stuff
-	public int size = 0;
-	public int arraySize = 20;
+	[ReadOnly]
+	[SerializeField]
+	private int _size = 0;
+	[ReadOnly]
+	[SerializeField]
+	private int arraySize = 20;
+
     public int stringleft = 21;
 	[SerializeField]
 	private Node[] nodes = new Node[20];
 	public Node this[int i] {
 		get {
-			if ((i >= size) || (i < 0)) {
+			if ((i >= _size) || (i < 0)) {
 				return null;
 			} else {
 				return nodes[i];
 			}
 		}
 		set {
-			if (i >= size)
-				size = i + 1;
+			if (i >= _size)
+				_size = i + 1;
 
-			while (size > arraySize) {
+			while (_size > arraySize) {
 				int oldSize = arraySize;
 				arraySize += 10;
 				Node[] newNodes = new Node[arraySize];
@@ -50,6 +55,17 @@ public class Map {
 				nodes[i] = value;
 			}
 		}
+	}
+
+	public int size {
+		get{ return _size; }
+		set{ }
+	}
+
+	public void setNodes(Node[] newNodes, int newSize, int newArraySize) {
+		nodes = newNodes;
+		_size = newSize;
+		arraySize = newArraySize;
 	}
 
 	#region Old code
@@ -81,7 +97,7 @@ public class Map {
 
 	public Map Copy() {
 		Map newCopy = new Map();
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < _size; i++) {
 			newCopy[i] = nodes[i].Copy();
 		}
 

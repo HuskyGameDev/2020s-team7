@@ -4,10 +4,14 @@ using UnityEngine;
 using System.IO;
 
 public class BatchGenerate {
-    static public Generate_Generic_Room[] roomsToGenerate = {
+	static public Generate_Generic_Room[] roomsToGenerate = {
+		new Generate_Room_001(),
+		new Generate_Room_002()
+	};
+	/*
         new Generate_Tutorial_002(),
         new Generate_Room_003()
-    };
+    };*/
     /*
 		new Generate_Room_001(),
 		new Generate_Room_002(),
