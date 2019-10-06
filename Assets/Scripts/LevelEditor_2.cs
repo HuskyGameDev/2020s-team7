@@ -349,7 +349,7 @@ public static class LevelEditor_2 {
 				Debug.Log("Node with index " + i + " does not exist");
 				for (int j = (i + 1); j < mapSize; j++) {
 					Debug.Log("Moving node with index " + j + " down one");
-					if ((room[j] == null) || (room[j].index < 0)) {
+					if ((room[j] != null) || (room[j].index >= 0)) {
 						room[j - 1] = room[j];
 						room[j - 1].index = (j - 1);
 						for (int k = 0; k < mapSize; k++) {

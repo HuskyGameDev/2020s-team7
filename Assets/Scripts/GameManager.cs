@@ -7,23 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     //bool animLockout = false;
+	[SerializeField]
     public static GameManager instance;
     //public int stringLeft = 21;
 
     public enum Direction { North, East, South, West }
-
-	//public Node currentPosition = new Node();
-	//public Map map;
-	//public RenderingHandler nonEuclidRenderer;
-	//public bool winTrigger = false;
-	//public UnityEngine.UI.Text stringrem;
-	//public GameObject wintext;
-	//public bool cinimaticMode = false;
-
-	//public string levelName = "006";
-
-	//public float moveAnimSpeed = 0.25f;
-	//public float youWinScreenTimeout = 7.0f;
+	
 
 	#region States
 
@@ -41,9 +30,14 @@ public class GameManager : MonoBehaviour {
     //public Sprite[] spriteBook;
     public string[] spriteBook;
 	// Use this for initialization
-	void Start() {
 
-		instance = this;
+	void Start() {
+		if ((instance == null) || (instance == this)) {
+			instance = this;
+		} else {
+			DestroyImmediate(this.gameObject);
+		}
+		
         currentstate = levelselector;
 
         //levelselector.deactivateAllButtons();

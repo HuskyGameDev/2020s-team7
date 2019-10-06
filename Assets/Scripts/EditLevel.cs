@@ -65,7 +65,7 @@ public class EditLevel : MonoBehaviour {
 			GameManager.instance.gameplay.map = currentMap;
 			GameManager.instance.gameplay.resetLevelAssets();
 		} else {
-			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + "/Levels/room_" + levelName + "\"");
+			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
 		}
 	}
 
@@ -113,6 +113,7 @@ public class EditLevel : MonoBehaviour {
 		} else {
 			Debug.Log("Both link-coordinates (link x & link y) & linkToIndex are invalid, cannot create link");
 		}
+		getCurrentNode();
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
 
@@ -120,6 +121,7 @@ public class EditLevel : MonoBehaviour {
 		getCurrentNode();
 		getCurrentMap();
 		LevelEditor_2.setSource(currentMap, currentNode.index);
+		getCurrentNode();
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
 
@@ -127,6 +129,7 @@ public class EditLevel : MonoBehaviour {
 		getCurrentNode();
 		getCurrentMap();
 		LevelEditor_2.setTarget(currentMap, currentNode.index);
+		getCurrentNode();
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
 
@@ -151,5 +154,7 @@ public class EditLevel : MonoBehaviour {
 		} else {
 			Debug.Log("Error: There is no node the " + methodDirection.ToString() + "-ern direction");
 		}
+		getCurrentNode();
+		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
 }
