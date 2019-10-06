@@ -28,7 +28,7 @@ public class EditLevelEditor : Editor {
 			BatchGenerate.GenerateRooms();
 		}
 		
-		if (GUILayout.Button("Create Tile-Chunk")) {
+		if (GUILayout.Button("Create New Tile-Chunk")) {
 			((EditLevel)target).createTileChunk();
 		}
 		if (GUILayout.Button("Create link from this tile to indicated tile")) {

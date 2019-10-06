@@ -97,6 +97,8 @@ public class RenderingHandler : MonoBehaviour {
 		if (editLevel != null) {
 			editLevel.getCurrentNode();
 			//Debug.Log("calling getCurrentNode()...");
+		} else {
+			Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");
 		}
 #endif
 		//if (doShift) ShiftGrid(direction);

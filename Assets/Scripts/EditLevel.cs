@@ -10,8 +10,8 @@ public class EditLevel : MonoBehaviour {
 	public bool overwriteLevel;
 
 	public GameManager.Direction methodDirection;
-	public int linkX = -1;
-	public int linkY = -1;
+	public int linkX = 0;
+	public int linkY = 0;
 	public int linkToIndex = -1;
 	public enum LinkDirectionality { Oneway, Twoway};
 	public LinkDirectionality linkDirectionality;
@@ -31,10 +31,13 @@ public class EditLevel : MonoBehaviour {
 
 	public void getNewMap() {
 		Map tempMap = new Map();
-		tempMap[0] = new Node(0, new Color32(newChunkColorR, newChunkColorG, newChunkColorB, newChunkColorA), null);
-		LevelEditor_2.setSource(tempMap, 0);
-		currentMap = tempMap;
 		GameManager.instance.gameplay.map = tempMap;
+		currentMap = tempMap;
+		//tempMap[0] = new Node(0, new Color32(newChunkColorR, newChunkColorG, newChunkColorB, newChunkColorA), null);
+		createTileChunk(false);
+		LevelEditor_2.setSource(tempMap, 0);
+		//currentMap = tempMap;
+		//GameManager.instance.gameplay.map = tempMap;
 		GameManager.instance.gameplay.resetLevelAssets();
 	}
 
@@ -50,6 +53,7 @@ public class EditLevel : MonoBehaviour {
 			if (overwriteLevel) {
 				Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName);
 				Debug.Log("Overwriting level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\" ?");
+				overwriteLevel = false;
 			} else {
 				Debug.Log("Are you sure you want to overwrite the level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\" ?");
 			}
@@ -82,7 +86,7 @@ public class EditLevel : MonoBehaviour {
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.instance.gameplay.currentPosition, false);
 	}
 
-	public void createTileChunk() {
+	public void createTileChunk(bool link = true) {
 		getCurrentMap();
 		Node[][,] temp = new Node[chunks.Length + 1][,];
 		int i;
@@ -92,11 +96,32 @@ public class EditLevel : MonoBehaviour {
 		chunks = temp;
 		chunks[i] = LevelEditor_2.createChunk(currentMap, new Color32(newChunkColorR, newChunkColorG, newChunkColorB, newChunkColorA), newChunkWidth, newChunkHeight);
 		chunkToLink = chunks[i];
+		if (link) {
+			createLink(true);
+		}
 	}
 
-	public void createLink() {
+	public void createLink(bool newChunk = false) {
 		getCurrentNode();
 		getCurrentMap();
+
+		if (newChunk) {
+			if ((linkX >= 0) && (linkY >= 0) && (linkX < newChunkWidth) && (linkY < newChunkHeight)) {
+				int toIndex = chunkToLink[(int)linkX, (int)linkY].index;
+				LevelEditor_2.createTwoWayLink(currentMap, currentNode.index, toIndex, methodDirection);
+			} else {
+				Debug.Log("Error: The location to link to: (" + linkX + "," + linkY + ") the the new chunk the is " + newChunkWidth + "x" + newChunkHeight + " is not valid");
+			}
+		} else if ((linkToIndex >= 0) && (linkToIndex < currentMap.size) && (currentMap[linkToIndex] != null)) {
+			if (linkDirectionality == LinkDirectionality.Twoway) {
+				LevelEditor_2.createTwoWayLink(currentMap, currentNode.index, (int)linkToIndex, methodDirection);
+			} else {
+				LevelEditor_2.createOneWayLink(currentMap, currentNode.index, (int)linkToIndex, methodDirection);
+			}
+		} else {
+			Debug.Log("Error: Given index of " + linkToIndex + " is not valid");
+		}
+		/*
 		if ((linkX >= 0) && (linkY >= 0) && (chunkToLink != null)) {
 			int toIndex = chunkToLink[(int)linkX, (int)linkY].index;
 			if (linkDirectionality == LinkDirectionality.Twoway) {
@@ -113,6 +138,7 @@ public class EditLevel : MonoBehaviour {
 		} else {
 			Debug.Log("Both link-coordinates (link x & link y) & linkToIndex are invalid, cannot create link");
 		}
+		*/
 		getCurrentNode();
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
