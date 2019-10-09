@@ -30,8 +30,6 @@ public class Gameplay : IState {
 
 	public override void _StartState() {
 
-        
-
 		nonEuclidRenderer.initialize();
 
      

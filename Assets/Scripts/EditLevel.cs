@@ -27,13 +27,13 @@ public class EditLevel : MonoBehaviour {
 		Map modMap = GameManager.instance.gameplay.map;
 		if (File.Exists(Application.dataPath + "/LevelsEdited/room_" + nameToSaveLevelWith)) {
 			if (overwriteLevel) {
-				Map.Save(modMap, Application.dataPath + "/LevelsEdited/room_" + (nameToSaveLevelWith));
+                Map.Save(modMap, Application.dataPath + "/LevelsEdited/room_" + (nameToSaveLevelWith) +".json");
 				Debug.Log("Overwriting level at: \"" + Application.dataPath + "/LevelsEdited/room_" + nameToSaveLevelWith + "\" ?");
 			} else {
 				Debug.Log("Are you sure you want to overwrite the level at: \"" + Application.dataPath + "/LevelsEdited/room_" + nameToSaveLevelWith + "\" ?");
 			}
 		} else {
-			Map.Save(modMap, Application.dataPath + "/LevelsEdited/room_" + (nameToSaveLevelWith));
+			Map.Save(modMap, Application.dataPath + "/LevelsEdited/room_" + (nameToSaveLevelWith)+".json");
 		}
 		
 	}

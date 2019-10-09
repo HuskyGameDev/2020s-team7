@@ -45,9 +45,10 @@ public class GameManager : MonoBehaviour {
 
 		instance = this;
         currentstate = levelselector;
+        currentstate._StartState();
 
         //levelselector.deactivateAllButtons();
-        levelselector.activateButton(levelselector.levelButtons[0]);
+        //levelselector.activateButton(levelselector.levelButtons[0]);
 
 
         //levelselector.SetActive(true);

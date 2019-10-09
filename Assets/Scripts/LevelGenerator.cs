@@ -7,7 +7,7 @@ public class LevelGenerator : MonoBehaviour {
 	public string levelSavePath = "level.json";
 
 	public void CreateAndSaveLevel() {
-		Map.Save(GenerateLevel(), "/" + levelSavePath);
+		Map.Save(GenerateLevel(), "/" + levelSavePath+".json");
 		//UnityEditor.AssetDatabase.Refresh();
 	}
 	public virtual Map GenerateLevel() { return new Map();}

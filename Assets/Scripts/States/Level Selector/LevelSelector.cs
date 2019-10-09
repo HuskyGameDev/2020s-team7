@@ -3,10 +3,49 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
+using TMPro;
+using System;
+using UnityEngine.EventSystems;
+using UnityEngine.UI.CoroutineTween;
+
+
+
 
 public class LevelSelector : IState {
+
+    public Button template;
+    public GameObject templateParent;
 	public override void _StartState() {
-		//Debug.Log("LevelSelector does not do anything in its _StartState() method");
+        //Debug.Log("LevelSelector does not do anything in its _StartState() method");
+        string[] levelButtonNames = searchForLevels();
+        if (levelButtons.Length == 0) { 
+            levelButtons = new Button[levelButtonNames.Length];
+            for (int i = 0; i < levelButtons.Length; i++)
+            {
+                
+                levelButtons[i] = Instantiate(template, templateParent.transform);
+                
+                //Vector3 temp = levelButtons[i].transform.position;
+                //if (i > 4) temp.x += 200;
+                //if (i > 9) temp.x += 200;
+               // temp.y -= (70f * i) % (70f * 5f);
+               // levelButtons[i].transform.position = temp;
+                levelButtons[i].gameObject.SetActive(true);
+                levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = levelButtonNames[i];
+                levelButtons[i].GetComponent<LevelButtonScript>().changeString(levelButtonNames[i]);
+            }
+
+
+
+            
+                    
+        }
+            
+           
+  
+                //Debug.Log(levelButtons[i].GetComponentInChildren<Text>().text);
+                //levelButtons[i].GetComponentInChildren<Text>().text = levelButtonNames[i];
         if (GameManager.instance.gameplay.winTrigger)
         {
             GameManager.instance.gameplay.winTrigger = false;
@@ -20,7 +59,8 @@ public class LevelSelector : IState {
         }
 	}
 
-	public override void _EndState() {
+
+    public override void _EndState() {
 		//Debug.Log("LevelSelector does not do anything in its _EndState() method");
 	}
 
@@ -31,9 +71,9 @@ public class LevelSelector : IState {
 
     public static Map startLevel(string levelName)
     {
-        if (File.Exists(Application.dataPath + "/Levels/room_" + levelName))
+        if (File.Exists(Application.dataPath + "/Levels/room_" + levelName+".json"))
         {
-            Map map = Map.Load(Application.dataPath + "/Levels/room_" + levelName);
+            Map map = Map.Load(Application.dataPath + "/Levels/room_" + levelName+".json");
             return map;
         }
         else
@@ -44,7 +84,7 @@ public class LevelSelector : IState {
         
     }
     
-    public void changeLevel(string s)
+    public static void changeLevel(string s)
     {
         //Debug.Log("Button was pressed");
         level = s;
@@ -63,18 +103,30 @@ public class LevelSelector : IState {
             GameManager.instance.gameplay.map = startLevel(level);
             GameManager.instance.gameplay.resetLevelAssets();
 
-            //Keep this
-            GameManager.instance.gameplay.gameObject.SetActive(true);
+           
             //this.gameObject.SetActive(false);
             change = false;
-			GameManager.instance.changeState(GameManager.instance.gameplay, this);
+            GameManager.instance.changeState(GameManager.instance.gameplay, this);
+            
         }
+        
     }
 
-    
+    public static string[] searchForLevels()
+    {
+        string[] fileNames = Directory.GetFiles((Application.dataPath + "/Levels/"),"*.json");
+        
+        int x = (Application.dataPath + "/Levels/room_").Length;
+        for (int i=0; i<fileNames.Length; i++)
+        {
+            fileNames[i] = fileNames[i].Substring(x,fileNames[i].Length-x-5);
+            
+        }
+        return fileNames;
+    }
     #region Buttons
 
-    public Button[] levelButtons;
+    public Button[] levelButtons = null;
 
     public Button activateButton(Button button)
     {
