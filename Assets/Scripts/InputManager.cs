@@ -457,6 +457,13 @@ public class InputManager {
 	/// <returns></returns>
 	public bool OnInputDown(Action action) {
 		int action_num = (int)action;
+
+#if UNITY_EDITOR
+		if (keybindings == null) {
+			Debug.Log("Error: keybindings object is null, WTF?");
+		}
+#endif
+
 		return (Input.GetKeyDown(keybindings.keys[action_num, 0]) | Input.GetKeyDown(keybindings.keys[action_num, 1]));
 	}
 

@@ -35,9 +35,7 @@ public class Gameplay : IState {
      
         GameManager.instance.pausemenu.gameObject.SetActive(false);
         GameManager.instance.levelselector.gameObject.SetActive(false);
-
 		resetLevelAssets();
-
 	}
 
 	public override void _EndState() {
@@ -158,6 +156,21 @@ public class Gameplay : IState {
 
 	public void resetLevelAssets() {
         stringLeft = map.stringleft;
+		currentPosition = map[map.sourceNodeIndex];
+		if ((currentPosition == null) || (currentPosition.index < 0)) {
+			int k;
+			for (k = 0; k < map.size; k++) {
+				if ((map[k] != null) && (map[k].index >= 0)) {
+					currentPosition = map[k];
+				}
+			}
+			if (k == map.size) {
+				Debug.Log("Error: map source index does not exist/is invalid, no valid nodes available");
+			} else {
+				Debug.Log("Error: map source index does not exist/is invalid, using first available node");
+			}
+			
+		}
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
 	}
 }

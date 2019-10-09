@@ -34,14 +34,14 @@ public class Generate_Room_006 : Generate_Generic_Room {
             chunkAE,
             new LevelEditor_2.TileCoord(1, 2),
             new LevelEditor_2.TileCoord(0, 2),
-            LevelEditor_2.Direction.North
+			GameManager.Direction.North
             );
         LevelEditor_2.createTwoWayLink(
             chunk1,
             chunkAE,
             new LevelEditor_2.TileCoord(3, 3),
             new LevelEditor_2.TileCoord(0, 0),
-            LevelEditor_2.Direction.South
+			GameManager.Direction.South
             );
 
 
@@ -52,14 +52,14 @@ public class Generate_Room_006 : Generate_Generic_Room {
             chunkBF,
             new LevelEditor_2.TileCoord(3, 2),
             new LevelEditor_2.TileCoord(0, 2),
-            LevelEditor_2.Direction.North
+			GameManager.Direction.North
             );
         LevelEditor_2.createTwoWayLink(
             chunk1,
             chunkBF,
             new LevelEditor_2.TileCoord(5, 3),
             new LevelEditor_2.TileCoord(0, 0),
-            LevelEditor_2.Direction.South
+			GameManager.Direction.South
             );
 
 
@@ -69,14 +69,14 @@ public class Generate_Room_006 : Generate_Generic_Room {
             chunkCD,
             new LevelEditor_2.TileCoord(5, 2),
             new LevelEditor_2.TileCoord(0, 2),
-            LevelEditor_2.Direction.North
+			GameManager.Direction.North
             );
         LevelEditor_2.createTwoWayLink(
             chunk1,
             chunkCD,
             new LevelEditor_2.TileCoord(1, 3),
             new LevelEditor_2.TileCoord(0, 0),
-            LevelEditor_2.Direction.South
+			GameManager.Direction.South
             );
 
 

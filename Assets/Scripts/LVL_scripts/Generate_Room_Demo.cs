@@ -24,14 +24,14 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk2,
 			new LevelEditor_2.TileCoord(0, 3),
 			new LevelEditor_2.TileCoord(1, 3),
-				LevelEditor_2.Direction.East
+				GameManager.Direction.East
 			);
 		LevelEditor_2.createOneWayLink(
 			chunk2,
 			chunk1,
 			new LevelEditor_2.TileCoord(2, 3),
 			new LevelEditor_2.TileCoord(1, 3),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 
 
@@ -47,7 +47,7 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk4,
 			new LevelEditor_2.TileCoord(0, 1),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.East
+				GameManager.Direction.East
 			);
 
 		LevelEditor_2.createTwoWayLink(
@@ -55,7 +55,7 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk4,
 			new LevelEditor_2.TileCoord(2, 1),
 			new LevelEditor_2.TileCoord(1, 0),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 
 		LevelEditor_2.createTwoWayLink(
@@ -63,7 +63,7 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk5,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.South
+				GameManager.Direction.South
 			);
 
 		LevelEditor_2.createTwoWayLink(
@@ -71,7 +71,7 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk5,
 			new LevelEditor_2.TileCoord(1, 2),
 			new LevelEditor_2.TileCoord(0, 1),
-				LevelEditor_2.Direction.North
+				GameManager.Direction.North
 			);
 
 		LevelEditor_2.createTwoWayLink(
@@ -79,7 +79,7 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk3,
 			new LevelEditor_2.TileCoord(1, 0),
 			new LevelEditor_2.TileCoord(1, 2),
-				LevelEditor_2.Direction.North
+				GameManager.Direction.North
 			);
 
 		Node[,] chunk6 = LevelEditor_2.createChunk(demoMap, new Color32(50, 50, 50, 255), 1, 1);
@@ -89,7 +89,7 @@ public class Generate_Room_Demo : Generate_Generic_Room {
 			chunk6,
 			new LevelEditor_2.TileCoord(0, 0),
 			new LevelEditor_2.TileCoord(0, 0),
-				LevelEditor_2.Direction.West
+				GameManager.Direction.West
 			);
 
 		LevelEditor_2.setSource(demoMap, chunk2, new LevelEditor_2.TileCoord(1, 0));

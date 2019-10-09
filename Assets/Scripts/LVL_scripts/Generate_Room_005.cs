@@ -31,42 +31,42 @@ public class Generate_Room_005 : Generate_Generic_Room {
                 chunk2,
                 new LevelEditor_2.TileCoord(3, 7),
                 new LevelEditor_2.TileCoord(0, 2),
-                LevelEditor_2.Direction.East
+				GameManager.Direction.East
                 );
         LevelEditor_2.createTwoWayLink(
                 chunk1,
                 chunk2,
                 new LevelEditor_2.TileCoord(3, 8),
                 new LevelEditor_2.TileCoord(0, 3),
-                LevelEditor_2.Direction.East
+				GameManager.Direction.East
                 );
         LevelEditor_2.createTwoWayLink(
                 chunk1,
                 chunk3,
                 new LevelEditor_2.TileCoord(3, 0),
                 new LevelEditor_2.TileCoord(0, 0),
-                LevelEditor_2.Direction.East
+				GameManager.Direction.East
                 );
         LevelEditor_2.createOneWayLink(
                 chunk2,
                 chunk1,
                 new LevelEditor_2.TileCoord(0, 0),
                 new LevelEditor_2.TileCoord(3, 0),
-                LevelEditor_2.Direction.West
+				GameManager.Direction.West
                 );
         LevelEditor_2.createOneWayLink(
                 chunk3,
                 chunk1,
                 new LevelEditor_2.TileCoord(0, 2),
                 new LevelEditor_2.TileCoord(3, 7),
-                LevelEditor_2.Direction.West
+				GameManager.Direction.West
                 );
         LevelEditor_2.createOneWayLink(
                 chunk3,
                 chunk1,
                 new LevelEditor_2.TileCoord(0, 3),
                 new LevelEditor_2.TileCoord(3, 8),
-                LevelEditor_2.Direction.West
+				GameManager.Direction.West
                 );
 
         LevelEditor_2.setSource(_map, chunk1, new LevelEditor_2.TileCoord(2, 6));

@@ -5,10 +5,13 @@ using Direction = GameManager.Direction;
 
 public class RenderingHandler : MonoBehaviour {
 
-    //public int memoryLayer;
-    //public int activeLayer;
+#if UNITY_EDITOR
+	public EditLevel editLevel = null;
+#endif
+	//public int memoryLayer;
+	//public int activeLayer;
 	//public SpriteMask mask;
-    [SerializeField]
+	[SerializeField]
     public RenderMap renderMap = new RenderMap(0);
     public RenderMap altRenderMap = new RenderMap(0);
 	public MaskMap cornerMaskMap = new MaskMap(0);
@@ -90,6 +93,14 @@ public class RenderingHandler : MonoBehaviour {
 	/// <param name="doShift"></param>
 	public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
+#if UNITY_EDITOR
+		if (editLevel != null) {
+			editLevel.getCurrentNode();
+			//Debug.Log("calling getCurrentNode()...");
+		} else {
+			Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");
+		}
+#endif
 		//if (doShift) ShiftGrid(direction);
 		//Blank out all render tiles
 		foreach (RenderTile t in renderMap)
