@@ -2,7 +2,7 @@
     "defaultPosition": 0,
     "sourceNodeIndex": 2,
     "targetNodeIndex": 43,
-    "size": 50,
+    "_size": 50,
     "arraySize": 50,
     "stringleft": 21,
     "nodes": [

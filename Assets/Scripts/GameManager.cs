@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
 
 		InputManager.instance.LoadKeybinds();
 
-		//BatchGenerate.GenerateRooms();
+		BatchGenerate.GenerateRooms();
 
 		/*
 		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName)) {
@@ -84,6 +84,11 @@ public class GameManager : MonoBehaviour {
 			p.gameObject.SetActive(false);
 		}
 		currentstate = g;
+    }
+
+    public void resumeState(IState g)
+    {
+        currentstate = g;
     }
 
 

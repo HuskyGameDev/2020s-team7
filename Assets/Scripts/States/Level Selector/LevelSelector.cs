@@ -23,14 +23,8 @@ public class LevelSelector : IState {
             levelButtons = new Button[levelButtonNames.Length];
             for (int i = 0; i < levelButtons.Length; i++)
             {
-                
+                Debug.Log("Trying to instantiate");
                 levelButtons[i] = Instantiate(template, templateParent.transform);
-                
-                //Vector3 temp = levelButtons[i].transform.position;
-                //if (i > 4) temp.x += 200;
-                //if (i > 9) temp.x += 200;
-               // temp.y -= (70f * i) % (70f * 5f);
-               // levelButtons[i].transform.position = temp;
                 levelButtons[i].gameObject.SetActive(true);
                 levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = levelButtonNames[i];
                 levelButtons[i].GetComponent<LevelButtonScript>().changeString(levelButtonNames[i]);

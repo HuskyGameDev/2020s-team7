@@ -28,6 +28,7 @@ public class PauseMenu : IState {
     }
    public void resume()
     {
-        GameManager.instance.changeState(GameManager.instance.gameplay, this);
+        GameManager.instance.resumeState(GameManager.instance.gameplay);
+        gameObject.SetActive(false);
     }
 }

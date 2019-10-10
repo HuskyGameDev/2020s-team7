@@ -2,7 +2,7 @@
     "defaultPosition": 0,
     "sourceNodeIndex": 4,
     "targetNodeIndex": 13,
-    "size": 18,
+    "_size": 18,
     "arraySize": 20,
     "stringleft": 21,
     "nodes": [
@@ -349,7 +349,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
@@ -368,7 +368,7 @@
             ]
         },
         {
-            "index": 0,
+            "index": -1,
             "color": {
                 "r": 255,
                 "g": 0,
