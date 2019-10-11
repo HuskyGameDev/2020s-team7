@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class GenerateRenderGrid : LevelGenerator {
 
-	public bool regenerateMasks = false;
-	public RenderingHandler handler;
+	
+	public bool regenerateMasks = false;	// indicates wether the masks should be deeted and re-generated alongside the render-tiles
+	public RenderingHandler handler;	// references to stuff used to generate the render grid and masks
 	public int dim = 5;
-	public GameObject tilePrefab;
-	public GameObject cornerMaskPrefab;
-	public GameObject tileMaskPrefab;
-	public Universe universe;
+	public GameObject tilePrefab;	// render tile prefab
+	public GameObject cornerMaskPrefab;	// corner mask prefab
+	public GameObject tileMaskPrefab;	// tile mask prefab
+	public Universe universe;	// refernce to the GameObject that the render-tiles and masks are placed under
 
-	public Sprite cornerHalfMask;
+	public Sprite cornerHalfMask;	// masks that are needed besides the prefab defaults
 	public Sprite tile18Mask;
 	public Sprite tile72Mask;
 	public Sprite lineMaskLow;
 
+	/// <summary>
+	/// Deletes the render map, and optionally the masks
+	/// </summary>
 	public override void DeleteRenderMap() {
 		foreach (RenderTile tile in handler.renderMap) {
 			if (tile != null) DestroyImmediate(tile.gameObject);
@@ -41,7 +45,12 @@ public class GenerateRenderGrid : LevelGenerator {
 		}
 	}
 
+	/// <summary>
+	/// Calls DeleteRenderMap(), then re-generates the render-tiles and masks, and applies settings to the tiles and masks based on position
+	/// </summary>
+	/// <returns></returns>
 	public override Map GenerateLevel() {
+		// only works correctly if these prefabs/references are set
 		if ((tilePrefab == null) ||
 			(cornerMaskPrefab == null) ||
 			(tileMaskPrefab == null) ||
@@ -54,22 +63,21 @@ public class GenerateRenderGrid : LevelGenerator {
 			return new Map();
 		}
 
-
+		// get the layer ids, so don't have to call NameToID() numerous times
 		int[] layerID = new int[4];
 		layerID[0] = SortingLayer.NameToID("Layer_0");
 		layerID[1] = SortingLayer.NameToID("Layer_1");
 		layerID[2] = SortingLayer.NameToID("Layer_2");
 		layerID[3] = SortingLayer.NameToID("Layer_3");
 
-		//Delete all old tiles
+		//Delete all old tiles and masks
 		DeleteRenderMap();
 
-		//5555
+		// create render & altrender tile maps
 		handler.renderMap = new RenderingHandler.RenderMap(dim);
 		handler.altRenderMap = new RenderingHandler.RenderMap(dim);
 
-		for (int x = 0; x < dim; x++)
-		{
+		for (int x = 0; x < dim; x++){
 			for (int y = 0; y < dim; y++) {
 				handler.renderMap[x,y] = GetPrefab(x, y).GetComponent<RenderTile>();
 				handler.altRenderMap[x,y] = GetPrefab(x, y, "alt").GetComponent<RenderTile>();
@@ -77,27 +85,26 @@ public class GenerateRenderGrid : LevelGenerator {
 				handler.renderMap[x, y].gameObject.SetActive(true);
 				handler.altRenderMap[x, y].gameObject.SetActive(true);
 
-				//Change the masking on the alt render map
 				RenderTile t = handler.renderMap[x, y];
 				foreach (SpriteRenderer spr in t.GetAllSprites) {
-					spr.sortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
-					//spr.color = new Color32(255, 0, 0, 255);
+					spr.sortingLayerID = layerID[(x % 2) + (2 * (y % 2))]; // set tile to be on layer Layer_0/1/2/3 based on (x,y), so that masks on neigboring tiles do not interfere
 				}
 
 				t = handler.altRenderMap[x, y];
 				foreach (SpriteRenderer spr in t.GetAllSprites) {
-					spr.sortingOrder += 20;
-					spr.sortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
-					//spr.color = new Color32(125, 255, 125, 255);
+					spr.sortingOrder += 20; // set altRenderMap to have higher height, so that masks do not interfere between render and altrender maps
+					spr.sortingLayerID = layerID[(x % 2) + (2 * (y % 2))]; // set tile to be on layer Layer_0/1/2/3 based on (x,y), so that masks on neigboring tiles do not interfere
 				}
 
 			}
 		}
 
+		// only generate these if regenerateMasks is set
 		if (this.regenerateMasks) {
 			handler.cornerMaskMap = new RenderingHandler.MaskMap(dim + 1);
 
 			// Generate corner masks
+			#region Generate corner masks
 			for (int x = 0; x <= dim; x++) {
 				for (int y = 0; y <= dim; y++) {
 					handler.cornerMaskMap[x, y] = GetPrefabCornerMask(x, y).GetComponent<GenericMask>();
@@ -159,11 +166,13 @@ public class GenerateRenderGrid : LevelGenerator {
 					}
 				}
 			}
+			#endregion
 
 			handler.tileMaskMap = new RenderingHandler.MaskMap(dim);
 			//handler.altTileMaskMap = new RenderingHandler.MaskMap(dim);
 
 			// Generate Tile masks
+			#region Generate Tile masks
 			for (int x = 0; x < dim; x++) {
 				for (int y = 0; y < dim; y++) {
 					if ((x != (dim / 2)) && (y != (dim / 2))) {
@@ -174,10 +183,10 @@ public class GenerateRenderGrid : LevelGenerator {
 
 						SpriteMask mask = handler.tileMaskMap[x, y].GetTileMask;
 						SpriteMask maskAlt = handler.tileMaskMap[x, y].GetAltTileMask;
-						mask.frontSortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
+						mask.frontSortingLayerID = layerID[(x % 2) + (2 * (y % 2))]; // set mask to be on layer Layer_0/1/2/3 based on (x,y), so that does not interfere with neighboring tiles
 						mask.backSortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
 
-						maskAlt.frontSortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
+						maskAlt.frontSortingLayerID = layerID[(x % 2) + (2 * (y % 2))]; // set mask to be on layer Layer_0/1/2/3 based on (x,y), so that does not interfere with neighboring tiles
 						maskAlt.backSortingLayerID = layerID[(x % 2) + (2 * (y % 2))];
 
 						// alt-tile-masks along the diagonals need to be rotated by 180 degrees, so only 1 sprite needs to be used
@@ -213,12 +222,19 @@ public class GenerateRenderGrid : LevelGenerator {
 					}
 				}
 			}
+			#endregion
 		}
 
 		return null;
 	}
 
-
+	/// <summary>
+	/// Get renderTile prefab
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <param name="nameAppend"></param>
+	/// <returns></returns>
 	public GameObject GetPrefab(int x, int y, string nameAppend = "") {
 		GameObject newObj = Instantiate(tilePrefab);
 		newObj.name = "RenderTile("+x+","+y+")" +((nameAppend == "") ? "" : " " + nameAppend);
@@ -228,6 +244,13 @@ public class GenerateRenderGrid : LevelGenerator {
 		return newObj;
 	}
 
+	/// <summary>
+	/// get prefab of corner mask
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <param name="nameAppend"></param>
+	/// <returns></returns>
 	public GameObject GetPrefabCornerMask(int x, int y, string nameAppend = "") {
 		GameObject newObj = Instantiate(cornerMaskPrefab);
 		newObj.name = "CornerMask(" + x + "," + y + ")" + ((nameAppend == "") ? "" : " " + nameAppend);
@@ -237,6 +260,13 @@ public class GenerateRenderGrid : LevelGenerator {
 		return newObj;
 	}
 
+	/// <summary>
+	/// Get prefab of tile mask
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <param name="nameAppend"></param>
+	/// <returns></returns>
 	public GameObject GetPrefabTileMask(int x, int y, string nameAppend = "") {
 		GameObject newObj = Instantiate(tileMaskPrefab);
 		newObj.name = "TileMask(" + x + "," + y + ")" + ((nameAppend == "") ? "" : " " + nameAppend);

@@ -8,12 +8,14 @@ public class EditLevelEditor : Editor {
 	private bool gotMap = false;
 
 	public override void OnInspectorGUI() {
-		//((EditLevel)target).getCurrentNode();
+		// in the editor, get the reference to the map if you don't already have it
 		if (Application.isPlaying && !gotMap) {
 			((EditLevel)target).getCurrentMap();
 			gotMap = true;
 		}
 
+		// A plethora of buttons used to call the methods in the EditLevel class/
+		// Do exactly what they says on the tin.
 		if (GUILayout.Button("Make New Level")) {
 			((EditLevel)target).getNewMap();
 		}

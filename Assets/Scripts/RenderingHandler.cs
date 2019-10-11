@@ -5,41 +5,35 @@ using Direction = GameManager.Direction;
 
 public class RenderingHandler : MonoBehaviour {
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR // if this is in the editor, need a reference to editLevel in order to call getCurrentNode() every time movement happens
 	public EditLevel editLevel = null;
 #endif
-	//public int memoryLayer;
-	//public int activeLayer;
-	//public SpriteMask mask;
+
 	[SerializeField]
-    public RenderMap renderMap = new RenderMap(0);
-    public RenderMap altRenderMap = new RenderMap(0);
-	public MaskMap cornerMaskMap = new MaskMap(0);
-	//public MaskMap altCornerMaskMap = new MaskMap(0);
-	public MaskMap tileMaskMap = new MaskMap(0);
-	//public MaskMap altTileMaskMap = new MaskMap(0);
+    public RenderMap renderMap = new RenderMap(0);	// used to render tiles that are accessed from a vertical direction
+    public RenderMap altRenderMap = new RenderMap(0);   // used to render tiles that are accessed from a horizontal direction
+	public MaskMap cornerMaskMap = new MaskMap(0);	// list of masks use to mask tile corners
+	public MaskMap tileMaskMap = new MaskMap(0);    // list of masks use to mask tiles
 
 	public RenderMap[] renderLayers { get { return new RenderMap[] { renderMap, altRenderMap }; } }
-	//public MaskMap[] cornerMaskLayers { get { return new MaskMap[] { cornerMaskMap, altCornerMaskMap }; } }
-	//public MaskMap[] tileMaskLayers { get { return new MaskMap[] { tileMaskMap, altTileMaskMap }; } }
-	public List<Node> prevVisibleNodes = new List<Node>();
-	private List<Node> visibleNodes;
-	//[SerializeField] public List<List<GameObject>> renderTiles = new List<List<GameObject>>();
-	//[SerializeField] public GameObject renderTiles = new GameObject[renderMap.dim,renderMap.dim];
-	// Use this for initialization
+	public List<Node> prevVisibleNodes = new List<Node>();  // lists nodes that where visible last time HandleRender() was called
+	private List<Node> visibleNodes;	// lists nodes that are visible now
 
+	// holds the pattern in which tiles should be accessed for rendering
 	[SerializeField]
 	private DrawPathInstruction[] drawPathInstructions = new DrawPathInstruction[0];
-	//public DrawPathInstruction[] drawPathInstructions;
 
-	Vector2Int center;
+	Vector2Int center;	// indicates the (x,y) coordinates of the center. Should be (2,2), for a 5X5 grid
+	
 	void Start () {
 		initialize();
 	}
 
+	// Use this for initialization
 	public void initialize() {
 		center = new Vector2Int(renderMap.dim / 2, renderMap.dim / 2);
 
+		// drawPathInstructions does need to be hardcoded, but this algorithm makes it so only 1/4 of it needs to be written, since it is the same pattern in each of the 4 directions
 		if (drawPathInstructions.Length < 4) {
 			drawPathInstructions = new DrawPathInstruction[4];
 			for (int i = 0; i < 4; i++) {
@@ -57,7 +51,7 @@ public class RenderingHandler : MonoBehaviour {
 
 
 	/// <summary>
-	/// 
+	/// Recursivly follows the drawpath instructions in order to render the tiles
 	/// </summary>
 	/// <param name="dpi"></param>
 	/// <param name="oldPosition"></param>
@@ -86,14 +80,14 @@ public class RenderingHandler : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// 
+	/// Does all of the setup in order to draw/render all of the tiles that should be visible from the current location
 	/// </summary>
 	/// <param name="direction"></param>
 	/// <param name="node"></param>
 	/// <param name="doShift"></param>
 	public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
-#if UNITY_EDITOR
+#if UNITY_EDITOR	// if this is in the editor, call getCurrentNode() every time movement happens
 		if (editLevel != null) {
 			editLevel.getCurrentNode();
 			//Debug.Log("calling getCurrentNode()...");
@@ -206,7 +200,10 @@ public class RenderingHandler : MonoBehaviour {
     }
 	*/
 	#endregion
-
+	
+		/// <summary>
+		/// Holds information used in the draw paths
+		/// </summary>
 	//[System.Serializable]
 	private struct DrawPathInstruction {
 		public Direction dir;
@@ -219,7 +216,9 @@ public class RenderingHandler : MonoBehaviour {
 		}
 	}
 
-
+	/// <summary>
+	/// holds an array of render-tiles
+	/// </summary>
 	[System.Serializable]
     public class RenderMap : IEnumerable
     {
@@ -244,6 +243,9 @@ public class RenderingHandler : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// holds an array of masks, for either tilesor tile corners
+	/// </summary>
 	[System.Serializable]
 	public class MaskMap : IEnumerable {
 		[SerializeField]

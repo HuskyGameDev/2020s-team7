@@ -36,4 +36,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.asset
+!/ProjectSettings/TagManager.asset
 *.asset.meta

@@ -6,7 +6,7 @@ using Direction = GameManager.Direction;
 
 [System.Serializable]
 public class Node {
-	[ReadOnly]
+	[ReadOnly]   // nullable variables are not serializable, so could not be saved. Now -1 indicates a non-existant connection
 	public int index = -1;
 	// Use this for initialization
 	public Color32 color = Color.magenta;
@@ -15,6 +15,7 @@ public class Node {
 	public enum TileType { regular, source, target };
 	public TileType type = TileType.regular;
 
+	// used to get the most current line data
 	public LineData data {
 		get {
 			//return dataStack.Peek();
@@ -24,6 +25,7 @@ public class Node {
 
 		}
 	}
+	// used to get the most current connection data
 	public ConnectionSet connections {
 		get {
 			//return connectionStack.Peek();
@@ -35,17 +37,12 @@ public class Node {
 	}
 
 	
-	//[SerializeField]
+	// had to change these to lists because lists are serializable, but stacks are not.
 	[HideInInspector]
 	public List<ConnectionSet> connectionList = new List<ConnectionSet>();
 	private List<LineData> dataList = new List<LineData>();
 
-
-	//[SerializeField]
-	//private Stack<ConnectionSet> connectionStack = new Stack<ConnectionSet>();
-	//[SerializeField]
-	//private Stack<LineData> dataStack = new Stack<LineData>();
-
+	// this is the same as justin left it
 	[System.Serializable]
 	public class LineData {
 		public bool hasEnter = false;
@@ -75,26 +72,32 @@ public class Node {
 		}
 	}
 
+	/// <summary>
+	/// Adds a connection set to the end of the list
+	/// </summary>
+	/// <param name="set"></param>
 	public void AddToConnectionStack(ConnectionSet set) {
-		//connectionStack.Push(set);
 		connectionList.Add(set);
-		//dataStack.Push(new LineData());
 		dataList.Add(new LineData());
 	}
 
+	/// <summary>
+	/// pops all but the last connection and data sets
+	/// </summary>
 	public void PopConnectionStack() {
 		if (data.hasEnter || data.hasLeave)
 			return;
-		//while (connectionStack.Count > 1) {
 		while (connectionList.Count > 1) {
-			//connectionStack.Pop();
 			connectionList.RemoveAt(connectionList.Count - 1);
-			//dataStack.Pop();
 			dataList.RemoveAt(dataList.Count - 1);
 		}
 	}
 
-	//public int? GetConnectionFromDir(GameManager.Direction dir) {
+	/// <summary>
+	/// Gets the index that the current nodeis  connected to in the given direction
+	/// </summary>
+	/// <param name="dir"></param>
+	/// <returns></returns>
 	public int GetConnectionFromDir(GameManager.Direction dir) {
 		switch (dir) {
 			case GameManager.Direction.North:
@@ -106,10 +109,10 @@ public class Node {
 			case GameManager.Direction.West:
 				return connections.west;
 		}
-		//return null;
 		return -1;
 	}
 
+	// basic constructor
 	public Node() {
 		//connectionStack.Push(new ConnectionSet());
 		connectionList.Add(new ConnectionSet());
@@ -117,7 +120,7 @@ public class Node {
 		dataList.Add(new LineData());
 	}
 
-	//public Node(int index, Color32 color, Sprite sprite) {
+	// constructor that sets up a small amuunt of information
 	public Node(int index, Color32 color, string sprite) {
 		//connectionStack.Push(new ConnectionSet());
 		connectionList.Add(new ConnectionSet());
@@ -128,7 +131,7 @@ public class Node {
 		this.floorSprite = sprite;
 	}
 
-	//public Node_2(int? north, int? south, int? east, int? west, int index, Color32 color) {
+	// detailed constructor, used in the node.copy() method
 	public Node(int north, int south, int east, int west, int index, Color32 color, String floorSprite, List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
 		//connectionStack.Push(new ConnectionSet());
 		connectionList.Add(new ConnectionSet());
@@ -149,10 +152,19 @@ public class Node {
 		}
 	}
 
+	/// <summary>
+	/// Returns a copy of the calling node
+	/// </summary>
+	/// <returns></returns>
 	public Node Copy() {
 		return new Node(connections.north, connections.south, connections.east, connections.west, index, color, floorSprite, connectionList, dataList);
 	}
 
+	/// <summary>
+	/// Returns a list of all nodes that a node is connected to in the given direction
+	/// </summary>
+	/// <param name="dir"></param>
+	/// <returns></returns>
 	public List<Node> GetFullStackConnectionsFromDir(Direction dir) {
 		List<Node> ns = new List<Node>();
 		
@@ -169,6 +181,9 @@ public class Node {
 		return ns;
 	}
 
+	/// <summary>
+	/// lists the nodes that a node is connected to in each direction
+	/// </summary>
 	[System.Serializable]
 	public class ConnectionSet {
 		/*
