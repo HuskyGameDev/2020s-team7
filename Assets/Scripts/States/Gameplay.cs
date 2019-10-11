@@ -7,54 +7,49 @@ using TMPro;
 
 
 public class Gameplay : IState {
-	bool animLockout = false;
+
+    #region Initialize Variables
+    bool animLockout = false;
 	public bool winTrigger = false;
 	public bool cinimaticMode = false;
-
 	public int stringLeft = 21;
-
-    
     public UnityEngine.UI.Text stringrem;
-    
 	public GameObject wintext;
-
 	public float moveAnimSpeed = 0.25f;
 	public float youWinScreenTimeout = 7.0f;
-
 	public Map map;
 	public Universe universe;
-	//public Node currentPosition = new Node();
 	public Node currentPosition = null;
-
 	public RenderingHandler nonEuclidRenderer;
 
-	public override void _StartState() {
 
+    #endregion
+    public override void _StartState() {
+        //Set up the renderer
 		nonEuclidRenderer.initialize();
 
-     
+        //Deactivate the other states just in case
         GameManager.instance.pausemenu.gameObject.SetActive(false);
         GameManager.instance.levelselector.gameObject.SetActive(false);
+
+        //Make sure the level is set to be the beginning of the level
 		resetLevelAssets();
 	}
 
 	public override void _EndState() {
-		Debug.Log("Gameplay does not do anything in its _EndState() method");
 	}
 
 
 	public override void _Update() {
-		//Debug.Log("Gameplay _Update() being called");
-		
+        //Shows pause menu
 		if (InputManager.instance.OnInputDown(InputManager.Action.back))
         {
             GameManager.instance.lscamera.SetActive(true);
             GameManager.instance.changeState(GameManager.instance.pausemenu, GameManager.instance.levelselector);
-            
-            //if (pausemenu.activeInHierarchy) Debug.Log("I'm active");
-            //changeState(lscamera, gameplay);
         }
 
+
+        //Shows level selecor. Delete this before final release
         if (Input.GetKeyDown(KeyCode.Q))
         {
 			GameManager.instance.lscamera.SetActive(true);
@@ -63,7 +58,10 @@ public class Gameplay : IState {
             
         }
 		
+
+        //Shows stringleft on screen
         stringrem.text = stringLeft +"/"+ map.stringleft.ToString();
+
         //Dont do anything past here if we are doing an animation
         if (animLockout)
             return;
@@ -75,14 +73,7 @@ public class Gameplay : IState {
             }
             return;
         }
-
-
-
-
-
-
-		//KeyCode[] buttonMapping = new KeyCode[] {KeyCode.W, KeyCode.D, KeyCode.S, KeyCode.A};
-		//KeyCode[] buttonMapping2 = new KeyCode[] {KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.DownArrow, KeyCode.LeftArrow};
+        //This for loop deals with inputs and moves the player around.
 
 		for (int i = 0; i < 4; i++) {
 			//Direction lines up with input manager so we can directly convert to an action from a direction.
@@ -154,8 +145,13 @@ public class Gameplay : IState {
 		}
 	}
 
+
+    //reverts the level back to initial conditions
 	public void resetLevelAssets() {
+        //Give the player their string back
         stringLeft = map.stringleft;
+
+        //Send the player back to the starting point
 		currentPosition = map[map.sourceNodeIndex];
 		if ((currentPosition == null) || (currentPosition.index < 0)) {
 			int k;

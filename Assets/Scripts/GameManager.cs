@@ -5,12 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-
-    //bool animLockout = false;
 	[SerializeField]
     public static GameManager instance;
-    //public int stringLeft = 21;
-
     public enum Direction { North, East, South, West }
 	
 
@@ -19,18 +15,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject mainmenu;
     public Gameplay gameplay;
     public GameObject lscamera;
-
     public LevelSelector levelselector;
     public PauseMenu pausemenu;
 
     private IState currentstate;
     #endregion
-
-
     //public Sprite[] spriteBook;
     public string[] spriteBook;
-	// Use this for initialization
-
 	void Start() {
 		if ((instance == null) || (instance == this)) {
 			instance = this;
@@ -41,40 +32,26 @@ public class GameManager : MonoBehaviour {
         currentstate = levelselector;
         currentstate._StartState();
 
+        //Uncomment these when ready for level progression
         //levelselector.deactivateAllButtons();
         //levelselector.activateButton(levelselector.levelButtons[0]);
-
-
-        //levelselector.SetActive(true);
-        
-
-		InputManager.instance.LoadKeybinds();
-
+        //levelselector.gameObject.SetActive(true);
+        InputManager.instance.LoadKeybinds();
 		BatchGenerate.GenerateRooms();
-
-		/*
-		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName)) {
-			map = Map.Load(Application.dataPath + "/Levels/room_" + levelName);
-		} else {
-			//Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + "/Levels/room_" + levelName + "\"");
-		}*/
-
-		//nonEuclidRenderer.HandleRender(Direction.East, currentPosition, false);
 	}
 
 
 	
 	// Update is called once per frame
 	void Update () {
+        //Calls the 'update' of the current state
 		currentstate._Update();
     }
 
     public void changeState(IState g, IState p)
     {
-		//Debug.Log("Changing state");
+		//Changes the state to 'g' and deactivates 'p' if not null
 		
-		
-
 		if (g != null) {
 			g._StartState();
 			g.gameObject.SetActive(true);

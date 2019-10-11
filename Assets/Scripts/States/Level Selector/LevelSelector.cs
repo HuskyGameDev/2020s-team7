@@ -17,29 +17,24 @@ public class LevelSelector : IState {
     public Button template;
     public GameObject templateParent;
 	public override void _StartState() {
-        //Debug.Log("LevelSelector does not do anything in its _StartState() method");
+        //Retrieve the level names from the directory
         string[] levelButtonNames = searchForLevels();
+
+        //Create list of button names if it hasn't already.
         if (levelButtons.Length == 0) { 
             levelButtons = new Button[levelButtonNames.Length];
             for (int i = 0; i < levelButtons.Length; i++)
             {
-                Debug.Log("Trying to instantiate");
                 levelButtons[i] = Instantiate(template, templateParent.transform);
                 levelButtons[i].gameObject.SetActive(true);
                 levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = levelButtonNames[i];
                 levelButtons[i].GetComponent<LevelButtonScript>().changeString(levelButtonNames[i]);
-            }
-
-
-
-            
-                    
+            }   
         }
-            
-           
-  
-                //Debug.Log(levelButtons[i].GetComponentInChildren<Text>().text);
-                //levelButtons[i].GetComponentInChildren<Text>().text = levelButtonNames[i];
+
+
+        //If the level is won, unlock the next stage.
+        //This is not active/working in the game right now due to winTrigger being buggy.
         if (GameManager.instance.gameplay.winTrigger)
         {
             GameManager.instance.gameplay.winTrigger = false;
@@ -55,14 +50,14 @@ public class LevelSelector : IState {
 
 
     public override void _EndState() {
-		//Debug.Log("LevelSelector does not do anything in its _EndState() method");
+		//Nothing for end state
 	}
 
     #region Changing Levels
     public static string level = "001";
     private static bool change = false;
     
-
+    //Find the .json file that holds the level data and create a map out of it.
     public static Map startLevel(string levelName)
     {
         if (File.Exists(Application.dataPath + "/Levels/room_" + levelName+".json"))
@@ -77,28 +72,26 @@ public class LevelSelector : IState {
         }
         
     }
-    
+
+    //This doesn't change the level, just the string called 'level'
     public static void changeLevel(string s)
     {
-        //Debug.Log("Button was pressed");
         level = s;
         change = true;
-        //Debug.Log("change is true, s was changed to "+level);
     }
 
     #endregion
 
     public override void _Update()
     {
+
+        //This is what ultimately ends up happening when the buttons are pressed.
+        //The reason for the work-around is because I can't pass arguments on a button's "onClick" functions if it's instantiated through script
+
         if (change)
         {
-            //Debug.Log("change is true in _Update");
-            //Change these two to whatever controls the visuals of the level once imported
             GameManager.instance.gameplay.map = startLevel(level);
             GameManager.instance.gameplay.resetLevelAssets();
-
-           
-            //this.gameObject.SetActive(false);
             change = false;
             GameManager.instance.changeState(GameManager.instance.gameplay, this);
             
@@ -106,22 +99,28 @@ public class LevelSelector : IState {
         
     }
 
+    //Retrieves the names of the levels from the directory by finding files ending in .json
     public static string[] searchForLevels()
     {
         string[] fileNames = Directory.GetFiles((Application.dataPath + "/Levels/"),"*.json");
         
+        //fileNames retrieves the entire path, ex: C:/Users/jsmith/Documents/Unity/Assets... .json
+        //We rewrite the fileNames strings by only getting the substring of the level name part
+
         int x = (Application.dataPath + "/Levels/room_").Length;
         for (int i=0; i<fileNames.Length; i++)
         {
-            fileNames[i] = fileNames[i].Substring(x,fileNames[i].Length-x-5);
+            fileNames[i] = fileNames[i].Substring(x,fileNames[i].Length-x-5); //The '5' removes the '.json' part
             
         }
-        return fileNames;
+        return fileNames; //fileNames is now a list of names for the buttons
     }
+
     #region Buttons
 
     public Button[] levelButtons = null;
 
+    //The names of these methods should be self explanitory
     public Button activateButton(Button button)
     {
         button.interactable = true;
