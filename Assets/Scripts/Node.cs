@@ -14,6 +14,8 @@ public class Node {
 	public String floorSprite = null;
 	public enum TileType { regular, source, target };
 	public TileType type = TileType.regular;
+	public bool hasSign = false;
+	public String signMessage = "";
 
 	// used to get the most current line data
 	public LineData data {
