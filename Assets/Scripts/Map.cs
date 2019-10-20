@@ -8,19 +8,16 @@ public class Map {
 	//private static System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
 	public int defaultPosition;
-	//private int _size = 0;
-	//public int size { get { return _size; } set { } }
-	//public Node_2 sourceNode = null;
-	//public Node_2 targetNode = null;
-	public int sourceNodeIndex = -1;
+	public int sourceNodeIndex = -1; // had to change these. Nullable variables are not serializable, and coud not be saved
 	public int targetNodeIndex = -1;
 
 	// new stuff
-	[ReadOnly]
+	[ReadOnly] // would like to be able to see this in the editor, but doen't want people accidentaly changing it
 	[SerializeField]
-	private int _size = 0;
-	[ReadOnly]
+	private int _size = 0;	// number of tiles in the map
+	[ReadOnly] // would like to be able to see this in the editor, but doen't want people accidentaly changing it
 	[SerializeField]
+
 	private int arraySize = 20;
     public int[] checkpoints = null;
     public int stringleft = 21;
@@ -29,10 +26,10 @@ public class Map {
         return stringleft == 0 && GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
     }
 	[SerializeField]
-	private Node[] nodes = new Node[20];
-	public Node this[int i] {
+	private Node[] nodes = new Node[20]; // by default, array of tiles has 20 slots.
+	public Node this[int i] { // get/set method that will automaticaly make the array of tiles larger when necessary
 		get {
-			if ((i >= _size) || (i < 0)) {
+			if ((i >= _size) || (i < 0)) { // can't return nodes that can't be in the arrray
 				return null;
 			} else {
 				return nodes[i];
@@ -42,7 +39,7 @@ public class Map {
 			if (i >= _size)
 				_size = i + 1;
 
-			while (_size > arraySize) {
+			while (_size > arraySize) { // make the array larger if it needs to be
 				int oldSize = arraySize;
 				arraySize += 10;
 				Node[] newNodes = new Node[arraySize];
@@ -55,21 +52,30 @@ public class Map {
 			if (nodes[i] != null) {
 				nodes[i] = value;
 			} else {
-				value.index = i;
+				value.index = i; 
 				nodes[i] = value;
 			}
 		}
 	}
 
-	public int size {
+	public int size {	// getter method. Shouldn't be set from outside
 		get{ return _size; }
 		set{ }
 	}
 
-	public void setNodes(Node[] newNodes, int newSize, int newArraySize) {
+	/// <summary>
+	/// Sets the list of nodes for this map to the given array.
+	/// Used in the clean up method of LevelEditor_2
+	/// </summary>
+	/// <param name="newNodes"></param>
+	/// <param name="newSize"></param>
+	/// <param name="newArraySize"></param>
+	public void setNodes(Node[] newNodes) {//, int newSize, int newArraySize) {
 		nodes = newNodes;
-		_size = newSize;
-		arraySize = newArraySize;
+		//_size = newSize;
+		//arraySize = newArraySize;
+		_size = newNodes.Length;
+		arraySize = newNodes.Length;
 	}
 
 	#region Old code
@@ -99,6 +105,10 @@ public class Map {
 	*/
 	#endregion
 
+	/// <summary>
+	/// returns a copy of a map
+	/// </summary>
+	/// <returns></returns>
 	public Map Copy() {
 		Map newCopy = new Map();
 		for (int i = 0; i < _size; i++) {
@@ -108,15 +118,26 @@ public class Map {
 		return newCopy;
 	}
 
-
+	/// <summary>
+	/// Save the given map at the given file path
+	/// </summary>
+	/// <param name="map"></param>
+	/// <param name="path"></param>
 	public static void Save(Map map, string path) {
 		string jsonData = JsonUtility.ToJson(map, true);
 		File.WriteAllText(path, jsonData);
 
 	}
 
+	/// <summary>
+	/// Loads the map from the given file path.
+	/// Prints some warinings if things don't work right.
+	/// Returns the loaded map.
+	/// </summary>
+	/// <param name="path"></param>
+	/// <returns></returns>
 	public static Map Load(string path) {
-		if (File.Exists(path)) {
+		if (File.Exists(path)) {	// can only load the map if the given file exists
 			//Debug.Log("Success: map file exists at path: " + path);
 			string jsonData = File.ReadAllText(path);
 			Map map = JsonUtility.FromJson<Map>(jsonData);

@@ -12,6 +12,7 @@ public class Gameplay : IState {
     bool animLockout = false;
 	public bool winTrigger = false;
 	public bool cinimaticMode = false;
+	public bool hasBall = true;
 	public int stringLeft = 21;
     public UnityEngine.UI.Text stringrem;
 	public GameObject wintext;
@@ -41,7 +42,17 @@ public class Gameplay : IState {
 
 
 	public override void _Update() {
-        //Shows pause menu
+        //Player interaction with the ball
+		if (InputManager.instance.OnInputDown(InputManager.Action.action)) {
+			if (hasBall) {
+				//Player drops the ball
+				hasBall = false;
+			} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave)) {
+				hasBall = true;
+			}
+		}
+		
+		//Shows pause menu
 		if (InputManager.instance.OnInputDown(InputManager.Action.back))
         {
             GameManager.instance.lscamera.SetActive(true);
@@ -86,7 +97,7 @@ public class Gameplay : IState {
 					//otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
 					otherNode = map[(int)currentPosition.GetConnectionFromDir(dir)];
 					//See if the other node has a leave
-					canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir);
+					canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir || !hasBall);
 				}
 				if (cinimaticMode && Input.GetKey(KeyCode.Space)) canMove = false;
 				animLockout = true;
@@ -108,18 +119,20 @@ public class Gameplay : IState {
 							}
 						}
 
-						//Tag the current square with line exit dir
-						if (otherNode.data.hasLeave == false) {
-							currentPosition.data.leave = dir;
-							otherNode.data.enter = dir.inverse();
-							currentPosition.data.hasLeave = true;
-							otherNode.data.hasEnter = true;
-							stringLeft--;
-						} else {
-							//Do a backup
-							currentPosition.data.hasEnter = false;
-							otherNode.data.hasLeave = false;
-							stringLeft++;
+						if (hasBall) {
+							//Tag the current square with line exit dir
+							if (otherNode.data.hasLeave == false) {
+								currentPosition.data.leave = dir;
+								otherNode.data.enter = dir.inverse();
+								currentPosition.data.hasLeave = true;
+								otherNode.data.hasEnter = true;
+								stringLeft--;
+							} else {
+								//Do a backup
+								currentPosition.data.hasEnter = false;
+								otherNode.data.hasLeave = false;
+								stringLeft++;
+							}
 						}
 
 						currentPosition = otherNode;

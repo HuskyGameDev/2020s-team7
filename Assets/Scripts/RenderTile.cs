@@ -56,6 +56,7 @@ public class RenderTile : MonoBehaviour {
 				lineCenter.gameObject.SetActive(false);
 
 			// should evaluate to an array of size 2 for tiles on the cardinal directions, 4 for the middle tile, or 1 otherwise
+			// CODING IN PROGRESS HERE - UNFINISHED
 			/*
 			Direction[] checkDirection = new Direction[((position.x == 2) ? 2:1) * ((position.y == 2) ? 2 : 1)];
 			int i = 0;
