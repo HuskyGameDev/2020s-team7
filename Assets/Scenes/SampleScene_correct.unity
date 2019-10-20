@@ -57153,6 +57153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winTrigger: 0
   cinimaticMode: 0
+  hasBall: 1
   stringLeft: 21
   stringrem: {fileID: 2146562671}
   wintext: {fileID: 784889633}
