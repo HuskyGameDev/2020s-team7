@@ -13,6 +13,7 @@ public class Gameplay : IState {
 	public bool winTrigger = false;
 	public bool cinimaticMode = false;
 	public bool hasBall = true;
+	public int curdir = 0;
 	public int stringLeft = 21;
     public UnityEngine.UI.Text stringrem;
 	public GameObject wintext;
@@ -42,13 +43,19 @@ public class Gameplay : IState {
 
 
 	public override void _Update() {
-        //Player interaction with the ball
+        //Player interaction objects
 		if (InputManager.instance.OnInputDown(InputManager.Action.action)) {
-			if (hasBall) {
-				//Player drops the ball
-				hasBall = false;
-			} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave)) {
-				hasBall = true;
+			if (currentPosition.hasSign && curdir == 0) {
+				//Player reads a sign
+				Debug.Log(currentPosition.signMessage);
+			} else {
+				if (hasBall) {
+					//Player drops the ball
+					hasBall = false;
+				} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave) || stringLeft == map.stringleft) {
+					//Player pick up the ball
+					hasBall = true;
+				}
 			}
 		}
 		
@@ -92,6 +99,7 @@ public class Gameplay : IState {
 			if (InputManager.instance.OnInput((InputManager.Action)i)) {
 				bool canMove = false;
 				Node otherNode = null;
+				curdir = i;
 				//if (currentPosition.GetConnectionFromDir(dir) != null) {
 				if (currentPosition.GetConnectionFromDir(dir) >= 0) {
 					//otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
