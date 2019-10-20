@@ -12,7 +12,7 @@ public class Node {
 	public Color32 color = Color.magenta;
 	//public Sprite floorSprite;
 	public String floorSprite = null;
-	public enum TileType { regular, source, target };
+	public enum TileType { regular, source, target, checkpoint };
 	public TileType type = TileType.regular;
 
 	public LineData data {

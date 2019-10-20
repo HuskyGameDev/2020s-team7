@@ -22,8 +22,12 @@ public class Map {
 	[ReadOnly]
 	[SerializeField]
 	private int arraySize = 20;
-
+    public int[] checkpoints = null;
     public int stringleft = 21;
+    public bool winConditions()
+    {
+        return stringleft == 0 && GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
+    }
 	[SerializeField]
 	private Node[] nodes = new Node[20];
 	public Node this[int i] {

@@ -40,11 +40,12 @@ public class LevelSelector : IState {
             GameManager.instance.gameplay.winTrigger = false;
             
             int i = 0;
-            while (levelButtons[i].interactable)
+    
+            while (i < levelButtons.Length && levelButtons[i].interactable)
             {
                 i++;
             }
-            levelButtons[i].interactable = true;
+            if (i<levelButtons.Length) levelButtons[i].interactable = true;
         }
 	}
 

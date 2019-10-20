@@ -56755,6 +56755,7 @@ MonoBehaviour:
     targetNodeIndex: -1
     _size: 0
     arraySize: 20
+    checkpoints: 
     stringleft: 21
     nodes:
     - index: 0
