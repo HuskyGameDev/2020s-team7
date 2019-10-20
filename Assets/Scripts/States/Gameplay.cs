@@ -148,8 +148,8 @@ public class Gameplay : IState {
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
 
-						if (//stringLeft == 0 &&
-                        currentPosition.data.type == Node.LineData.TileType.target) {
+                        //Crossing the target tile
+						if (map.winConditions()) {
 
 							winTrigger = true;
                             GameManager.instance.changeState(GameManager.instance.levelselector, this);
@@ -189,5 +189,7 @@ public class Gameplay : IState {
 			
 		}
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
+
+
 	}
 }

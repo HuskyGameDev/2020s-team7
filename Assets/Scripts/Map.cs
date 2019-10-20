@@ -17,9 +17,14 @@ public class Map {
 	private int _size = 0;	// number of tiles in the map
 	[ReadOnly] // would like to be able to see this in the editor, but doen't want people accidentaly changing it
 	[SerializeField]
-	private int arraySize = 20; // size of the array used to hold tiles 
 
-    public int stringleft = 21; //dfault ammoung of string to give the player
+	private int arraySize = 20;
+    public int[] checkpoints = null;
+    public int stringleft = 21;
+    public bool winConditions()
+    {
+        return stringleft == 0 && GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
+    }
 	[SerializeField]
 	private Node[] nodes = new Node[20]; // by default, array of tiles has 20 slots.
 	public Node this[int i] { // get/set method that will automaticaly make the array of tiles larger when necessary
