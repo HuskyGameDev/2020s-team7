@@ -4,6 +4,7 @@
     "targetNodeIndex": -1,
     "_size": 16,
     "arraySize": 20,
+    "checkpoints": [],
     "stringleft": 21,
     "nodes": [
         {
