@@ -17,6 +17,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -36,6 +38,8 @@
             },
             "floorSprite": "sourceTile",
             "type": 1,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 0,
@@ -55,6 +59,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 1,
@@ -74,6 +80,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 2,
@@ -93,6 +101,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 3,
@@ -112,6 +122,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -131,6 +143,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 5,
@@ -150,6 +164,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 6,
@@ -169,6 +185,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 7,
@@ -188,6 +206,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 8,
@@ -207,6 +227,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -226,6 +248,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 10,
@@ -245,6 +269,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 11,
@@ -264,6 +290,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 12,
@@ -283,6 +311,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 13,
@@ -302,6 +332,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -321,6 +353,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 15,
@@ -340,6 +374,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 16,
@@ -359,6 +395,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 17,
@@ -378,6 +416,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 18,
@@ -397,6 +437,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -416,6 +458,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 20,
@@ -435,6 +479,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 21,
@@ -454,6 +500,8 @@
             },
             "floorSprite": "targetTile",
             "type": 2,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 22,
@@ -473,6 +521,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 23,
@@ -492,6 +542,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -511,6 +563,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -530,6 +584,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -549,6 +605,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -568,6 +626,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
