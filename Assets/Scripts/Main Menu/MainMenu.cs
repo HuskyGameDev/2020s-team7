@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single); 
+        SceneManager.LoadScene("SampleScene_correct", LoadSceneMode.Single); 
     }
 
     public void QuitGame()
