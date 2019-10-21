@@ -23,6 +23,14 @@ public class Map {
     public int stringleft = 21;
     public bool winConditions()
     {
+        foreach(int i in checkpoints)
+        {
+            if (!GameManager.instance.gameplay.map[i].data.hasEnter || !GameManager.instance.gameplay.map[i].data.hasLeave)
+            {
+                return false;
+            }
+        }
+
         return stringleft == 0 && GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
     }
 	[SerializeField]

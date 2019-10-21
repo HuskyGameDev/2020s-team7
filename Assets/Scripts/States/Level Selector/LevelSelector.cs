@@ -20,7 +20,7 @@ public class LevelSelector : IState {
         //Retrieve the level names from the directory
         string[] levelButtonNames = searchForLevels();
 
-        //Create list of button names if it hasn't already.
+        //Create the list of buttons and their names if it hasn't already.
         if (levelButtons.Length == 0) { 
             levelButtons = new Button[levelButtonNames.Length];
             for (int i = 0; i < levelButtons.Length; i++)
@@ -87,7 +87,7 @@ public class LevelSelector : IState {
     {
 
         //This is what ultimately ends up happening when the buttons are pressed.
-        //The reason for the work-around is because I can't pass arguments on a button's "onClick" functions if it's instantiated through script
+        //The reason for the work-around is because I can't pass arguments on these button's "onClick" functions since they're instantiated through script. I have to be able to call their onClick functions without needing any arguments.
 
         if (change)
         {
@@ -105,7 +105,7 @@ public class LevelSelector : IState {
     {
         string[] fileNames = Directory.GetFiles((Application.dataPath + "/Levels/"),"*.json");
         
-        //fileNames retrieves the entire path, ex: C:/Users/jsmith/Documents/Unity/Assets... .json
+        //fileNames retrieves the entire path, ex: "C:/Users/jsmith/Documents/Unity/Assets... .json"
         //We rewrite the fileNames strings by only getting the substring of the level name part
 
         int x = (Application.dataPath + "/Levels/room_").Length;
