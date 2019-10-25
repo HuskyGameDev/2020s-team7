@@ -21,7 +21,6 @@ public class GenericMask : MonoBehaviour {
 	public SpriteMask altMaskTile = null;
 
 	public bool corner = false;
-	public Direction dir;
 
 	/*
 	public SpriteMask[] GetHorizontalMasks {
@@ -55,8 +54,8 @@ public class GenericMask : MonoBehaviour {
 	public SpriteMask GetTileMask { set { } get { return maskTile; }}
 	public SpriteMask GetAltTileMask { set { } get { return altMaskTile; } }
 
-	public void setCornerFromDir(bool set) {
-		if ((dir == Direction.North) || (dir == Direction.North)) {
+	public void setCornerFromDir(bool set, Direction dir) {
+		if ((dir == Direction.North) || (dir == Direction.South)) {
 			foreach (SpriteMask mask in maskVertical) {
 				if (mask != null) mask.gameObject.SetActive(!set);
 			}
@@ -67,7 +66,8 @@ public class GenericMask : MonoBehaviour {
 			}
 			horiActive = !set;
 		}
-		if (((maskVertical == null) || vertActive) && ((maskHorizontal == null) || horiActive)) {
+		if (((maskVertical.Length == 0) || vertActive) && ((maskHorizontal.Length == 0) || horiActive)) {
+		//		if (((maskVertical == null) || vertActive) && ((maskHorizontal == null) || horiActive)) {
 			if (maskLineOfSight != null) {
 				maskLineOfSight.gameObject.SetActive(false);
 			}
