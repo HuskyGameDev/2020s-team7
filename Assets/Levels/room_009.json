@@ -1,9 +1,9 @@
 {
     "defaultPosition": 0,
     "sourceNodeIndex": 4,
-    "targetNodeIndex": -1,
-    "_size": 46,
-    "arraySize": 46,
+    "targetNodeIndex": 53,
+    "_size": 61,
+    "arraySize": 61,
     "checkpoints": [],
     "stringleft": 21,
     "nodes": [
@@ -882,7 +882,7 @@
             "signMessage": "",
             "connectionList": [
                 {
-                    "north": -1,
+                    "north": 48,
                     "south": -1,
                     "east": -1,
                     "west": 40
@@ -970,6 +970,321 @@
                     "south": -1,
                     "east": 1,
                     "west": -1
+                }
+            ]
+        },
+        {
+            "index": 46,
+            "color": {
+                "r": 210,
+                "g": 105,
+                "b": 30,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 47,
+                    "east": -1,
+                    "west": 60
+                }
+            ]
+        },
+        {
+            "index": 47,
+            "color": {
+                "r": 210,
+                "g": 105,
+                "b": 30,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 46,
+                    "south": 48,
+                    "east": -1,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 48,
+            "color": {
+                "r": 210,
+                "g": 105,
+                "b": 30,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 47,
+                    "south": 41,
+                    "east": -1,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 49,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 50,
+                    "east": 52,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 50,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 49,
+                    "south": 51,
+                    "east": 53,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 51,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 50,
+                    "south": -1,
+                    "east": 54,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 52,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 53,
+                    "east": 55,
+                    "west": 49
+                }
+            ]
+        },
+        {
+            "index": 53,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "targetTile",
+            "type": 2,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 52,
+                    "south": 54,
+                    "east": 56,
+                    "west": 50
+                }
+            ]
+        },
+        {
+            "index": 54,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 53,
+                    "south": -1,
+                    "east": 57,
+                    "west": 51
+                }
+            ]
+        },
+        {
+            "index": 55,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 56,
+                    "east": -1,
+                    "west": 52
+                }
+            ]
+        },
+        {
+            "index": 56,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 55,
+                    "south": 57,
+                    "east": 58,
+                    "west": 53
+                }
+            ]
+        },
+        {
+            "index": 57,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 56,
+                    "south": -1,
+                    "east": -1,
+                    "west": 54
+                }
+            ]
+        },
+        {
+            "index": 58,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 59,
+                    "west": 56
+                }
+            ]
+        },
+        {
+            "index": 59,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 60,
+                    "west": 58
+                }
+            ]
+        },
+        {
+            "index": 60,
+            "color": {
+                "r": 80,
+                "g": 123,
+                "b": 67,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 46,
+                    "west": 59
                 }
             ]
         }
