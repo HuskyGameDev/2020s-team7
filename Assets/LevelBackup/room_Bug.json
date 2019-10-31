@@ -9,21 +9,15 @@
     "nodes": [
         {
             "index": 0,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 200,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 200,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -49,21 +43,15 @@
         },
         {
             "index": 1,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 200,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 200,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -89,21 +77,15 @@
         },
         {
             "index": 2,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 200,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 200,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -129,21 +111,15 @@
         },
         {
             "index": 3,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 200,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 200,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -169,21 +145,15 @@
         },
         {
             "index": 4,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 200,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 200,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -209,13 +179,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -249,13 +213,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -289,13 +247,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -329,13 +281,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -369,13 +315,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -409,13 +349,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -449,13 +383,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -489,13 +417,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -529,13 +451,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -569,13 +485,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -609,13 +519,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -649,13 +553,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -689,13 +587,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -729,13 +621,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -769,13 +655,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,

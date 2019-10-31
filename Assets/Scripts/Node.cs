@@ -6,13 +6,17 @@ using Direction = GameManager.Direction;
 
 [System.Serializable]
 public class Node {
-	[ReadOnly]   // nullable variables are not serializable, so could not be saved. Now -1 indicates a non-existant connection
+	//[ReadOnly]   // nullable variables are not serializable, so could not be saved. Now -1 indicates a non-existant connection
 	public int index = -1;
-	// Use this for initialization
-	public Color32 color = Color.magenta;
-	//public Sprite floorSprite;
+	public Color32 colorF = Color.magenta;
+	public Color32 colorW = Color.magenta;
+
 	public String floorSprite = null;
-	public enum TileType { regular, source, target, checkpoint };
+	public String wallSprite = null;
+	public String cornerSprite = null;
+	public String[] debris = new String[9];
+
+	public enum TileType { regular, source, target, checkpointon, checkpointoff };
 	public TileType type = TileType.regular;
 	public bool hasSign = false;
 	public String signMessage = "";
@@ -52,10 +56,6 @@ public class Node {
 		public GameManager.Direction enter = Direction.North;
 		public GameManager.Direction leave = Direction.North;
 		public bool lineActive = false;
-
-		public enum TileType { regular, source, target, checkpointon, checkpointoff };
-
-		public TileType type = TileType.regular;
 	
 		public LineData() {
 
@@ -122,30 +122,43 @@ public class Node {
 		dataList.Add(new LineData());
 	}
 
-	// constructor that sets up a small amuunt of information
+	// constructor that sets up a small amount of information
 	public Node(int index, Color32 color, string sprite) {
 		//connectionStack.Push(new ConnectionSet());
 		connectionList.Add(new ConnectionSet());
 		//dataStack.Push(new LineData());
 		dataList.Add(new LineData());
 		this.index = index;
-		this.color = color;
+		this.colorF = color;
+		this.colorW = color;
 		this.floorSprite = sprite;
+		this.wallSprite = "Wall_Default";
+		this.cornerSprite = "Corner_Default";
 	}
 
 	// detailed constructor, used in the node.copy() method
-	public Node(int north, int south, int east, int west, int index, Color32 color, String floorSprite, List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
+	public Node(int index, int north, int south, int east, int west, Color32 colorF, Color32 colorW, String floorSprite, String wallSprite, String cornerSprite, String[] debris, TileType type, bool hasSign, String signMessage, List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
 		//connectionStack.Push(new ConnectionSet());
 		connectionList.Add(new ConnectionSet());
 		//dataStack.Push(new LineData());
 		dataList.Add(new LineData());
+		this.index = index;
 		this.connections.north = north;
 		this.connections.south = south;
 		this.connections.east = east;
 		this.connections.west = west;
-		this.index = index;
-		this.color = color;
+		this.colorF = colorF;
+		this.colorW = colorW;
 		this.floorSprite = floorSprite;
+		this.wallSprite = wallSprite;
+		this.cornerSprite = cornerSprite;
+		for (int i = 0; i < 9; i++) {
+			this.debris[i] = debris[i];
+		}
+
+		this.type = type;
+		this.hasSign = hasSign;
+		this.signMessage = signMessage;
 		foreach (ConnectionSet conn in connectionOriginal) {
 			this.connectionList.Add(conn.Copy());
 		}
@@ -159,7 +172,23 @@ public class Node {
 	/// </summary>
 	/// <returns></returns>
 	public Node Copy() {
-		return new Node(connections.north, connections.south, connections.east, connections.west, index, color, floorSprite, connectionList, dataList);
+		/*int index;
+		Color32 colorF;
+		Color32 colorW;
+	
+		String floorSprite;
+		String wallSprite;
+		String cornerSprite;
+		String[] debris;
+	
+		TileType type;
+		bool hasSign;
+		String signMessage;*/
+		Node newNode = new Node(index, connections.north, connections.south, connections.east, connections.west, colorF, colorW, floorSprite, wallSprite, cornerSprite, debris, type, hasSign, signMessage, connectionList, dataList);
+		for (int i = 0; i < 9; i++) {
+			newNode.debris[i] = this.debris[i];
+		}
+		return newNode;
 	}
 
 	/// <summary>

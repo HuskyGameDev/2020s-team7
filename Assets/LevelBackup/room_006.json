@@ -9,21 +9,15 @@
     "nodes": [
         {
             "index": 0,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -49,21 +43,15 @@
         },
         {
             "index": 1,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -89,27 +77,21 @@
         },
         {
             "index": 2,
-            "colorF": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
-            "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "sourceTile",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
                 "",
                 "",
-                "Source",
+                "",
                 "",
                 "",
                 "",
@@ -129,21 +111,15 @@
         },
         {
             "index": 3,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -169,21 +145,15 @@
         },
         {
             "index": 4,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -209,21 +179,15 @@
         },
         {
             "index": 5,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -249,21 +213,15 @@
         },
         {
             "index": 6,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -289,21 +247,15 @@
         },
         {
             "index": 7,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -329,21 +281,15 @@
         },
         {
             "index": 8,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -369,21 +315,15 @@
         },
         {
             "index": 9,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -409,21 +349,15 @@
         },
         {
             "index": 10,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -449,21 +383,15 @@
         },
         {
             "index": 11,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -489,21 +417,15 @@
         },
         {
             "index": 12,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -529,21 +451,15 @@
         },
         {
             "index": 13,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -569,21 +485,15 @@
         },
         {
             "index": 14,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -609,21 +519,15 @@
         },
         {
             "index": 15,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -649,21 +553,15 @@
         },
         {
             "index": 16,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -689,21 +587,15 @@
         },
         {
             "index": 17,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -729,27 +621,21 @@
         },
         {
             "index": 18,
-            "colorF": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
-            "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "targetTile",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
                 "",
                 "",
-                "Target",
+                "",
                 "",
                 "",
                 "",
@@ -769,21 +655,15 @@
         },
         {
             "index": 19,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -809,21 +689,15 @@
         },
         {
             "index": 20,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -849,21 +723,15 @@
         },
         {
             "index": 21,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -889,21 +757,15 @@
         },
         {
             "index": 22,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -929,21 +791,15 @@
         },
         {
             "index": 23,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -969,21 +825,15 @@
         },
         {
             "index": 24,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1009,21 +859,15 @@
         },
         {
             "index": 25,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1049,21 +893,15 @@
         },
         {
             "index": 26,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1089,21 +927,15 @@
         },
         {
             "index": 27,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1129,21 +961,15 @@
         },
         {
             "index": 28,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1169,21 +995,15 @@
         },
         {
             "index": 29,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1209,21 +1029,15 @@
         },
         {
             "index": 30,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1249,21 +1063,15 @@
         },
         {
             "index": 31,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1289,21 +1097,15 @@
         },
         {
             "index": 32,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1329,21 +1131,15 @@
         },
         {
             "index": 33,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1369,21 +1165,15 @@
         },
         {
             "index": 34,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1409,21 +1199,15 @@
         },
         {
             "index": 35,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1449,21 +1233,15 @@
         },
         {
             "index": 36,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1489,21 +1267,15 @@
         },
         {
             "index": 37,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1529,21 +1301,15 @@
         },
         {
             "index": 38,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1569,21 +1335,15 @@
         },
         {
             "index": 39,
-            "colorF": {
-                "r": 0,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 0,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1609,21 +1369,15 @@
         },
         {
             "index": 40,
-            "colorF": {
-                "r": 0,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 0,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1649,21 +1403,15 @@
         },
         {
             "index": 41,
-            "colorF": {
-                "r": 0,
-                "g": 255,
-                "b": 0,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 0,
                 "g": 255,
                 "b": 0,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1689,21 +1437,15 @@
         },
         {
             "index": 42,
-            "colorF": {
-                "r": 0,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 0,
                 "g": 0,
                 "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1729,21 +1471,15 @@
         },
         {
             "index": 43,
-            "colorF": {
-                "r": 0,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 0,
                 "g": 0,
                 "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1769,21 +1505,15 @@
         },
         {
             "index": 44,
-            "colorF": {
-                "r": 0,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 0,
                 "g": 0,
                 "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "",
+            "cornerSprite": "",
             "debris": [
                 "",
                 "",
@@ -1809,13 +1539,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -1849,13 +1573,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -1889,13 +1607,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -1929,13 +1641,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,
@@ -1969,13 +1675,7 @@
         },
         {
             "index": -1,
-            "colorF": {
-                "r": 255,
-                "g": 0,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
+            "color": {
                 "r": 255,
                 "g": 0,
                 "b": 255,

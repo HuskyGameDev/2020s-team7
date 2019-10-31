@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour {
         //levelselector.activateButton(levelselector.levelButtons[0]);
         //levelselector.gameObject.SetActive(true);
         InputManager.instance.LoadKeybinds();
-		BatchGenerate.GenerateRooms();
 	}
 
 

@@ -261,27 +261,7 @@ public static class LevelEditor_2 {
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
 	public static void setSource(Map room, Node[,] chunk, TileCoord tile) {
-		for (int i = 0; i < room.size; i++) {
-			if (room[i].type == Node.TileType.source) {
-				room[i].type = Node.TileType.regular;
-				room[i].floorSprite = GameManager.instance.spriteBook[0];
-			}
-		}
-		chunk[tile.x, tile.y].type = Node.TileType.source;
-		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[1];
-		room.sourceNodeIndex = chunk[tile.x, tile.y].index;
-	}
-	// Same as above, but meant for use with the in-editor level editor
-	public static void setSource(Map room, int tileIndex) {
-		for (int i = 0; i < room.size; i++) {
-			if (room[i].type == Node.TileType.source) {
-				room[i].type = Node.TileType.regular;
-				room[i].floorSprite = GameManager.instance.spriteBook[0];
-			}
-		}
-		room[tileIndex].type = Node.TileType.source;
-		room[tileIndex].floorSprite = GameManager.instance.spriteBook[1];
-		room.sourceNodeIndex = tileIndex;
+		setType(room, chunk[tile.x, tile.y].index, Node.TileType.source);
 	}
 
 	/// <summary>
@@ -291,27 +271,66 @@ public static class LevelEditor_2 {
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
 	public static void setTarget(Map room, Node[,] chunk, TileCoord tile) {
-		for (int i = 0; i < room.size; i++) {
-			if (room[i].type == Node.TileType.target) {
-				room[i].type = Node.TileType.regular;
-				room[i].floorSprite = GameManager.instance.spriteBook[0];
-			}
-		}
-		chunk[tile.x, tile.y].type = Node.TileType.target;
-		chunk[tile.x, tile.y].floorSprite = GameManager.instance.spriteBook[2];
-		room.targetNodeIndex = chunk[tile.x, tile.y].index;
+		setType(room, chunk[tile.x, tile.y].index, Node.TileType.target);
 	}
-	// Same as above, but meant for use with the in-editor level editor
-	public static void setTarget(Map room, int tileIndex) {
-		for (int i = 0; i < room.size; i++) {
-			if (room[i].type == Node.TileType.target) {
-				room[i].type = Node.TileType.regular;
-				room[i].floorSprite = GameManager.instance.spriteBook[0];
+	
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="room"></param>
+	/// <param name="tileIndex"></param>
+	/// <param name="newType"></param>
+	public static void setType(Map room, int tileIndex, Node.TileType newType) {
+		//regular, source, target, checkpointon, checkpointoff
+		for (int i = 0; i < 9; i++) {
+			if (
+				room[tileIndex].debris[i] != null && (
+					room[tileIndex].debris[i].Equals("Source") ||
+					room[tileIndex].debris[i].Equals("Target") ||
+					room[tileIndex].debris[i].Equals("Checkpoint")
+				)) {
+				room[tileIndex].debris[i] = "";
 			}
 		}
-		room[tileIndex].type = Node.TileType.target;
-		room[tileIndex].floorSprite = GameManager.instance.spriteBook[2];
-		room.targetNodeIndex = tileIndex;
+
+		switch (newType) {
+			case Node.TileType.regular:
+				room[tileIndex].type = Node.TileType.regular;
+				break;
+			case Node.TileType.source:
+				for (int i = 0; i < room.size; i++) {
+					if (room[i].type == Node.TileType.source) {
+						room[i].type = Node.TileType.regular;
+						room[i].debris[4] = "";
+					}
+				}
+				room[tileIndex].type = Node.TileType.source;
+				room[tileIndex].debris[4] = "Source";
+				room.sourceNodeIndex = tileIndex;
+				break;
+			case Node.TileType.target:
+				for (int i = 0; i < room.size; i++) {
+					if (room[i].type == Node.TileType.target) {
+						room[i].type = Node.TileType.regular;
+						room[i].debris[4] = "";
+					}
+				}
+				room[tileIndex].type = Node.TileType.target;
+				//room[tileIndex].floorSprite = GameManager.instance.spriteBook[2];
+				room[tileIndex].debris[4] = "Target";
+				room.targetNodeIndex = tileIndex;
+				break;
+			case Node.TileType.checkpointon:
+				room[tileIndex].type = Node.TileType.checkpointon;
+				room[tileIndex].debris[4] = "Checkpoint";
+				break;
+			case Node.TileType.checkpointoff:
+				room[tileIndex].type = Node.TileType.checkpointoff;
+				room[tileIndex].debris[4] = "Checkpoint";
+				break;
+			default:
+				break;
+		}
 	}
 
 	/// <summary>
@@ -340,7 +359,7 @@ public static class LevelEditor_2 {
 		if (index == room.sourceNodeIndex) {
 			for (int k = 0; k < room.size; k++) {
 				if ((room[k] != null) && (room[k].index >= 0) && (room[k].index != index)) {
-					setSource(room, k);
+					setType(room, k, Node.TileType.source);
 				}
 			}
 		}

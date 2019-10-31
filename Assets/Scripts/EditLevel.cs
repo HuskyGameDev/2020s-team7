@@ -12,6 +12,7 @@ public class EditLevel : MonoBehaviour {
 	public bool overwriteLevel;
 
 	// direction to create connection in / delete tile in
+	public Node.TileType type = Node.TileType.regular;
 	public GameManager.Direction methodDirection;
 	public int linkX = 0;	// X & Y coordinates to link to in newly created chunk
 	public int linkY = 0;	// Note the the coordinates start at (0,0) in the upper left corner
@@ -29,7 +30,7 @@ public class EditLevel : MonoBehaviour {
 	public Node[,] chunkToLink;	// refernce to the most newly created chunk
 	public Node[][,] chunks = new Node[0][,]; // probably not strictly needed since you cant access this to change things in the editor anyway
 
-	public Node currentNode;	// referes to the copy of the current node
+	public Node currentNode;    // referes to the copy of the current node
 	public Map currentMap;	// refers to the current map use by the gameplay object
 
 	/// <summary>
@@ -41,9 +42,8 @@ public class EditLevel : MonoBehaviour {
 		Map tempMap = new Map();
 		GameManager.instance.gameplay.map = tempMap;	// let gameplay & this have a new map
 		currentMap = tempMap;
-		//tempMap[0] = new Node(0, new Color32(newChunkColorR, newChunkColorG, newChunkColorB, newChunkColorA), null);
 		createTileChunk(false);	// create a new tile chunk in the new map
-		LevelEditor_2.setSource(tempMap, 0); // set the suorce tile to (0,0)
+		LevelEditor_2.setType(tempMap, 0, Node.TileType.source); // set the suorce tile to (0,0)
 		//currentMap = tempMap;
 		//GameManager.instance.gameplay.map = tempMap;
 		GameManager.instance.gameplay.resetLevelAssets();	// reset player location & redraw everything
@@ -62,6 +62,7 @@ public class EditLevel : MonoBehaviour {
 	/// Note that this is a relative filepath from the assests folder, not the absolute filepath
 	/// </summary>
 	public void saveLevel() {
+		Debug.Log("WTF, is this not being called?");
 		getCurrentMap();	// make sure map reference is current
 		LevelEditor_2.cleanUpMap(currentMap);	// clean up the map, removing deleted or invalid tiles
 		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName+".json")) {	// if it already exists, check wether the person intends to overwrite it
@@ -75,6 +76,7 @@ public class EditLevel : MonoBehaviour {
 			}
 		} else {
 			// if it doesn't already exit, don't need to make any checks.
+			Debug.Log("Saving level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
 			Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName+".json");
 		}
 
@@ -89,6 +91,7 @@ public class EditLevel : MonoBehaviour {
 			currentMap = Map.Load(Application.dataPath + levelPath + "/room_" + levelName);
 			GameManager.instance.gameplay.map = currentMap;
 			GameManager.instance.gameplay.resetLevelAssets();
+			Debug.Log("Loading level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
 		} else {
 			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
 		}
@@ -101,7 +104,7 @@ public class EditLevel : MonoBehaviour {
 		currentNode = GameManager.instance.gameplay.currentPosition.Copy();
 		//currentNode = GameManager.instance.gameplay.currentPosition;
 	}
-	
+
 	/// <summary>
 	/// apply any changes that have been made to the copy-of-the-current-node to the current node
 	/// </summary>
@@ -112,21 +115,14 @@ public class EditLevel : MonoBehaviour {
 		// draw changes to node
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.instance.gameplay.currentPosition, false);
 	}
-    /*
-    public void saveLevel()
-    {
-        Map modMap = GameManager.instance.gameplay.map;
-        if (File.Exists(Application.dataPath + "/LevelsEdited/room_" + nameToSaveLevelWith))
-        {
-            if (overwriteLevel)
-            {
-                Map.Save(modMap, Application.dataPath + "/LevelsEdited/room_" + (nameToSaveLevelWith) + ".json");
-                Debug.Log("Overwriting level at: \"" + Application.dataPath + "/LevelsEdited/room_" + nameToSaveLevelWith + "\" ?");
-            }
-        }
-    }
-    */
-    
+
+	public void redraw() {
+		getCurrentMap();    // make sure map reference is current
+		getCurrentNode();
+		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.instance.gameplay.currentPosition, false);
+	}
+
+
 	/// <summary>
 	/// creates a rectalngular matrix of tiles that are already linked together.
 	/// Also creates a link to this new collection of tiles, from the current ile, and in 
@@ -182,35 +178,15 @@ public class EditLevel : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Sets the current node to the source node
+	/// 
 	/// </summary>
-	public void setSource() {
+	public void setType() {
 		getCurrentNode();
 		getCurrentMap();
-		LevelEditor_2.setSource(currentMap, currentNode.index);
+		LevelEditor_2.setType(currentMap, currentNode.index, type);
 		getCurrentNode();
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
 	}
-
-	/// <summary>
-	/// Sets the current node to the target node
-	/// </summary>
-	public void setTarget() {
-		getCurrentNode();
-		getCurrentMap();
-		LevelEditor_2.setTarget(currentMap, currentNode.index);
-		getCurrentNode();
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
-	}
-
-	/*
-	public void cleanUpMap() {
-		Debug.Log("cleanUpMap() does not do anything right now");
-		Map tempMap = new Map();
-		for (int i = 0; i < currentMap.arraySize; i++) {
-
-		}
-	}*/
 
 	/// <summary>
 	/// Deletes the tile that is at the direction given by methodDirection.

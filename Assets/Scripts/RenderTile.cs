@@ -18,9 +18,22 @@ public class RenderTile : MonoBehaviour {
     public SpriteRenderer westLine;
 	public SpriteRenderer lineCenter;
 
-	public GenericMask[] cornerMasks;
+	private static Vector2Int center = new Vector2Int(2,2);
+	//public GenericMask[] cornerMasks;
+	public SpriteRenderer[] debris = new SpriteRenderer[9];
 
-	public SpriteRenderer[] GetAllSprites { set { } get { return new SpriteRenderer[] { corners, northWall, eastWall, southWall, westWall, floor, northLine, southLine, eastLine, westLine, lineCenter}; } }
+	public SpriteRenderer[] GetAllSprites {
+		set { }
+		get {
+			return new SpriteRenderer[] {
+				corners, northWall, eastWall, southWall, westWall,
+				floor,
+				northLine, southLine, eastLine, westLine, lineCenter,
+				debris[0], debris[1], debris[2], debris[3], debris[4],
+				debris[5], debris[6], debris[7], debris[8]
+			};
+		}
+	}
 
 
 
@@ -125,15 +138,60 @@ public class RenderTile : MonoBehaviour {
 				} else {
 					floor.sprite = Resources.Load<Sprite>("ErrorSprite");
 				}
-				//floor.sprite = Resources.Load<Sprite>("rock_05_disp");
+			}
+			if (node.wallSprite != null) {
+				Sprite wSprite = Resources.Load<Sprite>(node.wallSprite);
+				if (wSprite != null) {
+					northWall.sprite = wSprite;
+					eastWall.sprite = wSprite;
+					southWall.sprite = wSprite;
+					westWall.sprite = wSprite;
+				} else {
+					wSprite = Resources.Load<Sprite>("ErrorSprite");
+					northWall.sprite = wSprite;
+					eastWall.sprite = wSprite;
+					southWall.sprite = wSprite;
+					westWall.sprite = wSprite;
+				}
+			}
+			if (node.cornerSprite != null) {
+				Sprite cSprite = Resources.Load<Sprite>(node.cornerSprite);
+				if (cSprite != null) {
+					corners.sprite = cSprite;
+				} else {
+					corners.sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
 			}
 			//Update the floor color
-			floor.color = Color.Lerp(node.color/*new Color32(node.r, node.g, node.b, node.a)*/, Color.gray, .3f);
+			floor.color = node.colorF;
+			northWall.color = node.colorW;
+			eastWall.color = node.colorW;
+			southWall.color = node.colorW;
+			westWall.color = node.colorW;
+			corners.color = node.colorW;
 
-            this.gameObject.SetActive(true);   
-            SetWallsFromNode(node);
+			SetDebrisFromNode(node);
+
+			this.gameObject.SetActive(true);   
+            SetWallsFromNode(node, dir, position);
         }
     }
+
+	public void SetDebrisFromNode(Node node) {
+		for (int j = 0; j < 9; j++) {
+			if (node.debris[j] != null && node.debris[j].Length > 0) {
+				Sprite dSprite = Resources.Load<Sprite>(node.debris[j]);
+				if (dSprite != null) {
+					this.debris[j].sprite = dSprite;
+				} else {
+					this.debris[j].sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
+				this.debris[j].gameObject.SetActive(true);
+			} else {
+				this.debris[j].gameObject.SetActive(false);
+			}
+		}
+	}
 
     public void SetLineFromDir(Direction dir, bool b) {
         switch (dir) {
@@ -170,16 +228,26 @@ public class RenderTile : MonoBehaviour {
         }
     }
 
-    public void SetWallsFromNode(Node node) {
+    public void SetWallsFromNode(Node node, GameManager.Direction? dir, Vector2Int? position) {
 		northWall.gameObject.SetActive(node.connections.north == -1);
 		southWall.gameObject.SetActive(node.connections.south == -1);
 		eastWall.gameObject.SetActive(node.connections.east == -1);
 		westWall.gameObject.SetActive(node.connections.west == -1);
-		/*
-		northWall.gameObject.SetActive(node.connections.north == null);
-		southWall.gameObject.SetActive(node.connections.south == null);
-		eastWall.gameObject.SetActive(node.connections.east == null);
-		westWall.gameObject.SetActive(node.connections.west == null);
-		*/
+		if (!center.Equals(position)) {
+			switch (dir) {
+				case Direction.North:
+					southWall.gameObject.SetActive(false);
+					break;
+				case Direction.East:
+					westWall.gameObject.SetActive(false);
+					break;
+				case Direction.South:
+					northWall.gameObject.SetActive(false);
+					break;
+				case Direction.West:
+					eastWall.gameObject.SetActive(false);
+					break;
+			}
+		}
 	}
 }

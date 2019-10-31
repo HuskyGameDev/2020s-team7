@@ -21,9 +21,11 @@ public class EditLevelEditor : Editor {
 		}
 		if (GUILayout.Button("Save Level")) {
 			((EditLevel)target).saveLevel();
+			Debug.Log("WTF!");
 		}
 		if (GUILayout.Button("Load Level")) {
 			((EditLevel)target).loadLevelByName();
+			Debug.Log("WTF! v2");
 		}
 
 		if (GUILayout.Button("Re-generate levels from scripts")) {
@@ -40,21 +42,17 @@ public class EditLevelEditor : Editor {
 		if (GUILayout.Button("Delete tile at \"Method Direction\"")) {
 			((EditLevel)target).deleteTile();
 		}
-		if (GUILayout.Button("Set this Tile as source")) {
-			((EditLevel)target).setSource();
+		if (GUILayout.Button("Set type for this tile")) {
+			((EditLevel)target).setType();
 		}
-		if (GUILayout.Button("Set this tile as Target")) {
-			((EditLevel)target).setTarget();
+		if (GUILayout.Button("Redraw Enviroment")) {
+			((EditLevel)target).redraw();
 		}
-		if (GUILayout.Button("Apply changes to node")) {
-			((EditLevel)target).applyToNode();
-		}
-		/*
-		if (GUILayout.Button("Get Current Node")) {
-			((EditLevel)target).getCurrentNode();
-		}*/
+	   
+	   if (GUILayout.Button("Apply changes to node")) {
+		   ((EditLevel)target).applyToNode();
+	   }
 
-
-		base.OnInspectorGUI();
+	   base.OnInspectorGUI();
 	}
 }
