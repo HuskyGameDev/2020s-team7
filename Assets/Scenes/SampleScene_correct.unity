@@ -5057,7 +5057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &152773275
 Transform:
   m_ObjectHideFlags: 0
@@ -47388,7 +47388,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1353602649}
   m_HandleRect: {fileID: 1353602648}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -57154,6 +57154,7 @@ MonoBehaviour:
   winTrigger: 0
   cinimaticMode: 0
   hasBall: 1
+  curdir: 0
   stringLeft: 21
   stringrem: {fileID: 2146562671}
   wintext: {fileID: 784889633}
@@ -57174,6 +57175,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57185,6 +57188,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57196,6 +57201,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57207,6 +57214,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57218,6 +57227,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57229,6 +57240,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57240,6 +57253,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57251,6 +57266,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57262,6 +57279,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57273,6 +57292,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57284,6 +57305,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57295,6 +57318,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57306,6 +57331,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57317,6 +57344,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57328,6 +57357,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57339,6 +57370,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57350,6 +57383,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57361,6 +57396,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57372,6 +57409,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57383,6 +57422,8 @@ MonoBehaviour:
         rgba: 4294902015
       floorSprite: 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
@@ -57396,6 +57437,8 @@ MonoBehaviour:
       rgba: 4294902015
     floorSprite: 
     type: 0
+    hasSign: 0
+    signMessage: 
     connectionList:
     - north: -1
       south: -1
@@ -61338,7 +61381,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552788035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57, y: 116, z: 0}
+  m_LocalPosition: {x: -440, y: -145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1717775202}

@@ -17,6 +17,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -36,6 +38,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 0,
@@ -55,6 +59,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 1,
@@ -74,6 +80,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 2,
@@ -93,6 +101,8 @@
             },
             "floorSprite": "rock_05_disp",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": 3,
@@ -112,6 +122,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -131,6 +143,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -150,6 +164,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -169,6 +185,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -188,6 +206,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -207,6 +227,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -226,6 +248,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -245,6 +269,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -264,6 +290,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -283,6 +311,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -302,6 +332,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -321,6 +353,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -340,6 +374,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -359,6 +395,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,
@@ -378,6 +416,8 @@
             },
             "floorSprite": "",
             "type": 0,
+            "hasSign": false,
+            "signMessage": "",
             "connectionList": [
                 {
                     "north": -1,

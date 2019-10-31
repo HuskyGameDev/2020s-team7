@@ -137,6 +137,11 @@ public class GenerateRenderGrid : LevelGenerator {
 
 						handler.cornerMaskMap[x, y].maskLineOfSight.sprite = lineMaskLow;
 						handler.cornerMaskMap[x, y].maskLineOfSight.transform.localPosition = new Vector3(-0.5f, -0.5f, 0.0f);
+					} else if (((x == (dim / 2)) || (x == (dim / 2) + 1)) && ((y == (dim / 2)) || (y == (dim / 2) + 1))) {
+						foreach (SpriteMask mask in handler.cornerMaskMap[x, y].maskHorizontal) {
+							if (mask != null) DestroyImmediate(mask.gameObject);
+						}
+						handler.cornerMaskMap[x, y].maskHorizontal = new SpriteMask[0];
 					}
 
 					//outer-edge corner masks do not need line mask
@@ -148,7 +153,8 @@ public class GenerateRenderGrid : LevelGenerator {
 
 
 					// set 45 angle corner SpriteMasks to use CornerMask_Half
-					if ((x == y) || (x + y == (dim))) {
+					// do not do this for corners immediately around the center tile
+					if (((x == y) || ((x + y) == dim)) && !((x == (dim/2)) || (x == (dim/2) + 1))) {
 						foreach (SpriteMask mask in handler.cornerMaskMap[x, y].maskVertical) {
 							mask.sprite = cornerHalfMask;
 						}

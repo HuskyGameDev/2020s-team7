@@ -35,13 +35,14 @@ public class RenderTile : MonoBehaviour {
 
     public void DrawFullNode(Node node, GameManager.Direction? dir, Vector2Int? position)
     {
-        if (node == null)
+        if ((node == null) || (dir == null) || (position == null))
         {
             this.gameObject.SetActive(false);
         }
         else
         {
-            for (int i = 0; i < 4; i++)
+			int i;
+			for (i = 0; i < 4; i++)
                 SetLineFromDir((Direction)i, false);
 
             if (node.data.hasEnter)
@@ -57,66 +58,63 @@ public class RenderTile : MonoBehaviour {
 
 			// should evaluate to an array of size 2 for tiles on the cardinal directions, 4 for the middle tile, or 1 otherwise
 			// CODING IN PROGRESS HERE - UNFINISHED
-			/*
-			Direction[] checkDirection = new Direction[((position.x == 2) ? 2:1) * ((position.y == 2) ? 2 : 1)];
-			int i = 0;
-			if (position.x >= 2) {
-				if (position.y >= 2) {
-					checkDirection[i] = Direction.North;
-					i++;
-				}
-				if(position.y <= 2) {
-					checkDirection[i] = Direction.East;
-					i++;
-				}
-			}
-			if (position.x <= 2) {
-				if (position.y >= 2) {
-					checkDirection[i] = Direction.West;
-					i++;
-				}
-				if (position.y <= 2) {
-					checkDirection[i] = Direction.South;
-					i++;
-				}
-			}
-			*/
-			/*
-			if ((position.x <= 2) && (position.y <= 2)) {
+			
+			Direction[] checkDirection = new Direction[((position.Value.x == 2) ? 2:1) * ((position.Value.y == 2) ? 2 : 1)];
+			i = 0;
+			if ((position.Value.x <= 2) && (position.Value.y <= 2)) {
 				checkDirection[i] = Direction.South;
 				i++;
 			}
-			if ((position.x >= 2) && (position.y >= 2)) {
+			if ((position.Value.x >= 2) && (position.Value.y >= 2)) {
 				checkDirection[i] = Direction.North;
 				i++;
 			}
-			if ((position.x <= 2) && (position.y >= 2)) {
+			if ((position.Value.x <= 2) && (position.Value.y >= 2)) {
 				checkDirection[i] = Direction.West;
 				i++;
 			}
-			if ((position.x >= 2) && (position.y <= 2)) {
+			if ((position.Value.x >= 2) && (position.Value.y <= 2)) {
 				checkDirection[i] = Direction.East;
-			}*/
-			/*
-			Node[] clockwiseNodes = new Node[4];
-			Node[] counterwiseNode = new Node[4];
-			Node tempNodeCW = node;
-			Node tempNodeCCW = node;
+			}
+			Node[] clockwiseNode;
+			Node[] counterwiseNode;
+			Node tempNodeCW;
+			Node tempNodeCCW;
+			Direction tempDirCW;
+			Direction tempDirCCW;
 			bool draw;
 			foreach (Direction d in checkDirection) {
+				clockwiseNode = new Node[4];
+				counterwiseNode = new Node[4];
+				tempNodeCW = node;
+				tempNodeCCW = node;
 				draw = false;
+				tempDirCW = d;
+				tempDirCCW = Extensions.clockwise(d);
 				for (i = 0; i < 4; i++) {
 					if (tempNodeCW != null) {
-						tempNodeCW = GameManager.instance.gameplay.map[(int)node.GetConnectionFromDir(dir)];
+						tempNodeCW = GameManager.instance.gameplay.map[(int)tempNodeCW.GetConnectionFromDir(tempDirCW)];
+						tempDirCW = Extensions.clockwise(tempDirCW);
+						clockwiseNode[i] = tempNodeCW;
 					}
 					if (tempNodeCCW != null) {
-						tempNodeCCW = GameManager.instance.gameplay.map[(int)node.GetConnectionFromDir(dir)];
+						tempNodeCCW = GameManager.instance.gameplay.map[(int)tempNodeCCW.GetConnectionFromDir(tempDirCCW)];
+						tempDirCCW = Extensions.counterclockwise(tempDirCCW);
+						counterwiseNode[(6 - i) % 4] = tempNodeCCW;
 					}
-
-
 				}
+				for (i = 0; i < 4; i++) {
+					if ((clockwiseNode[i] == null) || (counterwiseNode[i] == null) || (clockwiseNode[i] != counterwiseNode[i])) {
+						draw = true;
+						break;
+					}
+				}
+				/* draw corner */
+				GameManager.instance.gameplay.nonEuclidRenderer.cornerMaskMap[
+					position.Value.x + ((d == Direction.North || d == Direction.East) ? 1 : 0), 
+					position.Value.y + ((d == Direction.North || d == Direction.West) ? 1 : 0)
+					].setCornerFromDir(draw, dir.Value);
 			}
-			*/
 
 			//Update the floor sprite if this node has one.
 			//if (node.floorSprite != null) floor.sprite = node.floorSprite;
