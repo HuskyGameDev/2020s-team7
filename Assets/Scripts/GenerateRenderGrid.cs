@@ -137,7 +137,8 @@ public class GenerateRenderGrid : LevelGenerator {
 
 						handler.cornerMaskMap[x, y].maskLineOfSight.sprite = lineMaskLow;
 						handler.cornerMaskMap[x, y].maskLineOfSight.transform.localPosition = new Vector3(-0.5f, -0.5f, 0.0f);
-					} else if (((x == (dim / 2)) || (x == (dim / 2) + 1)) && ((y == (dim / 2)) || (y == (dim / 2) + 1))) {
+					} else if (((x == (dim / 2)) || (x == (dim / 2) + 1)) && ((y == (dim / 2)) || (y == (dim / 2) + 1))) { 
+							//the corners right around the center tile do not need their horizontal masks
 						foreach (SpriteMask mask in handler.cornerMaskMap[x, y].maskHorizontal) {
 							if (mask != null) DestroyImmediate(mask.gameObject);
 						}

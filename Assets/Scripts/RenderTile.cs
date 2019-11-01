@@ -46,33 +46,35 @@ public class RenderTile : MonoBehaviour {
         westWall.gameObject.SetActive(other.westWall.gameObject.activeSelf);
     }
 
-    public void DrawFullNode(Node node, GameManager.Direction? dir, Vector2Int? position)
-    {
-        if ((node == null) || (dir == null) || (position == null))
-        {
-            this.gameObject.SetActive(false);
-        }
-        else
-        {
+	public void DrawFullNode(Node node, GameManager.Direction? dir, Vector2Int? position) {
+		if ((node == null) || (dir == null) || (position == null)) {    // set everything invisible if any of these are null
+			this.gameObject.SetActive(false);
+		} else {
+			// otherwise, draw the stuff as appropriate
 			int i;
 			for (i = 0; i < 4; i++)
                 SetLineFromDir((Direction)i, false);
 
-            if (node.data.hasEnter)
+            if (node.data.hasEnter)	// set line/string visible as appropriate
                 SetLineFromDir((Direction)node.data.enter, true);
             if (node.data.hasLeave)
                 SetLineFromDir((Direction)node.data.leave, true);
 
-
+				// set line/string center visible as appropriate
 			if (node.data.hasEnter && node.data.hasLeave && node.data.enter.inverse() == node.data.leave)
 				lineCenter.gameObject.SetActive(true);
 			else
 				lineCenter.gameObject.SetActive(false);
 
 			// should evaluate to an array of size 2 for tiles on the cardinal directions, 4 for the middle tile, or 1 otherwise
-			// CODING IN PROGRESS HERE - UNFINISHED
-			
 			Direction[] checkDirection = new Direction[((position.Value.x == 2) ? 2:1) * ((position.Value.y == 2) ? 2 : 1)];
+
+			// add the directions that need to be checked to the array
+			// Directions to be check are based on tile location in relation to the center tile
+			// North correspondes to upper-right, east to lower-right, south to lower-left, and west to upper-left.
+			//    Center tile is checked in upper-right, lower-right, lower-left, upper-right directions,
+			//    Tile on the cardinal directions are checked in the two directions pointeed away from the center tile, 
+			//    and all other tile are checked in the main direction that points away from the center tile
 			i = 0;
 			if ((position.Value.x <= 2) && (position.Value.y <= 2)) {
 				checkDirection[i] = Direction.South;
@@ -96,6 +98,8 @@ public class RenderTile : MonoBehaviour {
 			Direction tempDirCW;
 			Direction tempDirCCW;
 			bool draw;
+			// now in each of the given directions, it checks the nodes that can be reached clockwise and counter cockwise in each direction. 
+			// If nodes reached clockwise/counter-clockwise do not match or are null, the corner in that direction is set visible, otherwise that corner is set non-visible.
 			foreach (Direction d in checkDirection) {
 				clockwiseNode = new Node[4];
 				counterwiseNode = new Node[4];
@@ -130,7 +134,7 @@ public class RenderTile : MonoBehaviour {
 			}
 
 			//Update the floor sprite if this node has one.
-			//if (node.floorSprite != null) floor.sprite = node.floorSprite;
+			//load errorsprite if floor sprite is invalid.
 			if (node.floorSprite != null) {
 				Sprite fSprite = Resources.Load<Sprite>(node.floorSprite);
 				if (fSprite != null) {
@@ -139,6 +143,8 @@ public class RenderTile : MonoBehaviour {
 					floor.sprite = Resources.Load<Sprite>("ErrorSprite");
 				}
 			}
+			//Update the wall sprites if this node has one.
+			//load errorsprite if wall sprite is invalid.
 			if (node.wallSprite != null) {
 				Sprite wSprite = Resources.Load<Sprite>(node.wallSprite);
 				if (wSprite != null) {
@@ -154,6 +160,8 @@ public class RenderTile : MonoBehaviour {
 					westWall.sprite = wSprite;
 				}
 			}
+			//Update the corner sprite if this node has one.
+			//load errorsprite if corner sprite is invalid.
 			if (node.cornerSprite != null) {
 				Sprite cSprite = Resources.Load<Sprite>(node.cornerSprite);
 				if (cSprite != null) {
@@ -162,7 +170,7 @@ public class RenderTile : MonoBehaviour {
 					corners.sprite = Resources.Load<Sprite>("ErrorSprite");
 				}
 			}
-			//Update the floor color
+			//Update the color of each sprite
 			floor.color = node.colorF;
 			northWall.color = node.colorW;
 			eastWall.color = node.colorW;
@@ -170,13 +178,19 @@ public class RenderTile : MonoBehaviour {
 			westWall.color = node.colorW;
 			corners.color = node.colorW;
 
+			//set debris visible is it exists
 			SetDebrisFromNode(node);
 
-			this.gameObject.SetActive(true);   
+			//set this tile visible
+			this.gameObject.SetActive(true);  
+			
+			//set walls visible as appropriate 
             SetWallsFromNode(node, dir, position);
         }
     }
 
+	// for each of the debris slots, set that sprite if there is a sprite listed for that slot.
+	// if a slot has something set, but that sprite is invalid, set it to the error sprite.
 	public void SetDebrisFromNode(Node node) {
 		for (int j = 0; j < 9; j++) {
 			if (node.debris[j] != null && node.debris[j].Length > 0) {
@@ -228,11 +242,16 @@ public class RenderTile : MonoBehaviour {
         }
     }
 
+	//set walls visible if there is not a connection in that direction.
     public void SetWallsFromNode(Node node, GameManager.Direction? dir, Vector2Int? position) {
 		northWall.gameObject.SetActive(node.connections.north == -1);
 		southWall.gameObject.SetActive(node.connections.south == -1);
 		eastWall.gameObject.SetActive(node.connections.east == -1);
 		westWall.gameObject.SetActive(node.connections.west == -1);
+
+		//this makes it so that one-way links between tiles don't look funny
+		//   Needs to not run on center tile, because center tile doesn't actually 
+		//   have a direction that it was accessed from.
 		if (!center.Equals(position)) {
 			switch (dir) {
 				case Direction.North:
