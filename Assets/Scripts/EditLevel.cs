@@ -72,7 +72,7 @@ public class EditLevel : MonoBehaviour {
 	/// Note that this is a relative filepath from the assests folder, not the absolute filepath
 	/// </summary>
 	public void saveLevel() {
-		Debug.Log("WTF, is this not being called?");
+		//Debug.Log("WTF, is this not being called?");
 		getCurrentMap();	// make sure map reference is current
 		LevelEditor_2.cleanUpMap(currentMap);	// clean up the map, removing deleted or invalid tiles
 		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName+".json")) {	// if it already exists, check wether the person intends to overwrite it
