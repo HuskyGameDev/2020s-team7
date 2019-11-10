@@ -1,64 +1,24 @@
 {
     "defaultPosition": 0,
-    "sourceNodeIndex": 1,
-    "targetNodeIndex": 7,
+    "sourceNodeIndex": 0,
+    "targetNodeIndex": -1,
     "_size": 9,
     "arraySize": 9,
     "checkpoints": [],
-    "stringleft": 6,
+    "stringleft": 21,
     "nodes": [
         {
             "index": 0,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
-                "a": 255
-            },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
-            "debris": [
-                "",
-                "",
-                "Deb_Grass",
-                "",
-                "",
-                "",
-                "Deb_Grass",
-                "Deb_Grass",
-                ""
-            ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 1,
-                    "east": 3,
-                    "west": -1
-                }
-            ]
-        },
-        {
-            "index": 1,
-            "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
-                "a": 255
-            },
-            "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -80,6 +40,46 @@
             "signMessage": "",
             "connectionList": [
                 {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 1,
+            "colorF": {
+                "r": 123,
+                "g": 28,
+                "b": 31,
+                "a": 255
+            },
+            "colorW": {
+                "r": 123,
+                "g": 28,
+                "b": 31,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
                     "north": 0,
                     "south": 2,
                     "east": 4,
@@ -90,15 +90,15 @@
         {
             "index": 2,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -107,10 +107,10 @@
             "debris": [
                 "",
                 "",
-                "Deb_Grass",
                 "",
-                "Deb_Grass",
-                "Deb_Grass",
+                "",
+                "",
+                "",
                 "",
                 "",
                 ""
@@ -130,15 +130,15 @@
         {
             "index": 3,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -147,13 +147,13 @@
             "debris": [
                 "",
                 "",
-                "Deb_Grass",
                 "",
                 "",
                 "",
                 "",
                 "",
-                "Deb_Grass"
+                "",
+                ""
             ],
             "type": 0,
             "hasSign": false,
@@ -170,15 +170,15 @@
         {
             "index": 4,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -210,15 +210,15 @@
         {
             "index": 5,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -232,7 +232,7 @@
                 "",
                 "",
                 "",
-                "Deb_Grass",
+                "",
                 ""
             ],
             "type": 0,
@@ -250,15 +250,15 @@
         {
             "index": 6,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -268,12 +268,12 @@
                 "",
                 "",
                 "",
-                "Deb_Grass",
                 "",
                 "",
                 "",
                 "",
-                "Deb_Grass"
+                "",
+                ""
             ],
             "type": 0,
             "hasSign": false,
@@ -290,15 +290,15 @@
         {
             "index": 7,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
@@ -309,13 +309,13 @@
                 "",
                 "",
                 "",
-                "Target",
+                "",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 2,
+            "type": 0,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
@@ -330,30 +330,30 @@
         {
             "index": 8,
             "colorF": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "colorW": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
+                "r": 123,
+                "g": 28,
+                "b": 31,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
             "cornerSprite": "Corner_Default",
             "debris": [
-                "Deb_Grass",
-                "",
-                "",
-                "Deb_Grass",
-                "Deb_Grass",
                 "",
                 "",
                 "",
-                "Deb_Grass"
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
             ],
             "type": 0,
             "hasSign": false,
