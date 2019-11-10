@@ -23,6 +23,10 @@ public class Map {
     public int stringleft = 21;
     public bool winConditions()
     {
+        if (!(GameManager.instance.gameplay.currentPosition.type == Node.TileType.target))
+        {
+            return false;
+        }
         //Debug.Log("Checking conditions");
         foreach(int i in checkpoints)
         {

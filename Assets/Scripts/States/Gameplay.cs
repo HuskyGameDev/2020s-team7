@@ -52,7 +52,7 @@ public class Gameplay : IState {
 				if (hasBall) {
 					//Player drops the ball
 					hasBall = false;
-				} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave) || stringLeft == map.stringleft) {
+				} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave) || stringLeft == map.stringleft && currentPosition.type == Node.TileType.source) {
 					//Player pick up the ball
 					hasBall = true;
 				}
