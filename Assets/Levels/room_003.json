@@ -5,7 +5,7 @@
     "_size": 33,
     "arraySize": 33,
     "checkpoints": [
-        32
+        28
     ],
     "stringleft": 19,
     "nodes": [
@@ -1151,13 +1151,13 @@
                 "",
                 "",
                 "",
-                "",
+                "Checkpoint",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
+            "type": 3,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
@@ -1311,13 +1311,13 @@
                 "",
                 "",
                 "",
-                "Checkpoint",
+                "",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 3,
+            "type": 0,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [

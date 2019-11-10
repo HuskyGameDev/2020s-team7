@@ -5,7 +5,7 @@
     "_size": 30,
     "arraySize": 30,
     "checkpoints": [],
-    "stringleft": 21,
+    "stringleft": 26,
     "nodes": [
         {
             "index": 0,
@@ -39,54 +39,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 4,
-                    "west": 21
-                },
                 {
                     "north": -1,
                     "south": -1,
@@ -247,30 +199,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": 5,
-                    "south": 13,
-                    "east": -1,
-                    "west": 0
-                },
-                {
-                    "north": 5,
-                    "south": 13,
-                    "east": -1,
-                    "west": 0
-                },
-                {
-                    "north": 5,
-                    "south": 13,
-                    "east": -1,
-                    "west": 0
-                },
-                {
-                    "north": 5,
-                    "south": 13,
-                    "east": -1,
-                    "west": 0
-                },
                 {
                     "north": 5,
                     "south": 13,
@@ -636,18 +564,6 @@
                     "south": -1,
                     "east": 14,
                     "west": -1
-                },
-                {
-                    "north": 4,
-                    "south": -1,
-                    "east": 14,
-                    "west": -1
-                },
-                {
-                    "north": 4,
-                    "south": -1,
-                    "east": 14,
-                    "west": -1
                 }
             ]
         },
@@ -683,18 +599,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": -1,
-                    "south": 15,
-                    "east": -1,
-                    "west": 13
-                },
-                {
-                    "north": -1,
-                    "south": 15,
-                    "east": -1,
-                    "west": 13
-                },
                 {
                     "north": -1,
                     "south": 15,
@@ -740,18 +644,6 @@
                     "south": -1,
                     "east": 16,
                     "west": -1
-                },
-                {
-                    "north": 14,
-                    "south": -1,
-                    "east": 16,
-                    "west": -1
-                },
-                {
-                    "north": 14,
-                    "south": -1,
-                    "east": 16,
-                    "west": -1
                 }
             ]
         },
@@ -787,18 +679,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": -1,
-                    "south": 17,
-                    "east": -1,
-                    "west": 15
-                },
-                {
-                    "north": -1,
-                    "south": 17,
-                    "east": -1,
-                    "west": 15
-                },
                 {
                     "north": -1,
                     "south": 17,
@@ -844,18 +724,6 @@
                     "south": -1,
                     "east": 18,
                     "west": -1
-                },
-                {
-                    "north": 16,
-                    "south": -1,
-                    "east": 18,
-                    "west": -1
-                },
-                {
-                    "north": 16,
-                    "south": -1,
-                    "east": 18,
-                    "west": -1
                 }
             ]
         },
@@ -891,18 +759,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": -1,
-                    "south": 19,
-                    "east": -1,
-                    "west": 17
-                },
-                {
-                    "north": -1,
-                    "south": 19,
-                    "east": -1,
-                    "west": 17
-                },
                 {
                     "north": -1,
                     "south": 19,
@@ -948,18 +804,6 @@
                     "south": -1,
                     "east": 20,
                     "west": -1
-                },
-                {
-                    "north": 18,
-                    "south": -1,
-                    "east": 20,
-                    "west": -1
-                },
-                {
-                    "north": 18,
-                    "south": -1,
-                    "east": 20,
-                    "west": -1
                 }
             ]
         },
@@ -995,18 +839,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": -1,
-                    "south": 28,
-                    "east": -1,
-                    "west": 19
-                },
-                {
-                    "north": -1,
-                    "south": 28,
-                    "east": -1,
-                    "west": 19
-                },
                 {
                     "north": -1,
                     "south": 28,
@@ -1252,18 +1084,6 @@
                     "south": -1,
                     "east": 27,
                     "west": 25
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 27,
-                    "west": 25
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 27,
-                    "west": 25
                 }
             ]
         },
@@ -1304,18 +1124,6 @@
                     "south": -1,
                     "east": 29,
                     "west": 26
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 29,
-                    "west": 26
-                },
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 29,
-                    "west": 26
                 }
             ]
         },
@@ -1351,18 +1159,6 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
-                {
-                    "north": 20,
-                    "south": 29,
-                    "east": -1,
-                    "west": -1
-                },
-                {
-                    "north": 20,
-                    "south": 29,
-                    "east": -1,
-                    "west": -1
-                },
                 {
                     "north": 20,
                     "south": 29,
