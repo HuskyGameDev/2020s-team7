@@ -91,6 +91,8 @@ public class Node {
 			return;
 		while (connectionList.Count > 1) {
 			connectionList.RemoveAt(connectionList.Count - 1);
+		}
+		while (dataList.Count > 1) {
 			dataList.RemoveAt(dataList.Count - 1);
 		}
 	}

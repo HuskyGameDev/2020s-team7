@@ -21,7 +21,7 @@ public class EditLevelEditor : Editor {
 		}
 		if (GUILayout.Button("Save Level")) {
 			((EditLevel)target).saveLevel();
-			Debug.Log("WTF!");	// right now this scripts isn't working right
+			//Debug.Log("WTF!");	// right now this scripts isn't working right
 		}
 		if (GUILayout.Button("Load Level")) {
 			((EditLevel)target).loadLevelByName();

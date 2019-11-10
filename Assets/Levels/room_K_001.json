@@ -4,7 +4,9 @@
     "targetNodeIndex": 25,
     "_size": 26,
     "arraySize": 26,
-    "checkpoints": [],
+    "checkpoints": [
+        2
+    ],
     "stringleft": 21,
     "nodes": [
         {
@@ -906,7 +908,7 @@
             "cornerSprite": "Corner_Default",
             "debris": [
                 "",
-                "",
+                "Deb_Grass",
                 "",
                 "",
                 "",
@@ -946,7 +948,7 @@
             "cornerSprite": "Corner_Default",
             "debris": [
                 "",
-                "",
+                "Deb_Grass",
                 "",
                 "",
                 "",
@@ -986,7 +988,7 @@
             "cornerSprite": "Corner_Default",
             "debris": [
                 "",
-                "",
+                "Deb_Grass",
                 "",
                 "",
                 "",

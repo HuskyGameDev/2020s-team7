@@ -19,7 +19,7 @@ public class Map {
 	[SerializeField]
 
 	private int arraySize = 20;
-    public int[] checkpoints = null;
+    public int[] checkpoints;
     public int stringleft = 21;
     public bool winConditions()
     {
