@@ -10,7 +10,7 @@ public class EditLevel : MonoBehaviour {
 	public bool drawing = false;
 	// name and path to use when saving/loading level
 	public string levelName = "test";
-	public string levelPath = "/LevelsEdited";
+	public string levelPath = "/Levels";
 	// safety check, must be checked to owerwrite a level that already exists
 	public bool overwriteLevel;
 
