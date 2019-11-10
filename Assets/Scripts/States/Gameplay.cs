@@ -21,9 +21,15 @@ public class Gameplay : IState {
 	public float youWinScreenTimeout = 7.0f;
 	public Map map;
 	public Universe universe;
+	/*public Node currentPosition = null;*/
 	public Node currentPosition {
 		get { return map[currentIndex]; }
-		set { currentIndex = value.index; }
+		set { if (value != null) {
+				currentIndex = value.index;
+			} else {
+				currentIndex = -1;
+			}
+		}
 	}
 	private int currentIndex = -1;
 	public RenderingHandler nonEuclidRenderer;
