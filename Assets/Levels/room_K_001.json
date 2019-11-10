@@ -908,14 +908,14 @@
             "cornerSprite": "Corner_Default",
             "debris": [
                 "",
-                "Deb_Grass",
                 "",
                 "",
                 "",
                 "",
                 "",
                 "",
-                ""
+                "",
+                "Deb_Grass"
             ],
             "type": 0,
             "hasSign": false,
@@ -988,12 +988,12 @@
             "cornerSprite": "Corner_Default",
             "debris": [
                 "",
+                "",
+                "",
                 "Deb_Grass",
                 "",
                 "",
-                "",
-                "",
-                "",
+                "Deb_Grass",
                 "",
                 ""
             ],
