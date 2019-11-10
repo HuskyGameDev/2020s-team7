@@ -5,9 +5,9 @@ using Direction = GameManager.Direction;
 
 public class RenderingHandler : MonoBehaviour {
 
-#if UNITY_EDITOR // if this is in the editor, need a reference to editLevel in order to call getCurrentNode() every time movement happens
+/*#if UNITY_EDITOR // if this is in the editor, need a reference to editLevel in order to call getCurrentNode() every time movement happens
 	public EditLevel editLevel = null;
-#endif
+#endif*/
 
 	[SerializeField]
     public RenderMap renderMap = new RenderMap(0);	// used to render tiles that are accessed from a vertical direction
@@ -87,14 +87,15 @@ public class RenderingHandler : MonoBehaviour {
 	/// <param name="doShift"></param>
 	public void HandleRender(Direction direction, Node node, bool doShift = true)
     {
-#if UNITY_EDITOR	// if this is in the editor, call getCurrentNode() every time movement happens
+/*#if UNITY_EDITOR	// if this is in the editor, call getCurrentNode() every time movement happens
 		if (editLevel != null) {
 			editLevel.getCurrentNode();
+			editLevel.drawTiles();
 			//Debug.Log("calling getCurrentNode()...");
 		} else {
 			Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");
 		}
-#endif
+#endif*/
 		//if (doShift) ShiftGrid(direction);
 		//Blank out all render tiles
 		foreach (RenderTile t in renderMap)

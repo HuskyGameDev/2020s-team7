@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System;
 
 public class EditLevel : MonoBehaviour {
 
+	[ReadOnly]
+	public bool drawing = false;
 	// name and path to use when saving/loading level
 	public string levelName = "test";
 	public string levelPath = "/Levels";
@@ -19,10 +22,12 @@ public class EditLevel : MonoBehaviour {
 	public enum LinkDirectionality { Twoway, Oneway };
 	public LinkDirectionality linkDirectionality;   // indicates whether a created link should be oneway or twoway
 
+	/*
 	public byte newChunkColorR = 255;	// R, G, B, and Alpha components of color to give to newly created tiles
 	public byte newChunkColorG = 255;
 	public byte newChunkColorB = 255;
-	private byte newChunkColorA = 255;
+	private byte newChunkColorA = 255;*/
+	public Color32 newChunkColor;
 	public int newChunkWidth;	// how many tiles wide to make the new chunk
 	public int newChunkHeight;	// how many tiles tall to make the new chunk
 	
@@ -30,7 +35,13 @@ public class EditLevel : MonoBehaviour {
 	public Node[][,] chunks = new Node[0][,]; // probably not strictly needed since you cant access this to change things in the editor anyway
 
 	public Node currentNode;    // referes to the copy of the current node
-	public Map currentMap;	// refers to the current map use by the gameplay object
+	public Map currentMap;  // refers to the current map use by the gameplay object
+
+	private Color32 copyColorF;
+	private Color32 copyColorW;
+	private String copyfloorSprite;
+	private String copywallSprite;
+	private String copycornerSprite;
 
 	/// <summary>
 	/// Creates a new map, with a starting area created using the same settings as the chunk creation.
@@ -140,7 +151,8 @@ public class EditLevel : MonoBehaviour {
 		}
 		chunks = temp;
 		// create new chunk
-		chunks[i] = LevelEditor_2.createChunk(currentMap, new Color32(newChunkColorR, newChunkColorG, newChunkColorB, newChunkColorA), newChunkWidth, newChunkHeight);
+		//chunks[i] = LevelEditor_2.createChunk(currentMap, new Color32(newChunkColorR, newChunkColorG, newChunkColorB, newChunkColorA), newChunkWidth, newChunkHeight);
+		chunks[i] = LevelEditor_2.createChunk(currentMap, newChunkColor, newChunkWidth, newChunkHeight);
 		chunkToLink = chunks[i];
 		if (link) {
 			// create link to new chunk
@@ -207,5 +219,32 @@ public class EditLevel : MonoBehaviour {
 		}
 		getCurrentNode();	// node copy now out of date, update it
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
+	}
+
+	public void sampleTile() {
+		copyColorF = currentNode.colorF;
+		copyColorW = currentNode.colorW;
+		copyfloorSprite = currentNode.floorSprite;
+		copywallSprite = currentNode.wallSprite;
+		copycornerSprite = currentNode.cornerSprite;
+	}
+	public void setDrawStatus() {
+		if (drawing) {
+			drawing = false;
+		} else {
+			drawing = true;
+		}
+	}
+	public void drawTiles() {
+		if (drawing) {
+			currentNode.colorF = copyColorF;
+			currentNode.colorW = copyColorW;
+			currentNode.floorSprite = copyfloorSprite;
+			currentNode.wallSprite = copywallSprite;
+			currentNode.cornerSprite = copycornerSprite;
+			getCurrentMap();    // make sure map reference is current
+			currentMap[GameManager.instance.gameplay.currentPosition.index] = currentNode.Copy();
+			GameManager.instance.gameplay.currentPosition = currentMap[GameManager.instance.gameplay.currentPosition.index];
+		}
 	}
 }

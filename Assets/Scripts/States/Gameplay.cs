@@ -21,12 +21,20 @@ public class Gameplay : IState {
 	public float youWinScreenTimeout = 7.0f;
 	public Map map;
 	public Universe universe;
-	public Node currentPosition = null;
+	public Node currentPosition {
+		get { return map[currentIndex]; }
+		set { currentIndex = value.index; }
+	}
+	private int currentIndex = -1;
 	public RenderingHandler nonEuclidRenderer;
 
 
-    #endregion
-    public override void _StartState() {
+	#endregion
+#if UNITY_EDITOR // if this is in the editor, need a reference to editLevel in order to call getCurrentNode() every time movement happens
+	public EditLevel editLevel = null;
+#endif
+
+	public override void _StartState() {
         //Set up the renderer
 		nonEuclidRenderer.initialize();
 
@@ -145,6 +153,15 @@ public class Gameplay : IState {
 
 						currentPosition = otherNode;
 
+					#if UNITY_EDITOR	// if this is in the editor, call getCurrentNode() every time movement happens
+						if (editLevel != null) {
+							editLevel.getCurrentNode();
+							editLevel.drawTiles();
+							//Debug.Log("calling getCurrentNode()...")
+						} else {
+							Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");
+						}
+					#endif
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
 

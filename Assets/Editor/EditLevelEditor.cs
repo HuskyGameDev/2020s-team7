@@ -49,10 +49,17 @@ public class EditLevelEditor : Editor {
 			((EditLevel)target).redraw();
 		}
 	   
-	   if (GUILayout.Button("Apply changes to node")) {
-		   ((EditLevel)target).applyToNode();
-	   }
+	    if (GUILayout.Button("Apply changes to node")) {
+		    ((EditLevel)target).applyToNode();
+	    }
 
-	   base.OnInspectorGUI();
+		if (GUILayout.Button("Sample node appearance")) {
+			((EditLevel)target).sampleTile();
+		}
+		if (GUILayout.Button("Start/Stop drawing")) {
+			((EditLevel)target).setDrawStatus();
+		}
+
+		base.OnInspectorGUI();
 	}
 }

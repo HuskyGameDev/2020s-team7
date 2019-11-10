@@ -168,7 +168,14 @@ public class Map {
 				Debug.Log("Error: map.sourceNode is null");
 				GameManager.instance.gameplay.currentPosition = map[0];
 			}
+			/*
+			for (int i = 0; i < map.arraySize; i++) {
+				Node n = map[i];
+				if (n.colorF = ) {
 
+				}
+			}
+			*/
 			return map;
 		} else {
 			return null;
