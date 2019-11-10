@@ -1,11 +1,11 @@
 {
     "defaultPosition": 0,
     "sourceNodeIndex": 0,
-    "targetNodeIndex": 6,
+    "targetNodeIndex": 19,
     "_size": 20,
     "arraySize": 20,
     "checkpoints": [],
-    "stringleft": 21,
+    "stringleft": 19,
     "nodes": [
         {
             "index": 0,
@@ -269,13 +269,13 @@
                 "",
                 "",
                 "",
-                "Target",
+                "",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 2,
+            "type": 0,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
@@ -789,13 +789,13 @@
                 "",
                 "",
                 "",
-                "",
+                "Target",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
+            "type": 2,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [

@@ -9,13 +9,32 @@
     "nodes": [
         {
             "index": 0,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -30,13 +49,32 @@
         },
         {
             "index": 1,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -51,13 +89,32 @@
         },
         {
             "index": 2,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -72,13 +129,32 @@
         },
         {
             "index": 3,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -93,17 +169,96 @@
         },
         {
             "index": 4,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
                 "a": 255
             },
-            "floorSprite": "sourceTile",
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Source",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 1,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
                 {
                     "north": 3,
                     "south": 5,
@@ -114,13 +269,32 @@
         },
         {
             "index": 5,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -135,13 +309,32 @@
         },
         {
             "index": 6,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -156,17 +349,168 @@
         },
         {
             "index": 7,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": 10,
+                    "west": 4
+                },
                 {
                     "north": 6,
                     "south": 8,
@@ -177,17 +521,72 @@
         },
         {
             "index": 8,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": 11,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": 11,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": 11,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": 11,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": 11,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": 11,
+                    "west": 5
+                },
                 {
                     "north": 7,
                     "south": -1,
@@ -198,13 +597,32 @@
         },
         {
             "index": 9,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -219,13 +637,32 @@
         },
         {
             "index": 10,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -240,13 +677,32 @@
         },
         {
             "index": 11,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -261,13 +717,32 @@
         },
         {
             "index": 12,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -282,13 +757,32 @@
         },
         {
             "index": 13,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -303,13 +797,32 @@
         },
         {
             "index": 14,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -324,13 +837,32 @@
         },
         {
             "index": 15,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -345,13 +877,32 @@
         },
         {
             "index": 16,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -366,13 +917,32 @@
         },
         {
             "index": 17,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -387,13 +957,32 @@
         },
         {
             "index": 18,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -408,13 +997,32 @@
         },
         {
             "index": 19,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -429,13 +1037,32 @@
         },
         {
             "index": 20,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -450,13 +1077,32 @@
         },
         {
             "index": 21,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -471,13 +1117,32 @@
         },
         {
             "index": 22,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -492,13 +1157,32 @@
         },
         {
             "index": 23,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -513,13 +1197,32 @@
         },
         {
             "index": 24,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -534,13 +1237,32 @@
         },
         {
             "index": 25,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -555,13 +1277,32 @@
         },
         {
             "index": 26,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -576,13 +1317,32 @@
         },
         {
             "index": 27,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "",
+            "cornerSprite": "",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -597,13 +1357,32 @@
         },
         {
             "index": 28,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "",
+            "cornerSprite": "",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -618,13 +1397,32 @@
         },
         {
             "index": 29,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "",
+            "cornerSprite": "",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -639,13 +1437,32 @@
         },
         {
             "index": 30,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "",
+            "cornerSprite": "",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -660,13 +1477,32 @@
         },
         {
             "index": 31,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -681,13 +1517,32 @@
         },
         {
             "index": 32,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -702,13 +1557,32 @@
         },
         {
             "index": 33,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -723,13 +1597,32 @@
         },
         {
             "index": 34,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -744,13 +1637,32 @@
         },
         {
             "index": 35,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -765,34 +1677,32 @@
         },
         {
             "index": 36,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 37,
-                    "west": 35
-                }
-            ]
-        },
-        {
-            "index": 37,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
-                "a": 255
-            },
-            "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -801,19 +1711,78 @@
                     "north": -1,
                     "south": -1,
                     "east": 1,
+                    "west": 35
+                }
+            ]
+        },
+        {
+            "index": 37,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 42,
                     "west": 36
                 }
             ]
         },
         {
             "index": 38,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -828,13 +1797,32 @@
         },
         {
             "index": 39,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -849,13 +1837,32 @@
         },
         {
             "index": 40,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -870,13 +1877,32 @@
         },
         {
             "index": 41,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -891,13 +1917,32 @@
         },
         {
             "index": 42,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -912,13 +1957,32 @@
         },
         {
             "index": 43,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -933,13 +1997,32 @@
         },
         {
             "index": 44,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 0,
+                "b": 255,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "",
+            "cornerSprite": "",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -954,13 +2037,32 @@
         },
         {
             "index": 45,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -975,13 +2077,32 @@
         },
         {
             "index": 46,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -996,13 +2117,32 @@
         },
         {
             "index": 47,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1017,13 +2157,32 @@
         },
         {
             "index": 48,
-            "color": {
-                "r": 210,
-                "g": 105,
-                "b": 30,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1038,13 +2197,32 @@
         },
         {
             "index": 49,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1059,13 +2237,32 @@
         },
         {
             "index": 50,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1080,13 +2277,32 @@
         },
         {
             "index": 51,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1101,13 +2317,32 @@
         },
         {
             "index": 52,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1122,13 +2357,32 @@
         },
         {
             "index": 53,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
                 "a": 255
             },
-            "floorSprite": "targetTile",
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Target",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 2,
             "hasSign": false,
             "signMessage": "",
@@ -1143,13 +2397,32 @@
         },
         {
             "index": 54,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1164,13 +2437,32 @@
         },
         {
             "index": 55,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1185,13 +2477,32 @@
         },
         {
             "index": 56,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1206,13 +2517,32 @@
         },
         {
             "index": 57,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1227,13 +2557,32 @@
         },
         {
             "index": 58,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1248,13 +2597,32 @@
         },
         {
             "index": 59,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
@@ -1269,13 +2637,32 @@
         },
         {
             "index": 60,
-            "color": {
-                "r": 80,
-                "g": 123,
-                "b": 67,
+            "colorF": {
+                "r": 192,
+                "g": 135,
+                "b": 66,
+                "a": 255
+            },
+            "colorW": {
+                "r": 113,
+                "g": 86,
+                "b": 57,
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
+            "wallSprite": "Wall_Default",
+            "cornerSprite": "Corner_Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
             "type": 0,
             "hasSign": false,
             "signMessage": "",
