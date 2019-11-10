@@ -21,11 +21,11 @@ public class EditLevelEditor : Editor {
 		}
 		if (GUILayout.Button("Save Level")) {
 			((EditLevel)target).saveLevel();
-			Debug.Log("WTF!");
+			Debug.Log("WTF!");	// right now this scripts isn't working right
 		}
 		if (GUILayout.Button("Load Level")) {
 			((EditLevel)target).loadLevelByName();
-			Debug.Log("WTF! v2");
+			Debug.Log("WTF! v2");   // right now this scripts isn't working right
 		}
 
 		if (GUILayout.Button("Re-generate levels from scripts")) {

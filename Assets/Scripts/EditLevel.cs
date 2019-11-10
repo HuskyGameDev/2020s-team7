@@ -11,9 +11,8 @@ public class EditLevel : MonoBehaviour {
 	// safety check, must be checked to owerwrite a level that already exists
 	public bool overwriteLevel;
 
-	// direction to create connection in / delete tile in
-	public Node.TileType type = Node.TileType.regular;
-	public GameManager.Direction methodDirection;
+	public Node.TileType type = Node.TileType.regular;	// type of tile that this should be changes to.
+	public GameManager.Direction methodDirection;	// direction to create connection in / delete tile in
 	public int linkX = 0;	// X & Y coordinates to link to in newly created chunk
 	public int linkY = 0;	// Note the the coordinates start at (0,0) in the upper left corner
 	public int linkToIndex = -1; // index of tile to link to, if not creating link to new chunk
@@ -116,6 +115,9 @@ public class EditLevel : MonoBehaviour {
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.instance.gameplay.currentPosition, false);
 	}
 
+	/// <summary>
+	/// redraws the map, making changes visible
+	/// </summary>
 	public void redraw() {
 		getCurrentMap();    // make sure map reference is current
 		getCurrentNode();

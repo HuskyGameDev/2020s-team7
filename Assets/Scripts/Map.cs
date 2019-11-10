@@ -23,15 +23,17 @@ public class Map {
     public int stringleft = 21;
     public bool winConditions()
     {
+        //Debug.Log("Checking conditions");
         foreach(int i in checkpoints)
         {
             if (!GameManager.instance.gameplay.map[i].data.hasEnter || !GameManager.instance.gameplay.map[i].data.hasLeave)
             {
+               // Debug.Log("Not enough checkpoints cleared");
                 return false;
             }
         }
-
-        return stringleft == 0 && GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
+        //Debug.Log(GameManager.instance.gameplay.stringLeft == 0);
+        return GameManager.instance.gameplay.stringLeft == 0; //stringleft == 0; //&& GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
     }
 	[SerializeField]
 	private Node[] nodes = new Node[20]; // by default, array of tiles has 20 slots.

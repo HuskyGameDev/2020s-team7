@@ -149,6 +149,8 @@ public class Gameplay : IState {
 						animLockout = false;
 
                         //Crossing the target tile
+                       
+                       
 						if (map.winConditions()) {
 
 							winTrigger = true;

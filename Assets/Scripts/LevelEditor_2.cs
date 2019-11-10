@@ -275,12 +275,14 @@ public static class LevelEditor_2 {
 	}
 	
 	/// <summary>
-	/// 
+	/// changes the type of a tile.
+	/// automatically applies visual changes and other supporting stuff to match the change
 	/// </summary>
 	/// <param name="room"></param>
 	/// <param name="tileIndex"></param>
 	/// <param name="newType"></param>
 	public static void setType(Map room, int tileIndex, Node.TileType newType) {
+		//resets visual stuff
 		//regular, source, target, checkpointon, checkpointoff
 		for (int i = 0; i < 9; i++) {
 			if (
@@ -293,6 +295,7 @@ public static class LevelEditor_2 {
 			}
 		}
 
+		//set stuff based on tile type
 		switch (newType) {
 			case Node.TileType.regular:
 				room[tileIndex].type = Node.TileType.regular;
@@ -316,7 +319,6 @@ public static class LevelEditor_2 {
 					}
 				}
 				room[tileIndex].type = Node.TileType.target;
-				//room[tileIndex].floorSprite = GameManager.instance.spriteBook[2];
 				room[tileIndex].debris[4] = "Target";
 				room.targetNodeIndex = tileIndex;
 				break;

@@ -8,16 +8,16 @@ using Direction = GameManager.Direction;
 public class Node {
 	//[ReadOnly]   // nullable variables are not serializable, so could not be saved. Now -1 indicates a non-existant connection
 	public int index = -1;
-	public Color32 colorF = Color.magenta;
-	public Color32 colorW = Color.magenta;
+	public Color32 colorF = Color.magenta;	// color for the floor
+	public Color32 colorW = Color.magenta;	// color for the walls/corners
 
-	public String floorSprite = null;
-	public String wallSprite = null;
-	public String cornerSprite = null;
-	public String[] debris = new String[9];
+	public String floorSprite = null;	// name of sprite for the floor
+	public String wallSprite = null;    // name of sprite for the walls
+	public String cornerSprite = null;  // name of sprite for the corners
+	public String[] debris = new String[9]; // name of sprites for debris 
 
 	public enum TileType { regular, source, target, checkpointon, checkpointoff };
-	public TileType type = TileType.regular;
+	public TileType type = TileType.regular;	// the type of this tile
 	public bool hasSign = false;
 	public String signMessage = "";
 
