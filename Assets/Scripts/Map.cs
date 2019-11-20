@@ -23,7 +23,7 @@ public class Map {
     public int stringleft = 21;
     public bool winConditions()
     {
-        if (!(GameManager.instance.gameplay.currentPosition.type == Node.TileType.target))
+        if (!(GameManager.instance.gameplay.currentPosition.type == Node.TileType.target) || !GameManager.instance.gameplay.hasBall)
         {
             return false;
         }

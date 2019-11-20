@@ -196,6 +196,7 @@ public class Gameplay : IState {
 	public void resetLevelAssets() {
         //Give the player their string back
         stringLeft = map.stringleft;
+        hasBall = true;
 
         //Send the player back to the starting point
 		currentPosition = map[map.sourceNodeIndex];
