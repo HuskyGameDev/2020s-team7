@@ -335,6 +335,22 @@ public static class LevelEditor_2 {
 		}
 	}
 
+	public static void createWall(Map room, int tileIndex, GameManager.Direction dir) {
+		int otherIndex = room[tileIndex].connections[dir];
+		Node.ConnectionSet[] thisConns = room[tileIndex].connectionList.ToArray();
+		foreach (Node.ConnectionSet set in thisConns) {
+			if (set[dir] == otherIndex) {
+				set[dir] = -1;
+			}
+		}
+		Node.ConnectionSet[] otherConns = room[otherIndex].connectionList.ToArray();
+		foreach (Node.ConnectionSet set in otherConns) {
+			if (set[Extensions.inverse(dir)] == tileIndex) {
+				set[Extensions.inverse(dir)] = -1;
+			}
+		}
+	}
+
 	/// <summary>
 	/// Deletes the tile at the given index in the map.
 	/// Sets all connections to that tile to null
@@ -386,6 +402,9 @@ public static class LevelEditor_2 {
 				for (int j = (i + 1); j < mapSize; j++) {	// if it isn't valid, move all nodes that come asfter it down one slot
 					//Debug.Log("Moving node with index " + j + " down one");
 					if ((room[j] != null) || (room[j].index >= 0)) {	// only bother moving nodes that are also valid
+						if(GameManager.instance.gameplay.currentIndex == j) {
+							GameManager.instance.gameplay.currentIndex = j - 1;
+						}
 						room[j - 1] = room[j];
 						room[j - 1].index = (j - 1);
 						for (int k = 0; k < mapSize; k++) { // for each node that is moved down one, go through the array and adjust all 

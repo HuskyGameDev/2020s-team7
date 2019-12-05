@@ -31,7 +31,7 @@ public class Gameplay : IState {
 			}
 		}
 	}
-	private int currentIndex = -1;
+	public int currentIndex = -1;
 	public RenderingHandler nonEuclidRenderer;
 
 

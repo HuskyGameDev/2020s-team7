@@ -56,8 +56,12 @@ public class InputManager {
 
 	#region Singleton Pattern
 	public readonly static InputManager instance = new InputManager();	// should only be one instance of the camera manager
-	private InputManager() {}	// Constuctor w/ nothing inside
+	private InputManager() {}   // Constuctor w/ nothing inside
 	#endregion
+
+	void start() {
+		Debug.LogWarning("Error: keybindings object still disappears, find a way to fix.");
+	}
 
 	#region Keybinding Methods
 	/// <summary>
@@ -447,6 +451,12 @@ public class InputManager {
 	/// <returns></returns>
 	public bool OnInput(Action action) {
 		int action_num = (int)action;
+		if (keybindings == null) {
+			#if UNITY_EDITOR
+			Debug.Log("Error: keybindings object is null, WTF?");
+			#endif
+			LoadKeybinds();
+		}
 		return (Input.GetKey(keybindings.keys[action_num, 0]) | Input.GetKey(keybindings.keys[action_num, 1]));
 	}
 
@@ -457,12 +467,12 @@ public class InputManager {
 	/// <returns></returns>
 	public bool OnInputDown(Action action) {
 		int action_num = (int)action;
-
-#if UNITY_EDITOR
 		if (keybindings == null) {
+			#if UNITY_EDITOR
 			Debug.Log("Error: keybindings object is null, WTF?");
+			#endif
+			LoadKeybinds();
 		}
-#endif
 
 		return (Input.GetKeyDown(keybindings.keys[action_num, 0]) | Input.GetKeyDown(keybindings.keys[action_num, 1]));
 	}
@@ -474,6 +484,12 @@ public class InputManager {
 	/// <returns></returns>
 	public bool OnInputUp(Action action) {
 		int action_num = (int)action;
+		if (keybindings == null) {
+			#if UNITY_EDITOR
+			Debug.Log("Error: keybindings object is null, WTF?");
+			#endif
+			LoadKeybinds();
+		}
 		return (Input.GetKeyUp(keybindings.keys[action_num, 0]) | Input.GetKeyUp(keybindings.keys[action_num, 1]));
 	}
 	#endregion

@@ -6,20 +6,27 @@ using System;
 
 public class EditLevel : MonoBehaviour {
 
-	[ReadOnly]
+	[HideInInspector]
 	public bool drawing = false;
 	// name and path to use when saving/loading level
+	[HideInInspector]
 	public string levelName = "test";
+	[HideInInspector]
 	public string levelPath = "/Levels";
 	// safety check, must be checked to owerwrite a level that already exists
+	[HideInInspector]
 	public bool overwriteLevel;
 
-	public Node.TileType type = Node.TileType.regular;	// type of tile that this should be changes to.
-	public GameManager.Direction methodDirection;	// direction to create connection in / delete tile in
-	public int linkX = 0;	// X & Y coordinates to link to in newly created chunk
-	public int linkY = 0;	// Note the the coordinates start at (0,0) in the upper left corner
+	[HideInInspector]
+	public Node.TileType type = Node.TileType.regular;  // type of tile that this should be changes to.
+
+	[HideInInspector]
+	public GameManager.Direction methodDirection;   // direction to create connection in / delete tile in
+	[HideInInspector]
 	public int linkToIndex = -1; // index of tile to link to, if not creating link to new chunk
+	[HideInInspector]
 	public enum LinkDirectionality { Twoway, Oneway };
+	[HideInInspector]
 	public LinkDirectionality linkDirectionality;   // indicates whether a created link should be oneway or twoway
 
 	/*
@@ -27,10 +34,18 @@ public class EditLevel : MonoBehaviour {
 	public byte newChunkColorG = 255;
 	public byte newChunkColorB = 255;
 	private byte newChunkColorA = 255;*/
+	[HideInInspector]
 	public Color32 newChunkColor;
-	public int newChunkWidth;	// how many tiles wide to make the new chunk
-	public int newChunkHeight;	// how many tiles tall to make the new chunk
-	
+	[HideInInspector]
+	public int newChunkWidth;   // how many tiles wide to make the new chunk
+	[HideInInspector]
+	public int newChunkHeight;  // how many tiles tall to make the new chunk
+	[HideInInspector]
+	public int linkX = 0;   // X & Y coordinates to link to in newly created chunk
+	[HideInInspector]
+	public int linkY = 0;   // Note the the coordinates start at (0,0) in the upper left corner
+
+
 	public Node[,] chunkToLink;	// refernce to the most newly created chunk
 	public Node[][,] chunks = new Node[0][,]; // probably not strictly needed since you cant access this to change things in the editor anyway
 
@@ -43,11 +58,15 @@ public class EditLevel : MonoBehaviour {
 	private String copywallSprite;
 	private String copycornerSprite;
 
-	/// <summary>
-	/// Creates a new map, with a starting area created using the same settings as the chunk creation.
-	/// (0,0) is the default source node.
-	/// Note that if changes to the previous map haven't been saved, they will be lost.
-	/// </summary>
+	void Start() {
+		newChunkColor = new Color32(255, 255, 255, 255);
+	}
+
+		/// <summary>
+		/// Creates a new map, with a starting area created using the same settings as the chunk creation.
+		/// (0,0) is the default source node.
+		/// Note that if changes to the previous map haven't been saved, they will be lost.
+		/// </summary>
 	public void getNewMap() {
 		Map tempMap = new Map();
 		GameManager.instance.gameplay.map = tempMap;	// let gameplay & this have a new map
@@ -202,6 +221,19 @@ public class EditLevel : MonoBehaviour {
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
 	}
 
+	public void createWall() {
+		getCurrentNode();   // make sure node copy is current
+		getCurrentMap();    // make sure map reference is current
+		if (currentNode.connections[methodDirection] < 0) {
+			Debug.Log("Error: no node in that direction");
+			return;
+		}
+
+		LevelEditor_2.createWall(currentMap, currentNode.index, methodDirection);
+		getCurrentNode();
+		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
+	}
+
 	/// <summary>
 	/// Deletes the tile that is at the direction given by methodDirection.
 	/// Can be used to screw up a map, so don't do that
@@ -228,13 +260,13 @@ public class EditLevel : MonoBehaviour {
 		copywallSprite = currentNode.wallSprite;
 		copycornerSprite = currentNode.cornerSprite;
 	}
-	public void setDrawStatus() {
+	/*public void setDrawStatus() {
 		if (drawing) {
 			drawing = false;
 		} else {
 			drawing = true;
 		}
-	}
+	}*/
 	public void drawTiles() {
 		if (drawing) {
 			currentNode.colorF = copyColorF;
