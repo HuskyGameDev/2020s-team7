@@ -22,8 +22,8 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
@@ -39,6 +39,78 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
+                {
+                    "north": -1,
+                    "south": 1,
+                    "east": 3,
+                    "west": -1
+                },
                 {
                     "north": -1,
                     "south": 1,
@@ -61,9 +133,9 @@
                 "b": 255,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Floor_Tile",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
@@ -79,6 +151,54 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                },
                 {
                     "north": 0,
                     "south": 2,
@@ -102,8 +222,8 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
@@ -119,6 +239,30 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 1,
+                    "south": -1,
+                    "east": 5,
+                    "west": -1
+                },
+                {
+                    "north": 1,
+                    "south": -1,
+                    "east": 5,
+                    "west": -1
+                },
+                {
+                    "north": 1,
+                    "south": -1,
+                    "east": 5,
+                    "west": -1
+                },
+                {
+                    "north": 1,
+                    "south": -1,
+                    "east": 5,
+                    "west": -1
+                },
                 {
                     "north": 1,
                     "south": -1,
@@ -142,8 +286,8 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
@@ -159,6 +303,66 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                },
                 {
                     "north": -1,
                     "south": 4,
@@ -181,15 +385,15 @@
                 "b": 255,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Floor_Tile",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_1",
                 "",
                 "",
                 "",
@@ -199,6 +403,30 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                },
                 {
                     "north": 3,
                     "south": 5,
@@ -222,14 +450,14 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
                 "",
                 "",
-                "",
+                "Deb_Puddle",
                 "",
                 "",
                 "Deb_Grass",
@@ -239,6 +467,66 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                },
                 {
                     "north": 4,
                     "south": -1,
@@ -262,12 +550,12 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
-                "",
+                "Deb_Grass",
                 "Deb_Grass",
                 "",
                 "",
@@ -279,6 +567,54 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                },
                 {
                     "north": -1,
                     "south": 7,
@@ -301,9 +637,9 @@
                 "b": 255,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Floor_Tile",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "",
                 "",
@@ -319,6 +655,30 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": -1,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": -1,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": -1,
+                    "west": 4
+                },
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": -1,
+                    "west": 4
+                },
                 {
                     "north": 6,
                     "south": 8,
@@ -342,8 +702,8 @@
                 "a": 255
             },
             "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "wallSprite": "Wall_Tile",
+            "cornerSprite": "Corner_Tile",
             "debris": [
                 "Deb_Grass",
                 "",
@@ -359,6 +719,42 @@
             "hasSign": false,
             "signMessage": "",
             "connectionList": [
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                },
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                },
                 {
                     "north": 7,
                     "south": -1,
