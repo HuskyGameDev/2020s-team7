@@ -6,7 +6,7 @@ using System;
 
 public class EditLevel : MonoBehaviour {
 
-	[HideInInspector]
+	[HideInInspector]	// hiding everything except the node and map references in the editor
 	public bool drawing = false;
 	// name and path to use when saving/loading level
 	[HideInInspector]
@@ -211,7 +211,7 @@ public class EditLevel : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// 
+	/// Set the type of the current tile
 	/// </summary>
 	public void setType() {
 		getCurrentNode();
@@ -221,16 +221,20 @@ public class EditLevel : MonoBehaviour {
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
 	}
 
+	/// <summary>
+	/// remove connections between this tile and the tile in direction, creating a wall between them
+	/// </summary>
 	public void createWall() {
 		getCurrentNode();   // make sure node copy is current
 		getCurrentMap();    // make sure map reference is current
-		if (currentNode.connections[methodDirection] < 0) {
+		if (currentNode.connections[methodDirection] < 0) {	// only try to run it there is actually a node in that direction
 			Debug.Log("Error: no node in that direction");
 			return;
 		}
 
 		LevelEditor_2.createWall(currentMap, currentNode.index, methodDirection);
-		getCurrentNode();
+
+		getCurrentNode();	// redraw the newly changed map
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
 
@@ -253,6 +257,9 @@ public class EditLevel : MonoBehaviour {
 		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
 	}
 
+	/// <summary>
+	/// Sample the colors and sprites used for a tile, so that they can be copied to other tiles
+	/// </summary>
 	public void sampleTile() {
 		copyColorF = currentNode.colorF;
 		copyColorW = currentNode.colorW;
@@ -260,13 +267,10 @@ public class EditLevel : MonoBehaviour {
 		copywallSprite = currentNode.wallSprite;
 		copycornerSprite = currentNode.cornerSprite;
 	}
-	/*public void setDrawStatus() {
-		if (drawing) {
-			drawing = false;
-		} else {
-			drawing = true;
-		}
-	}*/
+
+	/// <summary>
+	/// Apply the sampled colors and sprites to the current tile
+	/// </summary>
 	public void drawTiles() {
 		if (drawing) {
 			currentNode.colorF = copyColorF;

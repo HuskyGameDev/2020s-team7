@@ -22,7 +22,8 @@ public class Gameplay : IState {
 	public Map map;
 	public Universe universe;
 	/*public Node currentPosition = null;*/
-	public Node currentPosition {
+	public Node currentPosition {   // Current position now internally uses an index, so that accessing current 
+									// position when stuff is changed doesn't cause as many issues.
 		get { return map[currentIndex]; }
 		set { if (value != null) {
 				currentIndex = value.index;
@@ -31,7 +32,8 @@ public class Gameplay : IState {
 			}
 		}
 	}
-	public int currentIndex = -1;
+	public int currentIndex = -1;	// needs to be public, so it can be updated when editing maps, 
+									// so you don't teleport around when deleting tiles.
 	public RenderingHandler nonEuclidRenderer;
 
 
@@ -159,10 +161,11 @@ public class Gameplay : IState {
 
 						currentPosition = otherNode;
 
-					#if UNITY_EDITOR	// if this is in the editor, call getCurrentNode() every time movement happens
+					#if UNITY_EDITOR	// if this is in the editor, call getCurrentNode() every time movement happens, 
+										// and apply copied colors and sprites to the new tile is currently drawing.
 						if (editLevel != null) {
 							editLevel.getCurrentNode();
-							editLevel.drawTiles();
+							editLevel.drawTiles();	// only changes stuff if currently drawing
 							//Debug.Log("calling getCurrentNode()...")
 						} else {
 							Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");

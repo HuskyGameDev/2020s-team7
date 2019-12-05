@@ -92,7 +92,7 @@ public class Node {
 		while (connectionList.Count > 1) {
 			connectionList.RemoveAt(connectionList.Count - 1);
 		}
-		while (dataList.Count > 1) {
+		while (dataList.Count > 1) {    // occasionally, connectionList & dataList will not have the same count, so need to check to make sure
 			dataList.RemoveAt(dataList.Count - 1);
 		}
 	}

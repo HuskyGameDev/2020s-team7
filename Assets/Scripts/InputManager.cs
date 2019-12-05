@@ -59,8 +59,8 @@ public class InputManager {
 	private InputManager() {}   // Constuctor w/ nothing inside
 	#endregion
 
-	void start() {
-		Debug.LogWarning("Error: keybindings object still disappears, find a way to fix.");
+	void start() {	// reminder to try and find a better way of preventing the null keybindings object issue
+		Debug.LogWarning("Error: keybindings object may still disappear, find a way to fix.");
 	}
 
 	#region Keybinding Methods
@@ -451,7 +451,7 @@ public class InputManager {
 	/// <returns></returns>
 	public bool OnInput(Action action) {
 		int action_num = (int)action;
-		if (keybindings == null) {
+		if (keybindings == null) {	// if keybindings is null, fix that.
 			#if UNITY_EDITOR
 			Debug.Log("Error: keybindings object is null, WTF?");
 			#endif
