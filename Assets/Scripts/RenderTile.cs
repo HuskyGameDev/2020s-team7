@@ -136,16 +136,19 @@ public class RenderTile : MonoBehaviour {
 			//Update the floor sprite if this node has one.
 			//load errorsprite if floor sprite is invalid.
 			if (node.floorSprite != null) {
-				Sprite fSprite = Resources.Load<Sprite>(node.floorSprite);
+				Sprite fSprite = Resources.Load<Sprite>("Floor_" + node.floorSprite);
 				if (fSprite != null) {
 					floor.sprite = fSprite;
 				} else {
+					Debug.Log("Error: sprite \"Floor_<" + node.wallSprite + ">\" not found");
 					floor.sprite = Resources.Load<Sprite>("ErrorSprite");
 				}
 			}
 			//Update the wall sprites if this node has one.
 			//load errorsprite if wall sprite is invalid.
+
 			if (node.wallSprite != null) {
+				/*
 				Sprite wSprite = Resources.Load<Sprite>(node.wallSprite);
 				if (wSprite != null) {
 					northWall.sprite = wSprite;
@@ -158,18 +161,53 @@ public class RenderTile : MonoBehaviour {
 					eastWall.sprite = wSprite;
 					southWall.sprite = wSprite;
 					westWall.sprite = wSprite;
+				}*/
+				Sprite wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_N");
+				if (wSprite != null) {
+					northWall.sprite = wSprite;
+				} else {
+					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_N\" not found");
+					northWall.sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
+				wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_E");
+				if (wSprite != null) {
+					eastWall.sprite = wSprite;
+				} else {
+					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_E\" not found");
+					eastWall.sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
+				wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_S");
+				if (wSprite != null) {
+					southWall.sprite = wSprite;
+				} else {
+					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_S\" not found");
+					southWall.sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
+				wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_W");
+				if (wSprite != null) {
+					westWall.sprite = wSprite;
+				} else {
+					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_W\" not found");
+					westWall.sprite = Resources.Load<Sprite>("ErrorSprite");
+				}
+				wSprite = Resources.Load<Sprite>("Corner_" + node.wallSprite);
+				if (wSprite != null) {
+					corners.sprite = wSprite;
+				} else {
+					Debug.Log("Error: sprite \"Corner_<" + node.wallSprite + ">\" not found");
+					corners.sprite = Resources.Load<Sprite>("ErrorSprite");
 				}
 			}
 			//Update the corner sprite if this node has one.
 			//load errorsprite if corner sprite is invalid.
-			if (node.cornerSprite != null) {
+			/*if (node.cornerSprite != null) {
 				Sprite cSprite = Resources.Load<Sprite>(node.cornerSprite);
 				if (cSprite != null) {
 					corners.sprite = cSprite;
 				} else {
 					corners.sprite = Resources.Load<Sprite>("ErrorSprite");
 				}
-			}
+			}*/
 			//Update the color of each sprite
 			floor.color = node.colorF;
 			northWall.color = node.colorW;

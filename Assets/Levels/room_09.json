@@ -23,9 +23,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -63,9 +62,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -103,9 +101,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -143,9 +140,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -183,9 +179,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -223,9 +218,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -263,9 +257,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -303,9 +296,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -343,9 +335,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -383,9 +374,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -423,9 +413,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -463,9 +452,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -503,9 +491,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -543,9 +530,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -583,9 +569,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -623,9 +608,8 @@
                 "b": 66,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -665,7 +649,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -705,7 +688,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -745,7 +727,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -785,7 +766,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -825,7 +805,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -865,7 +844,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -905,7 +883,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -945,7 +922,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -985,7 +961,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1025,7 +1000,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1065,7 +1039,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1105,7 +1078,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1145,7 +1117,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1185,7 +1156,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1225,7 +1195,6 @@
             },
             "floorSprite": "rock_05_disp",
             "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
             "debris": [
                 "",
                 "",
@@ -1263,9 +1232,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1303,9 +1271,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1343,9 +1310,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1383,9 +1349,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1423,9 +1388,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1463,9 +1427,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1503,9 +1466,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1543,9 +1505,8 @@
                 "b": 244,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1583,9 +1544,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1623,9 +1583,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1663,9 +1622,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1703,9 +1661,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1743,9 +1700,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1783,9 +1739,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1823,9 +1778,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",
@@ -1863,9 +1817,8 @@
                 "b": 103,
                 "a": 255
             },
-            "floorSprite": "rock_05_disp",
-            "wallSprite": "Wall_Default",
-            "cornerSprite": "Corner_Default",
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
             "debris": [
                 "",
                 "",

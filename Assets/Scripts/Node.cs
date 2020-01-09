@@ -13,7 +13,7 @@ public class Node {
 
 	public String floorSprite = null;	// name of sprite for the floor
 	public String wallSprite = null;    // name of sprite for the walls
-	public String cornerSprite = null;  // name of sprite for the corners
+	//public String cornerSprite = null;  // name of sprite for the corners
 	public String[] debris = new String[9]; // name of sprites for debris 
 
 	public enum TileType { regular, source, target, checkpointon, checkpointoff };
@@ -134,34 +134,40 @@ public class Node {
 		this.colorF = color;
 		this.colorW = color;
 		this.floorSprite = sprite;
-		this.wallSprite = "Wall_Default";
-		this.cornerSprite = "Corner_Default";
+		this.wallSprite = "Default";
+		//this.cornerSprite = "Corner_Default";
 	}
 
 	// detailed constructor, used in the node.copy() method
-	public Node(int index, int north, int south, int east, int west, Color32 colorF, Color32 colorW, String floorSprite, String wallSprite, String cornerSprite, String[] debris, TileType type, bool hasSign, String signMessage, List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
-		//connectionStack.Push(new ConnectionSet());
-		connectionList.Add(new ConnectionSet());
-		//dataStack.Push(new LineData());
+	public Node(int index, 
+			int north, int south, int east, int west, 
+			Color32 colorF, Color32 colorW, 
+			String floorSprite, String wallSprite, /*String cornerSprite,*/ 
+			String[] debris, 
+			TileType type, bool hasSign, String signMessage, 
+			List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
+		/*connectionList.Add(new ConnectionSet());
 		dataList.Add(new LineData());
-		this.index = index;
 		this.connections.north = north;
 		this.connections.south = south;
 		this.connections.east = east;
-		this.connections.west = west;
+		this.connections.west = west;*/
+
+		this.index = index;
 		this.colorF = colorF;
 		this.colorW = colorW;
 		this.floorSprite = floorSprite;
 		this.wallSprite = wallSprite;
-		this.cornerSprite = cornerSprite;
+		//this.cornerSprite = cornerSprite;
 		for (int i = 0; i < 9; i++) {
 			this.debris[i] = debris[i];
 		}
-
 		this.type = type;
 		this.hasSign = hasSign;
 		this.signMessage = signMessage;
-		foreach (ConnectionSet conn in connectionOriginal) {
+
+		//this.connectionList = connectionOriginal.
+		foreach (ConnectionSet conn in connectionOriginal) {	// does this actually do anything?
 			this.connectionList.Add(conn.Copy());
 		}
 		foreach (LineData data in dataOriginal) {
@@ -174,22 +180,10 @@ public class Node {
 	/// </summary>
 	/// <returns></returns>
 	public Node Copy() {
-		/*int index;
-		Color32 colorF;
-		Color32 colorW;
-	
-		String floorSprite;
-		String wallSprite;
-		String cornerSprite;
-		String[] debris;
-	
-		TileType type;
-		bool hasSign;
-		String signMessage;*/
-		Node newNode = new Node(index, connections.north, connections.south, connections.east, connections.west, colorF, colorW, floorSprite, wallSprite, cornerSprite, debris, type, hasSign, signMessage, connectionList, dataList);
-		for (int i = 0; i < 9; i++) {
+		Node newNode = new Node(index, connections.north, connections.south, connections.east, connections.west, colorF, colorW, floorSprite, wallSprite, /*cornerSprite,*/ debris, type, hasSign, signMessage, connectionList, dataList);
+		/*for (int i = 0; i < 9; i++) {
 			newNode.debris[i] = this.debris[i];
-		}
+		}*/
 		return newNode;
 	}
 

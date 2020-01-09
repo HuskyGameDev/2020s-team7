@@ -96,17 +96,17 @@ public class EditLevel : MonoBehaviour {
 		LevelEditor_2.cleanUpMap(currentMap);	// clean up the map, removing deleted or invalid tiles
 		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName+".json")) {	// if it already exists, check wether the person intends to overwrite it
 			if (overwriteLevel) {
-				Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName+".json");
-				Debug.Log("Overwriting level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\" ?");
+				Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName + ".json");
+				Debug.Log("Overwriting level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
 				overwriteLevel = false;
 			} else {
 				// If the overwriteLevel boolean is not set, do not overwrite the level
-				Debug.Log("Are you sure you want to overwrite the level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\" ?");
+				Debug.Log("Are you sure you want to overwrite the level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\" ?");
 			}
 		} else {
 			// if it doesn't already exit, don't need to make any checks.
-			Debug.Log("Saving level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
-			Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName+".json");
+			Debug.Log("Saving level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
+			Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName + ".json");
 		}
 
 	}
@@ -116,13 +116,14 @@ public class EditLevel : MonoBehaviour {
 	/// Can be used to load levels outside the Assets/Levels/ folder, unlike the ingame level loader
 	/// </summary>
 	public void loadLevelByName() {
-		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName)) {
-			currentMap = Map.Load(Application.dataPath + levelPath + "/room_" + levelName);
+		Debug.Log("Trying to load level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
+		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName + ".json")) {
+			currentMap = Map.Load(Application.dataPath + levelPath + "/room_" + levelName + ".json");
 			GameManager.instance.gameplay.map = currentMap;
 			GameManager.instance.gameplay.resetLevelAssets();
-			Debug.Log("Loading level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
+			Debug.Log("Loaded level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
 		} else {
-			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + levelPath + "/room_" + levelName + "\"");
+			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
 		}
 	}
 
@@ -261,11 +262,12 @@ public class EditLevel : MonoBehaviour {
 	/// Sample the colors and sprites used for a tile, so that they can be copied to other tiles
 	/// </summary>
 	public void sampleTile() {
+		getCurrentNode();
 		copyColorF = currentNode.colorF;
 		copyColorW = currentNode.colorW;
 		copyfloorSprite = currentNode.floorSprite;
 		copywallSprite = currentNode.wallSprite;
-		copycornerSprite = currentNode.cornerSprite;
+		//copycornerSprite = currentNode.cornerSprite;
 	}
 
 	/// <summary>
@@ -273,11 +275,12 @@ public class EditLevel : MonoBehaviour {
 	/// </summary>
 	public void drawTiles() {
 		if (drawing) {
+			getCurrentNode();
 			currentNode.colorF = copyColorF;
 			currentNode.colorW = copyColorW;
 			currentNode.floorSprite = copyfloorSprite;
 			currentNode.wallSprite = copywallSprite;
-			currentNode.cornerSprite = copycornerSprite;
+			//currentNode.cornerSprite = copycornerSprite;
 			getCurrentMap();    // make sure map reference is current
 			currentMap[GameManager.instance.gameplay.currentPosition.index] = currentNode.Copy();
 			GameManager.instance.gameplay.currentPosition = currentMap[GameManager.instance.gameplay.currentPosition.index];
