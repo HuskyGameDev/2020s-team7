@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{71658748-0f8b-4bdf-82e1-8caee3d4ca8d}">
+        <property name="assetPath">
+            <value>Team 7-MusicV1.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>70.25</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{62340d55-28d0-480d-984a-d8c0c44ad17c}</destination>
+        </relationship>
+    </object>
+</objects>

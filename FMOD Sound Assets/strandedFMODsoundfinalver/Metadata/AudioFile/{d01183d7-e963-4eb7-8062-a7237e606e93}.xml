@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{d01183d7-e963-4eb7-8062-a7237e606e93}">
+        <property name="assetPath">
+            <value>Team7_WaterDrops.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>21</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{62340d55-28d0-480d-984a-d8c0c44ad17c}</destination>
+        </relationship>
+    </object>
+</objects>
