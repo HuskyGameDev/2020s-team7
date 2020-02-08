@@ -66,7 +66,7 @@ public static class LevelEditor_2 {
 		/// <param name="emptyTiles"></param>
 		/// <param name="tileWalls"></param>
 		/// <returns></returns>
-	public static Node[,] createChunk(Map room, Color32 color, int width, int height, List<TileCoord> emptyTiles = null, List<TileCoord> tileWalls = null) {
+	public static Node[,] createChunk(LevelMap room, Color32 color, int width, int height, List<TileCoord> emptyTiles = null, List<TileCoord> tileWalls = null) {
 		Node[,] chunk = new Node[width,height]; // 2D array of tiles for the new chunk, allows easy accessing based on coordinates
 
 		// do stuff to create chunk with empty tiles, only needs to be done if there is a list of tiles that should be empty
@@ -201,7 +201,7 @@ public static class LevelEditor_2 {
 			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
 		}
 	}
-	public static void createOneWayLink(Map room, int fromIndex, int toIndex, GameManager.Direction dir) {
+	public static void createOneWayLink(LevelMap room, int fromIndex, int toIndex, GameManager.Direction dir) {
 		if (dir == GameManager.Direction.North) {
 			room[fromIndex].connections.north = room[toIndex].index;
 		} else if (dir == GameManager.Direction.East) {
@@ -238,7 +238,7 @@ public static class LevelEditor_2 {
 			chunkTo[tileTo.x, tileTo.y].connections.east = chunkFrom[tileFrom.x, tileFrom.y].index;
 		}
 	}
-	public static void createTwoWayLink(Map room, int fromIndex, int toIndex, GameManager.Direction dir) {
+	public static void createTwoWayLink(LevelMap room, int fromIndex, int toIndex, GameManager.Direction dir) {
 		if (dir == GameManager.Direction.North) {
 			room[fromIndex].connections.north = room[toIndex].index;
 			room[toIndex].connections.south = room[fromIndex].index;
@@ -260,7 +260,7 @@ public static class LevelEditor_2 {
 	/// </summary>
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
-	public static void setSource(Map room, Node[,] chunk, TileCoord tile) {
+	public static void setSource(LevelMap room, Node[,] chunk, TileCoord tile) {
 		setType(room, chunk[tile.x, tile.y].index, Node.TileType.source);
 	}
 
@@ -270,7 +270,7 @@ public static class LevelEditor_2 {
 	/// </summary>
 	/// <param name="chunk"></param>
 	/// <param name="tile"></param>
-	public static void setTarget(Map room, Node[,] chunk, TileCoord tile) {
+	public static void setTarget(LevelMap room, Node[,] chunk, TileCoord tile) {
 		setType(room, chunk[tile.x, tile.y].index, Node.TileType.target);
 	}
 	
@@ -281,7 +281,7 @@ public static class LevelEditor_2 {
 	/// <param name="room"></param>
 	/// <param name="tileIndex"></param>
 	/// <param name="newType"></param>
-	public static void setType(Map room, int tileIndex, Node.TileType newType) {
+	public static void setType(LevelMap room, int tileIndex, Node.TileType newType) {
 		//resets visual stuff
 		//regular, source, target, checkpointon, checkpointoff
 		for (int i = 0; i < 9; i++) {
@@ -341,7 +341,7 @@ public static class LevelEditor_2 {
 	/// <param name="room"></param>
 	/// <param name="tileIndex"></param>
 	/// <param name="dir"></param>
-	public static void createWall(Map room, int tileIndex, GameManager.Direction dir) {
+	public static void createWall(LevelMap room, int tileIndex, GameManager.Direction dir) {
 		int otherIndex = room[tileIndex].connections[dir];
 		Node.ConnectionSet[] thisConns = room[tileIndex].connectionList.ToArray();
 		foreach (Node.ConnectionSet set in thisConns) {
@@ -363,7 +363,7 @@ public static class LevelEditor_2 {
 	/// </summary>
 	/// <param name="room"></param>
 	/// <param name="index"></param>
-	public static void deleteTile(Map room, int index) {
+	public static void deleteTile(LevelMap room, int index) {
 		// if another node in the map has a connection to this node, set that connection to null
 		for (int k = 0; k < room.size; k++) {
 			// j is index of moved node
@@ -394,7 +394,7 @@ public static class LevelEditor_2 {
 	/// Removes null and invalid nodes from the maps array of nodes
 	/// </summary>
 	/// <param name="room"></param>
-	public static void cleanUpMap(Map room) {
+	public static void cleanUpMap(LevelMap room) {
 		int mapSize = room.size;
 		
 		/*
@@ -407,10 +407,14 @@ public static class LevelEditor_2 {
 				//Debug.Log("Node with index " + i + " does not exist");
 				for (int j = (i + 1); j < mapSize; j++) {	// if it isn't valid, move all nodes that come asfter it down one slot
 					//Debug.Log("Moving node with index " + j + " down one");
-					if ((room[j] != null) || (room[j].index >= 0)) {	// only bother moving nodes that are also valid
-						if(GameManager.instance.gameplay.currentIndex == j) {	// if the current tile is the one having its index changed, also update the current index 
-							GameManager.instance.gameplay.currentIndex = j - 1;	// this prevents teleporting or other error.
+					if ((room[j] != null) || (room[j].index >= 0)) {    // only bother moving nodes that are also valid
+						if (GameManager.gameplay.currentIndex == j) {  // if the current tile is the one having its index changed, also update the current index 
+							GameManager.gameplay.currentIndex = j - 1; // this prevents teleporting or other error.
 						}
+						/*if(GameManager.instance.gameplay.currentIndex == j) {	// if the current tile is the one having its index changed, also update the current index 
+							GameManager.instance.gameplay.currentIndex = j - 1;	// this prevents teleporting or other error.
+						}*/
+
 						room[j - 1] = room[j];
 						room[j - 1].index = (j - 1);
 						for (int k = 0; k < mapSize; k++) { // for each node that is moved down one, go through the array and adjust all 

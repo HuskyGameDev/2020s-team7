@@ -49,7 +49,7 @@ public class GenerateRenderGrid : LevelGenerator {
 	/// Calls DeleteRenderMap(), then re-generates the render-tiles and masks, and applies settings to the tiles and masks based on position
 	/// </summary>
 	/// <returns></returns>
-	public override Map GenerateLevel() {
+	public override LevelMap GenerateLevel() {
 		// only works correctly if these prefabs/references are set
 		if ((tilePrefab == null) ||
 			(cornerMaskPrefab == null) ||
@@ -60,7 +60,7 @@ public class GenerateRenderGrid : LevelGenerator {
 			(tile72Mask == null) ||
 			(lineMaskLow == null)) {
 			Debug.Log("Error: Prefabs, Universe, or mask Sprites not set");
-			return new Map();
+			return new LevelMap();
 		}
 
 		// get the layer ids, so don't have to call NameToID() numerous times

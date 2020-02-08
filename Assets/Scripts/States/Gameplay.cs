@@ -7,9 +7,10 @@ using TMPro;
 
 
 public class Gameplay : IState {
+	public UnityEngine.UI.Text levelNameText;
 
-    #region Initialize Variables
-    bool animLockout = false;
+	#region Initialize Variables
+	bool animLockout = false;
 	public bool winTrigger = false;
 	public bool cinimaticMode = false;
 	public bool hasBall = true;
@@ -18,8 +19,8 @@ public class Gameplay : IState {
     public UnityEngine.UI.Text stringrem;
 	public GameObject wintext;
 	public float moveAnimSpeed = 0.25f;
-	public float youWinScreenTimeout = 7.0f;
-	public Map map;
+	public float youWinScreenTimeout = 1.0f;
+	public LevelMap map;
 	public Universe universe;
 	/*public Node currentPosition = null;*/
 	public Node currentPosition {   // Current position now internally uses an index, so that accessing current 
@@ -36,26 +37,44 @@ public class Gameplay : IState {
 									// so you don't teleport around when deleting tiles.
 	public RenderingHandler nonEuclidRenderer;
 
-
+	private PauseMenu pauseMenu;
+	private LevelSelector levelSelector;
 	#endregion
 #if UNITY_EDITOR // if this is in the editor, need a reference to editLevel in order to call getCurrentNode() every time movement happens
 	public EditLevel editLevel = null;
 #endif
 
-	public override void _StartState() {
-        //Set up the renderer
-		nonEuclidRenderer.initialize();
-
-        //Deactivate the other states just in case
-        GameManager.instance.pausemenu.gameObject.SetActive(false);
-        GameManager.instance.levelselector.gameObject.SetActive(false);
-
-        //Make sure the level is set to be the beginning of the level
-		resetLevelAssets();
+	//GameManager.gameplay = this;
+	public override GameManager.IStateType _stateType {
+		get { return GameManager.IStateType.gameplay; }
 	}
 
-	public override void _EndState() {
+	public override void initialize() {
+		pauseMenu = (PauseMenu)GameManager.istates[(int)GameManager.IStateType.pauseMenu];
+		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
+
+	public override void _StartState(IState oldstate) {
+		GameManager.uiCamera.SetActive(false);
+		this.setBackground(false);
+		//Set up the renderer
+		if (!(oldstate is PauseMenu)) {
+			nonEuclidRenderer.initialize();
+			//Make sure the level is set to be the beginning of the level
+			resetLevelAssets();
+		}
+	}
+
+	public override void _EndState(IState newstate) {
+		GameManager.uiCamera.SetActive(true);
+		if (newstate is PauseMenu) {
+			this.setBackground(true);
+			this.gameObject.SetActive(true);
+			//GameManager.changeState(pauseMenu, null);
+		}
+	}
+
+	public override void _RespondToConfirm(int retVal, string retString) { }
 
 
 	public override void _Update() {
@@ -76,35 +95,34 @@ public class Gameplay : IState {
 		}
 		
 		//Shows pause menu
-		if (InputManager.instance.OnInputDown(InputManager.Action.back))
-        {
-            GameManager.instance.lscamera.SetActive(true);
-            GameManager.instance.changeState(GameManager.instance.pausemenu, GameManager.instance.levelselector);
+		if (InputManager.instance.OnInputDown(InputManager.Action.back)) {
+			GameManager.changeState(pauseMenu,this);
+			//pause();
+			//GameManager.instance.lscamera.SetActive(true);
+            //GameManager.instance.changeState(GameManager.instance.pausemenu, GameManager.instance.levelselector);
         }
 
+		//if (Input.GetKeyDown(KeyCode.Q)) pause();
 
-        //Shows level selecor. Delete this before final release
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-			GameManager.instance.lscamera.SetActive(true);
-			GameManager.instance.pausemenu.gameObject.SetActive(false);
-			GameManager.instance.changeState(GameManager.instance.levelselector, null);
-            
-        }
-		
 
-        //Shows stringleft on screen
-        stringrem.text = stringLeft +"/"+ map.stringleft.ToString();
+		//Shows stringleft on screen
+		stringrem.text = stringLeft +"/"+ map.stringleft.ToString();
 
         //Dont do anything past here if we are doing an animation
         if (animLockout)
             return;
         else if (winTrigger) {
-            wintext.SetActive(true);
             youWinScreenTimeout -= Time.deltaTime;
             if (youWinScreenTimeout < 0.0f) {
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+				winTrigger = false;
+				//GameManager.saveGame.levelNumber
+				if (GameManager.saveGame.levelNumber >= 0 && GameManager.saveGame.levelNumber < levelSelector.levelButtons.Length) {
+					LevelSelector.changeLevelHelper(GameManager.saveGame.levelNumber);
+				} else {
+					GameManager.changeState(levelSelector, this);
+				}
+
+			}
             return;
         }
         //This for loop deals with inputs and moves the player around.
@@ -178,10 +196,13 @@ public class Gameplay : IState {
                        
                        
 						if (map.winConditions()) {
-
 							winTrigger = true;
-                            GameManager.instance.changeState(GameManager.instance.levelselector, this);
-                            Debug.Log("You win!");
+							wintext.SetActive(true);
+							// play win sound here
+							levelSelector.unlockLevel();    // unlocks next level
+							GameManager.saveGame.levelNumber++;
+							SaveObj.SaveGame(GameManager.settings.saveNum, GameManager.saveGame);
+							Debug.Log("You win!");
 						}
 					},
 					dir,
@@ -197,20 +218,28 @@ public class Gameplay : IState {
 
     //reverts the level back to initial conditions
 	public void resetLevelAssets() {
-        //Give the player their string back
-        stringLeft = map.stringleft;
-        hasBall = true;
+		//levelNameText.text = "???";
+		// reset variables
+		animLockout = false;
+		winTrigger = false;
+		cinimaticMode = false;
+		hasBall = true;
+		curdir = 0;
+		stringLeft = map.stringleft;
+		wintext.SetActive(false);
+		youWinScreenTimeout = 1.0f;
 
-        //Send the player back to the starting point
+		//Send the player back to the starting point
 		currentPosition = map[map.sourceNodeIndex];
 		if ((currentPosition == null) || (currentPosition.index < 0)) {
 			int k;
 			for (k = 0; k < map.size; k++) {
 				if ((map[k] != null) && (map[k].index >= 0)) {
 					currentPosition = map[k];
+					break;
 				}
 			}
-			if (k == map.size) {
+			if (k == map.size) {	// means loop above checked all tiles
 				Debug.Log("Error: map source index does not exist/is invalid, no valid nodes available");
 			} else {
 				Debug.Log("Error: map source index does not exist/is invalid, using first available node");
@@ -218,7 +247,14 @@ public class Gameplay : IState {
 			
 		}
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
-
-
 	}
+
+	/*
+	public void pause() {
+		GameManager.uiCamera.SetActive(true);
+		this.setBackground(true);
+		GameManager.changeState(pauseMenu, null);
+	}*/
 }
+
+

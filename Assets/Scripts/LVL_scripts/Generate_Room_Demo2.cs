@@ -6,8 +6,8 @@ public class Generate_Room_Demo2 : Generate_Generic_Room {
 	override public string getLevelName() {
 		return "Demo2";
 	}
-	override public Map generateRoom() {
-		Map demoMap = new Map();
+	override public LevelMap generateRoom() {
+		LevelMap demoMap = new LevelMap();
 
 		//Demo room map, relativly complex
 

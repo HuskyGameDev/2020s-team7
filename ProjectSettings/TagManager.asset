@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RenderTile
   - MaskTile
+  - IState
   layers:
   - Default
   - TransparentFX

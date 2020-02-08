@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 
 [System.Serializable]
-public class Map {
+public class LevelMap {
 	//private static System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
 	public int defaultPosition;
@@ -23,21 +23,21 @@ public class Map {
     public int stringleft = 21;
     public bool winConditions()
     {
-        if (!(GameManager.instance.gameplay.currentPosition.type == Node.TileType.target) || !GameManager.instance.gameplay.hasBall)
+        if (!(GameManager.gameplay.currentPosition.type == Node.TileType.target) || !GameManager.gameplay.hasBall)
         {
             return false;
         }
         //Debug.Log("Checking conditions");
         foreach(int i in checkpoints)
         {
-            if (!GameManager.instance.gameplay.map[i].data.hasEnter || !GameManager.instance.gameplay.map[i].data.hasLeave)
+            if (!GameManager.gameplay.map[i].data.hasEnter || !GameManager.gameplay.map[i].data.hasLeave)
             {
                // Debug.Log("Not enough checkpoints cleared");
                 return false;
             }
         }
         //Debug.Log(GameManager.instance.gameplay.stringLeft == 0);
-        return GameManager.instance.gameplay.stringLeft == 0; //stringleft == 0; //&& GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
+        return GameManager.gameplay.stringLeft == 0; //stringleft == 0; //&& GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
     }
 	[SerializeField]
 	private Node[] nodes = new Node[20]; // by default, array of tiles has 20 slots.
@@ -123,8 +123,8 @@ public class Map {
 	/// returns a copy of a map
 	/// </summary>
 	/// <returns></returns>
-	public Map Copy() {
-		Map newCopy = new Map();
+	public LevelMap Copy() {
+		LevelMap newCopy = new LevelMap();
 		for (int i = 0; i < _size; i++) {
 			newCopy[i] = nodes[i].Copy();
 		}
@@ -137,7 +137,7 @@ public class Map {
 	/// </summary>
 	/// <param name="map"></param>
 	/// <param name="path"></param>
-	public static void Save(Map map, string path) {
+	public static void Save(LevelMap map, string path) {
 		string jsonData = JsonUtility.ToJson(map, true);
 		File.WriteAllText(path, jsonData);
 
@@ -150,11 +150,11 @@ public class Map {
 	/// </summary>
 	/// <param name="path"></param>
 	/// <returns></returns>
-	public static Map Load(string path) {
+	public static LevelMap Load(string path) {
 		if (File.Exists(path)) {	// can only load the map if the given file exists
 			//Debug.Log("Success: map file exists at path: " + path);
 			string jsonData = File.ReadAllText(path);
-			Map map = JsonUtility.FromJson<Map>(jsonData);
+			LevelMap map = JsonUtility.FromJson<LevelMap>(jsonData);
 			
 
 			if (map == null) {
@@ -163,10 +163,10 @@ public class Map {
 
 			if (map.sourceNodeIndex >= 0) {
 				//Debug.Log("Success: map.sourceNode is not null, is :" + map.sourceNodeIndex);
-				GameManager.instance.gameplay.currentPosition = map[map.sourceNodeIndex];
+				GameManager.gameplay.currentPosition = map[map.sourceNodeIndex];
 			} else {
 				Debug.Log("Error: map.sourceNode is null");
-				GameManager.instance.gameplay.currentPosition = map[0];
+				GameManager.gameplay.currentPosition = map[0];
 			}
 			/*
 			for (int i = 0; i < map.arraySize; i++) {

@@ -110,12 +110,12 @@ public class RenderTile : MonoBehaviour {
 				tempDirCCW = Extensions.clockwise(d);
 				for (i = 0; i < 4; i++) {
 					if (tempNodeCW != null) {
-						tempNodeCW = GameManager.instance.gameplay.map[(int)tempNodeCW.GetConnectionFromDir(tempDirCW)];
+						tempNodeCW = GameManager.gameplay.map[(int)tempNodeCW.GetConnectionFromDir(tempDirCW)];
 						tempDirCW = Extensions.clockwise(tempDirCW);
 						clockwiseNode[i] = tempNodeCW;
 					}
 					if (tempNodeCCW != null) {
-						tempNodeCCW = GameManager.instance.gameplay.map[(int)tempNodeCCW.GetConnectionFromDir(tempDirCCW)];
+						tempNodeCCW = GameManager.gameplay.map[(int)tempNodeCCW.GetConnectionFromDir(tempDirCCW)];
 						tempDirCCW = Extensions.counterclockwise(tempDirCCW);
 						counterwiseNode[(6 - i) % 4] = tempNodeCCW;
 					}
@@ -127,7 +127,7 @@ public class RenderTile : MonoBehaviour {
 					}
 				}
 				/* draw corner */
-				GameManager.instance.gameplay.nonEuclidRenderer.cornerMaskMap[
+				GameManager.gameplay.nonEuclidRenderer.cornerMaskMap[
 					position.Value.x + ((d == Direction.North || d == Direction.East) ? 1 : 0), 
 					position.Value.y + ((d == Direction.North || d == Direction.West) ? 1 : 0)
 					].setCornerFromDir(draw, dir.Value);

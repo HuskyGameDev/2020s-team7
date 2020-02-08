@@ -6,9 +6,9 @@ public class Generate_Room_006 : Generate_Generic_Room {
 	override public string getLevelName() {
 		return "006";
 	}
-	override public Map generateRoom()
+	override public LevelMap generateRoom()
     {
-		Map demoMap = new Map();
+		LevelMap demoMap = new LevelMap();
 
         // This map is a long room, with a walled off walway in the middle.
         // The hallway looks short from the outside, and long from the inside

@@ -50,7 +50,7 @@ public class EditLevel : MonoBehaviour {
 	public Node[][,] chunks = new Node[0][,]; // probably not strictly needed since you cant access this to change things in the editor anyway
 
 	public Node currentNode;    // referes to the copy of the current node
-	public Map currentMap;  // refers to the current map use by the gameplay object
+	public LevelMap currentMap;  // refers to the current map use by the gameplay object
 
 	private Color32 copyColorF;
 	private Color32 copyColorW;
@@ -68,14 +68,14 @@ public class EditLevel : MonoBehaviour {
 		/// Note that if changes to the previous map haven't been saved, they will be lost.
 		/// </summary>
 	public void getNewMap() {
-		Map tempMap = new Map();
-		GameManager.instance.gameplay.map = tempMap;	// let gameplay & this have a new map
+		LevelMap tempMap = new LevelMap();
+		GameManager.gameplay.map = tempMap;	// let gameplay & this have a new map
 		currentMap = tempMap;
 		createTileChunk(false);	// create a new tile chunk in the new map
 		LevelEditor_2.setType(tempMap, 0, Node.TileType.source); // set the suorce tile to (0,0)
 		//currentMap = tempMap;
 		//GameManager.instance.gameplay.map = tempMap;
-		GameManager.instance.gameplay.resetLevelAssets();	// reset player location & redraw everything
+		GameManager.gameplay.resetLevelAssets();	// reset player location & redraw everything
 	}
 
 	/// <summary>
@@ -83,7 +83,7 @@ public class EditLevel : MonoBehaviour {
 	/// </summary>
 	public void getCurrentMap() {
 		//Debug.Log("getCurrentMap() does not do anything right now");
-		currentMap = GameManager.instance.gameplay.map;
+		currentMap = GameManager.gameplay.map;
 	}
 
     /// <summary>
@@ -96,7 +96,7 @@ public class EditLevel : MonoBehaviour {
 		LevelEditor_2.cleanUpMap(currentMap);	// clean up the map, removing deleted or invalid tiles
 		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName+".json")) {	// if it already exists, check wether the person intends to overwrite it
 			if (overwriteLevel) {
-				Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName + ".json");
+				LevelMap.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName + ".json");
 				Debug.Log("Overwriting level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
 				overwriteLevel = false;
 			} else {
@@ -106,7 +106,7 @@ public class EditLevel : MonoBehaviour {
 		} else {
 			// if it doesn't already exit, don't need to make any checks.
 			Debug.Log("Saving level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
-			Map.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName + ".json");
+			LevelMap.Save(currentMap, Application.dataPath + levelPath + "/room_" + levelName + ".json");
 		}
 
 	}
@@ -118,9 +118,9 @@ public class EditLevel : MonoBehaviour {
 	public void loadLevelByName() {
 		Debug.Log("Trying to load level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
 		if (File.Exists(Application.dataPath + levelPath + "/room_" + levelName + ".json")) {
-			currentMap = Map.Load(Application.dataPath + levelPath + "/room_" + levelName + ".json");
-			GameManager.instance.gameplay.map = currentMap;
-			GameManager.instance.gameplay.resetLevelAssets();
+			currentMap = LevelMap.Load(Application.dataPath + levelPath + "/room_" + levelName + ".json");
+			GameManager.gameplay.map = currentMap;
+			GameManager.gameplay.resetLevelAssets();
 			Debug.Log("Loaded level at: \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
 		} else {
 			Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + levelPath + "/room_" + levelName + ".json\"");
@@ -131,7 +131,7 @@ public class EditLevel : MonoBehaviour {
 	/// mostly used internaly to make sure that the copy of the current node is actually of the current node
 	/// </summary>
 	public void getCurrentNode() {
-		currentNode = GameManager.instance.gameplay.currentPosition.Copy();
+		currentNode = GameManager.gameplay.currentPosition.Copy();
 		//currentNode = GameManager.instance.gameplay.currentPosition;
 	}
 
@@ -140,10 +140,10 @@ public class EditLevel : MonoBehaviour {
 	/// </summary>
 	public void applyToNode() {
 		getCurrentMap();    // make sure map reference is current
-		currentMap[GameManager.instance.gameplay.currentPosition.index] = currentNode.Copy();
-		GameManager.instance.gameplay.currentPosition = currentMap[GameManager.instance.gameplay.currentPosition.index];
+		currentMap[GameManager.gameplay.currentPosition.index] = currentNode.Copy();
+		GameManager.gameplay.currentPosition = currentMap[GameManager.gameplay.currentPosition.index];
 		// draw changes to node
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.instance.gameplay.currentPosition, false);
+		GameManager.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.gameplay.currentPosition, false);
 	}
 
 	/// <summary>
@@ -152,7 +152,7 @@ public class EditLevel : MonoBehaviour {
 	public void redraw() {
 		getCurrentMap();    // make sure map reference is current
 		getCurrentNode();
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.instance.gameplay.currentPosition, false);
+		GameManager.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, GameManager.gameplay.currentPosition, false);
 	}
 
 
@@ -208,7 +208,7 @@ public class EditLevel : MonoBehaviour {
 			Debug.Log("Error: Given index of " + linkToIndex + " is not valid");
 		}
 		getCurrentNode(); // current node will have changed slightly, make sure copy is still accurate
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);	// draw changes to map
+		GameManager.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);	// draw changes to map
 	}
 
 	/// <summary>
@@ -219,7 +219,7 @@ public class EditLevel : MonoBehaviour {
 		getCurrentMap();
 		LevelEditor_2.setType(currentMap, currentNode.index, type);
 		getCurrentNode();
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
+		GameManager.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
 	}
 
 	/// <summary>
@@ -236,7 +236,7 @@ public class EditLevel : MonoBehaviour {
 		LevelEditor_2.createWall(currentMap, currentNode.index, methodDirection);
 
 		getCurrentNode();	// redraw the newly changed map
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
+		GameManager.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);
 	}
 
 	/// <summary>
@@ -255,7 +255,7 @@ public class EditLevel : MonoBehaviour {
 			Debug.Log("Error: There is no node the " + methodDirection.ToString() + "-ern direction");
 		}
 		getCurrentNode();	// node copy now out of date, update it
-		GameManager.instance.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
+		GameManager.gameplay.nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentNode, false);   // draw changes to map
 	}
 
 	/// <summary>
@@ -282,8 +282,8 @@ public class EditLevel : MonoBehaviour {
 			currentNode.wallSprite = copywallSprite;
 			//currentNode.cornerSprite = copycornerSprite;
 			getCurrentMap();    // make sure map reference is current
-			currentMap[GameManager.instance.gameplay.currentPosition.index] = currentNode.Copy();
-			GameManager.instance.gameplay.currentPosition = currentMap[GameManager.instance.gameplay.currentPosition.index];
+			currentMap[GameManager.gameplay.currentPosition.index] = currentNode.Copy();
+			GameManager.gameplay.currentPosition = currentMap[GameManager.gameplay.currentPosition.index];
 		}
 	}
 }

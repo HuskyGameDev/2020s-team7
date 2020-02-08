@@ -9,10 +9,10 @@ public class Generate_Tutorial_002 : Generate_Generic_Room {
         return "Tutorial2";
     }
 
-    public override Map generateRoom()
+    public override LevelMap generateRoom()
     {
 
-        Map _map = new Map();
+        LevelMap _map = new LevelMap();
 
         //This Room will introduce the player to the non-euclidean spaces
 

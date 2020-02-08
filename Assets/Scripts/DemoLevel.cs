@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DemoLevel : LevelGenerator {
 
-    public override Map GenerateLevel()
+    public override LevelMap GenerateLevel()
     {
-        return new Map();
+        return new LevelMap();
     }
 }

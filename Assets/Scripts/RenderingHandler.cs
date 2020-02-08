@@ -65,7 +65,7 @@ public class RenderingHandler : MonoBehaviour {
 
 		Vector2Int position = oldPosition + dpi.dir.offset();
 		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
-		Node node = GameManager.instance.gameplay.map[(int)oldNode.GetConnectionFromDir(dpi.dir)];
+		Node node = GameManager.gameplay.map[(int)oldNode.GetConnectionFromDir(dpi.dir)];
 		//Draw the node, regarless of if it is null (null node is handled by the drawer)
 		tile.DrawFullNode(node, dpi.dir, position);
 		//If the node is not null, then we continue on with the instructions

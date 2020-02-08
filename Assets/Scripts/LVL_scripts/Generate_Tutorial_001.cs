@@ -9,10 +9,10 @@ public class Generate_Tutorial_001 : Generate_Generic_Room {
         return "Tutorial1";
     }
 
-    public override Map generateRoom()
+    public override LevelMap generateRoom()
     {
 
-        Map _map = new Map();
+        LevelMap _map = new LevelMap();
 
         //This Room will show the player how to move and that they need to move a certain distance to complete a level
 

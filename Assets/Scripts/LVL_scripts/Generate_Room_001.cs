@@ -6,8 +6,8 @@ public class Generate_Room_001 : Generate_Generic_Room {
 	override public string getLevelName() {
 		return "001";
 	}
-	override public Map generateRoom() {
-		Map demoMap = new Map();
+	override public LevelMap generateRoom() {
+		LevelMap demoMap = new LevelMap();
 
 		// simple map for 1st room, one chunk, not strange connections
 		Node[,] chunk = LevelEditor_2.createChunk(demoMap, new Color32(255, 255, 255, 255), 3, 3);

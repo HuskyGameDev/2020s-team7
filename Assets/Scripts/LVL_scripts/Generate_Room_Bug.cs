@@ -7,8 +7,8 @@ public class Generate_Room_Bug : Generate_Generic_Room {
 	override public string getLevelName() {
 		return "Bug";
 	}
-	override public Map generateRoom() {
-		Map demoMap = new Map();
+	override public LevelMap generateRoom() {
+		LevelMap demoMap = new LevelMap();
 
 		// This map demonstrates the ways that connects can be very wierd
 		// Demonstrates cunfusing, undesired behavior

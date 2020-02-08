@@ -13,61 +13,108 @@ using UnityEngine.UI.CoroutineTween;
 
 
 public class LevelSelector : IState {
+	public UnityEngine.UI.Text numUnlockedText;
+	public UnityEngine.UI.Text slotNameText;
 
-    public Button template;
+	public static string[] levelNames;
+	public Button template;
     public GameObject templateParent;
-	public override void _StartState() {
-        //Retrieve the level names from the directory
-        string[] levelButtonNames = searchForLevels();
+	public Button[] levelButtons = null;
+	public static LevelSelector instance;
 
-        //Create the list of buttons and their names if it hasn't already.
-        if (levelButtons.Length == 0) { 
-            levelButtons = new Button[levelButtonNames.Length];
-            for (int i = 0; i < levelButtons.Length; i++)
-            {
-                levelButtons[i] = Instantiate(template, templateParent.transform);
-                levelButtons[i].gameObject.SetActive(true);
-                levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = levelButtonNames[i];
-                levelButtons[i].GetComponent<LevelButtonScript>().changeString(levelButtonNames[i]);
-            }   
-        }
+	//public static string level = "001";
+	public static int level = 0;
+	private static bool change = false;
 
+	public override GameManager.IStateType _stateType {
+		get { return GameManager.IStateType.levelSelector; }
+	}
 
-        //If the level is won, unlock the next stage.
-        //This is not active/working in the game right now due to winTrigger being buggy.
-        if (GameManager.instance.gameplay.winTrigger)
-        {
-            GameManager.instance.gameplay.winTrigger = false;
-            
-            int i = 0;
-    
-            while (i < levelButtons.Length && levelButtons[i].interactable)
-            {
-                i++;
-            }
-            if (i<levelButtons.Length) levelButtons[i].interactable = true;
-        }
+	public void Start() {
+		/*if (levelButtons == null) {
+			initialize();
+		}*/
+	}
+
+	public override void _StartState(IState oldstate) {
+		this.setBackground(false);
+		if (GameManager.saveGame == null) {
+			slotNameText.text = "-";
+			numUnlockedText.text = "~/" + GameManager.numLevels;
+			Debug.Log("Error: can select levels");
+		} else {
+			int count = 0;
+			for (int i = 0; i < levelButtons.Length; i++) {
+				if (GameManager.saveGame.canAccess(i)) {
+					count++;
+					levelButtons[i].gameObject.SetActive(true);
+					//levelButtons[i].interactable = true;
+				} else {
+					levelButtons[i].gameObject.SetActive(false);
+					//levelButtons[i].interactable = false;
+				}
+			}
+			levelButtons[0].gameObject.SetActive(true);
+
+			slotNameText.text = GameManager.saveGame.slotName;
+			numUnlockedText.text = count + "/" + GameManager.numLevels;
+		}
 	}
 
 
-    public override void _EndState() {
+	public override void _EndState(IState newstate) {
 		//Nothing for end state
 	}
 
-    #region Changing Levels
-    public static string level = "001";
-    private static bool change = false;
-    
+	public override void _RespondToConfirm(int retVal, string retString) { }
+
+	public override void initialize() {
+		if ((instance == null) || (instance == this)) {
+			instance = this;
+		} else {
+			Debug.Log("Duplicate GameManager destroyed");
+			DestroyImmediate(this.gameObject);
+		}
+		//Retrieve the level names from the directory
+		//string[] levelButtonNames = searchForLevels();
+		levelNames = searchForLevels();
+
+		//Create the list of buttons and their names if it hasn't already.
+		//if (levelButtons.Length == 0) {
+		levelButtons = new Button[levelNames.Length];
+		for (int i = 0; i < levelButtons.Length; i++) {
+			levelButtons[i] = Instantiate(template, templateParent.transform);
+			levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = levelNames[i];
+			//levelButtons[i].GetComponent<LevelButtonScript>().changeString(levelButtonNames[i]);
+			levelButtons[i].GetComponent<LevelButtonScript>().index = i;
+		}
+		GameManager.numLevels = levelButtons.Length;
+		levelButtons[0].gameObject.SetActive(true);
+		//}
+	}
+
+	public void unlockLevel() {
+		int i = 0;
+		while (GameManager.saveGame.canAccess(i)) {
+			i++;
+		}
+		if (i < levelButtons.Length) {
+			//levelButtons[i].gameObject.SetActive(true);
+			GameManager.saveGame.setAccess(i, true);
+		}
+		// offer to save???
+	}
+
+	#region Changing Levels
     //Find the .json file that holds the level data and create a map out of it.
-    public static Map startLevel(string levelName)
-    {
-        if (File.Exists(Application.dataPath + "/Levels/room_" + levelName+".json"))
-        {
-            Map map = Map.Load(Application.dataPath + "/Levels/room_" + levelName+".json");
+    //public static LevelMap startLevel(string levelName) {
+	public static LevelMap startLevel(string levelName) {
+		GameManager.gameplay.levelNameText.text = levelName;
+		//string levelName = levelNames[index];
+		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName+".json")) {
+            LevelMap map = LevelMap.Load(Application.dataPath + "/Levels/room_" + levelName+".json");
             return map;
-        }
-        else
-        {
+        } else {
             Debug.Log("Error: Map file does not exist at path \"" + Application.dataPath + "/Levels/room_" + levelName + "\"");
             return null;
         }
@@ -75,34 +122,37 @@ public class LevelSelector : IState {
     }
 
     //This doesn't change the level, just the string called 'level'
-    public static void changeLevel(string s)
-    {
-        level = s;
-        change = true;
-    }
+	/*public static void changeLevel(int num) {
+		level = num;
+		change = true;
+	}*/
 
-    #endregion
+	#endregion
 
-    public override void _Update()
+	public override void _Update()
     {
 
         //This is what ultimately ends up happening when the buttons are pressed.
         //The reason for the work-around is because I can't pass arguments on these button's "onClick" functions since they're instantiated through script. I have to be able to call their onClick functions without needing any arguments.
-
-        if (change)
-        {
-            GameManager.instance.gameplay.map = startLevel(level);
-            GameManager.instance.gameplay.resetLevelAssets();
-            change = false;
-            GameManager.instance.changeState(GameManager.instance.gameplay, this);
-            
-        }
+        if (change) {
+			change = false;
+			//changeLevelHelper(level ,this);
+			changeLevelHelper(level);
+			GameManager.changeState(GameManager.gameplay, this);
+		}
         
     }
 
+	public static void changeLevelHelper(int index) { //, IState state) {
+													  //change = false;
+		string name = levelNames[index];
+		GameManager.gameplay.map = startLevel(name);
+		GameManager.gameplay.resetLevelAssets();
+		//GameManager.changeState(GameManager.gameplay, state);
+	}
+
     //Retrieves the names of the levels from the directory by finding files ending in .json
-    public static string[] searchForLevels()
-    {
+    public static string[] searchForLevels() {
         string[] fileNames = Directory.GetFiles((Application.dataPath + "/Levels/"),"*.json");
         
         //fileNames retrieves the entire path, ex: "C:/Users/jsmith/Documents/Unity/Assets... .json"
@@ -119,9 +169,8 @@ public class LevelSelector : IState {
 
     #region Buttons
 
-    public Button[] levelButtons = null;
-
     //The names of these methods should be self explanitory
+	/*
     public Button activateButton(Button button)
     {
         button.interactable = true;
@@ -139,6 +188,6 @@ public class LevelSelector : IState {
             b.interactable = false;
         }
     }
-
+	*/
     #endregion
 }

@@ -130,6 +130,7 @@ public class InputManager {
 			//Debug.Log("Loading keybinds from location: \"" + Application.persistentDataPath + "\\Keybindings.txt\"");
 			Stream stream = new FileStream(Application.persistentDataPath + "\\Keybindings.txt", FileMode.Open, FileAccess.Read);
 			keybindings = (Keybindings)formatter.Deserialize(stream);
+			stream.Close();
 			temp_keybindings = keybindings.Copy();
 		} else {
 			//Debug.Log("Loading default keybinds");

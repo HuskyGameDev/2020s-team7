@@ -6,8 +6,8 @@ public class Generate_Room_004 : Generate_Generic_Room {
 	override public string getLevelName() {
 		return "004";
 	}
-	override public Map generateRoom() {
-		Map demoMap = new Map();
+	override public LevelMap generateRoom() {
+		LevelMap demoMap = new LevelMap();
         demoMap.stringleft = 10;
 
 		// This room has two hallways that go through the middle.
