@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SettingMenu : IState {
-	private bool current = false;
-	private IState previous;
-	private SettingsObj tempSettings;
+	/*
+	 * this whole state does nothing right now. Will add stuff to it later.
+	 */
+	private bool current = false;	// if the temp settings match the current settings
+	private IState previous;	// previous state, so can return to it.
+	private SettingsObj tempSettings;	// temp settings, so can spply discard changes
 
 	public UnityEngine.UI.Button applySettingsButton;
 	public UnityEngine.UI.Button discardSettingsButton;

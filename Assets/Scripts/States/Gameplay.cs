@@ -7,11 +7,8 @@ using TMPro;
 
 
 public class Gameplay : IState {
-	public Text levelNameText;
-	/*public GameObject pauseButtonObj;
-	public GameObject lvlNameObj;
-	public GameObject stringRemObj;*/
-	public RectTransform pauseButtonTransform;
+	public Text levelNameText;	// text element used to indicate current level
+	public RectTransform pauseButtonTransform;	// transform of UI elements, so their position can by updated when screen size changes. Rough right now.
 	public RectTransform lvlNameTransform;
 	public RectTransform stringRemTransform;
 
@@ -43,7 +40,7 @@ public class Gameplay : IState {
 									// so you don't teleport around when deleting tiles.
 	public RenderingHandler nonEuclidRenderer;
 
-	private PauseMenu pauseMenu;
+	private PauseMenu pauseMenu;	// local pause menu and level selector references. Set up in initilizer
 	private LevelSelector levelSelector;
 	#endregion
 #if UNITY_EDITOR // if this is in the editor, need a reference to editLevel in order to call getCurrentNode() every time movement happens
@@ -51,33 +48,32 @@ public class Gameplay : IState {
 #endif
 
 	//GameManager.gameplay = this;
-	public override GameManager.IStateType _stateType {
+	public override GameManager.IStateType _stateType { // override the state-enum return value
 		get { return GameManager.IStateType.gameplay; }
 	}
 
-	public override void _initialize() {
+	public override void _initialize() {	// setup local references
 		pauseMenu = (PauseMenu)GameManager.istates[(int)GameManager.IStateType.pauseMenu];
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
 
 	public override void _StartState(IState oldstate) {
-		GameManager.uiCamera.SetActive(false);
-		this.setBackground(false);
-		//Set up the renderer
+		GameManager.uiCamera.SetActive(false);	//not strictly needed, but makes it easy to make sure no menu stuff is visible
+		this.setBackground(false);  // make sure buttons are active
+									//Set up the renderer
 		if (!(oldstate is PauseMenu)) {
 			nonEuclidRenderer.initialize();
 			//Make sure the level is set to be the beginning of the level
 			resetLevelAssets();
 		}
-		fitUitoScreen();
+		fitUitoScreen();	// basic crappy auto-UI-sizing
 	}
 
 	public override void _EndState(IState newstate) {
-		GameManager.uiCamera.SetActive(true);
-		if (newstate is PauseMenu) {
+		GameManager.uiCamera.SetActive(true);	// set menu stuff active
+		if (newstate is PauseMenu) {	// if new state is pause menu, set this as background, and keep active
 			this.setBackground(true);
 			this.gameObject.SetActive(true);
-			//GameManager.changeState(pauseMenu, null);
 		}
 	}
 
@@ -104,13 +100,7 @@ public class Gameplay : IState {
 		//Shows pause menu
 		if (InputManager.instance.OnInputDown(InputManager.Action.back)) {
 			GameManager.changeState(pauseMenu,this);
-			//pause();
-			//GameManager.instance.lscamera.SetActive(true);
-            //GameManager.instance.changeState(GameManager.instance.pausemenu, GameManager.instance.levelselector);
         }
-
-		//if (Input.GetKeyDown(KeyCode.Q)) pause();
-
 
 		//Shows stringleft on screen
 		stringrem.text = stringLeft +"/"+ map.stringleft.ToString();
@@ -122,7 +112,7 @@ public class Gameplay : IState {
             youWinScreenTimeout -= Time.deltaTime;
             if (youWinScreenTimeout < 0.0f) {
 				winTrigger = false;
-				//GameManager.saveGame.levelNumber
+				// load the next level if it exists, else return to level selector
 				if (GameManager.saveGame.levelNumber >= 0 && GameManager.saveGame.levelNumber < levelSelector.levelButtons.Length) {
 					LevelSelector.changeLevelHelper(GameManager.saveGame.levelNumber);
 				} else {
@@ -204,11 +194,11 @@ public class Gameplay : IState {
                        
 						if (map.winConditions()) {
 							winTrigger = true;
-							wintext.SetActive(true);
+							wintext.SetActive(true);	// make win text visible
 							// play win sound here
 							levelSelector.unlockLevel();    // unlocks next level
-							GameManager.saveGame.levelNumber++;
-							SaveObj.SaveGame(GameManager.settings.saveNum, GameManager.saveGame);
+							GameManager.saveGame.levelNumber++;	// advance last level visited, so will auto-load next level
+							SaveObj.SaveGame(GameManager.settings.saveNum, GameManager.saveGame);	// save changes to levels accessible and last-level-visited
 							Debug.Log("You win!");
 						}
 					},
@@ -225,7 +215,6 @@ public class Gameplay : IState {
 
     //reverts the level back to initial conditions
 	public void resetLevelAssets() {
-		//levelNameText.text = "???";
 		// reset variables
 		animLockout = false;
 		winTrigger = false;
@@ -233,7 +222,7 @@ public class Gameplay : IState {
 		hasBall = true;
 		curdir = 0;
 		stringLeft = map.stringleft;
-		wintext.SetActive(false);
+		wintext.SetActive(false);	// make sure win text is not visible
 		youWinScreenTimeout = 1.0f;
 
 		//Send the player back to the starting point
@@ -256,13 +245,7 @@ public class Gameplay : IState {
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
 	}
 
-	/*
-	public void pause() {
-		GameManager.uiCamera.SetActive(true);
-		this.setBackground(true);
-		GameManager.changeState(pauseMenu, null);
-	}*/
-
+	// crappy auto-UI sizing thing. Gonna make it better
 	public void fitUitoScreen() {
 		pauseButtonTransform.anchoredPosition = new Vector2(
 			Math.Max((Screen.width - pauseButtonTransform.sizeDelta.x) / 2 - 10, pauseButtonTransform.sizeDelta.x - 10),

@@ -3,26 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadMenu : IState {
-	public UnityEngine.UI.Text[] numUnlockedText = new UnityEngine.UI.Text[3];
-	public UnityEngine.UI.Text[] slotNameText = new UnityEngine.UI.Text[3];
+	public UnityEngine.UI.Text[] numUnlockedText = new UnityEngine.UI.Text[3];	// info about each of the three save slots.
+	public UnityEngine.UI.Text[] slotNameText = new UnityEngine.UI.Text[3];		// could be changed form more save slots easily.
 	public UnityEngine.UI.Button[] resumeButton = new UnityEngine.UI.Button[3];
 
-	private LevelSelector levelSelector;
-	private Gameplay gameplay;
+	private LevelSelector levelSelector;	// local reference to levelSelector, setup in _initialize()
 
-	public override GameManager.IStateType _stateType {
+	public override GameManager.IStateType _stateType {	// override the state-enum return value
 		get { return GameManager.IStateType.loadMenu; }
 	}
 
-	public override void _initialize() {
+	public override void _initialize() {	// initialize specific to this istate
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
-		//gameplay = (Gameplay) GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
 
 	public override void _StartState(IState oldstate) {
-		this.setBackground(false);
-		for (int i = 0; i < 3; i++) {
-			if (SaveObj.SaveExists(i+1)) {
+		this.setBackground(false);	// make sure buttons are active
+		for (int i = 0; i < 3; i++) {	// for each potential save:
+			if (SaveObj.SaveExists(i+1)) {	// if it exists, set the button active, and set the name and levels-unlocked text to the values in the save
 				SaveObj save = SaveObj.LoadGame(i+1);
 				slotNameText[i].text = save.slotName;
 				int count = 0;
@@ -31,7 +29,7 @@ public class LoadMenu : IState {
 				}
 				numUnlockedText[i].text = count + "/" + GameManager.numLevels;
 				resumeButton[i].interactable = true;
-			} else {
+			} else {    // if it doesn't exists, set the button non-interactive, and set the name and levels-unlocked text to default values
 				slotNameText[i].text = "-";
 				numUnlockedText[i].text = "~/" + GameManager.numLevels;
 				resumeButton[i].interactable = false;
@@ -46,18 +44,24 @@ public class LoadMenu : IState {
 
 	public override void _RespondToConfirm(int retVal, string retString) { }
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="num"></param>
 	public void loadSlot(int num) {
-		//GameManager.instance.saveGame;
-		//GameManager.instance.settings;
-		//Debug.Log("loadSlot() does nothing right now");
-		GameManager.settings.saveNum = num;
 		GameManager.saveGame = SaveObj.LoadGame(num);
+		if (GameManager.saveGame == null) {	// complain if save file doesn't exist/error
+			// give file-doesn't exist notification here
+			Debug.Log("Error: Can't find save file \"" + num + "\"");
+			return;
+		}
+		GameManager.settings.saveNum = num;	// set the last-save-used to this num, and save that change
 		SettingsObj.saveSettings(GameManager.settings);
-		if (GameManager.saveGame.levelNumber >= 0 && GameManager.saveGame.levelNumber < levelSelector.levelButtons.Length) {
+		if (GameManager.saveGame.levelNumber >= 0 && GameManager.saveGame.levelNumber < levelSelector.levelButtons.Length) {	// load straight to the last visited level if it exists
 			LevelSelector.changeLevelHelper(GameManager.saveGame.levelNumber);
 			GameManager.changeState(GameManager.gameplay, this);
 		} else {
-			onClick(levelSelector);
+			onClick(levelSelector);	// else, go to level selector
 		}
 	}
 }

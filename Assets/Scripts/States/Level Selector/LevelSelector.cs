@@ -13,36 +13,33 @@ using UnityEngine.UI.CoroutineTween;
 
 
 public class LevelSelector : IState {
-	public UnityEngine.UI.Text numUnlockedText;
+	public UnityEngine.UI.Text numUnlockedText;	// text for the name and number of level unlocked of the current save slot
 	public UnityEngine.UI.Text slotNameText;
 
-	public static string[] levelNames;
+	public static string[] levelNames;	// array of level names. Makes it easier to load levels from other scripts
 	public Button template;
     public GameObject templateParent;
 	public Button[] levelButtons = null;
-	public static LevelSelector instance;
+	public static LevelSelector instance;	// singleton for use by the buttons. Probably bad and should be changed
 
 	//public static string level = "001";
-	public static int level = 0;
-	private static bool change = false;
+	//public static int level = 0;
+	//private static bool change = false;
 
-	public override GameManager.IStateType _stateType {
+	public override GameManager.IStateType _stateType { // override the state-enum return value
 		get { return GameManager.IStateType.levelSelector; }
 	}
 
 	public void Start() {
-		/*if (levelButtons == null) {
-			initialize();
-		}*/
 	}
 
 	public override void _StartState(IState oldstate) {
-		this.setBackground(false);
-		if (GameManager.saveGame == null) {
+		this.setBackground(false);  // make sure buttons are active
+		if (GameManager.saveGame == null) {	// shouldn't be able to see this if no save is selected anyway
 			slotNameText.text = "-";
 			numUnlockedText.text = "~/" + GameManager.numLevels;
 			Debug.Log("Error: can select levels");
-		} else {
+		} else {	// if save exists, set the savename and number-of-levels-unlocked text, as well as activating only buttoons for unlocked levels
 			int count = 0;
 			for (int i = 0; i < levelButtons.Length; i++) {
 				if (GameManager.saveGame.canAccess(i)) {
@@ -69,30 +66,30 @@ public class LevelSelector : IState {
 	public override void _RespondToConfirm(int retVal, string retString) { }
 
 	public override void _initialize() {
-		if ((instance == null) || (instance == this)) {
+		if ((instance == null) || (instance == this)) {	// setup singleton
 			instance = this;
 		} else {
 			Debug.Log("Duplicate GameManager destroyed");
 			DestroyImmediate(this.gameObject);
 		}
 		//Retrieve the level names from the directory
-		//string[] levelButtonNames = searchForLevels();
-		levelNames = searchForLevels();
+		levelNames = searchForLevels();	// get level names
 
 		//Create the list of buttons and their names if it hasn't already.
-		//if (levelButtons.Length == 0) {
 		levelButtons = new Button[levelNames.Length];
 		for (int i = 0; i < levelButtons.Length; i++) {
 			levelButtons[i] = Instantiate(template, templateParent.transform);
 			levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = levelNames[i];
-			//levelButtons[i].GetComponent<LevelButtonScript>().changeString(levelButtonNames[i]);
-			levelButtons[i].GetComponent<LevelButtonScript>().index = i;
+			levelButtons[i].GetComponent<LevelButtonScript>().index = i;	// set index for this button
 		}
-		GameManager.numLevels = levelButtons.Length;
-		levelButtons[0].gameObject.SetActive(true);
-		//}
+		GameManager.numLevels = levelButtons.Length;	// set number of levels that exist in the game manager
+		levelButtons[0].gameObject.SetActive(true);	// make sure level 0 is always accessible. 
 	}
 
+	/// <summary>
+	/// set the first locked level to unlocked
+	/// should be changed
+	/// </summary>
 	public void unlockLevel() {
 		int i = 0;
 		while (GameManager.saveGame.canAccess(i)) {
@@ -102,7 +99,6 @@ public class LevelSelector : IState {
 			//levelButtons[i].gameObject.SetActive(true);
 			GameManager.saveGame.setAccess(i, true);
 		}
-		// offer to save???
 	}
 
 	#region Changing Levels
@@ -134,20 +130,25 @@ public class LevelSelector : IState {
 
         //This is what ultimately ends up happening when the buttons are pressed.
         //The reason for the work-around is because I can't pass arguments on these button's "onClick" functions since they're instantiated through script. I have to be able to call their onClick functions without needing any arguments.
-        if (change) {
+        /*if (change) {
 			change = false;
 			//changeLevelHelper(level ,this);
 			changeLevelHelper(level);
 			GameManager.changeState(GameManager.gameplay, this);
-		}
+		}*/
         
     }
 
+	/// <summary>
+	/// Should change the name of this
+	/// sets up gameplay with the level with the given index in the levelNames[] array
+	/// </summary>
+	/// <param name="index"></param>
 	public static void changeLevelHelper(int index) { //, IState state) {
 													  //change = false;
 		string name = levelNames[index];
-		GameManager.gameplay.map = startLevel(name);
-		GameManager.gameplay.resetLevelAssets();
+		GameManager.gameplay.map = startLevel(name);	// load level map
+		GameManager.gameplay.resetLevelAssets();	// reset everything
 		//GameManager.changeState(GameManager.gameplay, state);
 	}
 
