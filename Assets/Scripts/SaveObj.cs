@@ -36,8 +36,10 @@ public class SaveObj {
 
 	public void setAccess(int index, bool value) {
 		if (index >= size) {
-			int tempsize = ((index + 1) / 10) + (((index + 1) / 10 == 0) ? 0: 1); // should give nearest multiple of ten that is equal to or above the index
-			bool[] arrayTemp = new bool[tempsize * 10];
+			//int tempsize = ((index + 1) / 10) + (((index + 1) / 10 == 0) ? 0: 1); // should give nearest multiple of ten that is equal to or above the index
+			int tempsize = size;
+			while (tempsize <= index) tempsize += 10;
+			bool[] arrayTemp = new bool[tempsize];
 			for (int i = 0; i < size; i++) {
 				arrayTemp[i] = array[i];
 			}
