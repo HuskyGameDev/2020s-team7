@@ -14,7 +14,7 @@ public class DeleteGameMenu : IState {
 		get { return GameManager.IStateType.deleteMenu; }
 	}
 
-	public override void initialize() { }
+	public override void _initialize() { }
 
 	public override void _StartState(IState oldstate) {
 		this.setBackground(false);

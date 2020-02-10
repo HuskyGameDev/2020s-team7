@@ -8,19 +8,25 @@ public abstract class IState : MonoBehaviour {
      * They have an update method which is called by GameManager instead of the unity engine.
      * They also have a start state method and end state method
     */
+
+	protected int dialogReturnVal = -1;
+	protected string returnString;
+	protected Component[] uiButtons;
 	public abstract GameManager.IStateType _stateType {
 		get;
 	}
 
-	public abstract void initialize();
+	public void initialize() {
+		uiButtons = gameObject.GetComponentsInChildren(typeof(UnityEngine.UI.Button), true);
+		_initialize();
+	}
+
+	public abstract void _initialize();
 
 	public abstract void _Update();
 	public abstract void _StartState(IState oldState);
 	public abstract void _EndState(IState newState);
-	protected int dialogReturnVal = -1;
-	protected string returnString;
-	public UnityEngine.UI.Button[] uiButtons;
-
+	
 	public abstract void _RespondToConfirm(int retVal, string retString);
 
 	public void setBackground(bool background) {

@@ -17,7 +17,7 @@ public class GameMenu : IState {
 		get { return GameManager.IStateType.gameMenu; }
 	}
 
-	public override void initialize() {
+	public override void _initialize() {
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 		//gameplay = (Gameplay) GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
@@ -73,7 +73,11 @@ public class GameMenu : IState {
 	}*/
 
 	public void quitGame() {
-		// offer to save game
-		Debug.Log("Quit does nothing right now");
+		//Debug.Log("Quit does nothing right now");
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+		Application.Quit();
+#endif
 	}
 }

@@ -8871,8 +8871,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &152773275
-Transform:
+--- !u!224 &152773275
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -8883,12 +8883,17 @@ Transform:
   m_Children:
   - {fileID: 914898458}
   - {fileID: 575286475}
-  - {fileID: 1552788036}
+  - {fileID: 1717775202}
   - {fileID: 1898203015}
   - {fileID: 1453426956}
   m_Father: {fileID: 1448683666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &155138860
 GameObject:
   m_ObjectHideFlags: 0
@@ -12105,7 +12110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1043eec1f596043459db8a84ff55d9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText: {fileID: 1366348480}
   slotNameText: {fileID: 231164206}
   resumeButton: {fileID: 1456780063}
@@ -14911,7 +14915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7033f7734c93aec42bbca6e5f3dc4a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText: {fileID: 529503337}
   slotNameText: {fileID: 1966595623}
   template: {fileID: 114128337337070610, guid: c3143d63dd106044e8f7587869fa2726, type: 2}
@@ -46758,7 +46761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a0e2202c66b1949852dc81c193da27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
 --- !u!114 &780082938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59538,7 +59540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d30a932beb7515408ea21a0f3c28a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText:
   - {fileID: 751638119}
   - {fileID: 41269724}
@@ -61932,7 +61933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1692c946ac29f5741adb13767ae6881c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText:
   - {fileID: 2035298190}
   - {fileID: 1002754193}
@@ -66343,7 +66343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00105cde19ffe4d43b0c8563d628b4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText:
   - {fileID: 1089251974}
   - {fileID: 1903319479}
@@ -84601,7 +84600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1448683666
 Transform:
   m_ObjectHideFlags: 0
@@ -84629,8 +84628,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c9f29972113f740b27c20932fb99cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   levelNameText: {fileID: 833838064}
+  pauseButtonTransform: {fileID: 575286475}
+  lvlNameTransform: {fileID: 914898458}
+  stringRemTransform: {fileID: 1717775202}
   winTrigger: 0
   cinimaticMode: 0
   hasBall: 1
@@ -91300,47 +91301,6 @@ SpriteMask:
   m_BackSortingOrder: 19
   m_IsCustomRangeActive: 1
   m_SpriteSortPoint: 0
---- !u!1 &1552788035
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1552788036}
-  - component: {fileID: 1552788037}
-  m_Layer: 0
-  m_Name: String Remaining
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1552788036
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1552788035}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -350, y: 285, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1717775202}
-  m_Father: {fileID: 152773275}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1552788037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1552788035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc35dc6a0e404f4f8cf6f73e0e1d738, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1554113678
 GameObject:
   m_ObjectHideFlags: 0
@@ -92290,7 +92250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f27dad401b8ea541891eb0e0398dd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   applySettingsButton: {fileID: 0}
   discardSettingsButton: {fileID: 0}
 --- !u!114 &1569007043
@@ -100867,7 +100826,7 @@ GameObject:
   - component: {fileID: 1717775205}
   - component: {fileID: 1717775203}
   m_Layer: 0
-  m_Name: Objective Description Background
+  m_Name: String Remaining
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100884,12 +100843,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2146562669}
-  m_Father: {fileID: 1552788036}
-  m_RootOrder: 0
+  m_Father: {fileID: 152773275}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -350, y: 285}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717775203

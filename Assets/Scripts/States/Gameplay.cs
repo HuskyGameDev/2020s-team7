@@ -7,7 +7,13 @@ using TMPro;
 
 
 public class Gameplay : IState {
-	public UnityEngine.UI.Text levelNameText;
+	public Text levelNameText;
+	/*public GameObject pauseButtonObj;
+	public GameObject lvlNameObj;
+	public GameObject stringRemObj;*/
+	public RectTransform pauseButtonTransform;
+	public RectTransform lvlNameTransform;
+	public RectTransform stringRemTransform;
 
 	#region Initialize Variables
 	bool animLockout = false;
@@ -49,7 +55,7 @@ public class Gameplay : IState {
 		get { return GameManager.IStateType.gameplay; }
 	}
 
-	public override void initialize() {
+	public override void _initialize() {
 		pauseMenu = (PauseMenu)GameManager.istates[(int)GameManager.IStateType.pauseMenu];
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
@@ -63,6 +69,7 @@ public class Gameplay : IState {
 			//Make sure the level is set to be the beginning of the level
 			resetLevelAssets();
 		}
+		fitUitoScreen();
 	}
 
 	public override void _EndState(IState newstate) {
@@ -255,6 +262,21 @@ public class Gameplay : IState {
 		this.setBackground(true);
 		GameManager.changeState(pauseMenu, null);
 	}*/
+
+	public void fitUitoScreen() {
+		pauseButtonTransform.anchoredPosition = new Vector2(
+			Math.Max((Screen.width - pauseButtonTransform.sizeDelta.x) / 2 - 10, pauseButtonTransform.sizeDelta.x - 10),
+			Math.Max((Screen.height - pauseButtonTransform.sizeDelta.y) / 2 - 10, pauseButtonTransform.sizeDelta.y - 10)
+			);
+		lvlNameTransform.anchoredPosition = new Vector2(
+			0, 
+			Math.Max((Screen.height - lvlNameTransform.sizeDelta.y) / 2 - 10, lvlNameTransform.sizeDelta.y - 10)
+			);
+		stringRemTransform.anchoredPosition = new Vector2(
+			Math.Min((-Screen.width + stringRemTransform.sizeDelta.x) / 2 + 10, -stringRemTransform.sizeDelta.x + 10),
+			Math.Max((Screen.height - stringRemTransform.sizeDelta.y) / 2 - 10, stringRemTransform.sizeDelta.y - 10)
+			);
+	}
 }
 
 

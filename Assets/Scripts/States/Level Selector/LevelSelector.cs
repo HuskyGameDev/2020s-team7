@@ -68,7 +68,7 @@ public class LevelSelector : IState {
 
 	public override void _RespondToConfirm(int retVal, string retString) { }
 
-	public override void initialize() {
+	public override void _initialize() {
 		if ((instance == null) || (instance == this)) {
 			instance = this;
 		} else {

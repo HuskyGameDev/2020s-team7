@@ -14,7 +14,7 @@ public class NewGameMenu : IState {
 		get { return GameManager.IStateType.newGameMenu; }
 	}
 
-	public override void initialize() {
+	public override void _initialize() {
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 		//gameplay = (Gameplay) GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}

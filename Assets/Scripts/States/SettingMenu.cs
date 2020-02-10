@@ -14,7 +14,7 @@ public class SettingMenu : IState {
 		get { return GameManager.IStateType.settingMenu; }
 	}
 
-	public override void initialize() { }
+	public override void _initialize() { }
 
 	public override void _StartState(IState oldstate) {
 		this.setBackground(false);
