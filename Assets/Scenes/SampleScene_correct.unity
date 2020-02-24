@@ -12108,7 +12108,7 @@ MonoBehaviour:
   numUnlockedText: {fileID: 1366348480}
   slotNameText: {fileID: 231164206}
   resumeButton: {fileID: 1456780063}
-  levelSelectButton: {fileID: 0}
+  levelSelectButton: {fileID: 1039160415}
 --- !u!222 &214702184
 CanvasRenderer:
   m_ObjectHideFlags: 0
