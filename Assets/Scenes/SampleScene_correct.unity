@@ -84624,9 +84624,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNameText: {fileID: 833838064}
-  pauseButtonTransform: {fileID: 575286475}
-  lvlNameTransform: {fileID: 914898458}
-  stringRemTransform: {fileID: 1717775202}
+  pauseButtonTransform: {fileID: 0}
+  lvlNameTransform: {fileID: 0}
+  stringRemTransform: {fileID: 0}
   winTrigger: 0
   cinimaticMode: 0
   hasBall: 1
