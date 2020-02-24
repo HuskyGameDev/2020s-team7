@@ -25,6 +25,10 @@ ExportedObj/
 *.booproj
 *.svd
 *.pdb
+/FMOD/**.user
+/FMOD/**.unsaved
+/FMOD/**.cache
+/FMOD/**.restore
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -37,4 +41,6 @@ sysinfo.txt
 *.unitypackage
 *.asset
 !/ProjectSettings/TagManager.asset
+!*FMODStudioSettings.asset
+/fmod_editor.log
 *.asset.meta
