@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: D:\HGD\2020s-team7\FMOD Sound Assets\strandedFMODsoundfinalver\strandedFMODsoundfinalver.fspro
-  SourceProjectPathUnformatted: D:\HGD\2020s-team7\FMOD Sound Assets\strandedFMODsoundfinalver\strandedFMODsoundfinalver.fspro
-  SourceBankPathUnformatted: D:\HGD\2020s-team7\FMOD Sound Assets\strandedFMODsoundfinalver\Build
+  sourceProjectPath: FMOD Sound Assets\strandedFMODsoundfinalver\strandedFMODsoundfinalver.fspro
+  SourceProjectPathUnformatted: FMOD Sound Assets\strandedFMODsoundfinalver\strandedFMODsoundfinalver.fspro
+  SourceBankPathUnformatted: FMOD Sound Assets\strandedFMODsoundfinalver\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

@@ -12105,11 +12105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1043eec1f596043459db8a84ff55d9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText: {fileID: 1366348480}
   slotNameText: {fileID: 231164206}
   resumeButton: {fileID: 1456780063}
-  saveButton: {fileID: 1039160415}
+  levelSelectButton: {fileID: 1039160415}
 --- !u!222 &214702184
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14911,7 +14910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7033f7734c93aec42bbca6e5f3dc4a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText: {fileID: 529503337}
   slotNameText: {fileID: 1966595623}
   template: {fileID: 114128337337070610, guid: c3143d63dd106044e8f7587869fa2726, type: 2}
@@ -46758,7 +46756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a0e2202c66b1949852dc81c193da27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
 --- !u!114 &780082938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59538,7 +59535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d30a932beb7515408ea21a0f3c28a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText:
   - {fileID: 751638119}
   - {fileID: 41269724}
@@ -61932,7 +61928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1692c946ac29f5741adb13767ae6881c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText:
   - {fileID: 2035298190}
   - {fileID: 1002754193}
@@ -66343,7 +66338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00105cde19ffe4d43b0c8563d628b4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   numUnlockedText:
   - {fileID: 1089251974}
   - {fileID: 1903319479}
@@ -84629,8 +84623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c9f29972113f740b27c20932fb99cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   levelNameText: {fileID: 833838064}
+  pauseButtonTransform: {fileID: 0}
+  lvlNameTransform: {fileID: 0}
+  stringRemTransform: {fileID: 0}
   winTrigger: 0
   cinimaticMode: 0
   hasBall: 1
@@ -92290,7 +92286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f27dad401b8ea541891eb0e0398dd75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtons: []
   applySettingsButton: {fileID: 0}
   discardSettingsButton: {fileID: 0}
 --- !u!114 &1569007043
