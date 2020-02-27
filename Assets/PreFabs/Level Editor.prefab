@@ -35,8 +35,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354406670148852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 3, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,15 +53,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSavePath: level.json
-  regenerateMasks: 0
+  regenerateMasks: 1
+  handler: {fileID: 0}
   dim: 5
-  tilePrefab: {fileID: 1478348900868680, guid: ba1cb4bbb96976d4eba7c85d3c479a74, type: 2}
+  tilePrefab: {fileID: 1396026476793186, guid: 6dbbaf2da65bcac45a05f42c20cc966c, type: 2}
   cornerMaskPrefab: {fileID: 1920250881213354, guid: f243f2b9797772c49ac8d5065469b409,
     type: 2}
   tileMaskPrefab: {fileID: 1207877981734958, guid: 57d6bc9539fc0f04a97f5e70a7562495,
     type: 2}
   universe: {fileID: 0}
-  cornerHalfMask: {fileID: 21300000, guid: 79bf41dd2cf97eb44b6769932f5c6594, type: 3}
+  cornerHalfMask: {fileID: 21300000, guid: 451ffbeaaf27933418a57713c6a345ad, type: 3}
   tile18Mask: {fileID: 21300000, guid: 9d6c44bcf5aae2349ad3c01a368b0414, type: 3}
   tile72Mask: {fileID: 21300000, guid: f13118083022b7343827ca91871ea626, type: 3}
   lineMaskLow: {fileID: 21300000, guid: 542fbe72969ca02438e9f0f9fde160ef, type: 3}
@@ -76,26 +77,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b5bb510f60e0e4482abea39d173808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawing: 0
   levelName: test
   levelPath: /LevelsEdited
   overwriteLevel: 0
+  type: 0
   methodDirection: 0
-  linkX: 1
-  linkY: 2
   linkToIndex: -1
   linkDirectionality: 0
-  newChunkColorR: 100
-  newChunkColorG: 100
-  newChunkColorB: 100
+  newChunkColor:
+    serializedVersion: 2
+    rgba: 0
   newChunkWidth: 3
   newChunkHeight: 3
+  linkX: 1
+  linkY: 2
   currentNode:
     index: 0
-    color:
+    colorF:
+      serializedVersion: 2
+      rgba: 4294902015
+    colorW:
       serializedVersion: 2
       rgba: 4294902015
     floorSprite: 
+    wallSprite: 
+    debris:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
     type: 0
+    hasSign: 0
+    signMessage: 
     connectionList:
     - north: -1
       south: -1
@@ -107,223 +126,544 @@ MonoBehaviour:
     targetNodeIndex: 7
     _size: 9
     arraySize: 20
+    checkpoints: 
     stringleft: 21
     nodes:
     - index: 0
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: 1
         east: 3
         west: -1
     - index: 1
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: sourceTile
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 1
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: 0
         south: 2
         east: 4
         west: -1
     - index: 2
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: 1
         south: -1
         east: 5
         west: -1
     - index: 3
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: 4
         east: 6
         west: 0
     - index: 4
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: 3
         south: 5
         east: 7
         west: 1
     - index: 5
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: 4
         south: -1
         east: 8
         west: 2
     - index: 6
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: 7
         east: -1
         west: 3
     - index: 7
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: targetTile
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 2
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: 6
         south: 8
         east: -1
         west: 4
     - index: 8
-      color:
+      colorF:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294902015
+      colorW:
+        serializedVersion: 2
+        rgba: 4294902015
       floorSprite: rock_05_disp
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: 7
         south: -1
         east: -1
         west: 5
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1
         east: -1
         west: -1
     - index: -1
-      color:
+      colorF:
+        serializedVersion: 2
+        rgba: 4294902015
+      colorW:
         serializedVersion: 2
         rgba: 4294902015
       floorSprite: 
+      wallSprite: 
+      debris:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
       type: 0
+      hasSign: 0
+      signMessage: 
       connectionList:
       - north: -1
         south: -1

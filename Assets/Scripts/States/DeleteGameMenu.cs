@@ -14,15 +14,14 @@ public class DeleteGameMenu : IState {
 		get { return GameManager.IStateType.deleteMenu; }
 	}
 
-	public override void _initialize() { }
+	protected override void _initialize() { }
 
-	public override void _StartState(IState oldstate) {
-		this.setBackground(false);
+	protected override void _StartState(IState oldstate) {
 		previous = oldstate;	// get previous state, so can return to it
 		refresh();	// refresh which slots are selectible / info on slots
 	}
 
-	public override void _EndState(IState newstate) {
+	protected override void _EndState(IState newstate) {
 	}
 
 	public override void _Update() {

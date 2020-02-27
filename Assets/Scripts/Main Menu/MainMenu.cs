@@ -6,20 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public GameObject startGame;
-    public GameObject quitGame;
+	public string sceneToLoad;
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene("SampleScene_correct", LoadSceneMode.Single); 
+	public void StartGame() {
+        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single); 
     }
 
     public void QuitGame()
     {
 #if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
+		UnityEditor.EditorApplication.isPlaying = false;
 #else
-        Application.Quit();
+		Application.Quit();
 #endif
-    }
+	}
 }

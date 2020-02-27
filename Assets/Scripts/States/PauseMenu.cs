@@ -12,14 +12,12 @@ public class PauseMenu : IState {
 		get { return GameManager.IStateType.pauseMenu; }
 	}
 
-	public override void _initialize() { }
+	protected override void _initialize() { }
 
-	public override void _StartState(IState oldstate) {
-		this.setBackground(false);  // make sure buttons are active
-									//Debug.Log("PauseMenu does not do anything in its _StartState() method");
+	protected override void _StartState(IState oldstate) {
 	}
 
-	public override void _EndState(IState newstate) {
+	protected override void _EndState(IState newstate) {
 		if (!(newstate is Gameplay)) {	// make sure gameplay is set inactive when leaving gameplay state, normaly it is still visible behind pause state
 			GameManager.gameplay.gameObject.SetActive(false);
 		}

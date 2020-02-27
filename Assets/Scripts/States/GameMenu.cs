@@ -14,13 +14,11 @@ public class GameMenu : IState {
 		get { return GameManager.IStateType.gameMenu; }
 	}
 
-	public override void _initialize() {
+	protected override void _initialize() {
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
 
-	public override void _StartState(IState oldstate) {
-		this.setBackground(false);  // make sure buttons are active
-									//Debug.Log("SaveMenu does not do anything in its _StartState() method");
+	protected override void _StartState(IState oldstate) {
 		if (GameManager.settings.saveNum < 1 ||		// set up save slot info display
 				GameManager.settings.saveNum > 3 || 
 				!SaveObj.SaveExists(GameManager.settings.saveNum)) {
@@ -40,7 +38,7 @@ public class GameMenu : IState {
 		}
 	}
 
-	public override void _EndState(IState newstate) {
+	protected override void _EndState(IState newstate) {
 		//Debug.Log("SaveMenu does not do anything in its _EndState() method");
 	}
 

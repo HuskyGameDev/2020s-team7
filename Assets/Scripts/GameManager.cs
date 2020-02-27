@@ -16,11 +16,14 @@ public class GameManager : MonoBehaviour {
 
 	//public static Dictionary<IStateType, IState> istates;    // doesn't show up in the editor
 	public static IState[] istates = new IState[System.Enum.GetValues(typeof(IStateType)).Length];	// list of all istates in the scene
-	public static GameObject uiCamera;	// UI camera, turned on when menus are active, off otherwise
+	//public static GameObject uiObject;  // UI camera, turned on when menus are active, off otherwise
+	//[SerializeField]
+	//private GameObject _uiObject;
 	public static ConfirmMenu confirmMenu;	// not an Istate, so needs its own reference
 
 	public static SettingsObj settings;	// the current settings
-	public static SaveObj saveGame;	// the current save info
+	public static SaveObj saveGame; // the current save info
+	//public FMOD.studio.bus;
 
 	public static int numLevels = 0;	// 0 is a placeholder, is updated by levelSelector when it instantiates its buttons
 
@@ -39,6 +42,19 @@ public class GameManager : MonoBehaviour {
 			Debug.Log("Duplicate GameManager destroyed");
 			DestroyImmediate(this.gameObject);
 		}
+
+		/*if (_uiObject == null) {
+			// _uiObject reffers to the object that all UI except gameplay UI is under
+			throw new System.NullReferenceException("_uiObject reference is missing, remember to set it on GameManager object");
+		} else {
+			uiObject = _uiObject;
+		}*/
+
+		/*
+		 * masterChannel = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+		 * masterChannel.setVolume(volume);
+		 * 
+		 */
 
 		IState[] objList = (IState[])Resources.FindObjectsOfTypeAll(typeof(IState));	// find all IState objects
 		// should be easily tweakable to work when switching between scenes
@@ -68,16 +84,7 @@ public class GameManager : MonoBehaviour {
 		}
 		for (int i = 1; i < conList.Length; i++) DestroyImmediate(conList[i].gameObject);	// destroy extras
 
-		Camera[] camList = (Camera[])Resources.FindObjectsOfTypeAll(typeof(Camera));
-		foreach (Camera cam in camList) {
-			if (cam.gameObject.name == "UI_Camera") {
-				if (uiCamera == null || uiCamera == cam.gameObject) {	// find the UI camera
-					uiCamera = cam.gameObject;
-				} else {
-					DestroyImmediate(cam.gameObject);
-				}
-			}
-		}
+		
 		#endregion
 
 		// load settings stuff, and apply them.
@@ -98,18 +105,49 @@ public class GameManager : MonoBehaviour {
 				SettingsObj.saveSettings(settings);
 			}
 		}
+		applySettings(settings);
 
 		gameplay = (Gameplay)istates[(int)GameManager.IStateType.gameplay]; // get gameplay IState from istate[Enum.gameplay] slot of array
 
 		if (istates[(int)GameManager.IStateType.gameMenu] != null) {	// set current state to gamemenu, or complain if gameMenu istate doesn't exist
 			currentstate = istates[(int)GameManager.IStateType.gameMenu];
-			currentstate._StartState(null);
+			currentstate.StartState(null);
 			istates[(int)GameManager.IStateType.gameMenu].gameObject.SetActive(true);
 		}
 
 		InputManager.instance.LoadKeybinds();	// load keybindings
 	}
 
+	public static void applySettings(SettingsObj setObj) {
+		Debug.Log("Warning: Volume settings do nothing right now");
+		//Screen.SetResolution(setObj.resolutionX, setObj.resolutionY, setObj.fullscreen);
+		//Screen.fullScreenMode = (FullScreenMode)setObj.fullscreen;
+		//masterChannel.setVolume(volume);
+		switch (setObj.fullscreen) {
+			case 0:
+				//Screen.fullScreenMode = FullScreenMode.Windowed;
+				Screen.SetResolution(setObj.resolutionX, setObj.resolutionY, FullScreenMode.Windowed);
+				break;
+			case 1:
+				//Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
+				Screen.SetResolution(setObj.resolutionX, setObj.resolutionY, FullScreenMode.MaximizedWindow);
+				break;
+			case 2:
+				//Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+				Screen.SetResolution(setObj.resolutionX, setObj.resolutionY, FullScreenMode.FullScreenWindow);
+				break;
+			case 3:
+				//Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+				Screen.SetResolution(setObj.resolutionX, setObj.resolutionY, FullScreenMode.ExclusiveFullScreen);
+				break;
+			default:
+				//Screen.fullScreenMode = FullScreenMode.Windowed;
+				Screen.SetResolution(setObj.resolutionX, setObj.resolutionY, FullScreenMode.Windowed);
+				break;
+		}
+		QualitySettings.vSyncCount = (setObj.vsync ? 1 : 0);
+		//volume??
+	}
 
 	// Update is called once per frame
 	void Update() {
@@ -126,11 +164,11 @@ public class GameManager : MonoBehaviour {
 		//Changes the state to 'g' and deactivates 'p' if not null
 		if (g != null) {
 			g.gameObject.SetActive(true);   // set active first, so Istate can overrride it in it's _StartState method if needed.
-			g._StartState(p);	// do general things, and also things that are specific depending on the old state
+			g.StartState(p);	// do general things, and also things that are specific depending on the old state
 		}
 		if (p != null) {
 			p.gameObject.SetActive(false);   // set inactive first, so Istate can overrride it in it's _EndState method if needed.
-			p._EndState(g); // do general things, and also things that are specific depending on the new state
+			p.EndState(g); // do general things, and also things that are specific depending on the new state
 		}
 		currentstate = g;
     }

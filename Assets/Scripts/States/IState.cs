@@ -18,21 +18,30 @@ public abstract class IState : MonoBehaviour {
 	}
 
 	public void initialize() {	// do the generic initialize stuff, and also the specific initialize stuff
-		uiButtons = gameObject.GetComponentsInChildren(typeof(UnityEngine.UI.Button), true);
+		uiButtons = gameObject.GetComponentsInChildren(typeof(UnityEngine.UI.Selectable), true);
 		_initialize();
 	}
+	protected abstract void _initialize();	// specific initilize stuff goes here.
 
-	public abstract void _initialize();	// specific initilize stuff goes here.
+	public abstract void _Update(); // any update stuff for this state goes here. Right now only Gameplay uses it.
 
-	public abstract void _Update();	// any update stuff for this state goes here. Right now only Gameplay uses it.
-	public abstract void _StartState(IState oldState);	// called when switching to a state. Gets old state as arguement, so can do things depending on the type
-	public abstract void _EndState(IState newState);    // called when switching away from a state. Gets new state as arguement, so can do things depending on the type
+	public void StartState(IState oldState) {
+		this.setInteractible(true);
+		_StartState(oldState);
+	}
+	protected abstract void _StartState(IState oldState);  // called when switching to a state. Gets old state as arguement, so can do things depending on the type
+
+	public void EndState(IState newState) {
+		this.setInteractible(false);
+		_EndState(newState);
+	}
+	protected abstract void _EndState(IState newState);    // called when switching away from a state. Gets new state as arguement, so can do things depending on the type
 
 	public abstract void _RespondToConfirm(int retVal, string retString);	// called by the confirmMenu on whatever set-up the confirm menu
 
-	public void setBackground(bool background) {	// sets all buttons active/not active
-		foreach (UnityEngine.UI.Button b in uiButtons) {
-			b.interactable = !background;
+	public void setInteractible(bool background) {	// sets all buttons active/not active
+		foreach (UnityEngine.UI.Selectable b in uiButtons) {
+			b.interactable = background;
 		}
 	}
 

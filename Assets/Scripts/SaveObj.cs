@@ -15,6 +15,7 @@ public class SaveObj {
 	//private int size;   // size of canAccessArray
 	private bool[] canAccessArray;
 
+
 	public SaveObj() {	// constructor
 		//size = 10;
 		levelNumber = 0;
@@ -74,7 +75,7 @@ public class SaveObj {
 			stream = new FileStream(Application.persistentDataPath + "\\Save_" + saveNum + ".txt", FileMode.Create, FileAccess.Write);
 			formatter.Serialize(stream, save);
 			stream.Close();
-		} catch (System.IO.IOException e) {
+		} catch (System.Exception e) {
 			Debug.Log(e.Message);   // notify me about any exceptions.
 			if (stream != null) {   // make sure the stream is closed if an exception was generated.
 				stream.Close();
@@ -114,7 +115,7 @@ public class SaveObj {
 				SaveObj save = (SaveObj)formatter.Deserialize(stream);
 				stream.Close();
 				return save;
-			} catch (System.IO.IOException e) {
+			} catch (System.Exception e) {
 				Debug.Log(e.Message);   // notify me about any exceptions.
 				if (stream != null) {   // make sure the stream is closed if an exception was generated.
 					stream.Close();

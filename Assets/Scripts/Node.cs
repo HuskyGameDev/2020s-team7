@@ -16,7 +16,7 @@ public class Node {
 	//public String cornerSprite = null;  // name of sprite for the corners
 	public String[] debris = new String[9]; // name of sprites for debris 
 
-	public enum TileType { regular, source, target, checkpointon, checkpointoff };
+	public enum TileType { regular, source, target, checkpoint };
 	public TileType type = TileType.regular;	// the type of this tile
 	public bool hasSign = false;
 	public String signMessage = "";
@@ -44,7 +44,7 @@ public class Node {
 
 	
 	// had to change these to lists because lists are serializable, but stacks are not.
-	[HideInInspector]
+	//[HideInInspector]
 	public List<ConnectionSet> connectionList = new List<ConnectionSet>();
 	private List<LineData> dataList = new List<LineData>();
 
@@ -146,12 +146,6 @@ public class Node {
 			String[] debris, 
 			TileType type, bool hasSign, String signMessage, 
 			List<ConnectionSet> connectionOriginal, List<LineData> dataOriginal) {
-		/*connectionList.Add(new ConnectionSet());
-		dataList.Add(new LineData());
-		this.connections.north = north;
-		this.connections.south = south;
-		this.connections.east = east;
-		this.connections.west = west;*/
 
 		this.index = index;
 		this.colorF = colorF;

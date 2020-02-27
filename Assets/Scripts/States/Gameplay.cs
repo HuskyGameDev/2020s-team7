@@ -25,6 +25,7 @@ public class Gameplay : IState {
 	public float youWinScreenTimeout = 1.0f;
 	public LevelMap map;
 	public Universe universe;
+	public GameObject winSound;
 	/*public Node currentPosition = null;*/
 	public Node currentPosition {   // Current position now internally uses an index, so that accessing current 
 									// position when stuff is changed doesn't cause as many issues.
@@ -52,27 +53,24 @@ public class Gameplay : IState {
 		get { return GameManager.IStateType.gameplay; }
 	}
 
-	public override void _initialize() {	// setup local references
+	protected override void _initialize() {	// setup local references
 		pauseMenu = (PauseMenu)GameManager.istates[(int)GameManager.IStateType.pauseMenu];
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
 
-	public override void _StartState(IState oldstate) {
-		GameManager.uiCamera.SetActive(false);	//not strictly needed, but makes it easy to make sure no menu stuff is visible
-		this.setBackground(false);  // make sure buttons are active
-									//Set up the renderer
+	protected override void _StartState(IState oldstate) {
+		//GameManager.uiObject.SetActive(false);	//not strictly needed, but makes it easy to make sure no menu stuff is visible
 		if (!(oldstate is PauseMenu)) {
 			nonEuclidRenderer.initialize();
 			//Make sure the level is set to be the beginning of the level
 			resetLevelAssets();
 		}
-		fitUitoScreen();	// basic crappy auto-UI-sizing
+		//fitUitoScreen();	// basic crappy auto-UI-sizing
 	}
 
-	public override void _EndState(IState newstate) {
-		GameManager.uiCamera.SetActive(true);	// set menu stuff active
+	protected override void _EndState(IState newstate) {
+		//GameManager.uiObject.SetActive(true);	// set menu stuff active
 		if (newstate is PauseMenu) {	// if new state is pause menu, set this as background, and keep active
-			this.setBackground(true);
 			this.gameObject.SetActive(true);
 		}
 	}
@@ -194,7 +192,8 @@ public class Gameplay : IState {
                        
 						if (map.winConditions()) {
 							winTrigger = true;
-							wintext.SetActive(true);	// make win text visible
+							wintext.SetActive(true);    // make win text visible
+							winSound.SetActive(true);
 							// play win sound here
 							levelSelector.unlockLevel();    // unlocks next level
 							GameManager.saveGame.levelNumber++;	// advance last level visited, so will auto-load next level
@@ -222,7 +221,8 @@ public class Gameplay : IState {
 		hasBall = true;
 		curdir = 0;
 		stringLeft = map.stringleft;
-		wintext.SetActive(false);	// make sure win text is not visible
+		wintext.SetActive(false);   // make sure win text is not visible
+		winSound.SetActive(false);
 		youWinScreenTimeout = 1.0f;
 
 		//Send the player back to the starting point
@@ -245,6 +245,7 @@ public class Gameplay : IState {
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
 	}
 
+	/*
 	// crappy auto-UI sizing thing. Gonna make it better
 	public void fitUitoScreen() {
 		pauseButtonTransform.anchoredPosition = new Vector2(
@@ -259,7 +260,7 @@ public class Gameplay : IState {
 			Math.Min((-Screen.width + stringRemTransform.sizeDelta.x) / 2 + 10, -stringRemTransform.sizeDelta.x + 10),
 			Math.Max((Screen.height - stringRemTransform.sizeDelta.y) / 2 - 10, stringRemTransform.sizeDelta.y - 10)
 			);
-	}
+	}*/
 }
 
 

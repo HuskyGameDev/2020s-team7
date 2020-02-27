@@ -25,8 +25,9 @@ public class CharacterAnimator : MonoBehaviour
     public IEnumerator<object> AnimateMovement(AnimationCallback callback, GameManager.Direction dir, float time, bool canMove)
     {
         float progress = 0.0f;
-        Vector3 startPos = this.gameObject.transform.position;
-        Vector3 goalPos = startPos + (new Vector3(moveDir[(int)dir].x, moveDir[(int)dir].y, 0));
+		//Vector3 startPos = this.gameObject.transform.position;
+		Vector3 startPos = this.gameObject.transform.localPosition;
+		Vector3 goalPos = startPos + (new Vector3(moveDir[(int)dir].x, moveDir[(int)dir].y, 0));
         
 
         //changes the direction of the player sprite
@@ -86,11 +87,13 @@ public class CharacterAnimator : MonoBehaviour
 					}
 				}
 				progress += Time.deltaTime;
-				this.gameObject.transform.position = Vector3.Lerp(startPos, goalPos, progress / time);
+				//this.gameObject.transform.position = Vector3.Lerp(startPos, goalPos, progress / time);
+				this.gameObject.transform.localPosition = Vector3.Lerp(startPos, goalPos, progress / time);
 				yield return null;
 			}
 			//Snap back
-			this.gameObject.transform.position = startPos;
+			//this.gameObject.transform.position = startPos;
+			this.gameObject.transform.localPosition = startPos;
 			if ((int)dir == 0) {
 				spriteR.sprite = sprites[characterSelect[characterInput][10]];
 			}

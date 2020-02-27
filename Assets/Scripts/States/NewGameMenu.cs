@@ -13,12 +13,11 @@ public class NewGameMenu : IState {
 		get { return GameManager.IStateType.newGameMenu; }
 	}
 
-	public override void _initialize() {
+	protected override void _initialize() {
 		levelSelector = (LevelSelector)GameManager.istates[(int)GameManager.IStateType.levelSelector];
 	}
 
-	public override void _StartState(IState oldstate) {
-		this.setBackground(false);  // make sure buttons are active
+	protected override void _StartState(IState oldstate) {
 		for (int i = 0; i < 3; i++) {   // for each potential save:
 			if (SaveObj.SaveExists(i+1)) {  // if exists, set name and number-unlocked to match info in save, and make button non-interactible
 				SaveObj save = SaveObj.LoadGame(i+1);
@@ -37,7 +36,7 @@ public class NewGameMenu : IState {
 		}
 	}
 
-	public override void _EndState(IState newstate) {
+	protected override void _EndState(IState newstate) {
 	}
 
 	public override void _Update() {

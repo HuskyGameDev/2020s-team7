@@ -42,7 +42,7 @@ public class ConfirmMenu : MonoBehaviour {
 		}
 		caller = GameManager.getCurrentState();	// the caller must also be the current istate
 		if (caller != null) {
-			caller.setBackground(true);
+			caller.setInteractible(false);
 			this.gameObject.SetActive(true);
 		} else {
 			throw new System.NullReferenceException("GameManager.instance.currentState must not be null");
@@ -60,14 +60,14 @@ public class ConfirmMenu : MonoBehaviour {
 
 	// accept whatever the dialog says, set the success value and the return string on the caller, and return to caller
 	public void acceptDialog() {
-		caller.setBackground(false);
+		caller.setInteractible(true);
 		this.gameObject.SetActive(false);
 		caller._RespondToConfirm(returnVal, (returnString ? returnText.text : null));
 	}
 
 	// cancel the dialog, set return value to -1 on caller, and return
 	public void returnToPrev() {
-		caller.setBackground(false);
+		caller.setInteractible(true);
 		this.gameObject.SetActive(false);
 		caller._RespondToConfirm(-1, null);
 	}

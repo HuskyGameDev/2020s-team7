@@ -284,6 +284,27 @@ public static class LevelEditor_2 {
 	public static void setType(LevelMap room, int tileIndex, Node.TileType newType) {
 		//resets visual stuff
 		//regular, source, target, checkpointon, checkpointoff
+		if (room[tileIndex].type == Node.TileType.checkpoint) {	// if this tile was previously a checkpoint, remove it from the list
+			int i;
+			bool removed = false;
+			for (i = 0; i < room.checkpoints.Length; i++) {
+				if (room.checkpoints[i] == tileIndex) {
+					removed = true;
+					i++;
+					break;
+				}
+			}
+			if (removed) {
+				for (; i < room.checkpoints.Length; i++) {
+					room.checkpoints[i - 1] = room.checkpoints[i];
+				}
+				int[] temp = new int[room.checkpoints.Length - 1];
+				for (i = 0; i < room.checkpoints.Length; i++) {
+					temp[i] = room.checkpoints[i];
+				}
+				room.checkpoints = temp;
+			}
+		}
 		for (int i = 0; i < 9; i++) {
 			if (
 				room[tileIndex].debris[i] != null && (
@@ -322,13 +343,15 @@ public static class LevelEditor_2 {
 				room[tileIndex].debris[4] = "Target";
 				room.targetNodeIndex = tileIndex;
 				break;
-			case Node.TileType.checkpointon:
-				room[tileIndex].type = Node.TileType.checkpointon;
+			case Node.TileType.checkpoint:
+				room[tileIndex].type = Node.TileType.checkpoint;
 				room[tileIndex].debris[4] = "Checkpoint";
-				break;
-			case Node.TileType.checkpointoff:
-				room[tileIndex].type = Node.TileType.checkpointoff;
-				room[tileIndex].debris[4] = "Checkpoint";
+				int[] temp = new int[room.checkpoints.Length + 1];	// add this tile to the list of checkpoints
+				for (int i = 0; i < room.checkpoints.Length; i++) {
+					temp[i] = room.checkpoints[i];
+				}
+				temp[room.checkpoints.Length] = tileIndex;
+				room.checkpoints = temp;
 				break;
 			default:
 				break;
@@ -436,6 +459,8 @@ public static class LevelEditor_2 {
 				}
 				// if a node is removed, reduce map size by one.
 				mapSize--;
+			} else {    // if a node is valid, clean it up
+				room[i].PopConnectionStack();
 			}
 		}
 		// make a new array that exactly fits the number of nodes actually in map, move nodes into it, and set the map's array to the new array

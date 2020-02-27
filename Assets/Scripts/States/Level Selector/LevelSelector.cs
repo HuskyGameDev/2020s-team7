@@ -33,8 +33,7 @@ public class LevelSelector : IState {
 	public void Start() {
 	}
 
-	public override void _StartState(IState oldstate) {
-		this.setBackground(false);  // make sure buttons are active
+	protected override void _StartState(IState oldstate) {
 		if (GameManager.saveGame == null) {	// shouldn't be able to see this if no save is selected anyway
 			slotNameText.text = "-";
 			numUnlockedText.text = "~/" + GameManager.numLevels;
@@ -59,13 +58,13 @@ public class LevelSelector : IState {
 	}
 
 
-	public override void _EndState(IState newstate) {
+	protected override void _EndState(IState newstate) {
 		//Nothing for end state
 	}
 
 	public override void _RespondToConfirm(int retVal, string retString) { }
 
-	public override void _initialize() {
+	protected override void _initialize() {
 		if ((instance == null) || (instance == this)) {	// setup singleton
 			instance = this;
 		} else {
