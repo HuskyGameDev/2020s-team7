@@ -26,6 +26,7 @@ public class CharacterAnimator : MonoBehaviour
     {
         float progress = 0.0f;
 		//Vector3 startPos = this.gameObject.transform.position;
+		// for some reason, changing the camera size messes this up if you use global position, so use local position instead.
 		Vector3 startPos = this.gameObject.transform.localPosition;
 		Vector3 goalPos = startPos + (new Vector3(moveDir[(int)dir].x, moveDir[(int)dir].y, 0));
         
@@ -88,11 +89,13 @@ public class CharacterAnimator : MonoBehaviour
 				}
 				progress += Time.deltaTime;
 				//this.gameObject.transform.position = Vector3.Lerp(startPos, goalPos, progress / time);
+				// for some reason, changing the camera size messes this up if you use global position, so use local position instead.
 				this.gameObject.transform.localPosition = Vector3.Lerp(startPos, goalPos, progress / time);
 				yield return null;
 			}
 			//Snap back
 			//this.gameObject.transform.position = startPos;
+			// for some reason, changing the camera size messes this up if you use global position, so use local position instead.
 			this.gameObject.transform.localPosition = startPos;
 			if ((int)dir == 0) {
 				spriteR.sprite = sprites[characterSelect[characterInput][10]];

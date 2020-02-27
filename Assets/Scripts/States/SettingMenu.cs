@@ -10,15 +10,14 @@ public class SettingMenu : IState {
 	private IState previous;	// previous state, so can return to it.
 	private SettingsObj tempSettings;	// temp settings, so can spply discard changes
 
-	public UnityEngine.UI.Button applySettingsButton;
-	public UnityEngine.UI.Button discardSettingsButton;
-	public UnityEngine.UI.Dropdown fullScreenDropdown;
-	public UnityEngine.UI.Dropdown resolutionDropdown;
+	public UnityEngine.UI.Button applySettingsButton;	// Used so that values can be retreived when it changes.
+	public UnityEngine.UI.Button discardSettingsButton;	// The UI elements will call a method when the value changes,
+	public UnityEngine.UI.Dropdown fullScreenDropdown;	// but do not support passing the changed value directly to
+	public UnityEngine.UI.Dropdown resolutionDropdown;	// that method.
 	public UnityEngine.UI.Toggle vsyncToggle;
 	public UnityEngine.UI.Slider volSlider;
 
-	public static int[,] array2D = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
-
+	// list of common resolutions, can be changed easily
 	public static int[,] resolutions = new int[,] { 
 										{640, 360},
 										{800, 600},
@@ -47,7 +46,7 @@ public class SettingMenu : IState {
 	}
 
 	protected override void _initialize() {
-		for (int i = 0; i < (resolutions.Length/2); i++) {
+		for (int i = 0; i < (resolutions.Length/2); i++) {	// add all of the resolutions as options to the reolution dropdown
 			string text = string.Format("{0} x {1}", resolutions[i,0], resolutions[i, 1]);
 			UnityEngine.UI.Dropdown.OptionData data = new UnityEngine.UI.Dropdown.OptionData(text);
 			resolutionDropdown.options.Add(data);
@@ -85,7 +84,6 @@ public class SettingMenu : IState {
 	}
 
 	public void setResolution() {
-		//tempSettings.fullscreen = resolutionDropdown.value;
 		tempSettings.resolutionX = resolutions[resolutionDropdown.value, 0];
 		tempSettings.resolutionY = resolutions[resolutionDropdown.value, 1];
 		refresh();
@@ -101,6 +99,10 @@ public class SettingMenu : IState {
 		refresh();
 	}
 
+	/// <summary>
+	/// apply temp settings, so use can see changes.
+	/// Change current to false if any temp settings do not match saved settings
+	/// </summary>
 	public void refresh() {
 		current = GameManager.settings.Equals(tempSettings);
 		applySettingsButton.interactable = !current;
@@ -121,7 +123,7 @@ public class SettingMenu : IState {
 		GameManager.settings = tempSettings;
 		SettingsObj.saveSettings(GameManager.settings);
 		discardChanges();   // so tempSettings doesn't point to the same thing as GameManager.settings
-		current = true;
+		//current = true;
 		refresh();
 	}
 

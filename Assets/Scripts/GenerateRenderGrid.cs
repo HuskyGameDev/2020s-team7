@@ -245,8 +245,6 @@ public class GenerateRenderGrid : LevelGenerator {
 	public GameObject GetPrefab(int x, int y, string nameAppend = "") {
 		GameObject newObj = Instantiate(tilePrefab);
 		newObj.name = "RenderTile("+x+","+y+")" +((nameAppend == "") ? "" : " " + nameAppend);
-		//newObj.transform.parent = this.transform;
-		//newObj.transform.parent = universe.renderTilesObject.transform;
 		newObj.transform.SetParent(universe.renderTilesObject.transform);
 		newObj.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		newObj.transform.localPosition = new Vector3((-(dim) / 2.0f) + 0.5f, (-(dim) / 2.0f) + 0.5f, 0.0f) + new Vector3(x, y, 0.0f);
@@ -263,8 +261,6 @@ public class GenerateRenderGrid : LevelGenerator {
 	public GameObject GetPrefabCornerMask(int x, int y, string nameAppend = "") {
 		GameObject newObj = Instantiate(cornerMaskPrefab);
 		newObj.name = "CornerMask(" + x + "," + y + ")" + ((nameAppend == "") ? "" : " " + nameAppend);
-		//newObj.transform.parent = this.transform;
-		//newObj.transform.parent = universe.cornerMasksObject.transform;
 		newObj.transform.SetParent(universe.cornerMasksObject.transform);
 		newObj.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		newObj.transform.localPosition = new Vector3((-(dim) / 2.0f), (-(dim) / 2.0f), 0.0f) + new Vector3(x, y, 0.0f);
@@ -281,8 +277,6 @@ public class GenerateRenderGrid : LevelGenerator {
 	public GameObject GetPrefabTileMask(int x, int y, string nameAppend = "") {
 		GameObject newObj = Instantiate(tileMaskPrefab);
 		newObj.name = "TileMask(" + x + "," + y + ")" + ((nameAppend == "") ? "" : " " + nameAppend);
-		//newObj.transform.parent = this.transform;
-		//newObj.transform.parent = universe.tileMasksObject.transform;
 		newObj.transform.SetParent(universe.tileMasksObject.transform);
 		newObj.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		newObj.transform.localPosition = new Vector3((-(dim) / 2.0f) + 0.5f, (-(dim) / 2.0f) + 0.5f, 0.0f) + new Vector3(x, y, 0.0f);

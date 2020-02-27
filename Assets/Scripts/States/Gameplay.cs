@@ -25,7 +25,7 @@ public class Gameplay : IState {
 	public float youWinScreenTimeout = 1.0f;
 	public LevelMap map;
 	public Universe universe;
-	public GameObject winSound;
+	public GameObject winSound;	// object that FMOD event emmitter is attached to, set to trigger when made active
 	/*public Node currentPosition = null;*/
 	public Node currentPosition {   // Current position now internally uses an index, so that accessing current 
 									// position when stuff is changed doesn't cause as many issues.
@@ -65,7 +65,6 @@ public class Gameplay : IState {
 			//Make sure the level is set to be the beginning of the level
 			resetLevelAssets();
 		}
-		//fitUitoScreen();	// basic crappy auto-UI-sizing
 	}
 
 	protected override void _EndState(IState newstate) {
@@ -193,7 +192,7 @@ public class Gameplay : IState {
 						if (map.winConditions()) {
 							winTrigger = true;
 							wintext.SetActive(true);    // make win text visible
-							winSound.SetActive(true);
+							winSound.SetActive(true);	// play sound
 							// play win sound here
 							levelSelector.unlockLevel();    // unlocks next level
 							GameManager.saveGame.levelNumber++;	// advance last level visited, so will auto-load next level
@@ -222,7 +221,7 @@ public class Gameplay : IState {
 		curdir = 0;
 		stringLeft = map.stringleft;
 		wintext.SetActive(false);   // make sure win text is not visible
-		winSound.SetActive(false);
+		winSound.SetActive(false);	// set inactive, so can be triggered again.
 		youWinScreenTimeout = 1.0f;
 
 		//Send the player back to the starting point
@@ -245,22 +244,6 @@ public class Gameplay : IState {
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
 	}
 
-	/*
-	// crappy auto-UI sizing thing. Gonna make it better
-	public void fitUitoScreen() {
-		pauseButtonTransform.anchoredPosition = new Vector2(
-			Math.Max((Screen.width - pauseButtonTransform.sizeDelta.x) / 2 - 10, pauseButtonTransform.sizeDelta.x - 10),
-			Math.Max((Screen.height - pauseButtonTransform.sizeDelta.y) / 2 - 10, pauseButtonTransform.sizeDelta.y - 10)
-			);
-		lvlNameTransform.anchoredPosition = new Vector2(
-			0, 
-			Math.Max((Screen.height - lvlNameTransform.sizeDelta.y) / 2 - 10, lvlNameTransform.sizeDelta.y - 10)
-			);
-		stringRemTransform.anchoredPosition = new Vector2(
-			Math.Min((-Screen.width + stringRemTransform.sizeDelta.x) / 2 + 10, -stringRemTransform.sizeDelta.x + 10),
-			Math.Max((Screen.height - stringRemTransform.sizeDelta.y) / 2 - 10, stringRemTransform.sizeDelta.y - 10)
-			);
-	}*/
 }
 
 

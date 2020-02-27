@@ -10,23 +10,29 @@ public class SettingsObj {
 	 * Has methods for saving and loading the objects that hold these setting variables to a standard location.
 	 */
 	public int saveNum; // the save used last time. [1-3] are valid, values less than 0 or larger than 3 will cause no save to be loaded.
-	public float volume;
-	public int resolutionX;
-	public int resolutionY;
-	public bool vsync;
-	public int fullscreen;
+	public float volume;	// global volume
+	public int resolutionX;	// x part of resolution
+	public int resolutionY; // y part of resolution
+	public int fullscreen;	// coresponds to FullscreenMode enum
+	public bool vsync;	// vsync on or off
+
+	//keybindings object here??
+	
 
 	public SettingsObj() {	// constructor. By default, no save was last used.
 		saveNum = 0;
 		volume = 1.0f;
-		//resolutionX = 640;
-		//resolutionY = 480;
-
+		resolutionX = 640;	// change so that it uses current resolution size
+		resolutionY = 480;
 		vsync = false;
 		fullscreen = 0;
 	}
 
-	public static bool settingsExists() {	// returns true if a settings file exists in the standard location
+	/// <summary>
+	/// returns true if a settings file exists in the standard location
+	/// </summary>
+	/// <returns></returns>
+	public static bool settingsExists() {
 		if (File.Exists(Application.persistentDataPath + "\\Settings.txt")) {
 			return true;
 		} else {

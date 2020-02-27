@@ -18,6 +18,7 @@ public abstract class IState : MonoBehaviour {
 	}
 
 	public void initialize() {	// do the generic initialize stuff, and also the specific initialize stuff
+		// find all interactable UI stuff, and add to list
 		uiButtons = gameObject.GetComponentsInChildren(typeof(UnityEngine.UI.Selectable), true);
 		_initialize();
 	}
@@ -26,13 +27,13 @@ public abstract class IState : MonoBehaviour {
 	public abstract void _Update(); // any update stuff for this state goes here. Right now only Gameplay uses it.
 
 	public void StartState(IState oldState) {
-		this.setInteractible(true);
+		this.setInteractible(true);	// turn on interactible UI stuff, and call specific startState method
 		_StartState(oldState);
 	}
 	protected abstract void _StartState(IState oldState);  // called when switching to a state. Gets old state as arguement, so can do things depending on the type
 
 	public void EndState(IState newState) {
-		this.setInteractible(false);
+		this.setInteractible(false);    // turn off interactible UI stuff, and call specific endState method
 		_EndState(newState);
 	}
 	protected abstract void _EndState(IState newState);    // called when switching away from a state. Gets new state as arguement, so can do things depending on the type
