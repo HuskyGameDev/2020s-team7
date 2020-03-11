@@ -1,0 +1,1337 @@
+{
+    "version": 1,
+    "defaultPosition": 0,
+    "sourceNodeIndex": 0,
+    "targetNodeIndex": -1,
+    "_size": 25,
+    "arraySize": 25,
+    "checkpoints": [],
+    "stringleft": 21,
+    "nodes": [
+        {
+            "index": 0,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Source",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 1,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                5,
+                1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 1,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                0,
+                6,
+                2,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 2,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                1,
+                22,
+                3,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 3,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                2,
+                8,
+                4,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 1
+        },
+        {
+            "index": 4,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                3,
+                9,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 5,
+            "colorF": {
+                "r": 236,
+                "g": 129,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                10,
+                6,
+                0
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 6,
+            "colorF": {
+                "r": 236,
+                "g": 129,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                5,
+                11,
+                7,
+                1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 7,
+            "colorF": {
+                "r": 236,
+                "g": 129,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                6,
+                12,
+                8,
+                2
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 8,
+            "colorF": {
+                "r": 236,
+                "g": 129,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                7,
+                13,
+                9,
+                3
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
+        },
+        {
+            "index": 9,
+            "colorF": {
+                "r": 236,
+                "g": 129,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                8,
+                14,
+                -1,
+                4
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 10,
+            "colorF": {
+                "r": 255,
+                "g": 114,
+                "b": 114,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                15,
+                11,
+                5
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 11,
+            "colorF": {
+                "r": 255,
+                "g": 114,
+                "b": 114,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                10,
+                16,
+                12,
+                6
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
+        },
+        {
+            "index": 12,
+            "colorF": {
+                "r": 255,
+                "g": 114,
+                "b": 114,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                11,
+                17,
+                13,
+                7
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
+        },
+        {
+            "index": 13,
+            "colorF": {
+                "r": 255,
+                "g": 114,
+                "b": 114,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                12,
+                18,
+                14,
+                8
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 0
+        },
+        {
+            "index": 14,
+            "colorF": {
+                "r": 255,
+                "g": 114,
+                "b": 114,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                13,
+                19,
+                -1,
+                9
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 15,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 129,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                20,
+                16,
+                10
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 16,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 129,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                15,
+                21,
+                17,
+                11
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 17,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 129,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                16,
+                22,
+                18,
+                12
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 18,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 129,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                17,
+                23,
+                19,
+                13
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 19,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 129,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                18,
+                24,
+                -1,
+                14
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 20,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                -1,
+                21,
+                15
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 21,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                20,
+                -1,
+                22,
+                16
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 22,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                21,
+                -1,
+                23,
+                17
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 23,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                22,
+                -1,
+                24,
+                18
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 24,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "Default",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                23,
+                -1,
+                -1,
+                19
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        }
+    ]
+}

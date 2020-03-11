@@ -105,7 +105,6 @@ public class LevelSelector : IState {
     //public static LevelMap startLevel(string levelName) {
 	public static LevelMap startLevel(string levelName) {
 		GameManager.gameplay.levelNameText.text = levelName;
-		//string levelName = levelNames[index];
 		if (File.Exists(Application.dataPath + "/Levels/room_" + levelName+".json")) {
             LevelMap map = LevelMap.Load(Application.dataPath + "/Levels/room_" + levelName+".json");
             return map;
@@ -146,7 +145,8 @@ public class LevelSelector : IState {
 	public static void changeLevelHelper(int index) { //, IState state) {
 													  //change = false;
 		string name = levelNames[index];
-		GameManager.gameplay.map = startLevel(name);	// load level map
+		GameManager.gameplay.map = startLevel(name);    // load level map
+		GameManager.gameplay.currentPosition = GameManager.gameplay.map[GameManager.gameplay.map.sourceNodeIndex];
 		GameManager.gameplay.resetLevelAssets();	// reset everything
 		//GameManager.changeState(GameManager.gameplay, state);
 	}

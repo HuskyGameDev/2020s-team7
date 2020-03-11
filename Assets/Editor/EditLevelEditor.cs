@@ -30,6 +30,9 @@ public class EditLevelEditor : Editor {
 			((EditLevel)target).loadLevelByName();
 		}
 		GUILayout.EndHorizontal();
+		if (GUILayout.Button("Load & Update Map Version")) {
+			((EditLevel)target).updateMapVer();
+		}
 		GUILayout.BeginHorizontal();
 		//playerLevel = GUILayout.TextField(playerLevel);
 		GUILayout.Label("Level Name", GUILayout.Width(labelWidth));
@@ -94,9 +97,14 @@ public class EditLevelEditor : Editor {
 		GUILayout.Space(10f);
 
 		// redraw the map on the screen after changes are made manually
+		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("Redraw Enviroment")) {
 			((EditLevel)target).redraw();
 		}
+		if (GUILayout.Button("redo corner visibility")) {
+			((EditLevel)target).updateCornerDrawing();
+		}
+		GUILayout.EndHorizontal();
 		GUILayout.Space(10f);
 
 		// buttons & variables for changes to the current node

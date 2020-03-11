@@ -1,10 +1,14 @@
 {
+    "version": 1,
     "defaultPosition": 0,
     "sourceNodeIndex": 18,
     "targetNodeIndex": 14,
     "_size": 86,
     "arraySize": 86,
-    "checkpoints": [],
+    "checkpoints": [
+        44,
+        73
+    ],
     "stringleft": 34,
     "nodes": [
         {
@@ -37,14 +41,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 10,
-                    "west": 47
-                }
-            ]
+            "defaultConn": [
+                -1,
+                10,
+                -1,
+                47
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 1,
@@ -76,14 +94,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 0,
-                    "south": 2,
-                    "east": 4,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                0,
+                4,
+                2,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 2,
@@ -115,14 +147,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 1,
-                    "south": -1,
-                    "east": 5,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                1,
+                5,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 3,
@@ -154,14 +200,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 4,
-                    "east": 6,
-                    "west": 0
-                }
-            ]
+            "defaultConn": [
+                -1,
+                6,
+                4,
+                0
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 4,
@@ -193,14 +253,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 3,
-                    "south": 5,
-                    "east": 7,
-                    "west": 1
-                }
-            ]
+            "defaultConn": [
+                3,
+                7,
+                5,
+                1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 5,
@@ -232,14 +306,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 4,
-                    "south": -1,
-                    "east": 8,
-                    "west": 2
-                }
-            ]
+            "defaultConn": [
+                4,
+                8,
+                -1,
+                2
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 6,
@@ -271,14 +359,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 7,
-                    "east": -1,
-                    "west": 3
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                7,
+                3
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 7,
@@ -310,14 +412,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 6,
-                    "south": 8,
-                    "east": -1,
-                    "west": 4
-                }
-            ]
+            "defaultConn": [
+                6,
+                -1,
+                8,
+                4
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 8,
@@ -349,14 +465,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 7,
-                    "south": -1,
-                    "east": -1,
-                    "west": 5
-                }
-            ]
+            "defaultConn": [
+                7,
+                -1,
+                -1,
+                5
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 9,
@@ -388,14 +518,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 10,
-                    "east": 13,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                -1,
+                13,
+                10,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 10,
@@ -427,14 +571,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 9,
-                    "south": 11,
-                    "east": 14,
-                    "west": 0
-                }
-            ]
+            "defaultConn": [
+                9,
+                14,
+                11,
+                0
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 11,
@@ -466,14 +624,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 10,
-                    "south": -1,
-                    "east": 15,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                10,
+                15,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 12,
@@ -505,14 +677,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 13,
-                    "east": 17,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                -1,
+                17,
+                13,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 2
         },
         {
             "index": 13,
@@ -544,14 +730,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 12,
-                    "south": 14,
-                    "east": 42,
-                    "west": 9
-                }
-            ]
+            "defaultConn": [
+                12,
+                42,
+                14,
+                9
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 1
         },
         {
             "index": 14,
@@ -583,14 +783,28 @@
             "type": 2,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 13,
-                    "south": 15,
-                    "east": 18,
-                    "west": 10
-                }
-            ]
+            "defaultConn": [
+                13,
+                18,
+                15,
+                10
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
         },
         {
             "index": 15,
@@ -622,14 +836,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 14,
-                    "south": 16,
-                    "east": 29,
-                    "west": 11
-                }
-            ]
+            "defaultConn": [
+                14,
+                29,
+                16,
+                11
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 1
         },
         {
             "index": 16,
@@ -661,14 +889,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 15,
-                    "south": -1,
-                    "east": 19,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                15,
+                19,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
         },
         {
             "index": 17,
@@ -700,14 +942,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 20,
-                    "west": 12
-                }
-            ]
+            "defaultConn": [
+                -1,
+                20,
+                -1,
+                12
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 18,
@@ -739,14 +995,28 @@
             "type": 1,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 22,
-                    "west": 14
-                }
-            ]
+            "defaultConn": [
+                -1,
+                22,
+                -1,
+                14
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
         },
         {
             "index": 19,
@@ -778,14 +1048,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 24,
-                    "west": 16
-                }
-            ]
+            "defaultConn": [
+                -1,
+                24,
+                -1,
+                16
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 20,
@@ -817,14 +1101,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 21,
-                    "east": -1,
-                    "west": 17
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                21,
+                17
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 3
         },
         {
             "index": 21,
@@ -856,14 +1154,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 20,
-                    "south": 22,
-                    "east": 25,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                20,
+                25,
+                22,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
         },
         {
             "index": 22,
@@ -895,14 +1207,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 21,
-                    "south": 23,
-                    "east": 26,
-                    "west": 18
-                }
-            ]
+            "defaultConn": [
+                21,
+                26,
+                23,
+                18
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 0
         },
         {
             "index": 23,
@@ -934,14 +1260,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 22,
-                    "south": 24,
-                    "east": 27,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                22,
+                27,
+                24,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
         },
         {
             "index": 24,
@@ -973,14 +1313,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 23,
-                    "south": -1,
-                    "east": -1,
-                    "west": 19
-                }
-            ]
+            "defaultConn": [
+                23,
+                -1,
+                -1,
+                19
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
         },
         {
             "index": 25,
@@ -1012,14 +1366,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 26,
-                    "east": -1,
-                    "west": 21
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                26,
+                21
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 26,
@@ -1051,14 +1419,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 25,
-                    "south": 27,
-                    "east": 28,
-                    "west": 22
-                }
-            ]
+            "defaultConn": [
+                25,
+                28,
+                27,
+                22
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 1
         },
         {
             "index": 27,
@@ -1090,14 +1472,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 26,
-                    "south": -1,
-                    "east": -1,
-                    "west": 23
-                }
-            ]
+            "defaultConn": [
+                26,
+                -1,
+                -1,
+                23
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 28,
@@ -1129,14 +1525,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 85,
-                    "west": 26
-                }
-            ]
+            "defaultConn": [
+                -1,
+                85,
+                -1,
+                26
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 29,
@@ -1168,14 +1578,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 30,
-                    "west": 15
-                }
-            ]
+            "defaultConn": [
+                -1,
+                30,
+                -1,
+                15
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 30,
@@ -1207,14 +1631,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 32,
-                    "south": -1,
-                    "east": -1,
-                    "west": 29
-                }
-            ]
+            "defaultConn": [
+                32,
+                -1,
+                -1,
+                29
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 0
         },
         {
             "index": 31,
@@ -1246,14 +1684,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 32,
-                    "east": -1,
-                    "west": 33
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                32,
+                33
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 3
         },
         {
             "index": 32,
@@ -1285,14 +1737,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 31,
-                    "south": 30,
-                    "east": -1,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                31,
+                -1,
+                30,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
         },
         {
             "index": 33,
@@ -1324,14 +1790,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 31,
-                    "west": 35
-                }
-            ]
+            "defaultConn": [
+                -1,
+                31,
+                -1,
+                35
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 34,
@@ -1363,14 +1843,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 35,
-                    "east": 50,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                -1,
+                50,
+                35,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 35,
@@ -1402,14 +1896,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 34,
-                    "south": 36,
-                    "east": 33,
-                    "west": 39
-                }
-            ]
+            "defaultConn": [
+                34,
+                33,
+                36,
+                39
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 2
         },
         {
             "index": 36,
@@ -1441,14 +1949,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 35,
-                    "south": 37,
-                    "east": 44,
-                    "west": 40
-                }
-            ]
+            "defaultConn": [
+                35,
+                44,
+                37,
+                40
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 1
         },
         {
             "index": 37,
@@ -1480,14 +2002,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 36,
-                    "south": 38,
-                    "east": 48,
-                    "west": 41
-                }
-            ]
+            "defaultConn": [
+                36,
+                48,
+                38,
+                41
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
         },
         {
             "index": 38,
@@ -1519,14 +2055,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 37,
-                    "south": -1,
-                    "east": 53,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                37,
+                53,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
         },
         {
             "index": 39,
@@ -1558,14 +2108,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 40,
-                    "east": 35,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                -1,
+                35,
+                40,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
         },
         {
             "index": 40,
@@ -1597,14 +2161,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 39,
-                    "south": 41,
-                    "east": 36,
-                    "west": 58
-                }
-            ]
+            "defaultConn": [
+                39,
+                36,
+                41,
+                58
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 41,
@@ -1636,14 +2214,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 40,
-                    "south": -1,
-                    "east": 37,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                40,
+                37,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
         },
         {
             "index": 42,
@@ -1675,14 +2267,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 43,
-                    "west": 13
-                }
-            ]
+            "defaultConn": [
+                -1,
+                43,
+                -1,
+                13
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 43,
@@ -1714,14 +2320,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 59,
-                    "east": -1,
-                    "west": 42
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                59,
+                42
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 2
         },
         {
             "index": 44,
@@ -1753,14 +2373,28 @@
             "type": 3,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 45,
-                    "west": 36
-                }
-            ]
+            "defaultConn": [
+                -1,
+                45,
+                -1,
+                36
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 45,
@@ -1792,14 +2426,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 52,
-                    "south": 55,
-                    "east": 46,
-                    "west": 44
-                }
-            ]
+            "defaultConn": [
+                52,
+                46,
+                55,
+                44
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 46,
@@ -1831,14 +2479,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 56,
-                    "south": 57,
-                    "east": 47,
-                    "west": 45
-                }
-            ]
+            "defaultConn": [
+                56,
+                47,
+                57,
+                45
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 47,
@@ -1870,14 +2532,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 0,
-                    "west": 46
-                }
-            ]
+            "defaultConn": [
+                -1,
+                0,
+                -1,
+                46
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 48,
@@ -1909,14 +2585,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 49,
-                    "west": 37
-                }
-            ]
+            "defaultConn": [
+                -1,
+                49,
+                -1,
+                37
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 49,
@@ -1948,14 +2638,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 63,
-                    "south": -1,
-                    "east": -1,
-                    "west": 48
-                }
-            ]
+            "defaultConn": [
+                63,
+                -1,
+                -1,
+                48
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
         },
         {
             "index": 50,
@@ -1987,14 +2691,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 51,
-                    "west": 34
-                }
-            ]
+            "defaultConn": [
+                -1,
+                51,
+                -1,
+                34
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 51,
@@ -2026,14 +2744,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 52,
-                    "east": -1,
-                    "west": 50
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                52,
+                50
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 52,
@@ -2065,14 +2797,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 51,
-                    "south": 45,
-                    "east": 56,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                51,
+                56,
+                45,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 53,
@@ -2104,14 +2850,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 54,
-                    "west": 38
-                }
-            ]
+            "defaultConn": [
+                -1,
+                54,
+                -1,
+                38
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 54,
@@ -2143,14 +2903,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 55,
-                    "south": -1,
-                    "east": -1,
-                    "west": 53
-                }
-            ]
+            "defaultConn": [
+                55,
+                -1,
+                -1,
+                53
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
         },
         {
             "index": 55,
@@ -2182,14 +2956,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 45,
-                    "south": 54,
-                    "east": 57,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                45,
+                57,
+                54,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
         },
         {
             "index": 56,
@@ -2221,14 +3009,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 46,
-                    "east": -1,
-                    "west": 52
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                46,
+                52
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 57,
@@ -2260,14 +3062,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 46,
-                    "south": -1,
-                    "east": -1,
-                    "west": 55
-                }
-            ]
+            "defaultConn": [
+                46,
+                -1,
+                -1,
+                55
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 58,
@@ -2299,14 +3115,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 40,
-                    "west": 84
-                }
-            ]
+            "defaultConn": [
+                -1,
+                40,
+                -1,
+                84
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 59,
@@ -2338,14 +3168,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 43,
-                    "south": 60,
-                    "east": -1,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                43,
+                -1,
+                60,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
         },
         {
             "index": 60,
@@ -2377,14 +3221,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 59,
-                    "south": -1,
-                    "east": -1,
-                    "west": 61
-                }
-            ]
+            "defaultConn": [
+                59,
+                -1,
+                -1,
+                61
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
         },
         {
             "index": 61,
@@ -2416,14 +3274,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 60,
-                    "west": 68
-                }
-            ]
+            "defaultConn": [
+                -1,
+                60,
+                -1,
+                68
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 62,
@@ -2455,14 +3327,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 63,
-                    "east": -1,
-                    "west": 64
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                63,
+                64
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 2
         },
         {
             "index": 63,
@@ -2494,14 +3380,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 62,
-                    "south": 49,
-                    "east": -1,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                62,
+                -1,
+                49,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
         },
         {
             "index": 64,
@@ -2533,14 +3433,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 62,
-                    "west": 66
-                }
-            ]
+            "defaultConn": [
+                -1,
+                62,
+                -1,
+                66
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 65,
@@ -2572,14 +3486,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 66,
-                    "east": 79,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                -1,
+                79,
+                66,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 2
         },
         {
             "index": 66,
@@ -2611,14 +3539,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 65,
-                    "south": 67,
-                    "east": 64,
-                    "west": 70
-                }
-            ]
+            "defaultConn": [
+                65,
+                64,
+                67,
+                70
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 1
         },
         {
             "index": 67,
@@ -2650,14 +3592,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 66,
-                    "south": 68,
-                    "east": 73,
-                    "west": 71
-                }
-            ]
+            "defaultConn": [
+                66,
+                73,
+                68,
+                71
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 1
         },
         {
             "index": 68,
@@ -2689,14 +3645,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 67,
-                    "south": 69,
-                    "east": 61,
-                    "west": 72
-                }
-            ]
+            "defaultConn": [
+                67,
+                61,
+                69,
+                72
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 2
         },
         {
             "index": 69,
@@ -2728,14 +3698,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 68,
-                    "south": -1,
-                    "east": 80,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                68,
+                80,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 1
         },
         {
             "index": 70,
@@ -2767,14 +3751,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 71,
-                    "east": 66,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                -1,
+                66,
+                71,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 71,
@@ -2806,14 +3804,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 70,
-                    "south": 72,
-                    "east": 67,
-                    "west": 85
-                }
-            ]
+            "defaultConn": [
+                70,
+                67,
+                72,
+                85
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 72,
@@ -2845,14 +3857,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 71,
-                    "south": -1,
-                    "east": 68,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                71,
+                68,
+                -1,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 73,
@@ -2884,14 +3910,28 @@
             "type": 3,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 76,
-                    "west": 67
-                }
-            ]
+            "defaultConn": [
+                -1,
+                76,
+                -1,
+                67
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 74,
@@ -2923,14 +3963,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 75,
-                    "east": -1,
-                    "west": 79
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                75,
+                79
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 3
         },
         {
             "index": 75,
@@ -2962,14 +4016,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 74,
-                    "south": 76,
-                    "east": 81,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                74,
+                81,
+                76,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
         },
         {
             "index": 76,
@@ -3001,14 +4069,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 75,
-                    "south": 77,
-                    "east": 82,
-                    "west": 73
-                }
-            ]
+            "defaultConn": [
+                75,
+                82,
+                77,
+                73
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 0
         },
         {
             "index": 77,
@@ -3040,14 +4122,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 76,
-                    "south": 78,
-                    "east": 83,
-                    "west": -1
-                }
-            ]
+            "defaultConn": [
+                76,
+                83,
+                78,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 78,
@@ -3079,14 +4175,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 77,
-                    "south": -1,
-                    "east": -1,
-                    "west": 80
-                }
-            ]
+            "defaultConn": [
+                77,
+                -1,
+                -1,
+                80
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 79,
@@ -3118,14 +4228,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 74,
-                    "west": 65
-                }
-            ]
+            "defaultConn": [
+                -1,
+                74,
+                -1,
+                65
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 80,
@@ -3157,14 +4281,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 78,
-                    "west": 69
-                }
-            ]
+            "defaultConn": [
+                -1,
+                78,
+                -1,
+                69
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 0
         },
         {
             "index": 81,
@@ -3196,14 +4334,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": 82,
-                    "east": -1,
-                    "west": 75
-                }
-            ]
+            "defaultConn": [
+                -1,
+                -1,
+                82,
+                75
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 82,
@@ -3235,14 +4387,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 81,
-                    "south": 83,
-                    "east": 84,
-                    "west": 76
-                }
-            ]
+            "defaultConn": [
+                81,
+                84,
+                83,
+                76
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                false,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 83,
@@ -3274,14 +4440,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": 82,
-                    "south": -1,
-                    "east": -1,
-                    "west": 77
-                }
-            ]
+            "defaultConn": [
+                82,
+                -1,
+                -1,
+                77
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
         },
         {
             "index": 84,
@@ -3313,14 +4493,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 58,
-                    "west": 82
-                }
-            ]
+            "defaultConn": [
+                -1,
+                58,
+                -1,
+                82
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 85,
@@ -3352,14 +4546,28 @@
             "type": 0,
             "hasSign": false,
             "signMessage": "",
-            "connectionList": [
-                {
-                    "north": -1,
-                    "south": -1,
-                    "east": 71,
-                    "west": 28
-                }
-            ]
+            "defaultConn": [
+                -1,
+                71,
+                -1,
+                28
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
         }
     ]
 }

@@ -7,10 +7,11 @@ using TMPro;
 
 
 public class Gameplay : IState {
-	public Text levelNameText;	// text element used to indicate current level
-	public RectTransform pauseButtonTransform;	// transform of UI elements, so their position can by updated when screen size changes. Rough right now.
-	public RectTransform lvlNameTransform;
-	public RectTransform stringRemTransform;
+	public Text levelNameText;  // text element used to indicate current level
+	public Text checkpointsText;
+	public UnityEngine.UI.Text stringrem;
+	public GameObject wintext;
+	public GameObject winSound; // object that FMOD event emmitter is attached to, set to trigger when made active
 
 	#region Initialize Variables
 	bool animLockout = false;
@@ -19,14 +20,12 @@ public class Gameplay : IState {
 	public bool hasBall = true;
 	public int curdir = 0;
 	public int stringLeft = 21;
-    public UnityEngine.UI.Text stringrem;
-	public GameObject wintext;
+    
+	
 	public float moveAnimSpeed = 0.25f;
 	public float youWinScreenTimeout = 1.0f;
 	public LevelMap map;
 	public Universe universe;
-	public GameObject winSound;	// object that FMOD event emmitter is attached to, set to trigger when made active
-	/*public Node currentPosition = null;*/
 	public Node currentPosition {   // Current position now internally uses an index, so that accessing current 
 									// position when stuff is changed doesn't cause as many issues.
 		get { return map[currentIndex]; }
@@ -64,6 +63,7 @@ public class Gameplay : IState {
 			nonEuclidRenderer.initialize();
 			//Make sure the level is set to be the beginning of the level
 			resetLevelAssets();
+			setUItext(true);
 		}
 	}
 
@@ -80,14 +80,16 @@ public class Gameplay : IState {
 	public override void _Update() {
         //Player interaction objects
 		if (InputManager.instance.OnInputDown(InputManager.Action.action)) {
-			if (currentPosition.hasSign && curdir == 0) {
+			if (currentPosition.hasSign/* && curdir == 0*/) {
 				//Player reads a sign
+				///////// make sign visible/not visible
 				Debug.Log(currentPosition.signMessage);
 			} else {
 				if (hasBall) {
 					//Player drops the ball
 					hasBall = false;
-				} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave) || stringLeft == map.stringleft && currentPosition.type == Node.TileType.source) {
+				//} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave) || stringLeft == map.stringleft && currentPosition.type == Node.TileType.source) {
+				} else if ((currentPosition.hasEnter && !currentPosition.hasLeave) || stringLeft == map.stringleft && currentPosition.type == Node.TileType.source) {
 					//Player pick up the ball
 					hasBall = true;
 				}
@@ -98,9 +100,6 @@ public class Gameplay : IState {
 		if (InputManager.instance.OnInputDown(InputManager.Action.back)) {
 			GameManager.changeState(pauseMenu,this);
         }
-
-		//Shows stringleft on screen
-		stringrem.text = stringLeft +"/"+ map.stringleft.ToString();
 
         //Dont do anything past here if we are doing an animation
         if (animLockout)
@@ -128,12 +127,24 @@ public class Gameplay : IState {
 				bool canMove = false;
 				Node otherNode = null;
 				curdir = i;
-				//if (currentPosition.GetConnectionFromDir(dir) != null) {
-				if (currentPosition.GetConnectionFromDir(dir) >= 0) {
-					//otherNode = map.nodes[(int)currentPosition.GetConnectionFromDir(dir)];
-					otherNode = map[(int)currentPosition.GetConnectionFromDir(dir)];
+				if (hasBall && (currentPosition.hasLeave || (currentPosition.type != Node.TileType.source && !currentPosition.hasLeave && !currentPosition.hasEnter))) {
+					hasBall = false;
+				}
+				//if (currentPosition.GetConnectionFromDir(dir) >= 0) {
+				if (currentPosition[(int)dir] >= 0) {
+					//otherNode = map[(int)currentPosition.GetConnectionFromDir(dir)];
+					otherNode = map[currentPosition[(int)dir]];
 					//See if the other node has a leave
-					canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir || !hasBall);
+					//canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir || !hasBall);
+					canMove = (
+						(
+							(!otherNode.hasLeave && !otherNode.hasEnter && stringLeft > 0) || (
+								otherNode.hasLeave && otherNode.leave.inverse() == dir && 
+								currentPosition.hasEnter && currentPosition.enter == dir
+							) || 
+							!hasBall) &&
+						!map.disjoint(currentPosition, dir)
+						);  // && (otherNode.type != Node.TileType.unwalkable || editmode)
 				}
 				if (cinimaticMode && Input.GetKey(KeyCode.Space)) canMove = false;
 				animLockout = true;
@@ -146,27 +157,29 @@ public class Gameplay : IState {
 						//Handle fake connection stacking
 						{
 							//If the connection from this node to the other is one-way
-							if (otherNode.GetConnectionFromDir(dir.inverse()) != currentPosition.index) {
+							//if (otherNode.GetConnectionFromDir(dir.inverse()) != currentPosition.index) {
+							if (otherNode[(int)dir.inverse()] != currentPosition.index) {
 								//We need to do a connection stacking
-								Node.ConnectionSet newSet = otherNode.connections.Copy();
-								newSet[dir.inverse()] = currentPosition.index;
-								otherNode.AddToConnectionStack(newSet);
-								//Due to the way we handle connection pushing, we need to add this to the previously visables
+								//Node.ConnectionSet newSet = otherNode.connections.Copy();
+								//newSet[dir.inverse()] = currentPosition.index;
+								//otherNode.AddToConnectionStack(newSet);
+								otherNode[(int)dir.inverse()] = currentPosition.index;
 							}
 						}
 
 						if (hasBall) {
 							//Tag the current square with line exit dir
-							if (otherNode.data.hasLeave == false) {
-								currentPosition.data.leave = dir;
-								otherNode.data.enter = dir.inverse();
-								currentPosition.data.hasLeave = true;
-								otherNode.data.hasEnter = true;
+							//if (otherNode.data.hasLeave == false) {
+							if(!otherNode.hasLeave) {
+								currentPosition.leave = dir;
+								currentPosition.hasLeave = true;
+								otherNode.enter = dir.inverse();
+								otherNode.hasEnter = true;
 								stringLeft--;
 							} else {
 								//Do a backup
-								currentPosition.data.hasEnter = false;
-								otherNode.data.hasLeave = false;
+								currentPosition.hasEnter = false;
+								otherNode.hasLeave = false;
 								stringLeft++;
 							}
 						}
@@ -185,10 +198,8 @@ public class Gameplay : IState {
 					#endif
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
+						setUItext();
 
-                        //Crossing the target tile
-                       
-                       
 						if (map.winConditions()) {
 							winTrigger = true;
 							wintext.SetActive(true);    // make win text visible
@@ -210,6 +221,17 @@ public class Gameplay : IState {
 		}
 	}
 
+	public void setUItext(bool setup = false) {
+		//stringrem.text = stringLeft + "/" + map.stringleft.ToString();
+		stringrem.text = String.Format("{0}/{1}", stringLeft, map.stringleft);
+		if (map.checkpoints.Length > 0) {
+			if (setup) checkpointsText.transform.parent.gameObject.SetActive(true);
+			checkpointsText.text = String.Format("{0}/{1}", map.countCheckpoints(), map.checkpoints.Length);
+		} else {
+			if (setup) checkpointsText.transform.parent.gameObject.SetActive(false);
+		}
+		
+	}
 
     //reverts the level back to initial conditions
 	public void resetLevelAssets() {
@@ -242,6 +264,7 @@ public class Gameplay : IState {
 			
 		}
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
+		//setUItext(true);
 	}
 
 }

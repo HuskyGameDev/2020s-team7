@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 	#region Variables
 	[SerializeField]
 	public static GameManager instance;
-	public enum Direction { North, East, South, West }
+	public enum Direction { North, East, South, West }  // north = 0, east = 1, South = 2, West = 3
 	public enum IStateType {gameMenu, gameplay, newGameMenu, loadMenu, deleteMenu, levelSelector, pauseMenu, settingMenu};	// enum each of the current Istates
 	public static Gameplay gameplay;	// this is needed pretty often, so keep a reference to it on the game manager
 

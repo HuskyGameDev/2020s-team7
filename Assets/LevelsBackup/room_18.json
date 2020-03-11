@@ -1,0 +1,3365 @@
+{
+    "defaultPosition": 0,
+    "sourceNodeIndex": 18,
+    "targetNodeIndex": 14,
+    "_size": 86,
+    "arraySize": 86,
+    "checkpoints": [],
+    "stringleft": 34,
+    "nodes": [
+        {
+            "index": 0,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 10,
+                    "west": 47
+                }
+            ]
+        },
+        {
+            "index": 1,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 0,
+                    "south": 2,
+                    "east": 4,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 2,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 1,
+                    "south": -1,
+                    "east": 5,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 3,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 4,
+                    "east": 6,
+                    "west": 0
+                }
+            ]
+        },
+        {
+            "index": 4,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 3,
+                    "south": 5,
+                    "east": 7,
+                    "west": 1
+                }
+            ]
+        },
+        {
+            "index": 5,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 4,
+                    "south": -1,
+                    "east": 8,
+                    "west": 2
+                }
+            ]
+        },
+        {
+            "index": 6,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 7,
+                    "east": -1,
+                    "west": 3
+                }
+            ]
+        },
+        {
+            "index": 7,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 6,
+                    "south": 8,
+                    "east": -1,
+                    "west": 4
+                }
+            ]
+        },
+        {
+            "index": 8,
+            "colorF": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "colorW": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+            },
+            "floorSprite": "rock_05_disp",
+            "wallSprite": "Default",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 7,
+                    "south": -1,
+                    "east": -1,
+                    "west": 5
+                }
+            ]
+        },
+        {
+            "index": 9,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 10,
+                    "east": 13,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 10,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 9,
+                    "south": 11,
+                    "east": 14,
+                    "west": 0
+                }
+            ]
+        },
+        {
+            "index": 11,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 10,
+                    "south": -1,
+                    "east": 15,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 12,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 13,
+                    "east": 17,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 13,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 12,
+                    "south": 14,
+                    "east": 42,
+                    "west": 9
+                }
+            ]
+        },
+        {
+            "index": 14,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Target",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 2,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 13,
+                    "south": 15,
+                    "east": 18,
+                    "west": 10
+                }
+            ]
+        },
+        {
+            "index": 15,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 14,
+                    "south": 16,
+                    "east": 29,
+                    "west": 11
+                }
+            ]
+        },
+        {
+            "index": 16,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 15,
+                    "south": -1,
+                    "east": 19,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 17,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 20,
+                    "west": 12
+                }
+            ]
+        },
+        {
+            "index": 18,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Source",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 1,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 22,
+                    "west": 14
+                }
+            ]
+        },
+        {
+            "index": 19,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 24,
+                    "west": 16
+                }
+            ]
+        },
+        {
+            "index": 20,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 21,
+                    "east": -1,
+                    "west": 17
+                }
+            ]
+        },
+        {
+            "index": 21,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 20,
+                    "south": 22,
+                    "east": 25,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 22,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 21,
+                    "south": 23,
+                    "east": 26,
+                    "west": 18
+                }
+            ]
+        },
+        {
+            "index": 23,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 22,
+                    "south": 24,
+                    "east": 27,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 24,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 23,
+                    "south": -1,
+                    "east": -1,
+                    "west": 19
+                }
+            ]
+        },
+        {
+            "index": 25,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 26,
+                    "east": -1,
+                    "west": 21
+                }
+            ]
+        },
+        {
+            "index": 26,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 25,
+                    "south": 27,
+                    "east": 28,
+                    "west": 22
+                }
+            ]
+        },
+        {
+            "index": 27,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 26,
+                    "south": -1,
+                    "east": -1,
+                    "west": 23
+                }
+            ]
+        },
+        {
+            "index": 28,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 85,
+                    "west": 26
+                }
+            ]
+        },
+        {
+            "index": 29,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 30,
+                    "west": 15
+                }
+            ]
+        },
+        {
+            "index": 30,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 32,
+                    "south": -1,
+                    "east": -1,
+                    "west": 29
+                }
+            ]
+        },
+        {
+            "index": 31,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 32,
+                    "east": -1,
+                    "west": 33
+                }
+            ]
+        },
+        {
+            "index": 32,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 31,
+                    "south": 30,
+                    "east": -1,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 33,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 31,
+                    "west": 35
+                }
+            ]
+        },
+        {
+            "index": 34,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 35,
+                    "east": 50,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 35,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 34,
+                    "south": 36,
+                    "east": 33,
+                    "west": 39
+                }
+            ]
+        },
+        {
+            "index": 36,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 35,
+                    "south": 37,
+                    "east": 44,
+                    "west": 40
+                }
+            ]
+        },
+        {
+            "index": 37,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 36,
+                    "south": 38,
+                    "east": 48,
+                    "west": 41
+                }
+            ]
+        },
+        {
+            "index": 38,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 37,
+                    "south": -1,
+                    "east": 53,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 39,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 40,
+                    "east": 35,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 40,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 39,
+                    "south": 41,
+                    "east": 36,
+                    "west": 58
+                }
+            ]
+        },
+        {
+            "index": 41,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 40,
+                    "south": -1,
+                    "east": 37,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 42,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 43,
+                    "west": 13
+                }
+            ]
+        },
+        {
+            "index": 43,
+            "colorF": {
+                "r": 106,
+                "g": 48,
+                "b": 106,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 59,
+                    "east": -1,
+                    "west": 42
+                }
+            ]
+        },
+        {
+            "index": 44,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Checkpoint",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 3,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 45,
+                    "west": 36
+                }
+            ]
+        },
+        {
+            "index": 45,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 52,
+                    "south": 55,
+                    "east": 46,
+                    "west": 44
+                }
+            ]
+        },
+        {
+            "index": 46,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 56,
+                    "south": 57,
+                    "east": 47,
+                    "west": 45
+                }
+            ]
+        },
+        {
+            "index": 47,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 0,
+                    "west": 46
+                }
+            ]
+        },
+        {
+            "index": 48,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 49,
+                    "west": 37
+                }
+            ]
+        },
+        {
+            "index": 49,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 63,
+                    "south": -1,
+                    "east": -1,
+                    "west": 48
+                }
+            ]
+        },
+        {
+            "index": 50,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 51,
+                    "west": 34
+                }
+            ]
+        },
+        {
+            "index": 51,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 52,
+                    "east": -1,
+                    "west": 50
+                }
+            ]
+        },
+        {
+            "index": 52,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 51,
+                    "south": 45,
+                    "east": 56,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 53,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 54,
+                    "west": 38
+                }
+            ]
+        },
+        {
+            "index": 54,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 55,
+                    "south": -1,
+                    "east": -1,
+                    "west": 53
+                }
+            ]
+        },
+        {
+            "index": 55,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 45,
+                    "south": 54,
+                    "east": 57,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 56,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 46,
+                    "east": -1,
+                    "west": 52
+                }
+            ]
+        },
+        {
+            "index": 57,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 46,
+                    "south": -1,
+                    "east": -1,
+                    "west": 55
+                }
+            ]
+        },
+        {
+            "index": 58,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 40,
+                    "west": 84
+                }
+            ]
+        },
+        {
+            "index": 59,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 43,
+                    "south": 60,
+                    "east": -1,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 60,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 59,
+                    "south": -1,
+                    "east": -1,
+                    "west": 61
+                }
+            ]
+        },
+        {
+            "index": 61,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 60,
+                    "west": 68
+                }
+            ]
+        },
+        {
+            "index": 62,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 63,
+                    "east": -1,
+                    "west": 64
+                }
+            ]
+        },
+        {
+            "index": 63,
+            "colorF": {
+                "r": 120,
+                "g": 40,
+                "b": 62,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 62,
+                    "south": 49,
+                    "east": -1,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 64,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 62,
+                    "west": 66
+                }
+            ]
+        },
+        {
+            "index": 65,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 66,
+                    "east": 79,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 66,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 65,
+                    "south": 67,
+                    "east": 64,
+                    "west": 70
+                }
+            ]
+        },
+        {
+            "index": 67,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 66,
+                    "south": 68,
+                    "east": 73,
+                    "west": 71
+                }
+            ]
+        },
+        {
+            "index": 68,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 67,
+                    "south": 69,
+                    "east": 61,
+                    "west": 72
+                }
+            ]
+        },
+        {
+            "index": 69,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 68,
+                    "south": -1,
+                    "east": 80,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 70,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 71,
+                    "east": 66,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 71,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 70,
+                    "south": 72,
+                    "east": 67,
+                    "west": 85
+                }
+            ]
+        },
+        {
+            "index": 72,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 71,
+                    "south": -1,
+                    "east": 68,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 73,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Checkpoint",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 3,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 76,
+                    "west": 67
+                }
+            ]
+        },
+        {
+            "index": 74,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 75,
+                    "east": -1,
+                    "west": 79
+                }
+            ]
+        },
+        {
+            "index": 75,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 74,
+                    "south": 76,
+                    "east": 81,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 76,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 75,
+                    "south": 77,
+                    "east": 82,
+                    "west": 73
+                }
+            ]
+        },
+        {
+            "index": 77,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 76,
+                    "south": 78,
+                    "east": 83,
+                    "west": -1
+                }
+            ]
+        },
+        {
+            "index": 78,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 77,
+                    "south": -1,
+                    "east": -1,
+                    "west": 80
+                }
+            ]
+        },
+        {
+            "index": 79,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 74,
+                    "west": 65
+                }
+            ]
+        },
+        {
+            "index": 80,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 78,
+                    "west": 69
+                }
+            ]
+        },
+        {
+            "index": 81,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": 82,
+                    "east": -1,
+                    "west": 75
+                }
+            ]
+        },
+        {
+            "index": 82,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 81,
+                    "south": 83,
+                    "east": 84,
+                    "west": 76
+                }
+            ]
+        },
+        {
+            "index": 83,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": 82,
+                    "south": -1,
+                    "east": -1,
+                    "west": 77
+                }
+            ]
+        },
+        {
+            "index": 84,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 58,
+                    "west": 82
+                }
+            ]
+        },
+        {
+            "index": 85,
+            "colorF": {
+                "r": 130,
+                "g": 100,
+                "b": 59,
+                "a": 255
+            },
+            "colorW": {
+                "r": 63,
+                "g": 53,
+                "b": 63,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "connectionList": [
+                {
+                    "north": -1,
+                    "south": -1,
+                    "east": 71,
+                    "west": 28
+                }
+            ]
+        }
+    ]
+}

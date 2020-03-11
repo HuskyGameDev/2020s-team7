@@ -484,7 +484,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1396026476793186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 432.50632, y: 335.80063, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4072917136404740}
@@ -652,15 +652,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   corners: {fileID: 212408389306862716}
-  northWall: {fileID: 212127501243062644}
-  eastWall: {fileID: 212236108602092376}
-  southWall: {fileID: 212076736236333954}
-  westWall: {fileID: 212967890514396412}
+  walls:
+  - {fileID: 212127501243062644}
+  - {fileID: 212236108602092376}
+  - {fileID: 212076736236333954}
+  - {fileID: 212967890514396412}
   floor: {fileID: 212751085800465124}
-  northLine: {fileID: 212055403429688866}
-  southLine: {fileID: 212407077021281034}
-  eastLine: {fileID: 212177801004399382}
-  westLine: {fileID: 212897135105843810}
+  lines:
+  - {fileID: 212055403429688866}
+  - {fileID: 212177801004399382}
+  - {fileID: 212407077021281034}
+  - {fileID: 212897135105843810}
   lineCenter: {fileID: 212061434120742294}
   debris:
   - {fileID: 212444249938536362}
