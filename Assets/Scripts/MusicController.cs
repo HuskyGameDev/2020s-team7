@@ -16,11 +16,11 @@ public class MusicController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		time += Time.deltaTime;
+		//time += Time.deltaTime;
 		
-		if (time > endTime) {
-			time -= endTime;
-			Instantiate(BGM);
-		}
+		//if (time > endTime) {
+			//time -= endTime;
+			//Instantiate(BGM);
+		//}
 	}
 }

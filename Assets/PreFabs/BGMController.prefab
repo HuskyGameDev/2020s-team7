@@ -54,8 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Game Sounds/Team7_WaterDrops
-  PlayEvent: 11
-  StopEvent: 12
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708734149498592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20dba208fc824484ebd81e87cef89205, type: 3}
+  m_Script: {fileID: 11500000, guid: 5746063e6d582454bac41f98949720da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114999593548177676
@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Game Sounds/Team 7-MusicV1
-  PlayEvent: 1
-  StopEvent: 2
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0

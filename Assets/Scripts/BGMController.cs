@@ -9,18 +9,18 @@ public class BGMController : MonoBehaviour {
 		
 	// Use this for initialization
 	void Start () {
-		endTime = 65.0f;
-		time = 0.0f;
-		stop = false;
+		//endTime = 70.0f;
+		//time = 0.0f;
+		SendMessage("Play");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		time += Time.deltaTime;
+		//time += Time.deltaTime;
 		
-		if (time > endTime && !stop) {
-			stop = true;
-			Destroy(gameObject, 5.0f);
-		}
+		//if (time > endTime) {
+			//SendMessage("Stop");
+			//Destroy(gameObject);
+		//}
 	}
 }
