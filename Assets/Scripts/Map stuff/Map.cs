@@ -21,17 +21,16 @@ public class LevelMap {
 	private int arraySize = 20;
     public int[] checkpoints;
     public int stringleft = 21;
-    public bool winConditions()
-    {
+    public bool winConditions() {
         if (!(GameManager.gameplay.currentPosition.type == Node.TileType.target) || !GameManager.gameplay.hasBall)
         {
             return false;
         }
-		//Debug.Log("Checking conditions");
 		if (countCheckpoints() < checkpoints.Length) return false;
-        //Debug.Log(GameManager.instance.gameplay.stringLeft == 0);
-        return GameManager.gameplay.stringLeft == 0; //stringleft == 0; //&& GameManager.instance.gameplay.currentPosition.index == GameManager.instance.gameplay.map.targetNodeIndex;
-    }
+        //return GameManager.gameplay.stringLeft == 0; 
+		return GameManager.gameplay.stringLeft == 0 &&
+			((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).currentPosition.index == ((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).map.targetNodeIndex;
+	}
 	[SerializeField]
 	private Node[] nodes = new Node[20]; // by default, array of tiles has 20 slots.
 	public Node this[int i] { // get/set method that will automaticaly make the array of tiles larger when necessary
@@ -83,8 +82,6 @@ public class LevelMap {
 	/// <param name="newArraySize"></param>
 	public void setNodes(Node[] newNodes) {//, int newSize, int newArraySize) {
 		nodes = newNodes;
-		//_size = newSize;
-		//arraySize = newArraySize;
 		_size = newNodes.Length;
 		arraySize = newNodes.Length;
 	}
@@ -108,10 +105,6 @@ public class LevelMap {
 	/// <param name="map"></param>
 	/// <param name="path"></param>
 	public static void Save(LevelMap map, string path) {
-		//for (int i = 0; i < map.size; i++) {
-		//	map[i].hasEnter = false;
-		//	map[i].hasLeave = false;
-		//}
 		string jsonData = JsonUtility.ToJson(map, true);
 		File.WriteAllText(path, jsonData);
 	}
@@ -129,25 +122,9 @@ public class LevelMap {
 			string jsonData = File.ReadAllText(path);
 			LevelMap map = JsonUtility.FromJson<LevelMap>(jsonData);
 			
-
 			if (map == null) {
 				Debug.Log("Error: map is null, WTF?");
 			}
-
-			/*if (map.sourceNodeIndex >= 0) {
-				GameManager.gameplay.currentPosition = map[map.sourceNodeIndex];
-			} else {
-				Debug.Log("Error: map.sourceNode is null");
-				GameManager.gameplay.currentPosition = map[0];
-			}*/
-			/*
-			for (int i = 0; i < map.arraySize; i++) {
-				Node n = map[i];
-				if (n.colorF = ) {
-
-				}
-			}
-			*/
 			return map;
 		} else {
 			return null;
@@ -155,18 +132,28 @@ public class LevelMap {
 
 	}
 
+	/// <summary>
+	/// return count of checkpoints touching the string
+	/// </summary>
+	/// <returns></returns>
 	public int countCheckpoints() {
 		int count = 0;
 		foreach (int i in checkpoints) {
-			if (GameManager.gameplay.map[i].hasEnter/* && GameManager.gameplay.map[i].hasLeave*/) count++;
+			if (GameManager.gameplay.map[i].hasEnter) count++;
 		}
 		return count;
 	}
 
+	/// <summary>
+	/// return true if the node and the one it is connected to in that direction have mis-matching string, that would indicate that a one-way connection would cut the string if traveled over.
+	/// </summary>
+	/// <param name="node"></param>
+	/// <param name="dir"></param>
+	/// <returns></returns>
 	public bool disjoint(Node node, GameManager.Direction dir) {
 		Node other = this[node[(int)dir]];
 		GameManager.Direction opposite = dir.inverse();
-		if (
+		if (	// if one node has an enter/exit for the string on the connection, and the other does not have the corresponding exit/enter
 			((node.hasEnter && (node.enter == dir)) && ((other.leave != opposite) || !other.hasLeave)) ||
 			((node.hasLeave && (node.leave == dir)) && ((other.enter != opposite) || !other.hasEnter)) ||
 			((other.hasEnter && (other.enter == opposite)) && ((node.leave != dir) || !node.hasLeave)) ||

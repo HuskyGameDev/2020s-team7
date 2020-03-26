@@ -74,48 +74,6 @@ public class Node_old {
 		}
 	}
 
-	/// <summary>
-	/// Adds a connection set to the end of the list
-	/// </summary>
-	/// <param name="set"></param>
-	/*public void AddToConnectionStack(ConnectionSet set) {
-		connectionList.Add(set);
-		dataList.Add(new LineData());
-	}*/
-
-	/// <summary>
-	/// pops all but the last connection and data sets
-	/// </summary>
-	/*public void PopConnectionStack() {
-		if (data.hasEnter || data.hasLeave)
-			return;
-		while (connectionList.Count > 1) {
-			connectionList.RemoveAt(connectionList.Count - 1);
-		}
-		while (dataList.Count > 1) {    // occasionally, connectionList & dataList will not have the same count, so need to check to make sure
-			dataList.RemoveAt(dataList.Count - 1);
-		}
-	}*/
-
-	/// <summary>
-	/// Gets the index that the current nodeis  connected to in the given direction
-	/// </summary>
-	/// <param name="dir"></param>
-	/// <returns></returns>
-	/*public int GetConnectionFromDir(GameManager.Direction dir) {
-		switch (dir) {
-			case GameManager.Direction.North:
-				return connections.north;
-			case GameManager.Direction.South:
-				return connections.south;
-			case GameManager.Direction.East:
-				return connections.east;
-			case GameManager.Direction.West:
-				return connections.west;
-		}
-		return -1;
-	}*/
-
 	// basic constructor
 	public Node_old() {
 		//connectionStack.Push(new ConnectionSet());
@@ -170,36 +128,9 @@ public class Node_old {
 	}
 
 	/// <summary>
-	/// Returns a copy of the calling node
+	/// create copy of this node using the new node type
 	/// </summary>
 	/// <returns></returns>
-	/*public Node_old Copy() {
-		Node_old newNode = new Node_old(index, connections.north, connections.south, connections.east, connections.west, colorF, colorW, floorSprite, wallSprite, debris, type, hasSign, signMessage, connectionList, dataList);
-		return newNode;
-	}*/
-
-	/// <summary>
-	/// Returns a list of all nodes that a node is connected to in the given direction
-	/// </summary>
-	/// <param name="dir"></param>
-	/// <returns></returns>
-	/*
-	public List<Node_old> GetFullStackConnectionsFromDir(Direction dir) {
-		List<Node_old> ns = new List<Node_old>();
-		
-		ConnectionSet[] conns = connectionList.ToArray();
-		Array.Reverse(conns);
-		foreach (ConnectionSet set in conns) {
-			//if (set[dir] != null) {
-			if (set[dir] != -1) {
-					Node_old n = GameManager.gameplay.map[(int)set[dir]];
-				if (ns.Contains(n) == false)
-					ns.Add(n);
-			}
-		}
-		return ns;
-	}*/
-
 	public Node ConvertToNew() {
 		Node newNode = new Node();
 		newNode.index = this.index;
@@ -215,7 +146,7 @@ public class Node_old {
 		newNode.signMessage = this.signMessage;
 
 		//newNode.defaultConn = { -1, -1, -1, -1 };
-		newNode.defaultConn[0] = this.connectionList[0].north;
+		newNode.defaultConn[0] = this.connectionList[0].north;	// default connections
 		newNode.defaultConn[1] = this.connectionList[0].east;
 		newNode.defaultConn[2] = this.connectionList[0].south;
 		newNode.defaultConn[3] = this.connectionList[0].west;
@@ -229,12 +160,6 @@ public class Node_old {
 	/// </summary>
 	[System.Serializable]
 	public class ConnectionSet {
-		/*
-		public int? north = null;
-		public int? south = null;
-		public int? east = null;
-		public int? west = null;
-		*/
 		public int north = -1;
 		public int south = -1;
 		public int east = -1;

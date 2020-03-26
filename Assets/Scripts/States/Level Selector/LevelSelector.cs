@@ -146,9 +146,7 @@ public class LevelSelector : IState {
 													  //change = false;
 		string name = levelNames[index];
 		GameManager.gameplay.map = startLevel(name);    // load level map
-		GameManager.gameplay.currentPosition = GameManager.gameplay.map[GameManager.gameplay.map.sourceNodeIndex];
 		GameManager.gameplay.resetLevelAssets();	// reset everything
-		//GameManager.changeState(GameManager.gameplay, state);
 	}
 
     //Retrieves the names of the levels from the directory by finding files ending in .json

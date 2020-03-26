@@ -81,17 +81,19 @@ public class LevelMap_old {
 		}
 	}
 
+	/// <summary>
+	/// Copy relevant data to new map, that uses new node type
+	/// </summary>
+	/// <param name="oldMap"></param>
+	/// <returns></returns>
 	public static LevelMap ConvertToNew(LevelMap_old oldMap) {
 		if (oldMap.version != 0) {
 			Debug.Log("Error: map is not version 0, cannot convert to version 1");
 			return null;
 		}
 		LevelMap newMap = new LevelMap();
-		/*
-		private Node[] nodes : setNodes(Node[] nodes)
-		*/
 		newMap.version = 1;
-		newMap.defaultPosition = oldMap.defaultPosition;
+		newMap.defaultPosition = oldMap.defaultPosition;	// copy map info
 		newMap.sourceNodeIndex = oldMap.sourceNodeIndex;
 		newMap.targetNodeIndex = oldMap.targetNodeIndex;
 		newMap.checkpoints = new int[oldMap.checkpoints.Length];
@@ -100,7 +102,7 @@ public class LevelMap_old {
 
 		Node[] newNodes = new Node[oldMap.size];
 		for (int i = 0; i < oldMap.size; i++) {
-			newNodes[i] = oldMap[i].ConvertToNew();
+			newNodes[i] = oldMap[i].ConvertToNew();	// create matching nodes of the new type
 		}
 
 		newMap.setNodes(newNodes);

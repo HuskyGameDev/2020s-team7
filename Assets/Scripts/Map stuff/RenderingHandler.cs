@@ -62,16 +62,10 @@ public class RenderingHandler : MonoBehaviour {
 		if (oldNode[(int)dpi.dir] < 0) {	// if this does not point to a node
 			return;
 		}
-		
 
 		Vector2Int position = oldPosition + dpi.dir.offset();
 		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
-		grayout = grayout || GameManager.gameplay.map.disjoint(oldNode, dpi.dir);
-		/*if (GameManager.gameplay.map.disjoint(oldNode, dpi.dir)) {
-			tile.SetWallFromDir(dpi.dir, true);
-			return;
-			// Maybe make if gray things out???
-		}*/
+		grayout = grayout || GameManager.gameplay.map.disjoint(oldNode, dpi.dir);	// gray-out if disjoint, or previos node was grayed-out
 		Node node = GameManager.gameplay.map[oldNode[(int)dpi.dir]];
 		//Draw the node, regarless of if it is null (null node is handled by the drawer)
 		tile.DrawFullNode(node, dpi.dir, position, grayout);
