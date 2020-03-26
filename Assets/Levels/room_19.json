@@ -2,11 +2,14 @@
     "version": 1,
     "defaultPosition": 0,
     "sourceNodeIndex": 0,
-    "targetNodeIndex": -1,
-    "_size": 36,
-    "arraySize": 36,
-    "checkpoints": [],
-    "stringleft": 21,
+    "targetNodeIndex": 57,
+    "_size": 60,
+    "arraySize": 60,
+    "checkpoints": [
+        48,
+        53
+    ],
+    "stringleft": 31,
     "nodes": [
         {
             "index": 0,
@@ -29,13 +32,13 @@
                 "",
                 "",
                 "",
-                "",
+                "Source",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
+            "type": 1,
             "hasSign": false,
             "signMessage": "",
             "defaultConn": [
@@ -59,7 +62,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 1,
@@ -588,8 +591,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 1,
+            "leave": 2
         },
         {
             "index": 11,
@@ -641,8 +644,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 12,
@@ -695,7 +698,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 3
         },
         {
             "index": 13,
@@ -747,8 +750,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 1,
+            "leave": 1
         },
         {
             "index": 14,
@@ -800,8 +803,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 2,
+            "leave": 3
         },
         {
             "index": 15,
@@ -854,7 +857,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 16,
@@ -907,7 +910,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 17,
@@ -960,7 +963,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 18,
@@ -1013,7 +1016,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 1
         },
         {
             "index": 19,
@@ -1118,7 +1121,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 1,
             "leave": 0
         },
         {
@@ -1154,7 +1157,7 @@
             "defaultConn": [
                 0,
                 -1,
-                -1,
+                12,
                 -1
             ],
             "tempConn": [
@@ -1172,7 +1175,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 22,
@@ -1224,7 +1227,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 2,
             "leave": 0
         },
         {
@@ -1261,7 +1264,7 @@
                 22,
                 -1,
                 24,
-                -1
+                54
             ],
             "tempConn": [
                 -1,
@@ -1277,8 +1280,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 3,
+            "leave": 2
         },
         {
             "index": 24,
@@ -1331,7 +1334,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 25,
@@ -1384,7 +1387,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 3
         },
         {
             "index": 26,
@@ -1542,8 +1545,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 29,
@@ -1576,7 +1579,7 @@
             "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                -1,
+                56,
                 30,
                 -1,
                 28
@@ -1595,7 +1598,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 3,
             "leave": 0
         },
         {
@@ -1648,7 +1651,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 1,
             "leave": 0
         },
         {
@@ -1683,7 +1686,7 @@
             "signMessage": "",
             "defaultConn": [
                 -1,
-                -1,
+                36,
                 32,
                 -1
             ],
@@ -1701,8 +1704,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 2,
+            "leave": 1
         },
         {
             "index": 32,
@@ -1754,7 +1757,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 2,
             "leave": 0
         },
         {
@@ -1789,7 +1792,7 @@
             "signMessage": "",
             "defaultConn": [
                 32,
-                -1,
+                52,
                 34,
                 20
             ],
@@ -1807,7 +1810,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 1,
             "leave": 0
         },
         {
@@ -1860,7 +1863,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 2,
             "leave": 0
         },
         {
@@ -1895,8 +1898,1068 @@
             "signMessage": "",
             "defaultConn": [
                 34,
+                44,
+                -1,
+                -1
+            ],
+            "tempConn": [
                 -1,
                 -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
+        },
+        {
+            "index": 36,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                37,
+                -1,
+                31
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
+        },
+        {
+            "index": 37,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                38,
+                47,
+                36
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
+        },
+        {
+            "index": 38,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                39,
+                -1,
+                37
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
+        },
+        {
+            "index": 39,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                -1,
+                40,
+                38
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 2
+        },
+        {
+            "index": 40,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                39,
+                -1,
+                41,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 41,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                40,
+                -1,
+                42,
+                50
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 42,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                41,
+                -1,
+                43,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 43,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                42,
+                -1,
+                -1,
+                46
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
+        },
+        {
+            "index": 44,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                45,
+                -1,
+                35
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
+        },
+        {
+            "index": 45,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                49,
+                46,
+                -1,
+                44
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 0
+        },
+        {
+            "index": 46,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                43,
+                -1,
+                45
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
+        },
+        {
+            "index": 47,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                37,
+                -1,
+                48,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
+        },
+        {
+            "index": 48,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Checkpoint",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 3,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                47,
+                50,
+                49,
+                51
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 3
+        },
+        {
+            "index": 49,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                48,
+                -1,
+                45,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
+        },
+        {
+            "index": 50,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                41,
+                -1,
+                48
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
+        },
+        {
+            "index": 51,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                48,
+                -1,
+                58
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
+        },
+        {
+            "index": 52,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                53,
+                -1,
+                33
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
+        },
+        {
+            "index": 53,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Checkpoint",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 3,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                55,
+                54,
+                56,
+                52
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 3
+        },
+        {
+            "index": 54,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                23,
+                -1,
+                53
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 3,
+            "leave": 1
+        },
+        {
+            "index": 55,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                59,
+                -1,
+                53,
                 -1
             ],
             "tempConn": [
@@ -1915,6 +2978,218 @@
             "hasLeave": false,
             "enter": 0,
             "leave": 0
+        },
+        {
+            "index": 56,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                53,
+                -1,
+                29,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 2,
+            "leave": 0
+        },
+        {
+            "index": 57,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Target",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 2,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                58,
+                59,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 2
+        },
+        {
+            "index": 58,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                -1,
+                51,
+                -1,
+                57
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 1,
+            "leave": 3
+        },
+        {
+            "index": 59,
+            "colorF": {
+                "r": 70,
+                "g": 55,
+                "b": 137,
+                "a": 255
+            },
+            "colorW": {
+                "r": 69,
+                "g": 70,
+                "b": 79,
+                "a": 255
+            },
+            "floorSprite": "Tile",
+            "wallSprite": "Tile",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "hasSign": false,
+            "signMessage": "",
+            "defaultConn": [
+                57,
+                -1,
+                55,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
         }
     ]
 }
