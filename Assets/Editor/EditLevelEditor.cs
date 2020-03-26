@@ -109,9 +109,19 @@ public class EditLevelEditor : Editor {
 
 		// buttons & variables for changes to the current node
 		GUILayout.BeginHorizontal();
+		GUILayout.BeginVertical();
 		if (GUILayout.Button("Apply changes to node")) {
 		    ((EditLevel)target).applyToNode();
 	    }
+		if (GameManager.istates[(int)GameManager.IStateType.gameplay] != null) {
+			((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).pitWalk = 
+				GUILayout.Toggle(
+					((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).pitWalk, 
+					"Toggle ignore pits");
+		} else {
+			GUILayout.Toggle(false, "Toggle ignore pits");
+		}
+		GUILayout.EndVertical();
 		GUILayout.BeginVertical();
 		if (GUILayout.Button("Sample node appearance")) {
 			((EditLevel)target).sampleTile();

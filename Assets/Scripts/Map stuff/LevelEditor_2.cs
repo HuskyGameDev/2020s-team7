@@ -325,7 +325,8 @@ public static class LevelEditor_2 {
 				room[tileIndex].debris[i] != null && (
 					room[tileIndex].debris[i].Equals("Source") ||
 					room[tileIndex].debris[i].Equals("Target") ||
-					room[tileIndex].debris[i].Equals("Checkpoint")
+					room[tileIndex].debris[i].Equals("Checkpoint") ||
+					room[tileIndex].debris[i].Equals("Pit_Placeholder")
 				)) {
 				room[tileIndex].debris[i] = "";
 			}
@@ -367,6 +368,10 @@ public static class LevelEditor_2 {
 				}
 				temp[room.checkpoints.Length] = tileIndex;
 				room.checkpoints = temp;
+				break;
+			case Node.TileType.unwalkable:
+				room[tileIndex].type = Node.TileType.unwalkable;
+				room[tileIndex].debris[4] = "Pit_Placeholder";
 				break;
 			default:
 				break;

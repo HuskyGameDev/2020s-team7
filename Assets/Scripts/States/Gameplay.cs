@@ -12,6 +12,8 @@ public class Gameplay : IState {
 	public UnityEngine.UI.Text stringrem;
 	public GameObject wintext;
 	public GameObject winSound; // object that FMOD event emmitter is attached to, set to trigger when made active
+	public Image signImage;
+	public Text signText;
 
 	#region Initialize Variables
 	bool animLockout = false;
@@ -20,7 +22,7 @@ public class Gameplay : IState {
 	public bool hasBall = true;
 	public int curdir = 0;
 	public int stringLeft = 21;
-    
+    public bool pitWalk = false;
 	
 	public float moveAnimSpeed = 0.25f;
 	public float youWinScreenTimeout = 1.0f;
@@ -63,7 +65,7 @@ public class Gameplay : IState {
 			nonEuclidRenderer.initialize();
 			//Make sure the level is set to be the beginning of the level
 			resetLevelAssets();
-			setUItext(true);
+			//setUItext(true);
 		}
 	}
 
@@ -143,7 +145,8 @@ public class Gameplay : IState {
 								currentPosition.hasEnter && currentPosition.enter == dir
 							) || 
 							!hasBall) &&
-						!map.disjoint(currentPosition, dir)
+						!map.disjoint(currentPosition, dir) &&
+						(otherNode.type != Node.TileType.unwalkable || pitWalk)
 						);  // && (otherNode.type != Node.TileType.unwalkable || editmode)
 				}
 				if (cinimaticMode && Input.GetKey(KeyCode.Space)) canMove = false;
@@ -264,7 +267,7 @@ public class Gameplay : IState {
 			
 		}
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
-		//setUItext(true);
+		setUItext(true);
 	}
 
 }

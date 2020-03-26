@@ -58,7 +58,7 @@ public class RenderTile : MonoBehaviour {
 		} 
 	}*/
 
-	public void DrawFullNode(Node node, GameManager.Direction? dir, Vector2Int? position) {
+	public void DrawFullNode(Node node, GameManager.Direction? dir, Vector2Int? position, bool grayout = false) {
 		if ((node == null) || (dir == null) || (position == null)) {    // set everything invisible if any of these are null
 			this.gameObject.SetActive(false);
 		} else {
@@ -202,11 +202,34 @@ public class RenderTile : MonoBehaviour {
 				}
 			}
 
-			floor.color = node.colorF;
-			for (int j = 0; j < walls.Length; j++) {
-				walls[j].color = node.colorW;
+			if (grayout) {
+				floor.color = Color.Lerp(node.colorF, Color.gray, 0.9f);
+				for (int j = 0; j < walls.Length; j++) {
+					walls[j].color = Color.Lerp(node.colorW, Color.gray, 0.9f);
+				}
+				corners.color = Color.Lerp(node.colorW, Color.gray, 0.9f);
+				Color grayish = new Color(0.55f, 0.55f, 0.55f);
+				for (int j = 0; j < debris.Length; j++) {
+					debris[j].color = grayish;
+				}
+				for (int j = 0; j < lines.Length; j++) {
+					lines[j].color = grayish;
+				}
+				lineCenter.color = grayish;
+			} else {
+				floor.color = node.colorF;
+				for (int j = 0; j < walls.Length; j++) {
+					walls[j].color = node.colorW;
+				}
+				corners.color = node.colorW;
+				for (int j = 0; j < debris.Length; j++) {
+					debris[j].color = Color.white;
+				}
+				for (int j = 0; j < lines.Length; j++) {
+					lines[j].color = Color.white;
+				}
+				lineCenter.color = Color.white;
 			}
-			corners.color = node.colorW;
 
 			//set debris visible is it exists
 			SetDebrisFromNode(node);
@@ -216,6 +239,7 @@ public class RenderTile : MonoBehaviour {
 			
 			//set walls visible as appropriate 
             SetWallsFromNode(node, dir, position);
+
         }
     }
 

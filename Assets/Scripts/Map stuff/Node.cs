@@ -15,7 +15,7 @@ public class Node {
 	public String wallSprite = null;    // name of sprite for the walls
 	public String[] debris = new String[9]; // name of sprites for debris 
 
-	public enum TileType { regular, source, target, checkpoint };
+	public enum TileType { regular, source, target, checkpoint, unwalkable};
 	public TileType type = TileType.regular;	// the type of this tile
 	public bool hasSign = false;
 	public String signMessage = "";
