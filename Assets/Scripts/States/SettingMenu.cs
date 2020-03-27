@@ -72,6 +72,8 @@ public class SettingMenu : IState {
 		switch (retVal) {
 			case 0:	// yes, want to leave without saving settings
 				onClick(previous);
+				FMOD.Studio.Bus bus = FMODUnity.RuntimeManager.GetBus("bus:/");
+				bus.setVolume(GameManager.settings.volume);
 				break;
 			default:    // canceled, do nothing
 				break;
@@ -96,6 +98,8 @@ public class SettingMenu : IState {
 
 	public void setVolume() {
 		tempSettings.volume = volSlider.value;
+		FMOD.Studio.Bus bus = FMODUnity.RuntimeManager.GetBus("bus:/");
+		bus.setVolume(tempSettings.volume);
 		refresh();
 	}
 
