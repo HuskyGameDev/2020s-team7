@@ -322,10 +322,11 @@ public static class LevelEditor_2 {
 		}
 		for (int i = 0; i < 9; i++) {
 			if (
-				room[tileIndex].debris[i] != null && (
+				room[tileIndex].debris[i] != null && (	// remove sprites used for particular tile types
 					room[tileIndex].debris[i].Equals("Source") ||
 					room[tileIndex].debris[i].Equals("Target") ||
-					room[tileIndex].debris[i].Equals("Checkpoint")
+					room[tileIndex].debris[i].Equals("Checkpoint") ||
+					room[tileIndex].debris[i].Equals("Pit_Placeholder")
 				)) {
 				room[tileIndex].debris[i] = "";
 			}
@@ -367,6 +368,10 @@ public static class LevelEditor_2 {
 				}
 				temp[room.checkpoints.Length] = tileIndex;
 				room.checkpoints = temp;
+				break;
+			case Node.TileType.unwalkable:
+				room[tileIndex].type = Node.TileType.unwalkable;	// un-walkable tile type, doen't need anything else
+				room[tileIndex].debris[4] = "Pit_Placeholder";
 				break;
 			default:
 				break;

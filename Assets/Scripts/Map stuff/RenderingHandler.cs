@@ -56,24 +56,19 @@ public class RenderingHandler : MonoBehaviour {
 	/// <param name="dpi"></param>
 	/// <param name="oldPosition"></param>
 	/// <param name="oldNode"></param>
-	private void HandleDPI(DrawPathInstruction dpi, Vector2Int oldPosition, Node oldNode) {
+	private void HandleDPI(DrawPathInstruction dpi, Vector2Int oldPosition, Node oldNode, bool grayout) {
 		//If our map does not have a node in the instruction dir, we cannot render in that dir
 		//if (oldNode.GetConnectionFromDir(dpi.dir) == null) {
 		if (oldNode[(int)dpi.dir] < 0) {	// if this does not point to a node
 			return;
 		}
-		
 
 		Vector2Int position = oldPosition + dpi.dir.offset();
 		RenderTile tile = renderLayers[dpi.dir.renderLayer()][position.x, position.y];
-		if (GameManager.gameplay.map.disjoint(oldNode, dpi.dir)) {
-			tile.SetWallFromDir(dpi.dir, true);
-			return;
-			// Maybe make if gray things out???
-		}
+		grayout = grayout || GameManager.gameplay.map.disjoint(oldNode, dpi.dir);	// gray-out if disjoint, or previos node was grayed-out
 		Node node = GameManager.gameplay.map[oldNode[(int)dpi.dir]];
 		//Draw the node, regarless of if it is null (null node is handled by the drawer)
-		tile.DrawFullNode(node, dpi.dir, position);
+		tile.DrawFullNode(node, dpi.dir, position, grayout);
 		//If the node is not null, then we continue on with the instructions
 		if (node != null) {
 			//Add it to the list of drawn nodes
@@ -81,7 +76,7 @@ public class RenderingHandler : MonoBehaviour {
 				visibleNodes.Add(node);
 			//Follow instructions on the next node
 			foreach (DrawPathInstruction nDpi in dpi.nextInstructions)
-				HandleDPI(nDpi, position, node);
+				HandleDPI(nDpi, position, node, grayout);
 		}
 	}
 
@@ -115,7 +110,7 @@ public class RenderingHandler : MonoBehaviour {
  
 		//Follow all drawing paths
 		foreach (DrawPathInstruction dpi in drawPathInstructions) {
-			HandleDPI(dpi, center, node);
+			HandleDPI(dpi, center, node, false);
 		}
 
 

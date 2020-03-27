@@ -15,42 +15,48 @@ public class Node {
 	public String wallSprite = null;    // name of sprite for the walls
 	public String[] debris = new String[9]; // name of sprites for debris 
 
-	public enum TileType { regular, source, target, checkpoint };
+	public enum TileType { regular, source, target, checkpoint, unwalkable};
 	public TileType type = TileType.regular;	// the type of this tile
 	public bool hasSign = false;
 	public String signMessage = "";
 
-	public int[] defaultConn = { -1, -1, -1, -1};
-	public int[] tempConn = { -1, -1, -1, -1 };
-	public bool[] drawCorner = { false, false, false, false };
+	public int[] defaultConn = { -1, -1, -1, -1};	// default connections, returns to using these connection when temp connections are out of sight
+	public int[] tempConn = { -1, -1, -1, -1 };	// temp connection, is used instead of default if the value is non-zero.
+	public bool[] drawCorner = { false, false, false, false };	// indicates that corners should be drawn, starts at NE and goes clockwise.
 
+	// removed stack for line-direction data. Makes level-saving less glitchy.
 	public bool hasEnter = false;
 	public bool hasLeave = false;
 	public GameManager.Direction enter = Direction.North;
 	public GameManager.Direction leave = Direction.North;
 
 	/// <summary>
-	/// Gets the index that the current nodeis  connected to in the given direction
+	/// Gets the index that the current node is connected to in the given direction.
 	/// </summary>
 	/// <param name="dir"></param>
 	/// <returns></returns>
 	public int this[int dir] {
 		get {
-			if (dir < 0 || dir > 3) {
+			if (dir < 0 || dir > 3) {	// only return value for valid indexes
 				return -1;
-			} else if (tempConn[dir] >= 0) {
+			} else if (tempConn[dir] >= 0) {	// return temp connection if it is valid
 				return tempConn[dir];
 			} else {
-				return defaultConn[dir];
+				return defaultConn[dir];	// else return default connection/wall
 			}
 		}
 		set {
-			if (dir >= 0 || dir <= 3) {
+			if (dir >= 0 || dir <= 3) {	// set the temp connection. Setting the default requires setting directly.
 				tempConn[dir] = value;
 			}
 		}
 	}
 
+	/// <summary>
+	/// returns true if there is a temp connection in that direction
+	/// </summary>
+	/// <param name="dir"></param>
+	/// <returns></returns>
 	public bool hasTempConn(int dir) {
 		if (tempConn[dir] >= 0) {
 			return true;
@@ -59,94 +65,16 @@ public class Node {
 		}
 	}
 
-	/*
-	// used to get the most current line data
-	public LineData data {
-		get {
-			//return dataStack.Peek();
-			return dataList[dataList.Count - 1];
-		}
-		set {
-
-		}
-	}
-	// used to get the most current connection data
-	public ConnectionSet connections {
-		get {
-			//return connectionStack.Peek();
-			return connectionList[connectionList.Count - 1];
-		}
-		set {
-
-		}
-	}*/
-
-
-	// had to change these to lists because lists are serializable, but stacks are not.
-	//[HideInInspector]
-	//public List<ConnectionSet> connectionList = new List<ConnectionSet>();
-	//private List<LineData> dataList = new List<LineData>();
-
-	// this is the same as justin left it
-	/*[System.Serializable]
-	public class LineData {
-		public bool hasEnter = false;
-		public bool hasLeave = false;
-		public GameManager.Direction enter = Direction.North;
-		public GameManager.Direction leave = Direction.North;
-		//public bool lineActive = false;
-	
-		public LineData() {
-
-		}
-
-		//public LineData(bool hasEnter, bool hasLeave, GameManager.Direction enter, GameManager.Direction leave, bool lineActive) {
-		public LineData(bool hasEnter, bool hasLeave, GameManager.Direction enter, GameManager.Direction leave) {
-			this.hasEnter = hasEnter;
-			this.hasLeave = hasLeave;
-			this.enter = enter;
-			this.leave = leave;
-			//this.lineActive = lineActive;
-		}
-
-		public LineData Copy() {
-			//return new LineData(hasEnter, hasLeave, enter, leave, lineActive);
-			return new LineData(hasEnter, hasLeave, enter, leave);
-		}
-	}*/
-	/*
-	/// <summary>
-	/// Adds a connection set to the end of the list
-	/// </summary>
-	/// <param name="set"></param>
-	public void AddToConnectionStack(ConnectionSet set) {
-		connectionList.Add(set);
-		dataList.Add(new LineData());
-	}*/
-
 	/// <summary>
 	/// pops all but the last connection and data sets
 	/// </summary>
 	public void PopConnectionStack() {
-		for (int i = 0; i < 4; i ++) {
+		for (int i = 0; i < 4; i ++) {	// remove temp connections that do not have a string going through them.
 			if (!((hasEnter && ((int)enter == i)) || (hasLeave && ((int)leave == i)))) {
 				tempConn[i] = -1;
 			}
 		}
 	}
-
-	/// <summary>
-	/// Gets the index that the current nodeis  connected to in the given direction
-	/// </summary>
-	/// <param name="dir"></param>
-	/// <returns></returns>
-	/*public int GetConnectionFromDir(int dir) {
-		if (tempConn[dir] >= 0) {
-			return tempConn[dir];
-		} else {
-			return defaultConn[dir];
-		}
-	}*/
 
 	// basic constructor
 	public Node() {
@@ -205,80 +133,5 @@ public class Node {
 			hasEnter, hasLeave, enter, leave);
 		return newNode;
 	}
-
-	/*
-	/// <summary>
-	/// Returns a list of all nodes that a node is connected to in the given direction
-	/// </summary>
-	/// <param name="dir"></param>
-	/// <returns></returns>
-	public List<Node> GetFullStackConnectionsFromDir(Direction dir) {
-		List<Node> ns = new List<Node>();
-		
-		ConnectionSet[] conns = connectionList.ToArray();
-		Array.Reverse(conns);
-		foreach (ConnectionSet set in conns) {
-			//if (set[dir] != null) {
-			if (set[dir] != -1) {
-					Node n = GameManager.gameplay.map[(int)set[dir]];
-				if (ns.Contains(n) == false)
-					ns.Add(n);
-			}
-		}
-		return ns;
-	}*/
-	/*
-	/// <summary>
-	/// lists the nodes that a node is connected to in each direction
-	/// </summary>
-	[System.Serializable]
-	public class ConnectionSet {
-		public int north = -1;
-		public int south = -1;
-		public int east = -1;
-		public int west = -1;
-
-		//public int? this[Direction dir] {
-		public int this[Direction dir] {
-			get {
-				switch (dir) {
-					case Direction.North:
-						return north;
-					case Direction.South:
-						return south;
-					case Direction.West:
-						return west;
-					case Direction.East:
-						return east;
-				}
-				return east;
-			}
-			set {
-				switch (dir) {
-					case Direction.North:
-						north = value;
-						break;
-					case Direction.South:
-						south = value;
-						break;
-					case Direction.West:
-						west = value;
-						break;
-					case Direction.East:
-						east = value;
-						break;
-				}
-			}
-		}
-
-		public ConnectionSet Copy() {
-			ConnectionSet newSet = new ConnectionSet();
-			newSet.north = north;
-			newSet.south = south;
-			newSet.east = east;
-			newSet.west = west;
-			return newSet;
-		}
-	}*/
 
 }

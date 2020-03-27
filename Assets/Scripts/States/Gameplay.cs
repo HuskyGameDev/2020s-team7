@@ -12,6 +12,8 @@ public class Gameplay : IState {
 	public UnityEngine.UI.Text stringrem;
 	public GameObject wintext;
 	public GameObject winSound; // object that FMOD event emmitter is attached to, set to trigger when made active
+	public Image signImage;	// used to change background image of sign
+	public Text signText;	// used to change text of sign
 
 	#region Initialize Variables
 	bool animLockout = false;
@@ -20,7 +22,7 @@ public class Gameplay : IState {
 	public bool hasBall = true;
 	public int curdir = 0;
 	public int stringLeft = 21;
-    
+    public bool pitWalk = false;	// for use when editing levels. Allows walking over unwalkable-type tiles.
 	
 	public float moveAnimSpeed = 0.25f;
 	public float youWinScreenTimeout = 1.0f;
@@ -61,9 +63,8 @@ public class Gameplay : IState {
 		//GameManager.uiObject.SetActive(false);	//not strictly needed, but makes it easy to make sure no menu stuff is visible
 		if (!(oldstate is PauseMenu)) {
 			nonEuclidRenderer.initialize();
-			//Make sure the level is set to be the beginning of the level
+			//Make sure the level is set to be the beginning of the level, set UI text
 			resetLevelAssets();
-			setUItext(true);
 		}
 	}
 
@@ -130,21 +131,18 @@ public class Gameplay : IState {
 				if (hasBall && (currentPosition.hasLeave || (currentPosition.type != Node.TileType.source && !currentPosition.hasLeave && !currentPosition.hasEnter))) {
 					hasBall = false;
 				}
-				//if (currentPosition.GetConnectionFromDir(dir) >= 0) {
 				if (currentPosition[(int)dir] >= 0) {
-					//otherNode = map[(int)currentPosition.GetConnectionFromDir(dir)];
 					otherNode = map[currentPosition[(int)dir]];
 					//See if the other node has a leave
-					//canMove = (otherNode.data.hasLeave == false && stringLeft > 0) || (otherNode.data.hasLeave && otherNode.data.leave.inverse() == dir || !hasBall);
 					canMove = (
 						(
-							(!otherNode.hasLeave && !otherNode.hasEnter && stringLeft > 0) || (
-								otherNode.hasLeave && otherNode.leave.inverse() == dir && 
-								currentPosition.hasEnter && currentPosition.enter == dir
-							) || 
-							!hasBall) &&
-						!map.disjoint(currentPosition, dir)
-						);  // && (otherNode.type != Node.TileType.unwalkable || editmode)
+							(!otherNode.hasLeave && !otherNode.hasEnter && stringLeft > 0) || (	// can't carry string onto tiles if it already has string on it
+								otherNode.hasLeave && otherNode.leave.inverse() == dir &&	// unless you are rolling up the string
+								currentPosition.hasEnter && currentPosition.enter == dir) || 
+							!hasBall) &&	// this stuff about string doesn't matter if you are not carrying string
+						!map.disjoint(currentPosition, dir) &&	// can't walk through one-ways if it would sever the string
+						(otherNode.type != Node.TileType.unwalkable || pitWalk)	// can't walk over pits, unless leveleditor "walk over pits" setting is set
+						);
 				}
 				if (cinimaticMode && Input.GetKey(KeyCode.Space)) canMove = false;
 				animLockout = true;
@@ -157,19 +155,14 @@ public class Gameplay : IState {
 						//Handle fake connection stacking
 						{
 							//If the connection from this node to the other is one-way
-							//if (otherNode.GetConnectionFromDir(dir.inverse()) != currentPosition.index) {
 							if (otherNode[(int)dir.inverse()] != currentPosition.index) {
-								//We need to do a connection stacking
-								//Node.ConnectionSet newSet = otherNode.connections.Copy();
-								//newSet[dir.inverse()] = currentPosition.index;
-								//otherNode.AddToConnectionStack(newSet);
+								// temp override connection to that node
 								otherNode[(int)dir.inverse()] = currentPosition.index;
 							}
 						}
 
 						if (hasBall) {
 							//Tag the current square with line exit dir
-							//if (otherNode.data.hasLeave == false) {
 							if(!otherNode.hasLeave) {
 								currentPosition.leave = dir;
 								currentPosition.hasLeave = true;
@@ -198,7 +191,7 @@ public class Gameplay : IState {
 					#endif
 						nonEuclidRenderer.HandleRender(dir, currentPosition);
 						animLockout = false;
-						setUItext();
+						setUItext();	// apply changes to UI text: string left, checkpoints.
 
 						if (map.winConditions()) {
 							winTrigger = true;
@@ -221,8 +214,11 @@ public class Gameplay : IState {
 		}
 	}
 
+	/// <summary>
+	/// set UI text: string left and checkpoints if applicable
+	/// </summary>
+	/// <param name="setup"></param>
 	public void setUItext(bool setup = false) {
-		//stringrem.text = stringLeft + "/" + map.stringleft.ToString();
 		stringrem.text = String.Format("{0}/{1}", stringLeft, map.stringleft);
 		if (map.checkpoints.Length > 0) {
 			if (setup) checkpointsText.transform.parent.gameObject.SetActive(true);
@@ -264,7 +260,7 @@ public class Gameplay : IState {
 			
 		}
 		nonEuclidRenderer.HandleRender(GameManager.Direction.East, currentPosition, false);
-		//setUItext(true);
+		setUItext(true);	// if resetting level stuff, also update UI text
 	}
 
 }

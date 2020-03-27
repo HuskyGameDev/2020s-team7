@@ -30,7 +30,7 @@ public class EditLevelEditor : Editor {
 			((EditLevel)target).loadLevelByName();
 		}
 		GUILayout.EndHorizontal();
-		if (GUILayout.Button("Load & Update Map Version")) {
+		if (GUILayout.Button("Load & Update Map Version")) {	// load old map version, call method that converts to new map type that uses the new node type
 			((EditLevel)target).updateMapVer();
 		}
 		GUILayout.BeginHorizontal();
@@ -101,7 +101,7 @@ public class EditLevelEditor : Editor {
 		if (GUILayout.Button("Redraw Enviroment")) {
 			((EditLevel)target).redraw();
 		}
-		if (GUILayout.Button("redo corner visibility")) {
+		if (GUILayout.Button("redo corner visibility")) {	// re-calculate the visibility of corners.
 			((EditLevel)target).updateCornerDrawing();
 		}
 		GUILayout.EndHorizontal();
@@ -109,9 +109,19 @@ public class EditLevelEditor : Editor {
 
 		// buttons & variables for changes to the current node
 		GUILayout.BeginHorizontal();
+		GUILayout.BeginVertical();
 		if (GUILayout.Button("Apply changes to node")) {
 		    ((EditLevel)target).applyToNode();
 	    }
+		if (GameManager.istates[(int)GameManager.IStateType.gameplay] != null) {
+			((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).pitWalk = // toggle ability to walk over pits
+				GUILayout.Toggle(
+					((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).pitWalk, 
+					"Toggle ignore pits");
+		} else {
+			GUILayout.Toggle(false, "Toggle ignore pits");	// prevent null-reference exception in editor
+		}
+		GUILayout.EndVertical();
 		GUILayout.BeginVertical();
 		if (GUILayout.Button("Sample node appearance")) {
 			((EditLevel)target).sampleTile();
