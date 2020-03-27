@@ -46,11 +46,41 @@ public class RenderTile : MonoBehaviour {
 			else
 				lineCenter.gameObject.SetActive(false);
 
-			for (i = 0; i < 4; i++) {	// set corners visible/not visible according to node corner visibility data.
-				if (node.drawCorner[i]) {
+			// should evaluate to an array of size 2 for tiles on the cardinal directions, 4 for the middle tile, or 1 otherwise
+			// add the directions that need to be checked to the array
+			// Directions to be check are based on tile location in relation to the center tile
+			// North correspondes to upper-right, east to lower-right, south to lower-left, and west to upper-left.
+			//    Center tile is checked in upper-right, lower-right, lower-left, upper-right directions,
+			//    Tile on the cardinal directions are checked in the two directions pointeed away from the center tile, 
+			//    and all other tile are checked in the main direction that points away from the center tile
+			Direction[] checkDirection = new Direction[((position.Value.x == 2) ? 2 : 1) * ((position.Value.y == 2) ? 2 : 1)];
+			i = 0;
+			if (position.Value.x <= 2) {
+				if (position.Value.y <= 2) {
+					checkDirection[i] = Direction.South;
+					i++;
+				}
+				if (position.Value.y >= 2) {
+					checkDirection[i] = Direction.West;
+					i++;
+				}
+			}
+			if (position.Value.x >= 2) {
+				if (position.Value.y >= 2) {
+					checkDirection[i] = Direction.North;
+					i++;
+				}
+				if (position.Value.y <= 2) {
+					checkDirection[i] = Direction.East;
+				}
+			}
+			// now in each of the given directions, it checks the nodes that can be reached clockwise and counter cockwise in each direction. 
+			// If nodes reached clockwise/counter-clockwise do not match or are null, the corner in that direction is set visible, otherwise that corner is set non-visible.
+			foreach (Direction d in checkDirection) {
+				if (node.drawCorner[(int)d]) {
 					GameManager.gameplay.nonEuclidRenderer.cornerMaskMap[
-						position.Value.x + ((i < 2) ? 1 : 0),
-						position.Value.y + (((i % 3) == 0) ? 1 : 0)
+						position.Value.x + (((int)d < 2) ? 1 : 0),
+						position.Value.y + ((((int)d % 3) == 0) ? 1 : 0)
 						].setCornerFromDir(true, dir.Value);
 				}
 			}
