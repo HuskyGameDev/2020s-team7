@@ -88322,11 +88322,14 @@ MonoBehaviour:
   stringrem: {fileID: 2146562671}
   wintext: {fileID: 1453426955}
   winSound: {fileID: 442908677}
+  signImage: {fileID: 0}
+  signText: {fileID: 0}
   winTrigger: 0
   cinimaticMode: 0
   hasBall: 1
   curdir: 0
   stringLeft: 21
+  pitWalk: 0
   moveAnimSpeed: 0.25
   youWinScreenTimeout: 7
   map:
@@ -125340,7 +125343,7 @@ Transform:
   m_GameObject: {fileID: 2074803749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 519420030}
   - {fileID: 442908678}
