@@ -93,7 +93,7 @@ public static class LevelEditor_2 {
 					if (valid) {    // if none of the given empty tile coords were found to match current tile coords, create this tile
 						int index = room.size;
 						//Debug.Log("Creating tile \"" + index + "\" [" + i + ", " + j + "]");
-						chunk[i, j] = new Node(index, color, GameManager.instance.spriteBook[0]);
+						chunk[i, j] = new Node(index, color, "Floor_Rock"); //GameManager.instance.spriteBook[0]);
 						room[index] = chunk[i, j];
 					}
 				}
@@ -104,7 +104,7 @@ public static class LevelEditor_2 {
 				for (int j = 0; j < height; j++) {
 					int index = room.size;
 					//Debug.Log("Creating tile \"" + index + "\" [" + i + ", " + j + "]");
-					chunk[i, j] = new Node(index, color, GameManager.instance.spriteBook[0]);
+					chunk[i, j] = new Node(index, color, "Floor_Rock"); //GameManager.instance.spriteBook[0]);
 					room[index] = chunk[i, j];
 				}
 			}

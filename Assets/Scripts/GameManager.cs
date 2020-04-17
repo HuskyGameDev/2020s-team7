@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour {
 
@@ -20,7 +21,9 @@ public class GameManager : MonoBehaviour {
 
 	public static SettingsObj settings;	// the current settings
 	public static SaveObj saveGame; // the current save info
-	
+
+	public static EventSystem eventSystem;
+
 	//public FMOD.studio.bus;	// once I know what name to look-up, I can use this to effect the volume
 
 	public static int numLevels = 0;	// 0 is a placeholder, is updated by levelSelector when it instantiates its buttons
@@ -29,7 +32,13 @@ public class GameManager : MonoBehaviour {
 	private static IState currentstate; // current Istate. this istate's _update() is called every update, every other istate's _update() is not
 
 	//public Sprite[] spriteBook;
-	public string[] spriteBook;	// should really be changed.
+	[SerializeField]
+	private Sprite[] _spriteBook;
+	public static Sprite[] spriteBook; // should really be changed.
+	[SerializeField]
+	private Sprite _errorSprite;
+	public static Sprite errorSprite;
+	public static Dictionary<string, int> spriteIndex = new Dictionary<string, int>(); 
 	#endregion
 
 	public void Awake() {
@@ -67,10 +76,24 @@ public class GameManager : MonoBehaviour {
 		} else {
 			Debug.Log("Error: No ConfirmMenu object is exists");
 		}
-		for (int i = 1; i < conList.Length; i++) DestroyImmediate(conList[i].gameObject);	// destroy extras
+		for (int i = 1; i < conList.Length; i++) DestroyImmediate(conList[i].gameObject);   // destroy extras
 
-		
+
 		#endregion
+
+		//settup spritebook & index
+		spriteBook = _spriteBook;
+		errorSprite = _errorSprite;
+		for (int s = 0; s < spriteBook.Length; s++) {
+			if (spriteBook[s] != null) {
+				Debug.Log("Trying to add sprite " + spriteBook[s].name + " to sprite index");
+				if (!spriteIndex.ContainsKey(spriteBook[s].name)) {
+					spriteIndex.Add(spriteBook[s].name, s);
+				} else {
+					throw new System.Exception("Error: sprite with name" + spriteBook[s].name + " present in spritebook more than once");
+				}
+			}
+		}
 
 		// load settings stuff, and apply them.
 		if (SettingsObj.settingsExists()) {	//load the settings if the file exists
@@ -102,7 +125,9 @@ public class GameManager : MonoBehaviour {
 			istates[(int)GameManager.IStateType.gameMenu].gameObject.SetActive(true);
 		}
 
-		InputManager.instance.LoadKeybinds();	// load keybindings
+		//InputManager.instance.LoadKeybinds();   // load keybindings
+
+		eventSystem = (EventSystem)FindObjectOfType(typeof(EventSystem));
 	}
 
 	/// <summary>
@@ -138,6 +163,9 @@ public class GameManager : MonoBehaviour {
 		//Calls the 'update' of the current state
 		if (currentstate != null) {
 			currentstate._Update();
+			if (GameManager.eventSystem.currentSelectedGameObject == null) {
+				currentstate.resetSelected();
+			}
 		} else {
 			Debug.Log("currentState is null");
 		}
@@ -145,8 +173,10 @@ public class GameManager : MonoBehaviour {
 
 	public static void changeState(IState g, IState p)
     {
+		
 		//Changes the state to 'g' and deactivates 'p' if not null
 		if (g != null) {
+			//Debug.Log("GameManagerManager: Switching to " + g._stateType.ToString());
 			g.gameObject.SetActive(true);   // set active first, so Istate can overrride it in it's _StartState method if needed.
 			g.StartState(p);	// do general things, and also things that are specific depending on the old state
 		}
@@ -159,5 +189,12 @@ public class GameManager : MonoBehaviour {
 
 	public static IState getCurrentState() { return currentstate; }	// accesor for private variable
 
-
+	public static Sprite getSprite(string name) {
+		if (spriteIndex.ContainsKey(name)) {
+			return spriteBook[spriteIndex[name]];
+		} else {
+			return errorSprite;
+		}
+		
+	}
 }

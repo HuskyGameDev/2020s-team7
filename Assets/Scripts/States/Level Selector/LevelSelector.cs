@@ -40,10 +40,12 @@ public class LevelSelector : IState {
 			Debug.Log("Error: can select levels");
 		} else {	// if save exists, set the savename and number-of-levels-unlocked text, as well as activating only buttoons for unlocked levels
 			int count = 0;
+			firstSelected = levelButtons[0];
 			for (int i = 0; i < levelButtons.Length; i++) {
 				if (GameManager.saveGame.canAccess(i)) {
 					count++;
 					levelButtons[i].gameObject.SetActive(true);
+					//firstSelected = levelButtons[i];
 					//levelButtons[i].interactable = true;
 				} else {
 					levelButtons[i].gameObject.SetActive(false);
@@ -51,6 +53,7 @@ public class LevelSelector : IState {
 				}
 			}
 			levelButtons[0].gameObject.SetActive(true);
+			//resetSelected();
 
 			slotNameText.text = GameManager.saveGame.slotName;
 			numUnlockedText.text = count + "/" + GameManager.numLevels;
@@ -82,7 +85,8 @@ public class LevelSelector : IState {
 			levelButtons[i].GetComponent<LevelButtonScript>().index = i;	// set index for this button
 		}
 		GameManager.numLevels = levelButtons.Length;	// set number of levels that exist in the game manager
-		levelButtons[0].gameObject.SetActive(true);	// make sure level 0 is always accessible. 
+		levelButtons[0].gameObject.SetActive(true); // make sure level 0 is always accessible. 
+		firstSelected = levelButtons[0];
 	}
 
 	/// <summary>

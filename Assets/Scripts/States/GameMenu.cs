@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameMenu : IState {
 	//public int numLevels = 22;
@@ -8,6 +9,7 @@ public class GameMenu : IState {
 	public UnityEngine.UI.Text slotNameText;
 	public UnityEngine.UI.Button resumeButton;	// buttons for resume and level select. Disabled if no save is currently selected
 	public UnityEngine.UI.Button levelSelectButton;
+	public UnityEngine.UI.Button newGameButton;
 	private LevelSelector levelSelector;    // local reference to levelSelector, setup in _initialize()
 
 	public override GameManager.IStateType _stateType {
@@ -26,6 +28,7 @@ public class GameMenu : IState {
 			numUnlockedText.text = "~/" + GameManager.numLevels;
 			resumeButton.interactable = false;	// set buttons unusable
 			levelSelectButton.interactable = false;
+			firstSelected = newGameButton;
 		} else {
 			slotNameText.text = GameManager.saveGame.slotName;
 			int count = 0;
@@ -35,7 +38,9 @@ public class GameMenu : IState {
 			numUnlockedText.text = count + "/" + GameManager.numLevels;
 			resumeButton.interactable = true;	// set buttons accesible
 			levelSelectButton.interactable = true;
+			firstSelected = resumeButton;
 		}
+		//resetSelected();
 	}
 
 	protected override void _EndState(IState newstate) {
