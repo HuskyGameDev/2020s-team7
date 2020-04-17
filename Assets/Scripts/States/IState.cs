@@ -11,7 +11,7 @@ public abstract class IState : MonoBehaviour {
      * They also have a start state method and end state method
     */
 	[SerializeField]
-	protected Selectable firstSelected;
+	protected Selectable firstSelected;	// button to be selected by default for UI navigation purposes
 	//protected EventSystem eventSystem;
 
 	protected int dialogReturnVal = -1; // value returned by confirmMenu, -1 or unassigned values indicate a negative/neutral, 
@@ -35,7 +35,7 @@ public abstract class IState : MonoBehaviour {
 	public void StartState(IState oldState) {
 		this.setInteractible(true); // turn on interactible UI stuff, and call specific startState method
 		_StartState(oldState);
-		resetSelected();
+		resetSelected();	// make the default selected button selected
 	}
 	protected abstract void _StartState(IState oldState);  // called when switching to a state. Gets old state as arguement, so can do things depending on the type
 
@@ -53,6 +53,9 @@ public abstract class IState : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Sets the default selected button as selected
+	/// </summary>
 	public void resetSelected(){
 		if (!EventSystem.current.alreadySelecting && firstSelected != null)
 			EventSystem.current.SetSelectedGameObject(firstSelected.gameObject);
@@ -60,10 +63,5 @@ public abstract class IState : MonoBehaviour {
 
 	public void onClick(IState g) {	// makes it easy to switch from this state to amother using untiy UI buttons
 		GameManager.changeState(g, this);
-		/*if (!g.Equals(GameManager.istates[(int)GameManager.IStateType.gameplay])) {
-			GameManager.changeState(g, this);
-			this.gameObject.SetActive(false);
-			GameManager.istates[(int)GameManager.IStateType.gameplay].gameObject.SetActive(false);
-		}*/
 	}
 }

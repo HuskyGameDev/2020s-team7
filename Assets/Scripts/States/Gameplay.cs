@@ -131,7 +131,7 @@ public class Gameplay : IState {
 		GameManager.Direction dir = GameManager.Direction.North;
 		float ver = Input.GetAxisRaw("Vertical");
 		float hor = Input.GetAxisRaw("Horizontal");
-		if (!Mathf.Approximately(ver, 0.0f) && ver > 0) {
+		if (!Mathf.Approximately(ver, 0.0f) && ver > 0) {	// if multiple axis are active, choose only one, with priority N > E > S > W
 			directionInput = true;
 		} else if (!Mathf.Approximately(hor, 0.0f) && hor > 0) {
 			dir = GameManager.Direction.East;
@@ -145,7 +145,7 @@ public class Gameplay : IState {
 		}
 
 		//if (InputManager.instance.OnInput((InputManager.Action)i)) {
-		if (directionInput) {
+		if (directionInput) {	// only go into if a direction input occured
 			bool canMove = false;
 			Node otherNode = null;
 			//curdir = i;

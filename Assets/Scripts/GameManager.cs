@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 	public static SettingsObj settings;	// the current settings
 	public static SaveObj saveGame; // the current save info
 
-	public static EventSystem eventSystem;
+	public static EventSystem eventSystem;	// used for checking if the currentSelectedObject of the UI navigation is null
 
 	//public FMOD.studio.bus;	// once I know what name to look-up, I can use this to effect the volume
 
@@ -33,10 +33,10 @@ public class GameManager : MonoBehaviour {
 
 	//public Sprite[] spriteBook;
 	[SerializeField]
-	private Sprite[] _spriteBook;
-	public static Sprite[] spriteBook; // should really be changed.
+	private Sprite[] _spriteBook;   // used because unity doesn't make static variables visible in the editor
+	public static Sprite[] spriteBook;
 	[SerializeField]
-	private Sprite _errorSprite;
+	private Sprite _errorSprite;	// used because unity doesn't make static variables visible in the editor
 	public static Sprite errorSprite;
 	public static Dictionary<string, int> spriteIndex = new Dictionary<string, int>(); 
 	#endregion
@@ -82,12 +82,12 @@ public class GameManager : MonoBehaviour {
 		#endregion
 
 		//settup spritebook & index
-		spriteBook = _spriteBook;
+		spriteBook = _spriteBook;	// move info from non-static variables to static variables
 		errorSprite = _errorSprite;
-		for (int s = 0; s < spriteBook.Length; s++) {
+		for (int s = 0; s < spriteBook.Length; s++) {	// get the index and name of every sprite, so you can look them up by name
 			if (spriteBook[s] != null) {
 				Debug.Log("Trying to add sprite " + spriteBook[s].name + " to sprite index");
-				if (!spriteIndex.ContainsKey(spriteBook[s].name)) {
+				if (!spriteIndex.ContainsKey(spriteBook[s].name)) {	// don't add any duplicate names
 					spriteIndex.Add(spriteBook[s].name, s);
 				} else {
 					throw new System.Exception("Error: sprite with name" + spriteBook[s].name + " present in spritebook more than once");
@@ -189,11 +189,17 @@ public class GameManager : MonoBehaviour {
 
 	public static IState getCurrentState() { return currentstate; }	// accesor for private variable
 
+
+	/// <summary>
+	/// get a sprite from the spritebook by name
+	/// </summary>
+	/// <param name="name"></param>
+	/// <returns></returns>
 	public static Sprite getSprite(string name) {
 		if (spriteIndex.ContainsKey(name)) {
 			return spriteBook[spriteIndex[name]];
 		} else {
-			return errorSprite;
+			return errorSprite;	// return this if can't find name in spritebook
 		}
 		
 	}

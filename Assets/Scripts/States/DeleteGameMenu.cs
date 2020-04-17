@@ -10,7 +10,7 @@ public class DeleteGameMenu : IState {
 	public UnityEngine.UI.Text[] numUnlockedText = new UnityEngine.UI.Text[3];  // info about each of the three save slots.
 	public UnityEngine.UI.Text[] slotNameText = new UnityEngine.UI.Text[3];		// could be changed form more save slots easily.
 	public UnityEngine.UI.Button[] slotButton = new UnityEngine.UI.Button[3];
-	public UnityEngine.UI.Button returnButton;
+	public UnityEngine.UI.Button returnButton;	// used a default selected if none of the slots are valid
 
 	public override GameManager.IStateType _stateType { // override the state-enum return value
 		get { return GameManager.IStateType.deleteMenu; }
@@ -20,9 +20,8 @@ public class DeleteGameMenu : IState {
 
 	protected override void _StartState(IState oldstate) {
 		previous = oldstate;    // get previous state, so can return to it
-		firstSelected = returnButton;
+		firstSelected = returnButton;   // return button is default if none of the slots are valid
 		refresh();  // refresh which slots are selectible / info on slots
-		//resetSelected();
 	}
 
 	protected override void _EndState(IState newstate) {
@@ -59,7 +58,7 @@ public class DeleteGameMenu : IState {
 	/// update which slots are selectible and the info displayed on them
 	/// </summary>
 	public void refresh() {
-		for (int i = 2; i >= 0; i--) {   // for each save:
+		for (int i = 2; i >= 0; i--) {   // for each save: (reverse order, so first valid slot is set at selected)
 			if (SaveObj.SaveExists(i+1)) {	// if exists, set name and number-unlocked to match info in save, and make button interactible
 				SaveObj save = SaveObj.LoadGame(i+1);
 				slotNameText[i].text = save.slotName;
@@ -69,7 +68,7 @@ public class DeleteGameMenu : IState {
 				}
 				numUnlockedText[i].text = count + "/" + GameManager.numLevels;
 				slotButton[i].interactable = true;
-				firstSelected = slotButton[i];
+				firstSelected = slotButton[i];	// set valid slot as selected
 			} else {	// else set text to defualt and set non-interactible
 				slotNameText[i].text = "-";
 				numUnlockedText[i].text = "~/" + GameManager.numLevels;
