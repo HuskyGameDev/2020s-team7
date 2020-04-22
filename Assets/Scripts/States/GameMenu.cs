@@ -21,6 +21,7 @@ public class GameMenu : IState {
 	}
 
 	protected override void _StartState(IState oldstate) {
+		this.gameObject.SetActive(true);
 		if (GameManager.settings.saveNum < 1 ||		// set up save slot info display
 				GameManager.settings.saveNum > 3 || 
 				!SaveObj.SaveExists(GameManager.settings.saveNum)) {
@@ -40,10 +41,6 @@ public class GameMenu : IState {
 			levelSelectButton.interactable = true;
 			firstSelected = resumeButton;	// set as default selected button
 		}
-	}
-
-	protected override void _EndState(IState newstate) {
-		//Debug.Log("SaveMenu does not do anything in its _EndState() method");
 	}
 
 	public override void _Update() { }

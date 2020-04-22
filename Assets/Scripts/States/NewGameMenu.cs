@@ -20,6 +20,7 @@ public class NewGameMenu : IState {
 	}
 
 	protected override void _StartState(IState oldstate) {
+		this.gameObject.SetActive(true);
 		firstSelected = returnButton;
 		for (int i = 2; i >= 0; i--) {   // for each potential save:
 			if (SaveObj.SaveExists(i+1)) {  // if exists, set name and number-unlocked to match info in save, and make button non-interactible
@@ -39,9 +40,6 @@ public class NewGameMenu : IState {
 			}
 		}
 		//resetSelected();
-	}
-
-	protected override void _EndState(IState newstate) {
 	}
 
 	public override void _Update() {

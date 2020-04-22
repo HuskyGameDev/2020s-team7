@@ -8,7 +8,7 @@ public class RenderTile : MonoBehaviour {
 	public SpriteRenderer[] walls = new SpriteRenderer[4];
 	public SpriteRenderer floor;
 	public SpriteRenderer[] lines = new SpriteRenderer[4];
-	public SpriteRenderer lineCenter;
+	//public SpriteRenderer lineCenter;
 	public SpriteRenderer[] debris = new SpriteRenderer[9];
 
 	private static Vector2Int center = new Vector2Int(2,2);
@@ -19,7 +19,7 @@ public class RenderTile : MonoBehaviour {
 			return new SpriteRenderer[] {
 				corners, walls[0], walls[1], walls[2], walls[3],
 				floor,
-				lines[0], lines[1], lines[2], lines[3], lineCenter,
+				lines[0], lines[1], lines[2], lines[3], /*lineCenter,*/
 				debris[0], debris[1], debris[2], debris[3], debris[4],
 				debris[5], debris[6], debris[7], debris[8]
 			};
@@ -41,10 +41,10 @@ public class RenderTile : MonoBehaviour {
                 SetLineFromDir(node.leave, true);
 
 				// set line/string center visible as appropriate
-			if (node.hasEnter && node.hasLeave && node.enter.inverse() == node.leave)
+			/*if (node.hasEnter && node.hasLeave && node.enter.inverse() == node.leave)
 				lineCenter.gameObject.SetActive(true);
 			else
-				lineCenter.gameObject.SetActive(false);
+				lineCenter.gameObject.SetActive(false);*/
 
 			// should evaluate to an array of size 2 for tiles on the cardinal directions, 4 for the middle tile, or 1 otherwise
 			// add the directions that need to be checked to the array
@@ -163,7 +163,7 @@ public class RenderTile : MonoBehaviour {
 				for (int j = 0; j < lines.Length; j++) {
 					lines[j].color = grayish;
 				}
-				lineCenter.color = grayish;
+				//lineCenter.color = grayish;
 			} else {	// if not grayed-out, set all colors as normal
 				floor.color = node.colorF;
 				for (int j = 0; j < walls.Length; j++) {
@@ -176,7 +176,7 @@ public class RenderTile : MonoBehaviour {
 				for (int j = 0; j < lines.Length; j++) {
 					lines[j].color = Color.white;
 				}
-				lineCenter.color = Color.white;
+				//lineCenter.color = Color.white;
 			}
 
 			//set debris visible is it exists

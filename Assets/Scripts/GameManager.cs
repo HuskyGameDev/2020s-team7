@@ -178,11 +178,11 @@ public class GameManager : MonoBehaviour {
 		//Changes the state to 'g' and deactivates 'p' if not null
 		if (g != null) {
 			//Debug.Log("GameManagerManager: Switching to " + g._stateType.ToString());
-			g.gameObject.SetActive(true);   // set active first, so Istate can overrride it in it's _StartState method if needed.
+			//g.gameObject.SetActive(true);   // set active first, so Istate can overrride it in it's _StartState method if needed.
 			g.StartState(p);	// do general things, and also things that are specific depending on the old state
 		}
 		if (p != null) {
-			p.gameObject.SetActive(false);   // set inactive first, so Istate can overrride it in it's _EndState method if needed.
+			//p.gameObject.SetActive(false);   // set inactive first, so Istate can overrride it in it's _EndState method if needed.
 			p.EndState(g); // do general things, and also things that are specific depending on the new state
 		}
 		currentstate = g;

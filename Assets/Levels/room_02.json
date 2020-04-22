@@ -2,11 +2,11 @@
     "version": 1,
     "defaultPosition": 0,
     "sourceNodeIndex": 0,
-    "targetNodeIndex": 12,
-    "_size": 15,
-    "arraySize": 15,
+    "targetNodeIndex": 13,
+    "_size": 16,
+    "arraySize": 16,
     "checkpoints": [],
-    "stringleft": 14,
+    "stringleft": 6,
     "nodes": [
         {
             "index": 0,
@@ -36,11 +36,10 @@
                 ""
             ],
             "type": 1,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
-                3,
+                2,
                 1,
                 -1
             ],
@@ -59,7 +58,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 1
+            "leave": 2
         },
         {
             "index": 1,
@@ -89,64 +88,10 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 0,
-                4,
-                2,
-                -1
-            ],
-            "tempConn": [
-                -1,
-                -1,
-                -1,
-                -1
-            ],
-            "drawCorner": [
-                false,
-                false,
-                true,
-                true
-            ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 1,
-            "leave": 2
-        },
-        {
-            "index": 2,
-            "colorF": {
-                "r": 197,
-                "g": 191,
-                "b": 133,
-                "a": 255
-            },
-            "colorW": {
-                "r": 99,
-                "g": 111,
-                "b": 83,
-                "a": 255
-            },
-            "floorSprite": "Rock",
-            "wallSprite": "rock",
-            "debris": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-            ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
-            "defaultConn": [
-                1,
-                5,
+                3,
                 -1,
                 -1
             ],
@@ -165,10 +110,10 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 1
+            "leave": 2
         },
         {
-            "index": 3,
+            "index": 2,
             "colorF": {
                 "r": 197,
                 "g": 191,
@@ -194,13 +139,12 @@
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": true,
-            "signMessage": "My hypothesis was correct! Placing the orb found inside of the ball of string in the indent caused me to be teleported much like when I was first brought here. This new room looks similar to the last, only with a different layout. Is this another puzzle? How many can there be? And why? I must find out!",
+            "type": 4,
+            "signMessage": "Frustratingly, I was not able to analyze the sphere. When I approached the symbol, I was teleported to this room. At the same time, I found what looked like a ball of string in my right hand. Curious. How did it get there? Did someone give it to me? Do I have consciousness during teleportation that my mind in a stable dimension cannot comprehend?",
             "defaultConn": [
                 -1,
-                6,
-                4,
+                5,
+                3,
                 0
             ],
             "tempConn": [
@@ -219,6 +163,58 @@
             "hasLeave": false,
             "enter": 3,
             "leave": 1
+        },
+        {
+            "index": 3,
+            "colorF": {
+                "r": 197,
+                "g": 191,
+                "b": 133,
+                "a": 255
+            },
+            "colorW": {
+                "r": 99,
+                "g": 111,
+                "b": 83,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "signMessage": "",
+            "defaultConn": [
+                2,
+                6,
+                4,
+                1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 3
         },
         {
             "index": 4,
@@ -248,13 +244,12 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 3,
                 7,
-                5,
-                1
+                -1,
+                -1
             ],
             "tempConn": [
                 -1,
@@ -264,14 +259,14 @@
             ],
             "drawCorner": [
                 false,
-                false,
-                false,
-                false
+                true,
+                true,
+                true
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 1,
-            "leave": 3
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 5,
@@ -301,12 +296,11 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                4,
-                8,
                 -1,
+                8,
+                6,
                 2
             ],
             "tempConn": [
@@ -316,10 +310,10 @@
                 -1
             ],
             "drawCorner": [
+                true,
                 false,
-                true,
-                true,
-                false
+                false,
+                true
             ],
             "hasEnter": false,
             "hasLeave": false,
@@ -354,10 +348,9 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                -1,
+                5,
                 9,
                 7,
                 3
@@ -369,15 +362,15 @@
                 -1
             ],
             "drawCorner": [
-                true,
                 false,
                 false,
-                true
+                false,
+                false
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 3,
-            "leave": 1
+            "enter": 1,
+            "leave": 3
         },
         {
             "index": 7,
@@ -407,12 +400,11 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 6,
                 10,
-                8,
+                14,
                 4
             ],
             "tempConn": [
@@ -424,13 +416,13 @@
             "drawCorner": [
                 false,
                 false,
-                false,
+                true,
                 false
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 1,
-            "leave": 3
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 8,
@@ -460,12 +452,11 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                7,
-                11,
                 -1,
+                11,
+                9,
                 5
             ],
             "tempConn": [
@@ -475,15 +466,15 @@
                 -1
             ],
             "drawCorner": [
+                true,
                 false,
-                true,
-                true,
-                false
+                false,
+                true
             ],
             "hasEnter": false,
             "hasLeave": false,
             "enter": 3,
-            "leave": 1
+            "leave": 2
         },
         {
             "index": 9,
@@ -513,10 +504,9 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                -1,
+                8,
                 12,
                 10,
                 6
@@ -528,15 +518,15 @@
                 -1
             ],
             "drawCorner": [
-                true,
                 false,
                 false,
-                true
+                false,
+                false
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 3,
-            "leave": 2
+            "enter": 0,
+            "leave": 1
         },
         {
             "index": 10,
@@ -559,19 +549,18 @@
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_2",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "Ah! As one would expect, the ball of string unwinds as I walk around. However, rather than unspooled thread, it leaves behind the previously observed line on the ground…  After fully unspooling the “string”, I found a metallic orb, similar the one in to the last room. There is also an indent of matching size on what I hypothesize is the “target” symbol.",
             "defaultConn": [
                 9,
                 13,
-                11,
+                15,
                 7
             ],
             "tempConn": [
@@ -582,14 +571,14 @@
             ],
             "drawCorner": [
                 false,
-                false,
+                true,
                 false,
                 false
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 3
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 11,
@@ -619,12 +608,11 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                10,
-                14,
                 -1,
+                -1,
+                12,
                 8
             ],
             "tempConn": [
@@ -634,18 +622,70 @@
                 -1
             ],
             "drawCorner": [
+                true,
+                true,
                 false,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 12,
+            "colorF": {
+                "r": 197,
+                "g": 191,
+                "b": 133,
+                "a": 255
+            },
+            "colorW": {
+                "r": 99,
+                "g": 111,
+                "b": 83,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "signMessage": "",
+            "defaultConn": [
+                11,
+                -1,
+                13,
+                9
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
                 true,
                 true,
+                false,
                 false
             ],
             "hasEnter": false,
             "hasLeave": false,
             "enter": 3,
-            "leave": 1
+            "leave": 3
         },
         {
-            "index": 12,
+            "index": 13,
             "colorF": {
                 "r": 197,
                 "g": 191,
@@ -672,65 +712,11 @@
                 ""
             ],
             "type": 2,
-            "hasSign": false,
             "signMessage": "",
-            "defaultConn": [
-                -1,
-                -1,
-                13,
-                9
-            ],
-            "tempConn": [
-                -1,
-                -1,
-                -1,
-                -1
-            ],
-            "drawCorner": [
-                true,
-                true,
-                false,
-                true
-            ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
-        },
-        {
-            "index": 13,
-            "colorF": {
-                "r": 197,
-                "g": 191,
-                "b": 133,
-                "a": 255
-            },
-            "colorW": {
-                "r": 99,
-                "g": 111,
-                "b": 83,
-                "a": 255
-            },
-            "floorSprite": "Rock",
-            "wallSprite": "rock",
-            "debris": [
-                "",
-                "",
-                "",
-                "",
-                "Deb_Page_1",
-                "",
-                "",
-                "",
-                ""
-            ],
-            "type": 0,
-            "hasSign": true,
-            "signMessage": "This new dimension appears rather strange, mostly comprised of small, confined rooms, each with their own puzzle to solve. It is as if another being made these rooms as some form of a test. More research is required before I can formulate any conclusions.",
             "defaultConn": [
                 12,
                 -1,
-                14,
+                -1,
                 10
             ],
             "tempConn": [
@@ -742,13 +728,13 @@
             "drawCorner": [
                 true,
                 true,
-                false,
+                true,
                 false
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 2,
-            "leave": 3
+            "enter": 3,
+            "leave": 0
         },
         {
             "index": 14,
@@ -778,13 +764,64 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                13,
+                7,
+                15,
+                -1,
+                -1
+            ],
+            "tempConn": [
                 -1,
                 -1,
-                11
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                false,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 0
+        },
+        {
+            "index": 15,
+            "colorF": {
+                "r": 197,
+                "g": 191,
+                "b": 133,
+                "a": 255
+            },
+            "colorW": {
+                "r": 99,
+                "g": 111,
+                "b": 83,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 0,
+            "signMessage": "",
+            "defaultConn": [
+                10,
+                -1,
+                -1,
+                14
             ],
             "tempConn": [
                 -1,
@@ -800,7 +837,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 3,
+            "enter": 0,
             "leave": 0
         }
     ]

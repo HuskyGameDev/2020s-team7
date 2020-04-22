@@ -6,7 +6,7 @@
     "_size": 15,
     "arraySize": 15,
     "checkpoints": [],
-    "stringleft": 6,
+    "stringleft": 12,
     "nodes": [
         {
             "index": 0,
@@ -36,7 +36,6 @@
                 ""
             ],
             "type": 1,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -82,15 +81,14 @@
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_1",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "My hypothesis was correct! Placing the orb into the indent caused me to be teleported much like when I was first brought here. This new room looks similar to the last, only with a different layout. How many can there be? And why? I must find out!",
             "defaultConn": [
                 0,
                 4,
@@ -142,7 +140,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 1,
@@ -195,7 +192,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -248,7 +244,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 3,
@@ -270,7 +265,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 3,
             "leave": 0
         },
         {
@@ -301,7 +296,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 4,
@@ -354,7 +348,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -377,7 +370,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 3,
-            "leave": 2
+            "leave": 1
         },
         {
             "index": 7,
@@ -407,7 +400,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 14,
@@ -429,7 +421,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 3,
             "leave": 1
         },
         {
@@ -460,7 +452,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -513,7 +504,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 8,
@@ -559,15 +549,14 @@
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_1",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "It seems that the orb can only be placed into the receptacle once all of the string is unpooled. And, frustratingly enough, the string cannot be made to overlap itself. The orb will refuse to cross over the line that it leaves behind, and at this time I possess no equipment for testing the upper limit of the resisting force.",
             "defaultConn": [
                 9,
                 13,
@@ -619,7 +608,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -672,7 +660,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 11,
@@ -725,7 +712,6 @@
                 ""
             ],
             "type": 2,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 12,
@@ -778,7 +764,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 6,

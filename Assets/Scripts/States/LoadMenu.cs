@@ -20,6 +20,7 @@ public class LoadMenu : IState {
 	}
 
 	protected override void _StartState(IState oldstate) {
+		this.gameObject.SetActive(true);
 		firstSelected = returnButton;
 		for (int i = 2; i >= 0; i--) {	// for each potential save:
 			if (SaveObj.SaveExists(i+1)) {	// if it exists, set the button active, and set the name and levels-unlocked text to the values in the save
@@ -39,9 +40,6 @@ public class LoadMenu : IState {
 			}
 		}
 		//resetSelected();
-	}
-
-	protected override void _EndState(IState newstate) {
 	}
 
 	public override void _Update() { }

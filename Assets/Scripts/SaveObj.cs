@@ -71,7 +71,7 @@ public class SaveObj {
 		Stream stream = null;
 		try {	// don't want a file I/O exception to cause issues
 			System.Runtime.Serialization.IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-			Debug.Log("Saving to File: \"" + Application.persistentDataPath + "\\Save_" + saveNum + ".txt\"");
+			//Debug.Log("Saving to File: \"" + Application.persistentDataPath + "\\Save_" + saveNum + ".txt\"");
 			stream = new FileStream(Application.persistentDataPath + "\\Save_" + saveNum + ".txt", FileMode.Create, FileAccess.Write);
 			formatter.Serialize(stream, save);
 			stream.Close();

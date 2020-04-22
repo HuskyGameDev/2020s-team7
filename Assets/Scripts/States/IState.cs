@@ -37,13 +37,17 @@ public abstract class IState : MonoBehaviour {
 		_StartState(oldState);
 		resetSelected();	// make the default selected button selected
 	}
-	protected abstract void _StartState(IState oldState);  // called when switching to a state. Gets old state as arguement, so can do things depending on the type
+	protected virtual void _StartState(IState oldState) {  // called when switching to a state. Gets old state as arguement, so can do things depending on the type
+		this.gameObject.SetActive(true);
+	}
 
 	public void EndState(IState newState) {
 		this.setInteractible(false);    // turn off interactible UI stuff, and call specific endState method
 		_EndState(newState);
 	}
-	protected abstract void _EndState(IState newState);    // called when switching away from a state. Gets new state as arguement, so can do things depending on the type
+	protected virtual void _EndState(IState newState) {    // called when switching away from a state. Gets new state as arguement, so can do things depending on the type
+		this.gameObject.SetActive(false);
+	}
 
 	public abstract void _RespondToConfirm(int retVal, string retString);	// called by the confirmMenu on whatever set-up the confirm menu
 

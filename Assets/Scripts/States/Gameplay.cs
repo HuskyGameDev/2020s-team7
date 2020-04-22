@@ -69,7 +69,7 @@ public class Gameplay : IState {
 	}
 
 	protected override void _StartState(IState oldstate) {
-		//GameManager.uiObject.SetActive(false);	//not strictly needed, but makes it easy to make sure no menu stuff is visible
+		this.gameObject.SetActive(true);
 		if (!(oldstate is PauseMenu)) {
 			nonEuclidRenderer.initialize();
 			//Make sure the level is set to be the beginning of the level, set UI text
@@ -78,9 +78,8 @@ public class Gameplay : IState {
 	}
 
 	protected override void _EndState(IState newstate) {
-		//GameManager.uiObject.SetActive(true);	// set menu stuff active
-		if (newstate is PauseMenu) {    // if new state is pause menu, set this as background, and keep active
-			this.gameObject.SetActive(true);
+		if (!(newstate is PauseMenu)) {    // if new state is pause menu, set this as background, and but keep visible
+			this.gameObject.SetActive(false); // otherwise, hide 
 		}
 	}
 
@@ -91,7 +90,8 @@ public class Gameplay : IState {
 		//Player interaction objects
 		//if (InputManager.instance.OnInputDown(InputManager.Action.action)) {
 		if (Input.GetButtonDown("Action")) {
-			if (currentPosition.hasSign/* && curdir == 0*/) {
+			//if (currentPosition.hasSign/* && curdir == 0*/) {
+			if (currentPosition.type == Node.TileType.sign/* && curdir == 0*/) {
 				//Player reads a sign
 				///////// make sign visible/not visible
 				signText.text = currentPosition.signMessage;
@@ -102,7 +102,9 @@ public class Gameplay : IState {
 					//Player drops the ball
 					hasBall = false;
 					//} else if ((currentPosition.data.hasEnter && !currentPosition.data.hasLeave) || stringLeft == map.stringleft && currentPosition.type == Node.TileType.source) {
-				} else if ((currentPosition.hasEnter && !currentPosition.hasLeave) || stringLeft == map.stringleft && currentPosition.type == Node.TileType.source) {
+				} else if (
+					(currentPosition.hasEnter && !currentPosition.hasLeave) || 
+					stringLeft >= map.stringleft && currentPosition.type == Node.TileType.source) {
 					//Player pick up the ball
 					hasBall = true;
 				}
@@ -243,9 +245,10 @@ public class Gameplay : IState {
 			levelSelector.unlockLevel();    // unlocks next level
 			GameManager.saveGame.levelNumber++; // advance last level visited, so will auto-load next level
 			SaveObj.SaveGame(GameManager.settings.saveNum, GameManager.saveGame);   // save changes to levels accessible and last-level-visited
-			Debug.Log("You win!");
+			//Debug.Log("You win!");
 		}
-		if (currentPosition.hasSign && !signsVisited.Contains(currentPosition.index)) {
+		//if (currentPosition.hasSign && !signsVisited.Contains(currentPosition.index)) {
+		if (currentPosition.type == Node.TileType.sign && !signsVisited.Contains(currentPosition.index)) {
 			signsVisited.Add(currentPosition.index);
 			signText.text = currentPosition.signMessage;
 			signImage.gameObject.SetActive(true);
@@ -282,6 +285,7 @@ public class Gameplay : IState {
 		winSound.SetActive(false);  // set inactive, so can be triggered again.
 		youWinScreenTimeout = 1.0f;
 		signsVisited.Clear();
+		CharacterAnimator.instance.resetPos();
 
 		//Send the player back to the starting point
 		currentPosition = map[map.sourceNodeIndex];

@@ -19,12 +19,10 @@ public class DeleteGameMenu : IState {
 	protected override void _initialize() { }
 
 	protected override void _StartState(IState oldstate) {
+		this.gameObject.SetActive(true);
 		previous = oldstate;    // get previous state, so can return to it
 		firstSelected = returnButton;   // return button is default if none of the slots are valid
 		refresh();  // refresh which slots are selectible / info on slots
-	}
-
-	protected override void _EndState(IState newstate) {
 	}
 
 	public override void _Update() {

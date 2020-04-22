@@ -22,12 +22,12 @@ public class LevelMap {
     public int[] checkpoints;
     public int stringleft = 21;
     public bool winConditions() {
-        if (!(GameManager.gameplay.currentPosition.type == Node.TileType.target) || !GameManager.gameplay.hasBall)
-        {
+		//if (!(GameManager.gameplay.currentPosition.type == Node.TileType.target) || !GameManager.gameplay.hasBall)
+		if ((GameManager.gameplay.currentPosition.type != Node.TileType.target) || 
+			(!GameManager.gameplay.currentPosition.hasEnter || GameManager.gameplay.currentPosition.hasLeave) || 
+			(countCheckpoints() < checkpoints.Length)) {
             return false;
         }
-		if (countCheckpoints() < checkpoints.Length) return false;
-        //return GameManager.gameplay.stringLeft == 0; 
 		return GameManager.gameplay.stringLeft == 0 &&
 			((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).currentPosition.index == ((Gameplay)GameManager.istates[(int)GameManager.IStateType.gameplay]).map.targetNodeIndex;
 	}

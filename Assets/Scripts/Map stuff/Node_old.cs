@@ -142,7 +142,7 @@ public class Node_old {
 		newNode.debris = this.debris; // name of sprites for debris 
 
 		newNode.type = this.type;    // the type of this tile
-		newNode.hasSign = this.hasSign;
+		//newNode.hasSign = this.hasSign;
 		newNode.signMessage = this.signMessage;
 
 		//newNode.defaultConn = { -1, -1, -1, -1 };

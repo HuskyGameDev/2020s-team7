@@ -157,23 +157,15 @@ public static class LevelEditor_2 {
 				TileCoord tile = wallIterator.Current;
 				if (null != tile) {
 					if (tile.North == true) {   // check if north wall
-												//chunk[tile.x, tile.y].connections.north = null;
-						//chunk[tile.x, tile.y].connections.north = -1;
 						chunk[tile.x, tile.y].defaultConn[0] = -1;
 					}
 					if (tile.South == true) {   // check if south wall
-												//chunk[tile.x, tile.y].connections.south = null;
-						//chunk[tile.x, tile.y].connections.south = -1;
 						chunk[tile.x, tile.y].defaultConn[2] = -1;
 					}
 					if (tile.East == true) {   // check if East wall
-						//chunk[tile.x, tile.y].connections.east = null;
-						//chunk[tile.x, tile.y].connections.east = -1;
 						chunk[tile.x, tile.y].defaultConn[1] = -1;
 					}
 					if (tile.West == true) {   // check if west wall
-						//chunk[tile.x, tile.y].connections.west = null;
-						//chunk[tile.x, tile.y].connections.west = -1;
 						chunk[tile.x, tile.y].defaultConn[3] = -1;
 					}
 				}
@@ -197,27 +189,9 @@ public static class LevelEditor_2 {
 	/// <param name="tileTo"></param>
 	public static void createOneWayLink(Node[,] chunkFrom, Node[,] chunkTo, TileCoord tileFrom, TileCoord tileTo, GameManager.Direction dir) {
 		chunkFrom[tileFrom.x, tileFrom.y].defaultConn[(int)dir] = chunkTo[tileTo.x, tileTo.y].index;
-		/*if (dir == GameManager.Direction.North) {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (dir == GameManager.Direction.East) {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
-		} else if (dir == GameManager.Direction.South) {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
-		} else {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
-		}*/
 	}
 	public static void createOneWayLink(LevelMap room, int fromIndex, int toIndex, GameManager.Direction dir) {
 		room[fromIndex].defaultConn[(int)dir] = room[toIndex].index;
-		/*if (dir == GameManager.Direction.North) {
-			room[fromIndex].connections.north = room[toIndex].index;
-		} else if (dir == GameManager.Direction.East) {
-			room[fromIndex].connections.east = room[toIndex].index;
-		} else if (dir == GameManager.Direction.South) {
-			room[fromIndex].connections.south = room[toIndex].index;
-		} else {
-			room[fromIndex].connections.west = room[toIndex].index;
-		}*/
 	}
 
 	/// <summary>
@@ -234,39 +208,11 @@ public static class LevelEditor_2 {
 		int opposite = ((int)dir + 2 ) % 4;
 		chunkFrom[tileFrom.x, tileFrom.y].defaultConn[(int)dir] = chunkTo[tileTo.x, tileTo.y].index;
 		chunkTo[tileTo.x, tileTo.y].defaultConn[opposite] = chunkFrom[tileFrom.x, tileFrom.y].index;
-
-		/*if (dir == GameManager.Direction.North) {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.north = chunkTo[tileTo.x, tileTo.y].index;
-			chunkTo[tileTo.x, tileTo.y].connections.south = chunkFrom[tileFrom.x, tileFrom.y].index;
-		} else if (dir == GameManager.Direction.East) {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.east = chunkTo[tileTo.x, tileTo.y].index;
-			chunkTo[tileTo.x, tileTo.y].connections.west = chunkFrom[tileFrom.x, tileFrom.y].index;
-		} else if (dir == GameManager.Direction.South) {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.south = chunkTo[tileTo.x, tileTo.y].index;
-			chunkTo[tileTo.x, tileTo.y].connections.north = chunkFrom[tileFrom.x, tileFrom.y].index;
-		} else {
-			chunkFrom[tileFrom.x, tileFrom.y].connections.west = chunkTo[tileTo.x, tileTo.y].index;
-			chunkTo[tileTo.x, tileTo.y].connections.east = chunkFrom[tileFrom.x, tileFrom.y].index;
-		}*/
 	}
 	public static void createTwoWayLink(LevelMap room, int fromIndex, int toIndex, GameManager.Direction dir) {
 		int opposite = ((int)dir + 2) % 4;
 		room[fromIndex].defaultConn[(int)dir] = room[toIndex].index;
 		room[toIndex].defaultConn[opposite] = room[fromIndex].index;
-
-		/*if (dir == GameManager.Direction.North) {
-			room[fromIndex].connections.north = room[toIndex].index;
-			room[toIndex].connections.south = room[fromIndex].index;
-		} else if (dir == GameManager.Direction.East) {
-			room[fromIndex].connections.east = room[toIndex].index;
-			room[toIndex].connections.west = room[fromIndex].index;
-		} else if (dir == GameManager.Direction.South) {
-			room[fromIndex].connections.south = room[toIndex].index;
-			room[toIndex].connections.north = room[fromIndex].index;
-		} else {
-			room[fromIndex].connections.west = room[toIndex].index;
-			room[toIndex].connections.east = room[fromIndex].index;
-		}*/
 	}
 
 	/// <summary>
@@ -320,13 +266,19 @@ public static class LevelEditor_2 {
 				room.checkpoints = temp;
 			}
 		}
+		if (room[tileIndex].type == Node.TileType.sign) {
+			room[tileIndex].signMessage = "";
+		}
 		for (int i = 0; i < 9; i++) {
 			if (
 				room[tileIndex].debris[i] != null && (	// remove sprites used for particular tile types
 					room[tileIndex].debris[i].Equals("Source") ||
 					room[tileIndex].debris[i].Equals("Target") ||
 					room[tileIndex].debris[i].Equals("Checkpoint") ||
-					room[tileIndex].debris[i].Equals("Pit_Placeholder")
+					room[tileIndex].debris[i].Equals("Pit_Placeholder") ||
+					room[tileIndex].debris[i].Equals("Deb_Page_1") ||
+					room[tileIndex].debris[i].Equals("Deb_Page_2") ||
+					room[tileIndex].debris[i].Equals("Deb_Page_3")
 				)) {
 				room[tileIndex].debris[i] = "";
 			}
@@ -369,6 +321,10 @@ public static class LevelEditor_2 {
 				temp[room.checkpoints.Length] = tileIndex;
 				room.checkpoints = temp;
 				break;
+			case Node.TileType.sign:
+				room[tileIndex].type = Node.TileType.sign;
+				room[tileIndex].debris[4] = "Deb_Page_1";
+				break;
 			case Node.TileType.unwalkable:
 				room[tileIndex].type = Node.TileType.unwalkable;	// un-walkable tile type, doen't need anything else
 				room[tileIndex].debris[4] = "Pit_Placeholder";
@@ -392,19 +348,6 @@ public static class LevelEditor_2 {
 		room[tileIndex].tempConn[(int)dir] = -1;
 		room[otherIndex].defaultConn[opposite] = -1;
 		room[otherIndex].tempConn[opposite] = -1;
-		/*int otherIndex = room[tileIndex].connections[dir];
-		Node.ConnectionSet[] thisConns = room[tileIndex].connectionList.ToArray();
-		foreach (Node.ConnectionSet set in thisConns) {
-			if (set[dir] == otherIndex) {
-				set[dir] = -1;
-			}
-		}
-		Node.ConnectionSet[] otherConns = room[otherIndex].connectionList.ToArray();
-		foreach (Node.ConnectionSet set in otherConns) {
-			if (set[Extensions.inverse(dir)] == tileIndex) {
-				set[Extensions.inverse(dir)] = -1;
-			}
-		}*/
 	}
 
 	/// <summary>
@@ -419,15 +362,6 @@ public static class LevelEditor_2 {
 			// j is index of moved node
 			// room[k] is node to check
 			// List<ConnectionSet> connectionList is list of connections on node to check
-			/*Node.ConnectionSet[] conns = room[k].connectionList.ToArray();
-			foreach (Node.ConnectionSet set in conns) {
-				for (int dir = 0; dir < 4; dir++) {
-					if (set[(GameManager.Direction)dir] == index) {
-						//Debug.Log("Deleting connection to node with index " + index);
-						set[(GameManager.Direction)dir] = -1;
-					}
-				}
-			}*/
 			for (int i = 0; i < 4; i++) {
 				if (room[k].defaultConn[i] == index) {
 					room[k].defaultConn[i] = -1;
@@ -465,13 +399,16 @@ public static class LevelEditor_2 {
 				//Debug.Log("Node with index " + i + " does not exist");
 				for (int j = (i + 1); j < mapSize; j++) {	// if it isn't valid, move all nodes that come asfter it down one slot
 					//Debug.Log("Moving node with index " + j + " down one");
+					if (room.targetNodeIndex == j) {
+						room.targetNodeIndex = j - 1;
+					}
+					if (room.sourceNodeIndex == j) {
+						room.sourceNodeIndex = j - 1;
+					}
 					if ((room[j] != null) || (room[j].index >= 0)) {    // only bother moving nodes that are also valid
 						if (GameManager.gameplay.currentIndex == j) {  // if the current tile is the one having its index changed, also update the current index 
 							GameManager.gameplay.currentIndex = j - 1; // this prevents teleporting or other error.
 						}
-						/*if(GameManager.instance.gameplay.currentIndex == j) {	// if the current tile is the one having its index changed, also update the current index 
-							GameManager.instance.gameplay.currentIndex = j - 1;	// this prevents teleporting or other error.
-						}*/
 
 						room[j - 1] = room[j];
 						room[j - 1].index = (j - 1);
@@ -480,15 +417,6 @@ public static class LevelEditor_2 {
 							// j is index of moved node
 							// room[k] is node to check
 							// List<ConnectionSet> connectionList is list of connections on node to check
-							/*Node.ConnectionSet[] conns = room[k].connectionList.ToArray();
-							foreach (Node.ConnectionSet set in conns) {
-								for (int dir = 0; dir < 4; dir++) {
-									if (set[(GameManager.Direction)dir] == j) {
-										//Debug.Log("Found reference to node with index " + j);
-										set[(GameManager.Direction)dir] = (j - 1);
-									}
-								}
-							}*/
 							for (int dir = 0; dir < 4; dir++) {
 								if (room[k].defaultConn[dir] == j) {
 									room[k].defaultConn[dir] = (j - 1);
@@ -501,10 +429,18 @@ public static class LevelEditor_2 {
 						}
 					}
 				}
-				// if a node is removed, reduce map size by one.
-				mapSize--;
+				mapSize--;	// if a node is removed, reduce map size by one.
+				i--;	// need to check the node that is now at index i
 			} else {    // if a node is valid, clean it up
 				room[i].PopConnectionStack();
+				//room[i].hasEnter = false;
+				//room[i].hasLeave = false;
+				if (room[i].type == Node.TileType.source && (room.sourceNodeIndex != i)) {	// only one source per map
+					setType(room, i, Node.TileType.regular);
+				}
+				if (room[i].type == Node.TileType.target && (room.targetNodeIndex != i)) {	// only one target per map
+					setType(room, i, Node.TileType.regular);
+				}
 			}
 		}
 		// make a new array that exactly fits the number of nodes actually in map, move nodes into it, and set the map's array to the new array

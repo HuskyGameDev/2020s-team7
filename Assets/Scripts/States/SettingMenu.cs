@@ -54,6 +54,7 @@ public class SettingMenu : IState {
 	}
 
 	protected override void _StartState(IState oldstate) {
+		this.gameObject.SetActive(true);
 		//Debug.Log("SaveMenu does not do anything in its _StartState() method");
 		previous = oldstate;
 		discardChanges(); // get fresh copy of current settings
@@ -61,7 +62,7 @@ public class SettingMenu : IState {
 	}
 
 	protected override void _EndState(IState newstate) {
-		//Debug.Log("SaveMenu does not do anything in its _EndState() method");
+		this.gameObject.SetActive(false);
 		GameManager.applySettings(GameManager.settings);
 	}
 

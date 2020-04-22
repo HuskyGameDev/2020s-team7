@@ -2,9 +2,9 @@
     "version": 1,
     "defaultPosition": 0,
     "sourceNodeIndex": 0,
-    "targetNodeIndex": 13,
-    "_size": 24,
-    "arraySize": 24,
+    "targetNodeIndex": 12,
+    "_size": 23,
+    "arraySize": 23,
     "checkpoints": [],
     "stringleft": 15,
     "nodes": [
@@ -36,7 +36,6 @@
                 ""
             ],
             "type": 1,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -59,7 +58,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 2
+            "leave": 1
         },
         {
             "index": 1,
@@ -89,7 +88,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 0,
@@ -112,7 +110,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 2
+            "leave": 1
         },
         {
             "index": 2,
@@ -142,7 +140,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 1,
@@ -195,7 +192,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -217,8 +213,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 4,
@@ -248,7 +244,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 3,
@@ -270,8 +265,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 2,
-            "leave": 0
+            "enter": 3,
+            "leave": 3
         },
         {
             "index": 5,
@@ -301,7 +296,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 4,
@@ -324,7 +318,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 3,
-            "leave": 0
+            "leave": 1
         },
         {
             "index": 6,
@@ -354,12 +348,11 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
                 8,
-                14,
+                13,
                 3
             ],
             "tempConn": [
@@ -376,8 +369,8 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 3,
+            "leave": 2
         },
         {
             "index": 7,
@@ -407,10 +400,9 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                23,
+                22,
                 10,
                 -1,
                 5
@@ -429,7 +421,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 3,
+            "enter": 0,
             "leave": 1
         },
         {
@@ -460,11 +452,10 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
-                11,
+                -1,
                 9,
                 6
             ],
@@ -476,14 +467,14 @@
             ],
             "drawCorner": [
                 true,
-                false,
+                true,
                 true,
                 true
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 3,
+            "leave": 2
         },
         {
             "index": 9,
@@ -513,11 +504,10 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 8,
-                12,
+                11,
                 10,
                 -1
             ],
@@ -528,14 +518,14 @@
                 -1
             ],
             "drawCorner": [
-                false,
+                true,
                 false,
                 true,
                 true
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 2,
+            "enter": 0,
             "leave": 0
         },
         {
@@ -566,11 +556,10 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 9,
-                13,
+                12,
                 -1,
                 7
             ],
@@ -619,13 +608,12 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
                 -1,
                 12,
-                8
+                9
             ],
             "tempConn": [
                 -1,
@@ -641,64 +629,11 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "enter": 2,
+            "leave": 3
         },
         {
             "index": 12,
-            "colorF": {
-                "r": 159,
-                "g": 143,
-                "b": 95,
-                "a": 255
-            },
-            "colorW": {
-                "r": 103,
-                "g": 113,
-                "b": 74,
-                "a": 255
-            },
-            "floorSprite": "Rock",
-            "wallSprite": "Rock",
-            "debris": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-            ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
-            "defaultConn": [
-                11,
-                -1,
-                13,
-                9
-            ],
-            "tempConn": [
-                -1,
-                -1,
-                -1,
-                -1
-            ],
-            "drawCorner": [
-                true,
-                true,
-                false,
-                false
-            ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
-        },
-        {
-            "index": 13,
             "colorF": {
                 "r": 159,
                 "g": 143,
@@ -725,10 +660,9 @@
                 ""
             ],
             "type": 2,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                12,
+                11,
                 -1,
                 -1,
                 10
@@ -747,8 +681,60 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 3,
             "leave": 0
+        },
+        {
+            "index": 13,
+            "colorF": {
+                "r": 159,
+                "g": 143,
+                "b": 95,
+                "a": 255
+            },
+            "colorW": {
+                "r": 103,
+                "g": 113,
+                "b": 74,
+                "a": 255
+            },
+            "floorSprite": "Rock",
+            "wallSprite": "Rock",
+            "debris": [
+                "",
+                "",
+                "",
+                "",
+                "Deb_Page_3",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "type": 4,
+            "signMessage": "Fascinating! The interior of this passage appears to occupy a much greater area in space than the outside would suggest. I knew that these dimensions would have altered spatial characteristics, but this is not what I expected.",
+            "defaultConn": [
+                6,
+                -1,
+                14,
+                -1
+            ],
+            "tempConn": [
+                -1,
+                -1,
+                -1,
+                -1
+            ],
+            "drawCorner": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "hasEnter": false,
+            "hasLeave": false,
+            "enter": 0,
+            "leave": 2
         },
         {
             "index": 14,
@@ -778,10 +764,9 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
-                6,
+                13,
                 -1,
                 15,
                 -1
@@ -801,7 +786,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 15,
@@ -831,7 +816,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 14,
@@ -854,7 +838,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 16,
@@ -884,7 +868,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 15,
@@ -907,7 +890,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 17,
@@ -937,7 +920,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 16,
@@ -960,7 +942,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 18,
@@ -990,7 +972,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 17,
@@ -1013,7 +994,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 19,
@@ -1043,7 +1024,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 18,
@@ -1066,7 +1046,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 20,
@@ -1089,15 +1069,14 @@
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_2",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "The ball of “string” interacts with its environment in a very interesting way. As I walked around, it unwinds, seemingly being absorbed by the floor. It also remains uniformly well lite. While I cannot make it cross itself, rewinding it is simplicity. Back-tracking causes the ball of string to removing itself from the floor and wind back up with no effort on my part.",
             "defaultConn": [
                 19,
                 -1,
@@ -1119,7 +1098,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 21,
@@ -1149,7 +1128,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 20,
@@ -1172,7 +1150,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 22,
@@ -1202,63 +1180,9 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 21,
-                -1,
-                23,
-                -1
-            ],
-            "tempConn": [
-                -1,
-                -1,
-                -1,
-                -1
-            ],
-            "drawCorner": [
-                true,
-                true,
-                true,
-                true
-            ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
-        },
-        {
-            "index": 23,
-            "colorF": {
-                "r": 159,
-                "g": 143,
-                "b": 95,
-                "a": 255
-            },
-            "colorW": {
-                "r": 103,
-                "g": 113,
-                "b": 74,
-                "a": 255
-            },
-            "floorSprite": "Rock",
-            "wallSprite": "Rock",
-            "debris": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-            ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
-            "defaultConn": [
-                22,
                 -1,
                 7,
                 -1
@@ -1278,7 +1202,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 0
+            "leave": 2
         }
     ]
 }

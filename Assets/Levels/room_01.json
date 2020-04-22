@@ -6,7 +6,7 @@
     "_size": 20,
     "arraySize": 20,
     "checkpoints": [],
-    "stringleft": 19,
+    "stringleft": 0,
     "nodes": [
         {
             "index": 0,
@@ -36,7 +36,6 @@
                 ""
             ],
             "type": 1,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -57,7 +56,7 @@
                 true
             ],
             "hasEnter": false,
-            "hasLeave": false,
+            "hasLeave": true,
             "enter": 0,
             "leave": 1
         },
@@ -89,7 +88,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -109,8 +107,8 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
+            "hasEnter": true,
+            "hasLeave": true,
             "enter": 3,
             "leave": 1
         },
@@ -141,9 +139,8 @@
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "I have finally done it! After many years of research I have finally made a machine that teleports a subject to another dimension…",
             "defaultConn": [
                 -1,
                 3,
@@ -162,10 +159,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
+            "hasEnter": true,
+            "hasLeave": true,
             "enter": 3,
-            "leave": 0
+            "leave": 1
         },
         {
             "index": 3,
@@ -195,7 +192,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -215,10 +211,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 4,
@@ -248,7 +244,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -268,10 +263,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 5,
@@ -301,7 +296,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -321,10 +315,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 6,
@@ -354,7 +348,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -374,10 +367,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 7,
@@ -407,7 +400,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -427,10 +419,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 8,
@@ -453,15 +445,14 @@
                 "",
                 "",
                 "",
-                "Deb_Page_1",
+                "Deb_Page_2",
                 "",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "Intriguing. These dimensions should be completely untouched, and yet surprisingly earthlike grasses and fungi are present. Less familiar is the symbol that I arrived on, and the line upon the floor. Both appear painted on, but I have found it impossible to extract samples for analysis.",
             "defaultConn": [
                 -1,
                 9,
@@ -480,10 +471,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 9,
@@ -513,7 +504,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -533,10 +523,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 10,
@@ -566,7 +556,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -586,10 +575,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 11,
@@ -619,7 +608,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -639,10 +627,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 12,
@@ -672,7 +660,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -692,10 +679,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 13,
@@ -725,7 +712,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -745,10 +731,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 14,
@@ -778,7 +764,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -798,10 +783,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 15,
@@ -831,7 +816,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -851,10 +835,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 16,
@@ -884,7 +868,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -904,10 +887,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 17,
@@ -930,15 +913,14 @@
                 "",
                 "",
                 "",
+                "Deb_Page_3",
                 "",
-                "Deb_Page_1",
                 "",
                 "",
                 ""
             ],
-            "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "type": 4,
+            "signMessage": "It seems as though there is another symbol inscribed on the floor at the end of this passage. Although, this symbol is different than the one at my entry point. This one also has a metallic sphere, about the size of a golfball, sitting at its center.",
             "defaultConn": [
                 -1,
                 18,
@@ -957,10 +939,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 18,
@@ -990,7 +972,6 @@
                 ""
             ],
             "type": 0,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -1010,10 +991,10 @@
                 true,
                 true
             ],
-            "hasEnter": false,
-            "hasLeave": false,
-            "enter": 0,
-            "leave": 0
+            "hasEnter": true,
+            "hasLeave": true,
+            "enter": 3,
+            "leave": 1
         },
         {
             "index": 19,
@@ -1043,7 +1024,6 @@
                 ""
             ],
             "type": 2,
-            "hasSign": false,
             "signMessage": "",
             "defaultConn": [
                 -1,
@@ -1063,9 +1043,9 @@
                 true,
                 true
             ],
-            "hasEnter": false,
+            "hasEnter": true,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 3,
             "leave": 0
         }
     ]

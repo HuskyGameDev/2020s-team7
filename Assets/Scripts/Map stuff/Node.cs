@@ -15,9 +15,9 @@ public class Node {
 	public String wallSprite = null;    // name of sprite for the walls
 	public String[] debris = new String[9]; // name of sprites for debris 
 
-	public enum TileType { regular, source, target, checkpoint, unwalkable};
+	public enum TileType { regular, source, target, checkpoint, sign, unwalkable};
 	public TileType type = TileType.regular;	// the type of this tile
-	public bool hasSign = false;
+	//public bool hasSign = false;
 	public String signMessage = "";
 
 	public int[] defaultConn = { -1, -1, -1, -1};	// default connections, returns to using these connection when temp connections are out of sight
@@ -94,7 +94,7 @@ public class Node {
 			Color32 colorF, Color32 colorW, 
 			String floorSprite, String wallSprite,
 			String[] debris, 
-			TileType type, bool hasSign, String signMessage, 
+			TileType type, /*bool hasSign,*/ String signMessage, 
 			int[] defaultConn, int[] tempConn, bool[] drawCorner,
 			bool hasEnter, bool hasLeave, Direction enter, Direction leave
 		) {
@@ -108,7 +108,7 @@ public class Node {
 			this.debris[i] = debris[i];
 		}
 		this.type = type;
-		this.hasSign = hasSign;
+		//this.hasSign = hasSign;
 		this.signMessage = signMessage;
 		for (int i = 0; i < 4; i++) {
 			this.defaultConn[i] = defaultConn[i];
@@ -128,7 +128,7 @@ public class Node {
 	public Node Copy() {
 		Node newNode = new Node(index, colorF, colorW, 
 			floorSprite, wallSprite, 
-			debris, type, hasSign, signMessage, 
+			debris, type, /*hasSign,*/ signMessage, 
 			defaultConn, tempConn, drawCorner,
 			hasEnter, hasLeave, enter, leave);
 		return newNode;
