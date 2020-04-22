@@ -88,53 +88,65 @@ public class RenderTile : MonoBehaviour {
 			//Update the floor sprite if this node has one.
 			//load errorsprite if floor sprite is invalid.
 			if (node.floorSprite != null) {
-				Sprite fSprite = Resources.Load<Sprite>("Floor_" + node.floorSprite);
+				//Sprite fSprite = Resources.Load<Sprite>("Floor_" + node.floorSprite);
+				Sprite fSprite = GameManager.getSprite("Floor_" + node.floorSprite);
 				if (fSprite != null) {
 					floor.sprite = fSprite;
 				} else {
 					Debug.Log("Error: sprite \"Floor_<" + node.floorSprite + ">\" not found");
-					floor.sprite = Resources.Load<Sprite>("ErrorSprite");
+					//floor.sprite = Resources.Load<Sprite>("ErrorSprite");
+					floor.sprite = GameManager.errorSprite;
 				}
 			}
 			//Update the wall sprites if this node has one.
 			//load errorsprite if wall sprite is invalid.
 
 			if (node.wallSprite != null) {
-				Sprite wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_N");
+				//Sprite wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_N");
+				Sprite wSprite = GameManager.getSprite("Wall_" + node.wallSprite + "_N");
 				if (wSprite != null) {
 					//northWall.sprite = wSprite;
 					walls[0].sprite = wSprite;
 				} else {
 					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_N\" not found");
-					walls[0].sprite = Resources.Load<Sprite>("ErrorSprite");
+					//walls[0].sprite = Resources.Load<Sprite>("ErrorSprite");
+					walls[0].sprite = GameManager.errorSprite;
 				}
-				wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_E");
+				//wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_E");
+				wSprite = GameManager.getSprite("Wall_" + node.wallSprite + "_E");
 				if (wSprite != null) {
 					walls[1].sprite = wSprite;
 				} else {
 					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_E\" not found");
-					walls[1].sprite = Resources.Load<Sprite>("ErrorSprite");
+					//walls[1].sprite = Resources.Load<Sprite>("ErrorSprite");
+					walls[1].sprite = GameManager.errorSprite;
 				}
-				wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_S");
+				//wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_S");
+				wSprite = GameManager.getSprite("Wall_" + node.wallSprite + "_S");
 				if (wSprite != null) {
 					walls[2].sprite = wSprite;
 				} else {
 					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_S\" not found");
-					walls[2].sprite = Resources.Load<Sprite>("ErrorSprite");
+					//walls[2].sprite = Resources.Load<Sprite>("ErrorSprite");
+					walls[2].sprite = GameManager.errorSprite;
 				}
-				wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_W");
+				//wSprite = Resources.Load<Sprite>("Wall_" + node.wallSprite + "_W");
+				wSprite = GameManager.getSprite("Wall_" + node.wallSprite + "_W");
 				if (wSprite != null) {
 					walls[3].sprite = wSprite;
 				} else {
 					Debug.Log("Error: sprite \"Wall_<" + node.wallSprite + ">_W\" not found");
-					walls[3].sprite = Resources.Load<Sprite>("ErrorSprite");
+					//walls[3].sprite = Resources.Load<Sprite>("ErrorSprite");
+					walls[3].sprite = GameManager.errorSprite;
 				}
-				wSprite = Resources.Load<Sprite>("Corner_" + node.wallSprite);
+				//wSprite = Resources.Load<Sprite>("Corner_" + node.wallSprite);
+				wSprite = GameManager.getSprite("Corner_" + node.wallSprite);
 				if (wSprite != null) {
 					corners.sprite = wSprite;
 				} else {
 					Debug.Log("Error: sprite \"Corner_<" + node.wallSprite + ">\" not found");
-					corners.sprite = Resources.Load<Sprite>("ErrorSprite");
+					//corners.sprite = Resources.Load<Sprite>("ErrorSprite");
+					corners.sprite = GameManager.errorSprite;
 				}
 			}
 
@@ -184,11 +196,13 @@ public class RenderTile : MonoBehaviour {
 	public void SetDebrisFromNode(Node node) {
 		for (int j = 0; j < 9; j++) {
 			if (node.debris[j] != null && node.debris[j].Length > 0) {
-				Sprite dSprite = Resources.Load<Sprite>(node.debris[j]);
+				//Sprite dSprite = Resources.Load<Sprite>(node.debris[j]);
+				Sprite dSprite = GameManager.getSprite(node.debris[j]);
 				if (dSprite != null) {
 					this.debris[j].sprite = dSprite;
 				} else {
-					this.debris[j].sprite = Resources.Load<Sprite>("ErrorSprite");
+					//this.debris[j].sprite = Resources.Load<Sprite>("ErrorSprite");
+					this.debris[j].sprite = GameManager.errorSprite;
 				}
 				this.debris[j].gameObject.SetActive(true);
 			} else {

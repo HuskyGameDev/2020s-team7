@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameMenu : IState {
 	//public int numLevels = 22;
@@ -8,6 +9,7 @@ public class GameMenu : IState {
 	public UnityEngine.UI.Text slotNameText;
 	public UnityEngine.UI.Button resumeButton;	// buttons for resume and level select. Disabled if no save is currently selected
 	public UnityEngine.UI.Button levelSelectButton;
+	public UnityEngine.UI.Button newGameButton;	// used as default selected button if saved savefile is not available to load
 	private LevelSelector levelSelector;    // local reference to levelSelector, setup in _initialize()
 
 	public override GameManager.IStateType _stateType {
@@ -26,6 +28,7 @@ public class GameMenu : IState {
 			numUnlockedText.text = "~/" + GameManager.numLevels;
 			resumeButton.interactable = false;	// set buttons unusable
 			levelSelectButton.interactable = false;
+			firstSelected = newGameButton;	// if resume/level select are greyed out, set newgame as default selected
 		} else {
 			slotNameText.text = GameManager.saveGame.slotName;
 			int count = 0;
@@ -35,6 +38,7 @@ public class GameMenu : IState {
 			numUnlockedText.text = count + "/" + GameManager.numLevels;
 			resumeButton.interactable = true;	// set buttons accesible
 			levelSelectButton.interactable = true;
+			firstSelected = resumeButton;	// set as default selected button
 		}
 	}
 

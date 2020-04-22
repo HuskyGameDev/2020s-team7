@@ -15,19 +15,23 @@ public class PauseMenu : IState {
 	protected override void _initialize() { }
 
 	protected override void _StartState(IState oldstate) {
+		//Debug.Log("PauseMenu starting state...");
 	}
 
 	protected override void _EndState(IState newstate) {
 		if (!(newstate is Gameplay)) {	// make sure gameplay is set inactive when leaving gameplay state, normaly it is still visible behind pause state
 			GameManager.gameplay.gameObject.SetActive(false);
 		}
-		//Debug.Log("PauseMenu does not do anything in its _EndState() method");
+		//Debug.Log("PauseMenu ending state...");
 	}
 
-	public override void _Update() {	// accept "esc"/back key input to return to gameplay, same as "esc" key will pause when in gameplay state
-		if (InputManager.instance.OnInputDown(InputManager.Action.back)) {
+	public override void _Update() {    // accept "esc"/back key input to return to gameplay, same as "esc" key will pause when in gameplay state
+		if (Input.GetButtonDown("Back")) {
 			GameManager.changeState(GameManager.gameplay, this);
 		}
+		/*if (InputManager.instance.OnInputDown(InputManager.Action.back)) {
+			GameManager.changeState(GameManager.gameplay, this);
+		}*/
 	}
 
 	public override void _RespondToConfirm(int retVal, string retString) { }

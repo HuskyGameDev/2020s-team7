@@ -40,14 +40,15 @@ public class LevelSelector : IState {
 			Debug.Log("Error: can select levels");
 		} else {	// if save exists, set the savename and number-of-levels-unlocked text, as well as activating only buttoons for unlocked levels
 			int count = 0;
+			firstSelected = levelButtons[0];	// start with first button selected
+			// need to figure out how to make is scroll to the right place on load, so it can be set to the last level visited.
+			// also make is so keyboard-nav makes it scroll outomatically as well.
 			for (int i = 0; i < levelButtons.Length; i++) {
 				if (GameManager.saveGame.canAccess(i)) {
 					count++;
 					levelButtons[i].gameObject.SetActive(true);
-					//levelButtons[i].interactable = true;
 				} else {
 					levelButtons[i].gameObject.SetActive(false);
-					//levelButtons[i].interactable = false;
 				}
 			}
 			levelButtons[0].gameObject.SetActive(true);
@@ -82,7 +83,8 @@ public class LevelSelector : IState {
 			levelButtons[i].GetComponent<LevelButtonScript>().index = i;	// set index for this button
 		}
 		GameManager.numLevels = levelButtons.Length;	// set number of levels that exist in the game manager
-		levelButtons[0].gameObject.SetActive(true);	// make sure level 0 is always accessible. 
+		levelButtons[0].gameObject.SetActive(true); // make sure level 0 is always accessible. 
+		firstSelected = levelButtons[0];
 	}
 
 	/// <summary>

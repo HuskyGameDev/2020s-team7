@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class LoadMenu : IState {
 	public UnityEngine.UI.Text[] numUnlockedText = new UnityEngine.UI.Text[3];	// info about each of the three save slots.
 	public UnityEngine.UI.Text[] slotNameText = new UnityEngine.UI.Text[3];		// could be changed form more save slots easily.
-	public UnityEngine.UI.Button[] resumeButton = new UnityEngine.UI.Button[3];
+	public UnityEngine.UI.Button[] slotButton = new UnityEngine.UI.Button[3];
+	public UnityEngine.UI.Button returnButton;
 
 	private LevelSelector levelSelector;	// local reference to levelSelector, setup in _initialize()
 
@@ -18,7 +20,8 @@ public class LoadMenu : IState {
 	}
 
 	protected override void _StartState(IState oldstate) {
-		for (int i = 0; i < 3; i++) {	// for each potential save:
+		firstSelected = returnButton;
+		for (int i = 2; i >= 0; i--) {	// for each potential save:
 			if (SaveObj.SaveExists(i+1)) {	// if it exists, set the button active, and set the name and levels-unlocked text to the values in the save
 				SaveObj save = SaveObj.LoadGame(i+1);
 				slotNameText[i].text = save.slotName;
@@ -27,13 +30,15 @@ public class LoadMenu : IState {
 					if (save.canAccess(j)) count++;
 				}
 				numUnlockedText[i].text = count + "/" + GameManager.numLevels;
-				resumeButton[i].interactable = true;
+				slotButton[i].interactable = true;
+				firstSelected = slotButton[i];
 			} else {    // if it doesn't exists, set the button non-interactive, and set the name and levels-unlocked text to default values
 				slotNameText[i].text = "-";
 				numUnlockedText[i].text = "~/" + GameManager.numLevels;
-				resumeButton[i].interactable = false;
+				slotButton[i].interactable = false;
 			}
 		}
+		//resetSelected();
 	}
 
 	protected override void _EndState(IState newstate) {
