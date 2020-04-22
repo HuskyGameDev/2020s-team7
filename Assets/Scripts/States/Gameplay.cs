@@ -8,12 +8,20 @@ using TMPro;
 
 public class Gameplay : IState {
 	public Text levelNameText;  // text element used to indicate current level
-	public Text checkpointsText;
-	public UnityEngine.UI.Text stringrem;
-	public GameObject wintext;
-	public GameObject winSound; // object that FMOD event emmitter is attached to, set to trigger when made active
-	public Image signImage; // used to change background image of sign
-	public Text signText;   // used to change text of sign
+	[SerializeField]
+	private Text checkpointsText;
+	[SerializeField]
+	private UnityEngine.UI.Text stringrem;
+	[SerializeField]
+	private GameObject wintext;
+	[SerializeField]
+	private GameObject winSound; // object that FMOD event emmitter is attached to, set to trigger when made active
+	[SerializeField]
+	private Image signImage; // used to change background image of sign
+	[SerializeField]
+	private Text signText;   // used to change text of sign
+	[SerializeField]
+	private List<int> signsVisited = new List<int>();
 
 	#region Initialize Variables
 	bool animLockout = false;
@@ -86,7 +94,9 @@ public class Gameplay : IState {
 			if (currentPosition.hasSign/* && curdir == 0*/) {
 				//Player reads a sign
 				///////// make sign visible/not visible
-				Debug.Log(currentPosition.signMessage);
+				signText.text = currentPosition.signMessage;
+				signImage.gameObject.SetActive(!signImage.gameObject.activeInHierarchy);
+				//Debug.Log(currentPosition.signMessage);
 			} else {
 				if (hasBall) {
 					//Player drops the ball
@@ -148,6 +158,7 @@ public class Gameplay : IState {
 		if (directionInput) {	// only go into if a direction input occured
 			bool canMove = false;
 			Node otherNode = null;
+			if (signImage.gameObject.activeInHierarchy) signImage.gameObject.SetActive(false);
 			//curdir = i;
 			//curdir = (int)dir;
 			if (hasBall && (currentPosition.hasLeave || (currentPosition.type != Node.TileType.source && !currentPosition.hasLeave && !currentPosition.hasEnter))) {
@@ -169,71 +180,76 @@ public class Gameplay : IState {
 			if (cinimaticMode && Input.GetKey(KeyCode.Space)) canMove = false;
 			animLockout = true;
 			StartCoroutine(CharacterAnimator.instance.AnimateMovement(
-				(bool flag) => {
-					if (!canMove) {
-						animLockout = false;
-						return;
-					}
-						//Handle fake connection stacking
-						{
-							//If the connection from this node to the other is one-way
-							if (otherNode[(int)dir.inverse()] != currentPosition.index) {
-								// temp override connection to that node
-								otherNode[(int)dir.inverse()] = currentPosition.index;
-						}
-					}
-
-					if (hasBall) {
-							//Tag the current square with line exit dir
-							if (!otherNode.hasLeave) {
-							currentPosition.leave = dir;
-							currentPosition.hasLeave = true;
-							otherNode.enter = dir.inverse();
-							otherNode.hasEnter = true;
-							stringLeft--;
-						} else {
-								//Do a backup
-								currentPosition.hasEnter = false;
-							otherNode.hasLeave = false;
-							stringLeft++;
-						}
-					}
-
-					currentPosition = otherNode;
-
-#if UNITY_EDITOR    // if this is in the editor, call getCurrentNode() every time movement happens, 
-						// and apply copied colors and sprites to the new tile is currently drawing.
-						if (editLevel != null) {
-						editLevel.getCurrentNode();
-						editLevel.drawTiles();  // only changes stuff if currently drawing
-												//Debug.Log("calling getCurrentNode()...")
-						} else {
-						Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");
-					}
-#endif
-						nonEuclidRenderer.HandleRender(dir, currentPosition);
-					animLockout = false;
-					setUItext();    // apply changes to UI text: string left, checkpoints.
-
-						if (map.winConditions()) {
-						winTrigger = true;
-						wintext.SetActive(true);    // make win text visible
-							winSound.SetActive(true);   // play sound
-														// play win sound here
-							levelSelector.unlockLevel();    // unlocks next level
-							GameManager.saveGame.levelNumber++; // advance last level visited, so will auto-load next level
-							SaveObj.SaveGame(GameManager.settings.saveNum, GameManager.saveGame);   // save changes to levels accessible and last-level-visited
-							Debug.Log("You win!");
-					}
-				},
-				dir,
-				moveAnimSpeed,
-				canMove
+				(bool flag) => { onArrive(canMove, otherNode, dir); }, 
+				dir, moveAnimSpeed, canMove
 			));
 
 			//break;
 		}
 		//}
+	}
+
+	public void onArrive(bool canMove, Node otherNode, GameManager.Direction dir) {
+		if (!canMove) {
+			animLockout = false;
+			return;
+		}
+		//Handle fake connection stacking
+		{
+			//If the connection from this node to the other is one-way
+			if (otherNode[(int)dir.inverse()] != currentPosition.index) {
+				// temp override connection to that node
+				otherNode[(int)dir.inverse()] = currentPosition.index;
+			}
+		}
+
+		if (hasBall) {
+			//Tag the current square with line exit dir
+			if (!otherNode.hasLeave) {
+				currentPosition.leave = dir;
+				currentPosition.hasLeave = true;
+				otherNode.enter = dir.inverse();
+				otherNode.hasEnter = true;
+				stringLeft--;
+			} else {
+				//Do a backup
+				currentPosition.hasEnter = false;
+				otherNode.hasLeave = false;
+				stringLeft++;
+			}
+		}
+
+		currentPosition = otherNode;
+
+#if UNITY_EDITOR    // if this is in the editor, call getCurrentNode() every time movement happens, 
+		// and apply copied colors and sprites to the new tile is currently drawing.
+		if (editLevel != null) {
+			editLevel.getCurrentNode();
+			editLevel.drawTiles();  // only changes stuff if currently drawing
+									//Debug.Log("calling getCurrentNode()...")
+		} else {
+			Debug.Log("Cannot call getCurrentNode(), there is no reference to editLevel script/object");
+		}
+#endif
+		nonEuclidRenderer.HandleRender(dir, currentPosition);
+		animLockout = false;
+		setUItext();    // apply changes to UI text: string left, checkpoints.
+
+		if (map.winConditions()) {
+			winTrigger = true;
+			wintext.SetActive(true);    // make win text visible
+			winSound.SetActive(true);   // play sound
+										// play win sound here
+			levelSelector.unlockLevel();    // unlocks next level
+			GameManager.saveGame.levelNumber++; // advance last level visited, so will auto-load next level
+			SaveObj.SaveGame(GameManager.settings.saveNum, GameManager.saveGame);   // save changes to levels accessible and last-level-visited
+			Debug.Log("You win!");
+		}
+		if (currentPosition.hasSign && !signsVisited.Contains(currentPosition.index)) {
+			signsVisited.Add(currentPosition.index);
+			signText.text = currentPosition.signMessage;
+			signImage.gameObject.SetActive(true);
+		}
 	}
 
 	/// <summary>
@@ -260,9 +276,12 @@ public class Gameplay : IState {
 		hasBall = true;
 		//curdir = 0;
 		stringLeft = map.stringleft;
+		signImage.gameObject.SetActive(false); // used to change background image of sign
+		signText.text = "";
 		wintext.SetActive(false);   // make sure win text is not visible
 		winSound.SetActive(false);  // set inactive, so can be triggered again.
 		youWinScreenTimeout = 1.0f;
+		signsVisited.Clear();
 
 		//Send the player back to the starting point
 		currentPosition = map[map.sourceNodeIndex];

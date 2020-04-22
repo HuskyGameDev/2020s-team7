@@ -86,9 +86,10 @@ public class GameManager : MonoBehaviour {
 		errorSprite = _errorSprite;
 		for (int s = 0; s < spriteBook.Length; s++) {	// get the index and name of every sprite, so you can look them up by name
 			if (spriteBook[s] != null) {
-				Debug.Log("Trying to add sprite " + spriteBook[s].name + " to sprite index");
-				if (!spriteIndex.ContainsKey(spriteBook[s].name)) {	// don't add any duplicate names
-					spriteIndex.Add(spriteBook[s].name, s);
+				string lowercase = spriteBook[s].name.ToLowerInvariant();
+				//Debug.Log(string.Format("Trying to add sprite {0} to sprite index", lowercase));
+				if (!spriteIndex.ContainsKey(lowercase)) {	// don't add any duplicate names
+					spriteIndex.Add(lowercase, s);
 				} else {
 					throw new System.Exception("Error: sprite with name" + spriteBook[s].name + " present in spritebook more than once");
 				}
@@ -135,7 +136,7 @@ public class GameManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="setObj"></param>
 	public static void applySettings(SettingsObj setObj) {
-		Debug.Log("Warning: Volume settings do nothing right now");
+		//Debug.Log("Warning: Volume settings do nothing right now");
 		
 		//masterChannel.setVolume(volume);
 		switch (setObj.fullscreen) {
@@ -191,11 +192,13 @@ public class GameManager : MonoBehaviour {
 
 
 	/// <summary>
-	/// get a sprite from the spritebook by name
+	/// get a sprite from the spritebook by name.
+	/// Ignores case
 	/// </summary>
 	/// <param name="name"></param>
 	/// <returns></returns>
 	public static Sprite getSprite(string name) {
+		name = name.ToLowerInvariant();
 		if (spriteIndex.ContainsKey(name)) {
 			return spriteBook[spriteIndex[name]];
 		} else {
