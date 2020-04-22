@@ -59,7 +59,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 0,
-            "leave": 2
+            "leave": 1
         },
         {
             "index": 1,
@@ -111,7 +111,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 0,
+            "enter": 1,
             "leave": 2
         },
         {
@@ -188,15 +188,15 @@
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_1",
                 "",
                 "",
                 "",
                 ""
             ],
             "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "hasSign": true,
+            "signMessage": "My hypothesis was correct! Placing the orb found inside of the ball of string in the indent caused me to be teleported much like when I was first brought here. This new room looks similar to the last, only with a different layout. Is this another puzzle? How many can there be? And why? I must find out!",
             "defaultConn": [
                 -1,
                 6,
@@ -217,7 +217,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 2,
+            "enter": 3,
             "leave": 1
         },
         {
@@ -271,7 +271,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 1,
-            "leave": 0
+            "leave": 3
         },
         {
             "index": 5,
@@ -536,7 +536,7 @@
             "hasEnter": false,
             "hasLeave": false,
             "enter": 3,
-            "leave": 0
+            "leave": 2
         },
         {
             "index": 10,
@@ -588,7 +588,7 @@
             ],
             "hasEnter": false,
             "hasLeave": false,
-            "enter": 1,
+            "enter": 0,
             "leave": 3
         },
         {
@@ -718,15 +718,15 @@
                 "",
                 "",
                 "",
-                "",
+                "Deb_Page_1",
                 "",
                 "",
                 "",
                 ""
             ],
             "type": 0,
-            "hasSign": false,
-            "signMessage": "",
+            "hasSign": true,
+            "signMessage": "This new dimension appears rather strange, mostly comprised of small, confined rooms, each with their own puzzle to solve. It is as if another being made these rooms as some form of a test. More research is required before I can formulate any conclusions.",
             "defaultConn": [
                 12,
                 -1,
